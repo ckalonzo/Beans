@@ -1,19 +1,17 @@
 import React, { Component } from "react";
-import Navigation from "./component/Navigation";
-import Navbar from "./component/Navbar";
-import Footer from "../Global/Component/Footer"
+import Navbar from "../Global/Component/Navigation/Layout/Navbar";
+import Footer from "../Global/Component/Navigation/Layout/Footer";
+import Hero from "../Global/Layout/Hero";
+import HowItWorks from "../Global/Layout/Hiw";
+
 
 class Home extends Component {
     render() {
         return (
             <div>
                 <Navbar />
-                <section>
-                    <div className="container">
-                        <h2>Hello World</h2>
-                    </div>
-                </section>
-
+                <Hero />
+                <HowItWorks />
                 <Footer />
             </div>
 

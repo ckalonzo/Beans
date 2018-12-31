@@ -1,5 +1,5 @@
 .navbar-brand{
-    background-image: url("../img/truckedaway-wh-bg.jpg");
+    background-image: url("../Images/truckedaway-wh-bg.jpg");
     width: 100px;
     height: 70px; 
     background-size: 100% 100%;
@@ -60,5 +60,8 @@ ul li{
     color:#000 !important;
   }
 .nav-link{
-    color:#000 !important;
+    color:#124676 !important;
+  }
+  .navbar-toggler{
+    background-color: #124676!important;
   }

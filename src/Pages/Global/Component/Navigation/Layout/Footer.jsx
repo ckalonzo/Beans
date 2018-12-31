@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
-import './Footer.css';
+import '../css/Footer.css';
 
 
 export default class Footer extends Component {
     render() {
         return (
             <div>
-                <footer className="footer mt-auto py-3 fixed-bottom">
+                <footer className="footer">
                     <div className="container">
                         <div class="row text-center d-flex justify-content-center pt-5 mb-3">
                             <div class="col-md-2 mb-3">
                                 <h6 class="text-uppercase font-weight-bold">
-                                    <a href="#!">About us</a>
+                                    <a className="ov-color" href="/Membership">Membership</a>
                                 </h6>
                             </div>
                             <div class="col-md-2 mb-3">
                                 <h6 class="text-uppercase font-weight-bold">
-                                    <a href="#!">Products</a>
+                                    <a className="ov-color" href="/aboutus">About Us</a>
                                 </h6>
                             </div>
                             <div class="col-md-2 mb-3">
                                 <h6 class="text-uppercase font-weight-bold">
-                                    <a href="#!">Awards</a>
+                                    <a className="ov-color" href="/term-of-use">Terms of Use</a>
                                 </h6>
                             </div>
                             <div class="col-md-2 mb-3">
                                 <h6 class="text-uppercase font-weight-bold">
-                                    <a href="#!">Help</a>
+                                    <a className="ov-color" href="/Contractor">Become a Contractor</a>
                                 </h6>
                             </div>
                             <div class="col-md-2 mb-3">
                                 <h6 class="text-uppercase font-weight-bold">
-                                    <a href="#!">Contact</a>
+                                    <a className="ov-color" href="/Contact">Contact</a>
                                 </h6>
                             </div>
 
