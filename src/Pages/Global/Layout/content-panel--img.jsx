@@ -8,11 +8,11 @@ export default class ContentPanelImg extends Component {
             <section>
                 <div className="container">
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-6 col-md-6 col-sm-12">
                             <div className="img-panel">
                             </div>
                         </div>
-                        <div className="col-6">
+                        <div className="col-6 col-md-6 col-sm-12">
                             <div className="mt-5">
                                 <div className="">
                                     <h2 className="img-content-title">What we offer</h2>
