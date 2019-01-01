@@ -1,7 +1,10 @@
 
 .herosection{
-    /* background-image: url("../../../100_Home/img/hero1.jpg"); */
-    background-color: goldenrod;
+    background-image: url("../../../100_Home/img/Hero.png");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 515px;
+    background-position:bottom;
 }
 .pj-btn{
     background-color: #dc3545;
@@ -10,9 +13,11 @@
 }
 .hero-title{
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 70px;
+    font-size: 60px;
+    color: #ffffff;
 }
 .hero-copy{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
+    color: #ffffff;
 }

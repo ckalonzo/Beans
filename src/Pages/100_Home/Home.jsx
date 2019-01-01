@@ -3,7 +3,8 @@ import Navbar from "../Global/Component/Navigation/Layout/Navbar";
 import Footer from "../Global/Component/Navigation/Layout/Footer";
 import Hero from "../Global/Layout/Hero";
 import HowItWorks from "../Global/Layout/Hiw";
-
+import ContentPanelImg from "../Global/Layout/content-panel--img";
+import Join from "../Global/Layout/Join";
 
 class Home extends Component {
     render() {
@@ -12,6 +13,8 @@ class Home extends Component {
                 <Navbar />
                 <Hero />
                 <HowItWorks />
+                <ContentPanelImg />
+                <Join />
                 <Footer />
             </div>
 

@@ -1,12 +1,34 @@
+.ovbg{
+    background-color: #f6f9f9;
+}
+.hiw-col{
+   color:  #003366;
+}
+.hiw-title{
+    font-size: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
 .step-1{
- background-image: url("../../../100_Home/img/hero1.jpg");
- height: 200px;
+    background-image: url("../../../100_Home/img/arrow.png");
+ height: 100px;
+ background-repeat: no-repeat;
+ background-position:center;
 }
 .step-2{
-    background-image: url("../../../100_Home/img/hero1.jpg");
-    height: 200px;
+    background-image: url("../../../100_Home/img/arrow2.png");
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position:center;
 }
 .step-3{
-    background-image: url("../../../100_Home/img/hero1.jpg");
-    height: 200px;
+    background-image: url("../../../100_Home/img/arrow3.png");
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.center-title{
+    text-align: center;
+}
+.center-text{
+    text-align: center; 
 }

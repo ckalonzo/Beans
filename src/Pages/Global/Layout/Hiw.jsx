@@ -4,36 +4,53 @@ import './css/Hiw.css';
 export default class HowItWorks extends Component {
     render() {
         return (
-            <section>
+            <section className="ovbg">
                 <div className="container">
+                    <div className="row">
+                        <div className="mt-5 mx-auto">
+                            <div className="hiw-col hiw-title">
+                                <h2>HOW IT WORKS</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="mb-5 mx-auto">
+                            <div className="hiw-col  hiw-subtitle">
+                                <h5>Here's 3 Simple Steps of How it Works</h5>
+                            </div>
+                        </div>
+
+
+
+                    </div>
                     <div class="card-deck">
-                        <div class="card">
-                            <div class="card-img-top step-1" alt="..."> </div>
+                        <div class="card border-0 ovbg">
+                            <div className="remo"></div>
+                            <div class="card-img-top mx-auto step-1" alt="..."> </div>
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h5 class="card-title center-title hiw-col">Post your Job with Budget</h5>
+                                <p class="card-text center-text hiw-col">Hey we get it. Stop paying Ridiculus rates and get the job done with a budget you can afford.</p>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-img-top step-2" alt="..."> </div>
+                        <div class="card border-0 ovbg">
+                            <div class="card-img-top mx-auto step-2" alt="..."> </div>
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h5 class="card-title center-title hiw-col">Accept Bid</h5>
+                                <p class="card-text center-text hiw-col">We have great partners. You choose the best company that fits your needs.</p>
+
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-img-top step-3" alt="..."> </div>
+                        <div class="card border-0 ovbg">
+                            <div class="card-img-top mx-auto step-3" alt="..."> </div>
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h5 class="card-title center-title hiw-col">Complete Job</h5>
+                                <p class="card-text center-text hiw-col">Contractor comes and complete job. All we ask is that you leave a review for the next customer. </p>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
         );
     }
