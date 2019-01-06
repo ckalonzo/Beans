@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../Css/Login.css'
+import '../Css/ProviderLogin.css'
 
 
-export default class Login extends Component {
+export default class ProviderLogin extends Component {
     render() {
         return (
             <section className="login-img-cus">
