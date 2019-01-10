@@ -1,10 +1,11 @@
 
 .herosection{
-    background-image: url("../../../100_Home/img/Hero.png");
+    background-image: url("../../../100_Home/Img/Hero.png");
     background-repeat: no-repeat;
     background-size: cover; 
     height: 515px;
     background-position:bottom;
+    
 }
 .pj-btn{
     background-color: #dc3545;
