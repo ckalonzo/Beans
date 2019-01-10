@@ -25,7 +25,7 @@ export default class Navbar extends Component {
                                     </div>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link moveline" to="/103_Membership/Membership">Membership</a>
+                                    <a className="nav-link moveline" href="/103_Membership/Membership">Membership</a>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link moveline dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contractor</a>
