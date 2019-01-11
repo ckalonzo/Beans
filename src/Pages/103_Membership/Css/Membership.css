@@ -1,0 +1,12 @@
+.check-img {
+    list-style-image: url('../Img/check-sign.png');
+  }
+
+  .bubble{
+
+    background-image: url("../Img/quote-bubble.png");
+    background-repeat: no-repeat;
+    background-size: 98% 100%;
+    height: 346px;
+   
+  }
