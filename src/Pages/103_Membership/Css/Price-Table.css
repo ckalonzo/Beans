@@ -11,8 +11,18 @@ figure.gold{
     background-color: #a67c00;
 }
 .sectioncolor{
-    background:#001859;
+    background: #7e7e7e;
 }
+#glow {
+    /* background: #28344a; */
+    color: #000000;
+  }
+  
+  #glow:hover {
+    background: #e2e6ea;
+   
+    box-shadow: 0 0 10px #fff, 0 0 15px #fff;
+  }
 body{
  
   font-family: 'Source Sans Pro', sans-serif;
@@ -89,6 +99,7 @@ figure.image {
     position: relative;
     margin: 0;
     padding: 0;
+    
 }
 figure.image figcaption {
     position: absolute;
@@ -96,7 +107,6 @@ figure.image figcaption {
     width: 100%;
     text-align: center;
     bottom: 4px;
-    background: rgba(0,0,0,0.6);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
@@ -130,7 +140,7 @@ figcaption p{
    border-bottom: 1px solid #ccc;
 }
 .listing-item:hover figure.image figcaption{
-       background: rgba(195, 39, 43, 0.6);
+    opacity: 1;
 }
 @media only screen and (min-width:540px){
     .listing-item {

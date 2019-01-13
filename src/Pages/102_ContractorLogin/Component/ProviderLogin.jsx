@@ -3,6 +3,16 @@ import '../Css/ProviderLogin.css'
 
 
 export default class ProviderLogin extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            Email: '',
+            password: ''
+        }
+
+
+    }
+
     render() {
         return (
             <section className="login-img-cus">
@@ -24,19 +34,33 @@ export default class ProviderLogin extends Component {
                                                     <form>
                                                         <div class="form-group mt-4">
                                                             <label for="InputEmail1">Email address</label>
-                                                            <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email"></input>
+                                                            <input
+                                                                className="form-control"
+                                                                type="text"
+                                                                placeholder="Email"
+                                                                onChange={event => this.setState({ Email: event.target.value })}
+                                                            />
 
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="InputPassword1">Password</label>
-                                                            <input type="password" class="form-control" id="InputPassword1" placeholder="Password"></input>
+                                                            <input
+                                                                className="form-control"
+                                                                type="password"
+                                                                placeholder="password"
+                                                                onChange={event => this.setState({ password: event.target.value })}
+                                                            />
                                                         </div>
                                                         <div class="form-check">
                                                             <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
                                                             <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                                                             <a href="#" class="float-right">Forgot Password?</a>
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary btn-block mt-3">Log In</button>
+                                                        <button
+                                                            className="btn btn-primary btn-block mt-3"
+                                                            type="submit"
+                                                            onClick={() => console.log('this.state', this.state)}
+                                                        >Log In</button>
 
                                                         <div class="or-seperator  mt-5"><span>OR</span></div>
                                                         <div class="text-center social-btn mb-5">

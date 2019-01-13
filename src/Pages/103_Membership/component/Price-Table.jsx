@@ -8,13 +8,14 @@ export default class Prices extends Component {
                 <div className="container">
                     <div className="row">
                         <div class="col-xs-12 col-md-12">
-                            <h2 id="title">Monthly Subscription and Single prices </h2>
+                            <h2 id="title">Monthly Subscription Packages </h2>
                             <div class="hover-table-layout">
-                                <div class="listing-item">
+                                <div class="listing-item" id="glow">
                                     <figure class="image">
-                                        <img src="https://i.ytimg.com/vi/MTrzTABzLfY/maxresdefault.jpg" alt="image"></img>
+                                        <img src="http://i66.tinypic.com/jzctud.jpg" alt="image"></img>
                                         <figcaption>
                                             <div class="caption">
+                                                <h1>Bronze Membership</h1>
                                                 <h1>$10000</h1>
                                                 <p>lorem</p>
                                             </div>
@@ -27,11 +28,12 @@ export default class Prices extends Component {
                                         <h4>Online brochures</h4>
                                     </div>
                                 </div>
-                                <div class="listing-item">
+                                <div class="listing-item" id="glow">
                                     <figure class="image">
-                                        <img src="https://i.ytimg.com/vi/MTrzTABzLfY/maxresdefault.jpg" alt="image"></img>
+                                        <img src="http://i64.tinypic.com/2nvufid.jpg" alt="image"></img>
                                         <figcaption>
                                             <div class="caption">
+                                                <h1>Silver Membership</h1>
                                                 <h1>$ 2000</h1>
                                                 <p>lorem</p>
                                             </div>
@@ -45,11 +47,12 @@ export default class Prices extends Component {
                                         <h4>Commercial opportunities in the preview and show dailies</h4>
                                     </div>
                                 </div>
-                                <div class="listing-item">
+                                <div class="listing-item" id="glow">
                                     <figure class="image">
-                                        <img src="https://i.ytimg.com/vi/MTrzTABzLfY/maxresdefault.jpg" alt="image"></img>
+                                        <img src="http://i65.tinypic.com/2sb38lu.jpg" alt="image"></img>
                                         <figcaption>
                                             <div class="caption">
+                                                <h1>Gold Membership</h1>
                                                 <h1>$100</h1>
                                                 <p>lorem</p>
                                             </div>
@@ -62,6 +65,7 @@ export default class Prices extends Component {
                                         <h4>Get Social</h4>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
