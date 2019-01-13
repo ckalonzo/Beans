@@ -1,17 +1,39 @@
 import React, { Component } from 'react';
 import '../Css/ProviderLogin.css'
-
+import firebaseApp  from "../../../Firebase";
 
 export default class ProviderLogin extends Component {
     constructor(props) {
         super(props);
+        this.login = this.login.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.signup = this.signup.bind(this);
         this.state = {
-            Email: '',
-            password: ''
-        }
-
-
-    }
+          email: '',
+          password: ''
+        };
+      }
+    
+      handleChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+      }
+    
+      login(e) {
+        e.preventDefault();
+        firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+        }).catch((error) => {
+            console.log(error);
+          });
+      }
+    
+      signup(e){
+        e.preventDefault();
+        firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+        }).then((u)=>{console.log(u)})
+        .catch((error) => {
+            console.log(error);
+          })
+      }
 
     render() {
         return (
@@ -32,7 +54,7 @@ export default class ProviderLogin extends Component {
                                             <div className="mx-auto login">
                                                 <div className="">
                                                     <form>
-                                                        <div class="form-group mt-4">
+                                                        <div className="form-group mt-4">
                                                             <label for="InputEmail1">Email address</label>
                                                             <input
                                                                 className="form-control"
@@ -42,7 +64,7 @@ export default class ProviderLogin extends Component {
                                                             />
 
                                                         </div>
-                                                        <div class="form-group">
+                                                        <div className="form-group">
                                                             <label for="InputPassword1">Password</label>
                                                             <input
                                                                 className="form-control"
@@ -51,10 +73,10 @@ export default class ProviderLogin extends Component {
                                                                 onChange={event => this.setState({ password: event.target.value })}
                                                             />
                                                         </div>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
-                                                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                                                            <a href="#" class="float-right">Forgot Password?</a>
+                                                        <div className="form-check">
+                                                            <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
+                                                            <label className="form-check-label" for="exampleCheck1">Remember Me</label>
+                                                            <a href="#" className="float-right">Forgot Password?</a>
                                                         </div>
                                                         <button
                                                             className="btn btn-primary btn-block mt-3"
@@ -62,10 +84,10 @@ export default class ProviderLogin extends Component {
                                                             onClick={() => console.log('this.state', this.state)}
                                                         >Log In</button>
 
-                                                        <div class="or-seperator  mt-5"><span>OR</span></div>
-                                                        <div class="text-center social-btn mb-5">
-                                                            <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
-                                                            <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
+                                                        <div className="or-seperator  mt-5"><span>OR</span></div>
+                                                        <div className="text-center social-btn mb-5">
+                                                            <a href="#" className="btn btn-primary btn-block"><i className="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
+                                                            <a href="#" className="btn btn-danger btn-block"><i className="fa fa-google"></i> Sign in with <b>Google</b></a>
                                                         </div>
 
                                                     </form>

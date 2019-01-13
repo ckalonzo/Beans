@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/content-panel--img.css';
+import './Css/content-panel--img.css';
 
 export default class ContentPanelImg extends Component {
     render() {

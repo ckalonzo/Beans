@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/Join.css';
+import './Css/Join.css';
 
 export default class Join extends Component {
     render() {

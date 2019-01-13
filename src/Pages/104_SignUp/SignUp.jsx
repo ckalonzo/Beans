@@ -1,67 +1,82 @@
 import React, { Component } from "react";
-import { firebaseApp } from '../../Firebase';
+import  firebaseApp  from '../../Firebase';
 
 
 class SignUp extends Component {
     constructor(props) {
         super(props);
+        this.signup = this.signup.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.state = {
             FirstName: '',
             LastName: '',
             Email: '',
-            password: '',
-            error: {
-                message: ''
-            }
-        }
-    }
-    apple() {
-        console.log('this.state', this.state);
-        const { FirstName, LastName, email, password } = this.state;
-        firebaseApp.auth().createUserWithEmailAndPassword(FirstName, LastName, email, password)
-            .catch(error => {
-                console.log("error", error);
-                this.setState({ error })
-            })
-    }
+            password: ''
+        };
+      }
+    
+      handleChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+      }
+
+    signup(e){
+        e.preventDefault();
+        firebaseApp.auth().createUserWithEmailAndPassword(this.state.FirstName,this.state.LastName, this.state.email, this.state.password).then((u)=>{
+        }).then((u)=>{console.log(u)})
+        .catch((error) => {
+            console.log(error);
+          })
+      }
+    
     render() {
         return (
             <div className="form-inline">
                 <h2>Sign Up</h2>
                 <div className="form-group">
-                    <input
+                <input
+                        value={this.state.FirstName}
+                        onChange={this.handleChange}
                         className="form-control"
                         type="text"
                         placeholder="First Name"
-                        onChange={event => this.setState({ FirstName: event.target.value })}
                     />
                     <input
+                        value={this.state.LastName}
+                        onChange={this.handleChange}
                         className="form-control"
                         type="text"
                         placeholder="Last Name"
-                        onChange={event => this.setState({ LastName: event.target.value })}
                     />
-                    <input
+                    <input 
+                        value={this.state.email} 
+                        onChange={this.handleChange}
+                         type="email" 
+                        name="email" 
                         className="form-control"
-                        type="text"
-                        placeholder="Email"
-                        onChange={event => this.setState({ Email: event.target.value })}
-                    />
-                    <input
-                        className="form-control"
-                        type="password"
-                        placeholder="password"
-                        onChange={event => this.setState({ password: event.target.value })}
-                    />
+                         id="exampleInputEmail1" 
+                        aria-describedby="emailHelp"
+                         placeholder="Enter email" 
+                         />
+                    <div className="form-group">
+                    <label for="InputPassword1">Password</label>
+                     <input 
+                        value={this.state.password} 
+                        onChange={this.handleChange} 
+                        type="password" 
+                        name="password" 
+                        className="form-control" 
+                        id="exampleInputPassword1"
+                        placeholder="Password" 
+                        />
+                      </div>
                     <button
                         className="btn btn-primary btn-block mt-3"
                         type="submit"
-                        onClick={() => this.apple()}
+                        onClick={this.signup}
                     >
                         Sign Up
                     </button>
                 </div>
-                <div>{this.state.error.message}</div>
             </div >
         )
     }
