@@ -14,7 +14,7 @@ export default class SingleBid extends Component {
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-auto mb-3">
-                            <div class="card colorch-btn" id="hover4">
+                            <div class="card-width colorch-btn" id="hover4">
                                 <a href="#" >
                                     <div class="card-body text-center">
                                         <h2 class="card-title">1 Bids</h2>
@@ -28,7 +28,7 @@ export default class SingleBid extends Component {
                             </div>
                         </div>
                         <div class="col-auto mb-3">
-                            <div class="card colorch-btn" id="hover4" >
+                            <div class="card-width colorch-btn" id="hover4" >
                                 <a href="#">
                                     <div class="card-body text-center">
                                         <h2 class="card-title">3 Bids</h2>
@@ -40,7 +40,7 @@ export default class SingleBid extends Component {
                             </div>
                         </div>
                         <div class="col-auto mb-3">
-                            <div class="card colorch-btn" id="hover4">
+                            <div class="card-width colorch-btn" id="hover4">
                                 <a href="#">
                                     <div class="card-body text-center">
                                         <h2 class="card-title">5 Bids</h2>
@@ -52,7 +52,7 @@ export default class SingleBid extends Component {
                             </div>
                         </div>
                         <div class="col-auto mb-3">
-                            <div class="card colorch-btn" id="hover4">
+                            <div class="card-width colorch-btn" id="hover4">
                                 <a href="#">
                                     <div class="card-body text-center">
                                         <h2 class="card-title">10 Bids</h2>
@@ -64,7 +64,7 @@ export default class SingleBid extends Component {
                             </div>
                         </div>
                         <div class="col-auto mb-3">
-                            <div class="card colorch-btn" id="hover4">
+                            <div class="card-width colorch-btn" id="hover4">
                                 <a href="#">
                                     <div class="card-body text-center">
                                         <h2 class="card-title">15 Bids</h2>
@@ -76,7 +76,7 @@ export default class SingleBid extends Component {
                             </div>
                         </div>
                         <div class="col-auto mb-3">
-                            <div class="card colorch-btn" id="hover4">
+                            <div class="card-width colorch-btn" id="hover4">
                                 <a href="#">
                                     <div class="card-body text-center">
                                         <h2 class="card-title">20 Bids</h2>
