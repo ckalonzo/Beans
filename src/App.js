@@ -10,6 +10,7 @@ import firebaseApp from './Firebase';
 import SignUp from './Pages/104_SignUp/SignUp';
 import Dashboard from "./Pages/105_Dashboard/Dashboard";
 import ProjectList from "./Pages/108_Browse/ProjectList";
+import WizardForm from "./Pages/106_JobPosts/PostJob";
 
 class App extends Component {
   constructor() {
@@ -43,6 +44,7 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
+            <Route path="/106_JobPosts/PostJob" component={WizardForm} />
             <Route path="/108_Browse/ProjectList" component={ProjectList} />
             <Route path="/105_Dashboard/Dashboard" component={Dashboard} />
             <Route path="/104_SignUp/SignUp" component={SignUp} />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "../Css/PostJob.css";
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 export default class AmountOfBids extends Component {
     render() {

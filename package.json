@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.12.3",
     "bootstrap": "^4.2.1",
     "firebase": "^5.7.3",
-    "form-carousel": "^1.1.1",
+    "formik": "^1.4.2",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3",

@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import '../Css/Login.css'
-import  firebaseApp  from '../../../Firebase';
+import firebaseApp from '../../../Firebase';
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 export default class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.login = this.login.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.state = {
-          email: '',
-          password: ''
-        };
-      }
-    
-      handleChange(e) {
-        this.setState({ [e.target.name]: e.target.value });
-      }
-    
-      login(e) {
-        e.preventDefault();
-        firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-        }).catch((error) => {
-            console.log(error);
-          });
-      }
+    // constructor(props) {
+    //     super(props);
+    //     this.login = this.login.bind(this);
+    //     this.handleChange = this.handleChange.bind(this);
+    //     this.state = {
+    //       email: '',
+    //       password: ''
+    //     };
+    //   }
+
+    //   handleChange(e) {
+    //     this.setState({ [e.target.name]: e.target.value });
+    //   }
+
+    //   login(e) {
+    //     e.preventDefault();
+    //     firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+    //     }).catch((error) => {
+    //         console.log(error);
+    //       });
+    //   }
 
     render() {
         return (
@@ -46,21 +47,25 @@ export default class Login extends Component {
                                                     <form>
                                                         <div className="form-group mt-4">
                                                             <label for="InputEmail1">Email address</label>
-                                                            <input value={this.state.email} onChange={this.handleChange} type="email" 
-                                                            name="email" className="form-control" id="exampleInputEmail1" 
-                                                            aria-describedby="emailHelp" placeholder="Enter email" />
+                                                            <Form.Item>
+
+                                                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+
+                                                            </Form.Item>
 
                                                         </div>
                                                         <div className="form-group">
                                                             <label for="InputPassword1">Password</label>
-                                                            <input value={this.state.password} onChange={this.handleChange} 
-                                                            type="password" name="password" className="form-control" 
-                                                            id="exampleInputPassword1" placeholder="Password" />
+                                                            <Form.Item>
+
+
+                                                                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+
+                                                            </Form.Item>
                                                         </div>
                                                         <div className="form-check">
-                                                            <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
-                                                            <label className="form-check-label" for="exampleCheck1">Remember Me</label>
-                                                            <a href="#" className="float-right">Forgot Password?</a>
+                                                            <Checkbox>Remember Me</Checkbox>
+                                                            <a className="login-form-forgot float-right" href="#">Forgot Password?</a>
                                                         </div>
                                                         <button type="submit" onClick={this.login} className="btn btn-primary">Login</button>
 
