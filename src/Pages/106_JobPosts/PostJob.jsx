@@ -3,7 +3,7 @@ import { Steps, Button, message } from 'antd';
 
 
 import BasicPage from "./Component/TypeOfTruck";
-import LocationPage from "./Component/PthreeJobType";
+import LocationPage from "./Component/AdditionalInfo/LocationOfJob";
 import SubmitPage from "./Component/PostTwoZipcode";
 import IntroPostJob from "./Component/IntroPostJob";
 import TypeOfJob from "./Component/TypeOfJob";

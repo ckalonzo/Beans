@@ -21,7 +21,7 @@ const props = {
     }
 };
 
-class UploadImages extends Component {
+class First extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,14 +32,6 @@ class UploadImages extends Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-6  offset-3 text-center mb-5 mt-5">
-                            <h1>Please Upload Images</h1>
-                            <h6>Uploading Images is optional but highly recommended to help providers recieve more accruate bids </h6>
-                        </div>
-                    </div>
-                </div>
                 <FormItem>
                     {getFieldDecorator("picture", {
                         rules: [
@@ -68,6 +60,6 @@ class UploadImages extends Component {
     }
 }
 
-const ImagesForm = Form.create({})(UploadImages);
+const FirstForm = Form.create({})(First);
 
-export default ImagesForm;
+export default FirstForm;

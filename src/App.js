@@ -10,7 +10,7 @@ import firebaseApp from './Firebase';
 import SignUp from './Pages/104_SignUp/SignUp';
 import Dashboard from "./Pages/105_Dashboard/Dashboard";
 import ProjectList from "./Pages/108_Browse/ProjectList";
-import WizardForm from "./Pages/106_JobPosts/PostJob";
+import WizardForm from "./Pages/106_JobPosts/pj";
 
 class App extends Component {
   constructor() {
