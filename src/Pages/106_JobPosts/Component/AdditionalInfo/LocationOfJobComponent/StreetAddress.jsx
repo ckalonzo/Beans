@@ -1,33 +1,11 @@
 import React, { Component } from "react";
-import { Input, Input, Tooltip, Col, Select, InputNumber, DatePicker, AutoComplete, Cascader, } from 'antd';
-import "../Css/PostJob.css";
+import { Input, Tooltip, Col, Select, InputNumber, DatePicker, AutoComplete, Cascader, } from 'antd';
+import "../../../Css/PostJob.css";
 
 const InputGroup = Input.Group;
 const Option = Select.Option;
 
-const options = [{
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [{
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [{
-            value: 'xihu',
-            label: 'West Lake',
-        }],
-    }],
-}, {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [{
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [{
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-        }],
-    }],
-}];
+ const options = {};
 
 
 export default class StreetAddress extends Component {
@@ -38,32 +16,26 @@ export default class StreetAddress extends Component {
         dataSource: [],
     }
 
-    handleChange = (value) => {
-        this.setState({
-            dataSource: !value || value.indexOf('@') >= 0 ? [] : [
-                `${value}@gmail.com`,
-                `${value}@163.com`,
-                `${value}@qq.com`,
-            ],
-        });
-    }
+   
 
 
     render() {
 
         return (
             <div>
-
-                <InputGroup size="large">
-                    <Col span={5}>
-                        <Select style={{ width: '30%' }} defaultValue="Home">
-                            <Option value="Home">Home</Option>
-                            <Option value="Company">Company</Option>
-                        </Select>
-                        <Cascader style={{ width: '70%' }} options={options} placeholder="Select Address" />
-                    </Col>
-                </InputGroup>
-
+                <div className="mx-auto">
+                <h6>Street Address</h6>
+                </div>
+                <InputGroup className="d-inline-flex" size="large">
+                <Col span={10} className="d-inline-flex mx-auto" >
+          <Select style={{ width: '30%' }}defaultValue="Home">
+            <Option value="Home">Home</Option>
+            <Option value="Company">Company</Option>
+            <Option value="Apartment">Apartment</Option>
+          </Select>
+          <Input  style={{ width: '100%' }} defaultValue="Street Address" />
+          </Col>
+        </InputGroup>
             </div>
         )
     }

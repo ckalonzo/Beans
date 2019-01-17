@@ -7,7 +7,7 @@ import AvaliableTimeDate from "../Component/AvaliableTimeDate";
 import IntroPostJob from "../Component/IntroPostJob";
 import TypeOfJob from "../Component/TypeOfJob";
 import UploadImages from "../Component/UploadImages";
-
+import LocationPage from "./AdditionalInfo/LocationOfJob";
 
 
 const Panel = Collapse.Panel;
@@ -25,7 +25,7 @@ export default class AdditionalInfo extends Component {
                     <div className="col-12">
                         <Collapse accordion>
                             <Panel header="This is panel header 1" key="1">
-                                <p>{text}</p>
+                                <LocationPage />
                             </Panel>
                             <Panel header="This is panel header 2" key="2">
                                 <p>{text}</p>
