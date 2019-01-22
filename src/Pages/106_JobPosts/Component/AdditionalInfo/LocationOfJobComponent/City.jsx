@@ -5,7 +5,7 @@ import "../../../Css/PostJob.css";
 const InputGroup = Input.Group;
 
 
-export default class ZipCode extends Component {
+export default class City extends Component {
     constructor(props) {
         super(props);
     }
@@ -19,9 +19,11 @@ export default class ZipCode extends Component {
     render() {
 
         return (
-            <div >
+            <div>
+
                 <InputGroup className="mx-auto" size="large">
-                    <Input style={{ width: '50%' }} placeholder="ZipCode" />
+                    <Input className="zipcode-container" style={{ width: '100%' }} placeholder="City" />
+
                 </InputGroup>
 
             </div>

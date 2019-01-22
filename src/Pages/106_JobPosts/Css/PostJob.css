@@ -42,3 +42,6 @@ or the height is not enough when content is empty */
 .numeric-input .numeric-input-title {
   font-size: 14px;
 }
+.zipcode-container{
+  width: 200px;
+}

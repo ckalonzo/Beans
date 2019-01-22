@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import "../Css/PostJob.css";
-import BasicPage from "../Component/TypeOfTruck";
+import Budget from "../Component/Budget";
 import LocationPage from "./AdditionalInfo/LocationOfJob";
 import AdditionalInfo from "../Component/AdditionalInfo";
 import IntroPostJob from "../Component/IntroPostJob";
@@ -46,24 +46,24 @@ class Main extends React.Component {
         const { current } = this.state;
         let steps = [
             {
-                title: "Introduction",
+
                 content: <IntroPostJob form={this.props.form} />
             },
             {
-                title: "Type Of Job",
+
                 content: <TypeOfJob form={this.props.form} />
             },
             {
-                title: "Upload Image",
+
                 content: <UploadImages form={this.props.form} />
             },
             {
-                title: "Additional Information",
+
                 content: <AdditionalInfo form={this.props.form} />
             },
             {
-                title: "Second",
-                content: <Second form={this.props.form} />
+
+                content: <Budget form={this.props.form} />
             },
             {
                 title: "Last",
@@ -80,42 +80,43 @@ class Main extends React.Component {
 
                     </div>
                 </div>
-                <Steps current={current}>
-                    {steps.map(item => <Step key={item.title} title={item.title} />)}
-                </Steps>
-                {steps.map(({ title, content }, i) => (
-                    <div
-                        key={title}
-                        className={i === this.state.current ? "foo fade-in" : "foo"}
-                    >
-                        {content}
-                    </div>
-                ))}
-                <div className="row">
-                    <div className="mx-auto mb-5">
-                        <div className="steps-action">
-                            {this.state.current < steps.length - 1 && (
-                                <Button type="primary" onClick={() => this.next()}>
-                                    Next
+                <div className="container">
+                    <Steps current={current}>
+                        {steps.map(item => <Step key={item.title} title={item.title} />)}
+                    </Steps>
+                    {steps.map(({ title, content }, i) => (
+                        <div
+                            key={title}
+                            className={i === this.state.current ? "foo fade-in" : "foo"}
+                        >
+                            {content}
+                        </div>
+                    ))}
+                    <div className="row">
+                        <div className="mx-auto mb-5">
+                            <div className="steps-action">
+                                {this.state.current < steps.length - 1 && (
+                                    <Button type="primary" onClick={() => this.next()}>
+                                        Next
             </Button>
-                            )}
-                            {this.state.current === steps.length - 1 && (
-                                <Button
-                                    type="primary"
-                                    onClick={() => message.success("Processing complete!")}
-                                >
-                                    Done
+                                )}
+                                {this.state.current === steps.length - 1 && (
+                                    <Button
+                                        type="primary"
+                                        onClick={() => message.success("Processing complete!")}
+                                    >
+                                        Done
             </Button>
-                            )}
-                            {this.state.current > 0 && (
-                                <Button style={{ marginLeft: 8 }} onClick={() => this.prev()}>
-                                    Previous
+                                )}
+                                {this.state.current > 0 && (
+                                    <Button style={{ marginLeft: 8 }} onClick={() => this.prev()}>
+                                        Previous
             </Button>
-                            )}
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         );
     }

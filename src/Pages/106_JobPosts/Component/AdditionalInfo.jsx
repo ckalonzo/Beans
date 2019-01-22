@@ -1,42 +1,50 @@
 import React, { Component } from 'react'
 import "../Css/PostJob.css";
 import { Collapse } from 'antd';
-import LocationOfJob from "./AdditionalInfo/LocationOfJob";
-import LargeItemInvolved from "../Component/LargeItemInvolved";
-import AvaliableTimeDate from "../Component/AvaliableTimeDate";
-import IntroPostJob from "../Component/IntroPostJob";
-import TypeOfJob from "../Component/TypeOfJob";
-import UploadImages from "../Component/UploadImages";
+import SpecialInstructions from "././AdditionalInfo/SpecialInstructions/SpecialInstructions";
+import TypeOfTruck from "../Component/AdditionalInfo/TypeOfTruck/TypeOfTruck";
+import TruckLoads from "../Component/AdditionalInfo/TruckLoads/TruckLoads";
+import FlightOfStairs from "../Component/AdditionalInfo/FlightOfStairs/FlightOfStairs";
+import Slot from "../Component/AdditionalInfo/DatePicker/slot";
+import AnyLargeItems from "../Component/AdditionalInfo/AnyLargeItemsComponent/AnyLargeItems";
 import LocationPage from "./AdditionalInfo/LocationOfJob";
 
 
 const Panel = Collapse.Panel;
 
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
 export default class AdditionalInfo extends Component {
     render() {
         return (
-            <div className="className container">
+            <div className="className container mt-5">
                 <div className="row">
                     <div className="col-12">
                         <Collapse accordion>
-                            <Panel header="This is panel header 1" key="1">
+                            <Panel header="Location Of Job" key="1">
                                 <LocationPage />
                             </Panel>
-                            <Panel header="This is panel header 2" key="2">
-                                <p>{text}</p>
+                            <Panel header="Will There Be AnyLarge Items Involved" key="2">
+                                <AnyLargeItems />
                             </Panel>
-                            <Panel header="This is panel header 3" key="3">
-                                <p>{text}</p>
+                            <Panel header="Choose Availibility" key="3">
+                                <Slot />
+                            </Panel>
+
+                            <Panel header="How Many Flights Of Stairs " key="4">
+                                <FlightOfStairs />
+                            </Panel>
+                            <Panel header="How Many truck Loads " key="5">
+                                <TruckLoads />
+                            </Panel>
+                            <Panel header="What type of truck will best sute the Job " key="6">
+                                <TypeOfTruck />
+                            </Panel>
+                            <Panel header="Additional Information you would like to add " key="7">
+                                <SpecialInstructions />
                             </Panel>
                         </Collapse>,
                     </div>
                 </div>
-            </div>
+            </div >
         )
     }
 }
