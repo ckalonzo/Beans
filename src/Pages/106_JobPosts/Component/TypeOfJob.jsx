@@ -1,20 +1,24 @@
 import React, { Component } from 'react'
 import "../Css/PostJob.css";
-import { Select } from 'antd';
+import { Select, Button } from 'antd';
 
 
 
 const Option = Select.Option;
 
-function handleChange(value) {
-    console.log(`selected ${value}`);
-}
 export default class TypeOfJob extends Component {
-    constructor(props) {
-        super(props);
+
+    continue = (e) => {
+        e.preventDefault()
+        this.props.nextStep()
+    }
+    back = (e) => {
+        e.preventDefault()
+        this.props.prevStep()
     }
 
     render() {
+        const { values, handleChangeSelect } = this.props;
         return (
             <div>
                 <div className="container">
@@ -27,11 +31,16 @@ export default class TypeOfJob extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-6  offset-3 text-center mb-5">
-                            <Select defaultValue="PLEASE SELECT FROM THE LIST BELOW" style={{ width: 300 }} onChange={handleChange}>
-                                <Option value="Junk Removal">Junk Removal</Option>
-                                <Option value="Cleaner Service">Cleaner Service</Option>
-                            </Select>
+                            <React.Fragment>
+                                <Select defaultvalue={values.service} style={{ width: 300 }} onChange={handleChangeSelect.bind(this)}>
+                                    <Option value="Junk Removal">Junk Removal</Option>
+                                    <Option value="Cleaner Service">Cleaner Service</Option>
+                                </Select>
+                            </React.Fragment>
+
                         </div>
+                        <Button onClick={this.continue}> Continue </Button>
+                        <Button onClick={this.back}> Back</Button>
                     </div>
                 </div>
                 <div>

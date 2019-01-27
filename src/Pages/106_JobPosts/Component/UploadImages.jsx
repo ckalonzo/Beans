@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Upload, Icon, message } from "antd";
+import { Form, Upload, Icon, message, Button } from "antd";
 
 const Dragger = Upload.Dragger;
 const FormItem = Form.Item;
@@ -22,11 +22,13 @@ const props = {
 };
 
 class UploadImages extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: ""
-        };
+    continue = (e) => {
+        e.preventDefault()
+        this.props.nextStep()
+    }
+    back = (e) => {
+        e.preventDefault()
+        this.props.prevStep()
     }
     render() {
         const { getFieldDecorator } = this.props.form;
@@ -63,6 +65,8 @@ class UploadImages extends Component {
                         </Dragger>
                     )}
                 </FormItem>
+                <Button onClick={this.continue}> Continue </Button>
+                <Button onClick={this.back}> Back</Button>
             </div>
         );
     }

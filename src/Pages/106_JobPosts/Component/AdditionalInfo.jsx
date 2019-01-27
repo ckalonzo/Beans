@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "../Css/PostJob.css";
-import { Collapse } from 'antd';
+import { Collapse, Button } from 'antd';
 import SpecialInstructions from "././AdditionalInfo/SpecialInstructions/SpecialInstructions";
 import TypeOfTruck from "../Component/AdditionalInfo/TypeOfTruck/TypeOfTruck";
 import TruckLoads from "../Component/AdditionalInfo/TruckLoads/TruckLoads";
@@ -13,6 +13,14 @@ import LocationPage from "./AdditionalInfo/LocationOfJob";
 const Panel = Collapse.Panel;
 
 export default class AdditionalInfo extends Component {
+    continue = (e) => {
+        e.preventDefault()
+        this.props.nextStep()
+    }
+    back = (e) => {
+        e.preventDefault()
+        this.props.prevStep()
+    }
     render() {
         return (
             <div className="className container mt-5">
@@ -43,6 +51,8 @@ export default class AdditionalInfo extends Component {
                             </Panel>
                         </Collapse>,
                     </div>
+                    <Button onClick={this.continue}> Continue </Button>
+                    <Button onClick={this.back}> Back</Button>
                 </div>
             </div >
         )

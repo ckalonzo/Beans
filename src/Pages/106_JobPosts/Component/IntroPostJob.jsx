@@ -5,7 +5,13 @@ export default class IntroPostJob extends Component {
     constructor(props) {
         super(props);
     }
+    continue = (e) => {
+        e.preventDefault()
+        this.props.nextStep()
+    }
+
     render() {
+
 
         return (
             <div>
@@ -15,6 +21,8 @@ export default class IntroPostJob extends Component {
                             <h1>Hi There! Im Mathrew.I'll get you started on posting your job. Lets get started!</h1>
                         </div>
                     </div>
+                    <Button onClick={this.continue}> Continue </Button>
+
                 </div>
 
             </div>
