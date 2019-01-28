@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import firebaseApp from '../../Firebase';
 import Notifications from './Component/Notifications';
+import DashboardHero from "./Component/dashboardHero";
+import "./Css/dashboard.css";
+
 
 class Dashboard extends Component {
     render() {
@@ -8,15 +11,11 @@ class Dashboard extends Component {
             <section>
                 <div className="projectList container">
                     <div className="row">
-                        <div className="col-12">
-                            <h1>Dashboard</h1>
-                        </div>
-                        <div className="row">
-                            <Notifications />
-                        </div>
+                        <DashboardHero />
                     </div>
                 </div>
             </section>
+
         );
 
     }
