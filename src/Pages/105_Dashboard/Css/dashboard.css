@@ -1,5 +1,10 @@
 .dash-hero {
     height:200px;
-    background-color: darkblue;
+    background-color:#E0EDED;
    /* background-image: url('../img/dashheromin.png'); */
+}
+
+.notification-item-root{
+    background-color:#E0EDED;
+    
 }
