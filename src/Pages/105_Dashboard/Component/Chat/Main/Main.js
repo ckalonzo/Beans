@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactLoading from 'react-loading'
 import { withRouter } from 'react-router-dom'
-import { myFirebase, myFirestore } from '../../Config/MyFirebase'
+import { myFirebase, myFirestore } from '../../../../../Firebase'
 import images from '../Themes/Images'
 import WelcomeBoard from '../WelcomeBoard/WelcomeBoard'
 import './Main.css'
@@ -29,7 +29,7 @@ class Main extends Component {
   checkLogin = () => {
     if (!localStorage.getItem(AppString.ID)) {
       this.setState({ isLoading: false }, () => {
-        this.props.history.push('/')
+        // this.props.history.push('/')
       })
     } else {
       this.getListUser()
@@ -62,7 +62,7 @@ class Main extends Component {
           this.props.history.push('/')
         })
       })
-      .catch(function(err) {
+      .catch(function (err) {
         this.setState({ isLoading: false })
         this.props.showToast(0, err.message)
       })
@@ -87,7 +87,7 @@ class Main extends Component {
             <button
               className={
                 this.state.currentPeerUser &&
-                this.state.currentPeerUser.id === item.data().id
+                  this.state.currentPeerUser.id === item.data().id
                   ? 'viewWrapItemFocused'
                   : 'viewWrapItem'
               }
@@ -104,10 +104,10 @@ class Main extends Component {
               <div className="viewWrapContentItem">
                 <span className="textItem">{`Nickname: ${
                   item.data().nickname
-                }`}</span>
+                  }`}</span>
                 <span className="textItem">{`About me: ${
                   item.data().aboutMe ? item.data().aboutMe : 'Not available'
-                }`}</span>
+                  }`}</span>
               </div>
             </button>
           )
@@ -121,11 +121,11 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="root">
+      <div className="root container">
         {/* Header */}
         <div className="header">
           <span>MAIN</span>
-          <img
+          {/* <img
             className="icProfile"
             alt="An icon default avatar"
             src={images.ic_default_avatar}
@@ -136,33 +136,34 @@ class Main extends Component {
             alt="An icon logout"
             src={images.ic_logout}
             onClick={this.onLogoutClick}
-          />
+          /> */}
         </div>
 
         {/* Body */}
         <div className="body">
           <div className="viewListUser"> {this.renderListUser()}</div>
           <div className="viewBoard">
-            {this.state.currentPeerUser ? (
-              <ChatBoard
-                currentPeerUser={this.state.currentPeerUser}
-                showToast={this.props.showToast}
-              />
+            <ChatBoard
+              currentPeerUser={this.state.currentPeerUser}
+              showToast={this.props.showToast}
+            />
+            {/* {this.state.currentPeerUser ? (
+              
             ) : (
-              <WelcomeBoard
-                currentUserNickname={this.currentUserNickname}
-                currentUserAvatar={this.currentUserAvatar}
-              />
-            )}
+                <WelcomeBoard
+                  currentUserNickname={this.currentUserNickname}
+                  currentUserAvatar={this.currentUserAvatar}
+                />
+              )} */}
           </div>
         </div>
 
         {/* Dialog confirm */}
-        {this.state.isOpenDialogConfirmLogout ? (
+        {/* {this.state.isOpenDialogConfirmLogout ? (
           <div className="viewCoverScreen">
             {this.renderDialogConfirmLogout()}
           </div>
-        ) : null}
+        ) : null} */}
 
         {/* Loading */}
         {this.state.isLoading ? (
@@ -179,21 +180,21 @@ class Main extends Component {
     )
   }
 
-  renderDialogConfirmLogout = () => {
-    return (
-      <div>
-        <div className="titleDialogConfirmLogout">Are you sure to logout?</div>
-        <div className="viewWrapButtonDialogConfirmLogout">
-          <button className="btnYes" onClick={this.doLogout}>
-            YES
-          </button>
-          <button className="btnNo" onClick={this.hideDialogConfirmLogout}>
-            CANCEL
-          </button>
-        </div>
-      </div>
-    )
-  }
+  // renderDialogConfirmLogout = () => {
+  //   return (
+  //     <div>
+  //       <div className="titleDialogConfirmLogout">Are you sure to logout?</div>
+  //       <div className="viewWrapButtonDialogConfirmLogout">
+  //         <button className="btnYes" onClick={this.doLogout}>
+  //           YES
+  //         </button>
+  //         <button className="btnNo" onClick={this.hideDialogConfirmLogout}>
+  //           CANCEL
+  //         </button>
+  //       </div>
+  //     </div>
+  //   )
+  // }
 }
 
 export default withRouter(Main)

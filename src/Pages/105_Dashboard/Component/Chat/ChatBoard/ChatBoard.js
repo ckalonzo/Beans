@@ -2,7 +2,7 @@ import moment from 'moment'
 import React, { Component } from 'react'
 import ReactLoading from 'react-loading'
 import 'react-toastify/dist/ReactToastify.css'
-import { myFirestore, myStorage } from '../../Config/MyFirebase'
+import { myFirestore, myStorage } from '../../../../../Firebase'
 import images from '../Themes/Images'
 import './ChatBoard.css'
 import { AppString } from './../Const'
@@ -52,34 +52,35 @@ export default class ChatBoard extends Component {
       this.removeListener()
     }
     this.listMessage.length = 0
-    this.setState({ isLoading: true })
-    if (
-      this.hashString(this.currentUserId) <=
-      this.hashString(this.currentPeerUser.id)
-    ) {
-      this.groupChatId = `${this.currentUserId}-${this.currentPeerUser.id}`
-    } else {
-      this.groupChatId = `${this.currentPeerUser.id}-${this.currentUserId}`
-    }
+    this.setState({ isLoading: false })
+    // if
+    //   (
+    //   this.hashString(this.currentUserId) <=
+    //   this.hashString(this.currentPeerUser.id)
+    // ) {
+    //   this.groupChatId = `${this.currentUserId}-${this.currentPeerUser.id}`
+    // } else {
+    //   this.groupChatId = `${this.currentPeerUser.id}-${this.currentUserId}`
+    // }
 
     // Get history and listen new data added
-    this.removeListener = myFirestore
-      .collection(AppString.NODE_MESSAGES)
-      .doc(this.groupChatId)
-      .collection(this.groupChatId)
-      .onSnapshot(
-        snapshot => {
-          snapshot.docChanges().forEach(change => {
-            if (change.type === AppString.DOC_ADDED) {
-              this.listMessage.push(change.doc.data())
-            }
-          })
-          this.setState({ isLoading: false })
-        },
-        err => {
-          this.props.showToast(0, err.toString())
-        }
-      )
+    // this.removeListener = myFirestore
+    //   .collection(AppString.NODE_MESSAGES)
+    //   .doc(this.groupChatId)
+    //   .collection(this.groupChatId)
+    //   .onSnapshot(
+    //     snapshot => {
+    //       snapshot.docChanges().forEach(change => {
+    //         if (change.type === AppString.DOC_ADDED) {
+    //           this.listMessage.push(change.doc.data())
+    //         }
+    //       })
+    //       this.setState({ isLoading: false })
+    //     },
+    //     err => {
+    //       this.props.showToast(0, err.toString())
+    //     }
+    //   )
   }
 
   openListSticker = () => {
@@ -186,14 +187,14 @@ export default class ChatBoard extends Component {
       <div className="viewChatBoard">
         {/* Header */}
         <div className="headerChatBoard">
-          <img
+          {/* <img
             className="viewAvatarItem"
             src={this.currentPeerUser.photoUrl}
             alt="icon avatar"
-          />
-          <span className="textHeaderChatBoard">
+          /> */}
+          {/* <span className="textHeaderChatBoard">
             {this.currentPeerUser.nickname}
-          </span>
+          </span> */}
         </div>
 
         {/* List message */}
@@ -386,18 +387,19 @@ export default class ChatBoard extends Component {
         }
       })
       return viewListMessage
-    } else {
-      return (
-        <div className="viewWrapSayHi">
-          <span className="textSayHi">Say hi to new friend</span>
-          <img
-            className="imgWaveHand"
-            src={images.ic_wave_hand}
-            alt="wave hand"
-          />
-        </div>
-      )
     }
+    // else {
+    //   return (
+    //     <div className="viewWrapSayHi">
+    //       <span className="textSayHi">Say hi to new friend</span>
+    //       <img
+    //         className="imgWaveHand"
+    //         src={images.ic_wave_hand}
+    //         alt="wave hand"
+    //       />
+    //     </div>
+    //   )
+    // }
   }
 
   renderStickers = () => {
@@ -461,14 +463,14 @@ export default class ChatBoard extends Component {
     )
   }
 
-  hashString = str => {
-    let hash = 0
-    for (let i = 0; i < str.length; i++) {
-      hash += Math.pow(str.charCodeAt(i) * 31, str.length - i)
-      hash = hash & hash // Convert to 32bit integer
-    }
-    return hash
-  }
+  // hashString = str => {
+  //   let hash = 0
+  //   for (let i = 0; i < str.length; i++) {
+  //     hash += Math.pow(str.charCodeAt(i) * 31, str.length - i)
+  //     hash = hash & hash // Convert to 32bit integer
+  //   }
+  //   return hash
+  // }
 
   getGifImage = value => {
     switch (value) {
