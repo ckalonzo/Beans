@@ -11,6 +11,7 @@ import SignUp from './Pages/104_SignUp/SignUp';
 import Dashboard from "./Pages/105_Dashboard/Dashboard";
 import ProjectList from "./Pages/108_Browse/ProjectList";
 import WizardForm from "./Pages/106_JobPosts/pj";
+import ListJobs from "./Pages/106_JobPosts/Component/ListJobs";
 
 class App extends Component {
   constructor() {
@@ -44,14 +45,31 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
-            <Route path="/106_JobPosts/PostJob" component={WizardForm} />
-            <Route path="/108_Browse/ProjectList" component={ProjectList} />
-            <Route path="/105_Dashboard/Dashboard" component={Dashboard} />
-            <Route path="/104_SignUp/SignUp" component={SignUp} />
-            <Route path="/103_Membership/Membership" component={Membership} />
-            <Route path="/102_ContractorLogin/ContractorLogin" component={ContractorLogin} />
-            <Route path="/101_CustomerLogin/CustomerLogin" component={CustomerLogin} />
-            <Route path="/" component={Home} />
+            <Route path="/106_JobPosts/Component/ListJobs"
+              component={ListJobs}
+            />
+            <Route path="/106_JobPosts/PostJob"
+              component={WizardForm}
+            />
+            <Route path="/108_Browse/ProjectList"
+              component={ProjectList}
+            />
+            <Route path="/105_Dashboard/Dashboard"
+              component={Dashboard}
+            />
+            <Route path="/104_SignUp/SignUp"
+              component={SignUp}
+            />
+            <Route path="/103_Membership/Membership" component={Membership}
+            />
+            <Route path="/102_ContractorLogin/ContractorLogin"
+              component={ContractorLogin}
+            />
+            <Route path="/101_CustomerLogin/CustomerLogin" component={CustomerLogin}
+            />
+            <Route path="/"
+              component={Home}
+            />
           </Switch>
 
           <Footer />

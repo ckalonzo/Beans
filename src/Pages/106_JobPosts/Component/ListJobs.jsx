@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import "../Css/PostJob.css";
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
-export default class JobPosted extends Component {
+
+export default class ListJobs extends Component {
     render() {
         return (
             <div className="className container">
