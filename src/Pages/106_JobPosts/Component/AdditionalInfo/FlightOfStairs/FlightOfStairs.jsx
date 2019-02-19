@@ -10,28 +10,18 @@ export default class FlightOfStairs extends Component {
     constructor(props) {
         super(props);
     }
-    state = {
-        value: 1,
-    }
-
-    onChange = (e) => {
-        console.log('radio checked', e.target.value);
-        this.setState({
-            value: e.target.value,
-        });
-    }
 
 
 
     render() {
-
+        const { handleChange } = this.props;
         return (
 
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
                         <InputGroup className="d-inline-flex  mx-auto" size="large">
-                            <RadioGroup className="mx-auto" onChange={this.onChange} value={this.state.value}>
+                            <RadioGroup className="mx-auto" onChange={handleChange} >
                                 <Radio value="0">0</Radio>
                                 <Radio value="1">1</Radio>
                                 <Radio value="2">2</Radio>

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
-import CustomerSignedInLinks from "./CustomerSignedInLinks";
 import ProviderSignedInLinks from "./ProviderSignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 
 export default class Navbar extends Component {
     render() {
-        const { content } = this.props;
         return (
             <div>
                 <nav className="navbar navbar-expand-md  hover-underline-menu">

@@ -9,21 +9,18 @@ export default class statee extends Component {
     constructor(props) {
         super(props);
     }
-    state = {
-        dataSource: [],
-    }
 
 
 
 
     render() {
-
+        const { handleChange } = this.props;
         return (
             <div>
 
                 <InputGroup size="large">
 
-                    <Select defaultValue="State">
+                    <Select defaultValue="State" onChange={handleChange} id="yourState">
                         <Option value="AL">AL</Option>
                         <Option value="AK">AK</Option>
                         <Option value="AZ">AZ</Option>

@@ -28,26 +28,40 @@ export default class AdditionalInfo extends Component {
                     <div className="col-12">
                         <Collapse accordion>
                             <Panel header="Location Of Job" key="1">
-                                <LocationPage />
+                                <LocationPage
+                                    handleChange={this.handleChange}
+                                />
                             </Panel>
                             <Panel header="Will There Be AnyLarge Items Involved" key="2">
-                                <AnyLargeItems />
+                                <AnyLargeItems
+                                    handleChange={this.handleChange}
+                                />
                             </Panel>
                             <Panel header="Choose Availibility" key="3">
-                                <Slot />
+                                <Slot
+                                    handleChange={this.handleChange}
+                                />
                             </Panel>
 
                             <Panel header="How Many Flights Of Stairs " key="4">
-                                <FlightOfStairs />
+                                <FlightOfStairs
+                                    handleChange={this.handleChange}
+                                />
                             </Panel>
                             <Panel header="How Many truck Loads " key="5">
-                                <TruckLoads />
+                                <TruckLoads
+                                    handleChange={this.handleChange}
+                                />
                             </Panel>
                             <Panel header="What type of truck will best sute the Job " key="6">
-                                <TypeOfTruck />
+                                <TypeOfTruck
+                                    handleChange={this.handleChange}
+                                />
                             </Panel>
                             <Panel header="Additional Information you would like to add " key="7">
-                                <SpecialInstructions />
+                                <SpecialInstructions
+                                    handleChange={this.handleChange}
+                                />
                             </Panel>
                         </Collapse>,
                     </div>

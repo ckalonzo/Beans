@@ -5,7 +5,7 @@ import '../css/Navbar.css';
 
 export default class CustomerSignedInLinks extends Component {
     render() {
-        const { content } = this.props;
+
         return (
             <div>
                 <div className="container">

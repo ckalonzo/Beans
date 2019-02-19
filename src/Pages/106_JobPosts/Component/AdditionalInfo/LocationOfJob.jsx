@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import "../../Css/PostJob.css";
-import { Col } from 'antd';
 import StreetAddress from "./LocationOfJobComponent/StreetAddress";
 import ZipCode from "./LocationOfJobComponent/ZipCode";
 import City from "./LocationOfJobComponent/City";
 import Statee from "./LocationOfJobComponent/State";
 export default class LocationPage extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
-        const { value } = this.props;
-
         return (
             <div>
                 <div className="className container">

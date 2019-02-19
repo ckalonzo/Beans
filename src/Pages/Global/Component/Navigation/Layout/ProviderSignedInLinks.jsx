@@ -6,7 +6,6 @@ import '../css/Navbar.css';
 
 export default class ProviderSignedInLinks extends Component {
     render() {
-        const { content } = this.props;
         return (
             <div>
                 <div className="navbar-collapse collapse" id="collapsingNavbar">
@@ -30,7 +29,7 @@ export default class ProviderSignedInLinks extends Component {
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <div class="inset">
-                                <img src="http://rs775.pbsrc.com/albums/yy35/PhoenyxStar/link-1.jpg~c200"></img>
+                                <img src="http://rs775.pbsrc.com/albums/yy35/PhoenyxStar/link-1.jpg~c200" alt=""></img>
                             </div>
                         </li>
                     </ul>

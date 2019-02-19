@@ -22,13 +22,13 @@ export default class SpecialInstructions extends Component {
 
 
     render() {
-
+        const { handleChange } = this.props;
         return (
 
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
-                        <InputGroup className="d-inline-flex  mx-auto" size="large">
+                        <InputGroup className="d-inline-flex  mx-auto" onChange={handleChange} size="large">
                             <TextArea placeholder="Autosize height with minimum and maximum number of lines" autosize={{ minRows: 4, maxRows: 10 }} />
 
                             );

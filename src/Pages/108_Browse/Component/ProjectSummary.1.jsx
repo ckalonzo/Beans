@@ -1,5 +1,5 @@
-import React from 'react';
-import ProjectDetial from './ProjectDetail'
+import React, { Component } from 'react';
+
 const ProjectSummary = () => {
     return (
         <div className="card">
@@ -12,8 +12,8 @@ const ProjectSummary = () => {
                 <p className="text-secondary">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 <p className="text-secondary"><small className="text-muted">posted By: Kisha555</small></p>
                 <p className="text-secondary"><small className="text-muted">Avalibility</small></p>
-                <a href="#" className="btn btn-secondary float-left">More Details</a>
-                <a href="#" className="btn btn-success float-right">Bid Now</a>
+                <a href="#" class="btn btn-secondary float-left">More Details</a>
+                <a href="#" class="btn btn-success float-right">Bid Now</a>
             </div>
             <img className="card-img-bottom" src="..." alt="Card image cap"></img>
         </div>

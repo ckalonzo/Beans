@@ -1,28 +1,40 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import "../Css/PostJob.css";
 import Budget from "../Component/Budget";
-import LocationPage from "./AdditionalInfo/LocationOfJob";
 import AdditionalInfo from "../Component/AdditionalInfo";
 import IntroPostJob from "../Component/IntroPostJob";
 import TypeOfJob from "../Component/TypeOfJob";
 import UploadImages from "../Component/UploadImages";
 import Third from "./Third";
 
-import { Steps, Button, message, Form } from "antd";
+import { Steps, Button, message } from 'antd';
+const Step = Steps.Step;
+
+const steps = [{
+    title: 'First',
+    content: 'First-content',
+}, {
+    title: 'Second',
+    content: 'Second-content',
+}, {
+    title: 'Last',
+    content: 'Last-content',
+}];
+
+
 
 
 export default class MainForm extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            step: 1,
+            current: 1,
             service: '',
             email: '',
             attachments: "",
             name: "",
-            addressType: "",
             address: "",
             city: "",
             state: "",
@@ -34,75 +46,75 @@ export default class MainForm extends Component {
             truckLoads: "",
             typeOfTruck: "",
             specialInstructions: "",
-        }
+        };
+        this.handleChange = this.handleChange.bind(this);
     }
-    changeService(service) {
-        this.setState({ service })
-        console.log(service);
-    }
-
-    handleChangeSelect(service) {
-        this.setState({ service })
-    };
+    //proceed to next step
     nextStep = () => {
-        const { step } = this.state
+        const { current } = this.state
         this.setState({
-            step: step + 1
+            current: current + 1
         });
     }
+
+    //go back to pevious step
     prevStep = () => {
-        const { step } = this.state
+        const { current } = this.state
         this.setState({
-            step: step - 1
+            current: current - 1
         })
     }
 
-    handleChange = event => {
-        this.setState({ service: event.target.value });
-    };
 
-    handleChangeRadio = radio => event => {
-        this.setState({ [radio]: event.target.value })
+    // Handle fields change
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+        console.log(e.target.id)
+
+
     }
-
-    // if (this.state.current == 0) {
-    //     this.props.form.validateFieldsAndScroll(["picture"], (err, values) => {
-    //         if (!err) {
-    //             const current = this.state.current + 1;
-    //             // console.log(current)
-    //             this.setState({ current });
-    //         }
-    //     });
+    // UpdateJobType(e) {
+    //     console.log(e.target.service)
+    //     console.log(e.target.value)
     // }
+
 
 
 
     render() {
         console.log(this.props);
-        const { step } = this.state;
-        const { service, email, attachments, name, addressType, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.state;
+        const { current } = this.state;
+        const { service, email, attachments, name, addressType, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions, id } = this.state;
         const values = { service, email, attachments, name, addressType, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
 
-        switch (step) {
+        switch (current) {
 
             case 1:
-                return <IntroPostJob
+                return (<IntroPostJob
                     nextStep={this.nextStep}
-                />
+                />)
             case 2:
-                return <TypeOfJob
+                return (<TypeOfJob
+
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
-                    handleChangeSelect={this.handleChangeSelect.bind(this)}
+                    onChange={this.handleChange}
                     values={values}
-                />
+                    id={service}
+
+
+
+
+                />)
             case 3:
-                return <UploadImages
+                return (<UploadImages
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
-                    handleChangeSelect={this.handleChangeSelect.bind(this)}
+                    handleChange={this.handleChange}
                     values={values}
-                />
+                />)
             case 4:
                 return (<AdditionalInfo
                     form={this.props.form}
@@ -112,97 +124,22 @@ export default class MainForm extends Component {
                     values={values}
                 />)
             case 5:
-                return <Budget
+                return (<Budget
                     form={this.props.form}
                     nextStep={this.nextStep}
                     prevStep={this.prev}
                     handleChange={this.handleChange}
                     values={values}
-                />
+                />)
             case 6:
-                return <Third
+                return (< Third
                     form={this.props.form}
                     nextStep={this.nextStep}
                     handleChange={this.handleChange}
                     values={values}
-                />
+                />)
 
         }
-
-        // {
-
-        //     content: <IntroPostJob form={this.props.form} />
-        // },
-        // {
-
-        //     content: <TypeOfJob form={this.props.form} />
-        // },
-        // {
-
-        //     content: <UploadImages form={this.props.form} />
-        // },
-        // {
-
-        //     content: <AdditionalInfo form={this.props.form} />
-        // },
-        // {
-
-        //     content: <Budget form={this.props.form} />
-        // },
-        // {
-
-        //     content: <Third form={this.props.form} />
-        // }
-
-        return (
-            <div>
-                <div className="container">
-                    <div className="row">
-                        <div className="mx-auto">
-                            <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Avatar" class="avatar"></img>
-                        </div>
-
-                    </div>
-                </div>
-                <div className="container">
-                    {/* <Steps current={step}>
-                        {steps.map(item => <Step key={item.title} title={item.title} />)}
-                    </Steps>
-                    {steps.map(({ title, content }, i) => (
-                        <div
-                            key={title}
-                            className={i === this.state.step ? "foo fade-in" : "foo"}
-                        >
-                            {content}
-                        </div>
-                    ))} */}
-                    {/* <div className="row">
-                        <div className="mx-auto mb-5">
-                            <div className="steps-action">
-                                {this.state.current < steps.length - 1 && (
-                                    <Button type="primary" onClick={() => this.next()}>
-                                        Next
-            </Button>
-                                )}
-                                {this.state.current === steps.length - 1 && (
-                                    <Button
-                                        type="primary"
-                                        onClick={() => message.success("Processing complete!")}
-                                    >
-                                        Done
-            </Button>
-                                )}
-                                {this.state.current > 0 && (
-                                    <Button style={{ marginLeft: 8 }} onClick={() => this.prev()}>
-                                        Previous
-            </Button> */}
-                    )}
-                            </div>
-            </div>
-            /*  </div >
-          </div >
-      </div > */
-        );
     }
 }
 

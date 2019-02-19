@@ -14,11 +14,11 @@ export default class AvaliableTime extends Component {
 
 
     render() {
-
+        const { handleChange } = this.props;
         return (
             <div>
                 <div className="col-12 text-center mb-5">
-                    <TimePicker use12Hours format="h:mm a" onChange={onChange} />
+                    <TimePicker use12Hours format="h:mm a" onChange={handleChange} />
                 </div>
 
             </div>

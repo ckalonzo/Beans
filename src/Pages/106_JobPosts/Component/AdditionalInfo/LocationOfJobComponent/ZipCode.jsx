@@ -9,19 +9,12 @@ export default class ZipCode extends Component {
     constructor(props) {
         super(props);
     }
-    state = {
-        dataSource: [],
-    }
-
-
-
-
     render() {
-
+        const { handleChange } = this.props;
         return (
             <div >
                 <InputGroup className="mx-auto" size="large">
-                    <Input style={{ width: '50%' }} placeholder="ZipCode" />
+                    <Input style={{ width: '50%' }} onChange={handleChange} id="yourZipCode" placeholder="ZipCode" />
                 </InputGroup>
 
             </div>

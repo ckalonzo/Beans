@@ -24,7 +24,7 @@ export default class Join extends Component {
 
                             </div>
                             <div className="mx-auto start-posting-today-button">
-                                <p><a className="btn btn-primary btn-lg spt-btn" href="/postjob" role="button">Start Posting Today!</a></p>
+                                <p><a className="btn btn-primary btn-lg spt-btn" href="/106_JobPosts/PostJob" role="button">Start Posting Today!</a></p>
                             </div>
 
                         </div>

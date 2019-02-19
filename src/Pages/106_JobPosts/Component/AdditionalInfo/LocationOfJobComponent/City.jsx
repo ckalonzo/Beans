@@ -9,20 +9,14 @@ export default class City extends Component {
     constructor(props) {
         super(props);
     }
-    state = {
-        dataSource: [],
-    }
-
-
-
 
     render() {
-
+        const { handleChange } = this.props;
         return (
             <div>
 
                 <InputGroup className="mx-auto" size="large">
-                    <Input className="zipcode-container" style={{ width: '100%' }} placeholder="City" />
+                    <Input className="city-container" onChange={handleChange} style={{ width: '100%' }} id="yourCity" placeholder="City" />
 
                 </InputGroup>
 

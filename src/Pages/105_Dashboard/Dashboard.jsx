@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import firebaseApp from '../../Firebase';
 import CurrentBids from './Component/Current-Bids';
 import DashboardHero from "./Component/dashboardHero";
 import "./Css/dashboard.css";

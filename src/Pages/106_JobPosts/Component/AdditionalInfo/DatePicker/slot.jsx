@@ -4,17 +4,11 @@ import CustDatePicker from "../DatePicker/DatePicker";
 import AvaliableTime from "../DatePicker/AvaliableTime";
 
 
-const Option = Select.Option;
 
-function handleChange(value) {
-    console.log(`selected ${value}`);
-}
 class AvaliableTimeDate extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
+
         return (
             <div>
                 <div className="className container">

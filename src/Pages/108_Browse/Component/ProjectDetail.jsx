@@ -1,12 +1,13 @@
 import React from 'react'
 
-const ProjectDetail = () => {
+const ProjectDetails = (props) => {
+  const id = props.match.params.id;
   return (
     <section>
-      <div className="container">
-        <div className="card">
+      <div className="container section project-details">
+        <div className="card z-depth-0">
           <div className="card-body">
-            <h5 className="card-title">Project title</h5>
+            <h5 className="card-title">Project title - {id}</h5>
             <p className="text-secondary">Location: Decatur Ga 30334</p>
             <p className="text-secondary">Type: Junk Removal</p>
             <div>
@@ -36,7 +37,7 @@ const ProjectDetail = () => {
   )
 }
 
-export default ProjectDetail
+export default ProjectDetails
 
 
 

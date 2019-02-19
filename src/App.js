@@ -10,6 +10,7 @@ import firebaseApp from './Firebase';
 import SignUp from './Pages/104_SignUp/SignUp';
 import Dashboard from "./Pages/105_Dashboard/Dashboard";
 import ProjectList from "./Pages/108_Browse/ProjectList";
+import ProjectDetails from "./Pages/108_Browse/Component/ProjectDetail";
 import WizardForm from "./Pages/106_JobPosts/pj";
 import ListJobs from "./Pages/106_JobPosts/Component/ListJobs";
 
@@ -51,6 +52,9 @@ class App extends Component {
             <Route path="/106_JobPosts/PostJob"
               component={WizardForm}
             />
+            <Route path='/jobs/:id'
+              component={ProjectDetails}
+            />
             <Route path="/108_Browse/ProjectList"
               component={ProjectList}
             />
@@ -67,7 +71,7 @@ class App extends Component {
             />
             <Route path="/101_CustomerLogin/CustomerLogin" component={CustomerLogin}
             />
-            <Route path="/"
+            <Route exact path="/"
               component={Home}
             />
           </Switch>

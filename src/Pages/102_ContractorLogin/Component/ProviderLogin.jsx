@@ -1,39 +1,24 @@
 import React, { Component } from 'react';
 import '../Css/ProviderLogin.css'
-import firebaseApp  from "../../../Firebase";
 
 export default class ProviderLogin extends Component {
-    constructor(props) {
-        super(props);
-        this.login = this.login.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.signup = this.signup.bind(this);
-        this.state = {
-          email: '',
-          password: ''
-        };
-      }
-    
-      handleChange(e) {
-        this.setState({ [e.target.name]: e.target.value });
-      }
-    
-      login(e) {
+
+    state = {
+        email: '',
+        password: ''
+
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
         e.preventDefault();
-        firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-        }).catch((error) => {
-            console.log(error);
-          });
-      }
-    
-      signup(e){
-        e.preventDefault();
-        firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-        }).then((u)=>{console.log(u)})
-        .catch((error) => {
-            console.log(error);
-          })
-      }
+        console.log(this.state)
+    }
 
     render() {
         return (
@@ -53,14 +38,14 @@ export default class ProviderLogin extends Component {
                                         <div className="container mt-3 login-outline">
                                             <div className="mx-auto login">
                                                 <div className="">
-                                                    <form>
+                                                    <form onSubmit={this.handleSubmit}>
                                                         <div className="form-group mt-4">
                                                             <label for="InputEmail1">Email address</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="text"
                                                                 placeholder="Email"
-                                                                onChange={event => this.setState({ Email: event.target.value })}
+                                                                onChange={this.handleChange}
                                                             />
 
                                                         </div>
@@ -70,7 +55,7 @@ export default class ProviderLogin extends Component {
                                                                 className="form-control"
                                                                 type="password"
                                                                 placeholder="password"
-                                                                onChange={event => this.setState({ password: event.target.value })}
+                                                                onChange={this.handleChange}
                                                             />
                                                         </div>
                                                         <div className="form-check">
@@ -81,7 +66,7 @@ export default class ProviderLogin extends Component {
                                                         <button
                                                             className="btn btn-primary btn-block mt-3"
                                                             type="submit"
-                                                            onClick={() => console.log('this.state', this.state)}
+
                                                         >Log In</button>
 
                                                         <div className="or-seperator  mt-5"><span>OR</span></div>

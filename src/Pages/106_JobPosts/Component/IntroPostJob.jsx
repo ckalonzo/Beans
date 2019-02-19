@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Button } from 'antd';
-export default class IntroPostJob extends Component {
 
-    constructor(props) {
-        super(props);
-    }
+
+export default class IntroPostJob extends Component {
+    state = {
+        size: 'large',
+    };
+
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
@@ -12,6 +14,7 @@ export default class IntroPostJob extends Component {
 
     render() {
 
+        const size = this.state.size;
 
         return (
             <div>
@@ -21,10 +24,19 @@ export default class IntroPostJob extends Component {
                             <h1>Hi There! Im Mathrew.I'll get you started on posting your job. Lets get started!</h1>
                         </div>
                     </div>
-                    <Button onClick={this.continue}> Continue </Button>
+                    <div className="row">
+                        <div className="mx-auto">
+                            <Button.Group size={size}>
+                                <Button type="primary" onClick={this.continue}>
+                                    Continue
+                                </Button>
+                            </Button.Group>
 
+
+                        </div>
+
+                    </div>
                 </div>
-
             </div>
         );
     }

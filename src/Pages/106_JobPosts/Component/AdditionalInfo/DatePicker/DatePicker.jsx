@@ -10,21 +10,15 @@ export default class CustDatePicker extends Component {
     constructor(props) {
         super(props);
     }
-    state = {
-        size: 'default',
-    };
 
-    handleSizeChange = (e) => {
-        this.setState({ size: e.target.value });
-    }
 
 
     render() {
-        const { size } = this.state;
+        const { handleChange } = this.props;
         return (
             <div>
-
-                <InputGroup size="large">
+                const {handleChange} = this.props;
+                <InputGroup onChange={handleChange} size="large">
                     <DatePicker size="large" />
                 </InputGroup>
             </div>
