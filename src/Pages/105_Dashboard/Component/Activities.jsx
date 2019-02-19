@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import "../Css/dashboard.css";
 import { Tabs, Icon, Badge } from 'antd';
-import Notification from "../Component/Notifications";
-import Main from "../Component/Chat/Main/Main";
+import Notification from "./Notifications";
+import Main from "./Chat/Main/Main";
+import currentbids from '../../105_Dashboard/Component/currentbids'
 
 const TabPane = Tabs.TabPane;
 
-export default class CurrentBids extends Component {
+export default class dashboard extends Component {
     state =
         {
             pastBidsCounter: 5,
@@ -19,7 +20,7 @@ export default class CurrentBids extends Component {
 
 
     render() {
-
+        const { projects } = this.props;
         return (
             <div className="col-12">
                 <Tabs defaultActiveKey="4" size="large">
@@ -27,7 +28,7 @@ export default class CurrentBids extends Component {
                     <TabPane
                         tab={<span><Icon type="pushpin" theme="twoTone" />Current Bids
                             <Badge count={this.state.currentBidsCounter} /></span>}
-                        key="1">Content of tab 1
+                        key="1"><currentbids projects={projects} />
                     </TabPane>
                     <TabPane
                         tab={<span><Icon type="clock-circle" theme="twoTone" />Past Bids

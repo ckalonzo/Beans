@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import CurrentBids from './Component/Current-Bids';
+import Activities from './Component/Activities';
 import DashboardHero from "./Component/dashboardHero";
 import "./Css/dashboard.css";
-
+import { connect } from 'react-redux'
 
 class Dashboard extends Component {
     render() {
+        const { projects } = this.props;
         return (
             <section>
                 <div className="projectList container">
@@ -13,7 +14,7 @@ class Dashboard extends Component {
                         <DashboardHero />
                     </div>
                     <div className="row">
-                        <CurrentBids />
+                        <Activities projects={projects} />
                     </div>
                 </div>
             </section>
@@ -23,5 +24,10 @@ class Dashboard extends Component {
     }
 
 }
+const mapStateToProps = (state) => {
+    return {
+        projects: state.project.projects
+    }
+}
 
-export default Dashboard;
+export default connect(mapStateToProps)(Dashboard);

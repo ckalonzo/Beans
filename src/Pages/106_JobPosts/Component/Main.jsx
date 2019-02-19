@@ -7,7 +7,6 @@ import IntroPostJob from "../Component/IntroPostJob";
 import TypeOfJob from "../Component/TypeOfJob";
 import UploadImages from "../Component/UploadImages";
 import Third from "./Third";
-
 import { Steps, Button, message } from 'antd';
 const Step = Steps.Step;
 

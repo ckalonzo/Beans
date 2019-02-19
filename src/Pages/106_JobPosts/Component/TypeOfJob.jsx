@@ -46,7 +46,7 @@ export default class TypeOfJob extends Component {
                     <div className="row">
                         <div className="col-6  offset-3 text-center mb-5">
                             <React.Fragment>
-                                <Select defaultvalue={value.service} style={{ width: 300 }} onChange={this.handleChange.bind(this)}>
+                                <Select defaultvalue={values.service} style={{ width: 300 }} onChange={this.handleChange}>
                                     <Option id="option1" value="Junk Removal">Junk Removal</Option>
                                     <Option id="option2" value="Cleaner Service">Cleaner Service</Option>
                                 </Select>
