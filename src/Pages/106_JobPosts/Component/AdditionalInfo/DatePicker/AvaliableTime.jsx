@@ -7,18 +7,18 @@ function onChange(time, timeString) {
 }
 
 export default class AvaliableTime extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-
 
     render() {
-        const { handleChange } = this.props;
+        const { handleChange, time } = this.props;
         return (
             <div>
                 <div className="col-12 text-center mb-5">
-                    <TimePicker use12Hours format="h:mm a" onChange={handleChange} />
+                    <TimePicker
+                        use12Hours
+                        format="h:mm a"
+                        id={time}
+                        handleChange={handleChange('time')}
+                    />
                 </div>
 
             </div>

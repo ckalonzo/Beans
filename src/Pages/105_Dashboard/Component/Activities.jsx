@@ -3,7 +3,7 @@ import "../Css/dashboard.css";
 import { Tabs, Icon, Badge } from 'antd';
 import Notification from "./Notifications";
 import Main from "./Chat/Main/Main";
-import currentbids from '../../105_Dashboard/Component/currentbids'
+import Currentbids from '../../105_Dashboard/Component/currentbids'
 
 const TabPane = Tabs.TabPane;
 
@@ -20,6 +20,8 @@ export default class dashboard extends Component {
 
 
     render() {
+        console.log(`activity${this.props}`);
+
         const { projects } = this.props;
         return (
             <div className="col-12">
@@ -28,7 +30,7 @@ export default class dashboard extends Component {
                     <TabPane
                         tab={<span><Icon type="pushpin" theme="twoTone" />Current Bids
                             <Badge count={this.state.currentBidsCounter} /></span>}
-                        key="1"><currentbids projects={projects} />
+                        key="1"><Currentbids projects={projects} />
                     </TabPane>
                     <TabPane
                         tab={<span><Icon type="clock-circle" theme="twoTone" />Past Bids

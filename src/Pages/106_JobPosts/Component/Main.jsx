@@ -36,7 +36,7 @@ export default class MainForm extends Component {
             name: "",
             address: "",
             city: "",
-            state: "",
+            state: "State",
             zipCode: "",
             largeItems: "",
             date: "",
@@ -66,11 +66,14 @@ export default class MainForm extends Component {
 
 
     // Handle fields change
-    handleChange = (e) => {
+    handleChange = id => value => {
         this.setState({
-            [e.target.id]: e.target.value
-        })
-        console.log(e.target.id)
+            [id]: value
+        },
+            () => {
+                console.log(this.state.service);
+            })
+
 
 
     }
@@ -85,8 +88,8 @@ export default class MainForm extends Component {
     render() {
         console.log(this.props);
         const { current } = this.state;
-        const { service, email, attachments, name, addressType, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions, id } = this.state;
-        const values = { service, email, attachments, name, addressType, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
+        const { service, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.state;
+        const values = { service, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
 
         switch (current) {
 
@@ -99,9 +102,9 @@ export default class MainForm extends Component {
 
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
-                    onChange={this.handleChange}
+                    handleChange={this.handleChange}
                     values={values}
-                    id={service}
+                    service={service}
 
 
 
@@ -113,6 +116,7 @@ export default class MainForm extends Component {
                     prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     values={values}
+                    attachments={attachments}
                 />)
             case 4:
                 return (<AdditionalInfo
@@ -120,6 +124,7 @@ export default class MainForm extends Component {
                     nextStep={this.nextStep}
                     prevStep={this.prev}
                     handleChange={this.handleChange}
+
                     values={values}
                 />)
             case 5:

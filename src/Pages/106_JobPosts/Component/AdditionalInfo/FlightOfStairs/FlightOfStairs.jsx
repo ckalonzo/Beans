@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Radio, Col, Input } from 'antd';
+import { Radio, Input } from 'antd';
 import "../../../Css/PostJob.css";
 
 const RadioGroup = Radio.Group;
@@ -7,21 +7,16 @@ const InputGroup = Input.Group;
 
 
 export default class FlightOfStairs extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-
 
     render() {
-        const { handleChange } = this.props;
+        const { handleChange, flightOfStairs } = this.props;
         return (
 
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
                         <InputGroup className="d-inline-flex  mx-auto" size="large">
-                            <RadioGroup className="mx-auto" onChange={handleChange} >
+                            <RadioGroup className="mx-auto" id={flightOfStairs} onChange={handleChange('flightOfStairs')} >
                                 <Radio value="0">0</Radio>
                                 <Radio value="1">1</Radio>
                                 <Radio value="2">2</Radio>

@@ -1,26 +1,20 @@
 import React, { Component } from "react";
-import { Input, Col, Select } from 'antd';
+import { Input, Select } from 'antd';
 import "../../../Css/PostJob.css";
 
 const InputGroup = Input.Group;
 const Option = Select.Option;
 
 export default class statee extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-
-
 
     render() {
-        const { handleChange } = this.props;
+        const { handleChange, statee, values } = this.props;
         return (
             <div>
 
                 <InputGroup size="large">
 
-                    <Select defaultValue="State" onChange={handleChange} id="yourState">
+                    <Select defaultValue={values.statee} onChange={handleChange('statee')} id={statee}>
                         <Option value="AL">AL</Option>
                         <Option value="AK">AK</Option>
                         <Option value="AZ">AZ</Option>

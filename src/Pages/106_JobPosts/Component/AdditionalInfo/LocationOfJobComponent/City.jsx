@@ -1,26 +1,20 @@
 import React, { Component } from "react";
-import { Input, Col } from 'antd';
+import { Input } from 'antd';
 import "../../../Css/PostJob.css";
 
 const InputGroup = Input.Group;
 
 
 export default class City extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
-        const { handleChange } = this.props;
+        const { handleChange, city } = this.props;
         return (
-            <div>
-
+            <React.Fragment>
                 <InputGroup className="mx-auto" size="large">
-                    <Input className="city-container" onChange={handleChange} style={{ width: '100%' }} id="yourCity" placeholder="City" />
-
+                    <Input className="city-container" onChange={handleChange('city')} style={{ width: '100%' }} id={city} placeholder="City" />
                 </InputGroup>
-
-            </div>
+            </React.Fragment>
         )
     }
 }

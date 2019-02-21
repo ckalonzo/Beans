@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ProjectSummary from './Component/ProjectSummary';
 
 
@@ -8,9 +8,9 @@ const ProjectList = ({ projects }) => {
             <div className="notifications container">
                 <div className="row">
                     <div className="col-12">
-                        {projects && projects.map(project => {
+                        {projects && projects.map(jobs => {
                             return (
-                                <ProjectSummary project={project} key={project.id} />
+                                <ProjectSummary jobs={jobs} key={jobs.id} />
                             )
 
                         })}

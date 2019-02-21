@@ -26,15 +26,12 @@ export default class TypeOfJob extends Component {
     handleSizeChange = (e) => {
         this.setState({ size: e.target.value });
     }
-    handleChange(e) {
-        let id = e.target.value;
-        this.props.onChange(id);
-    }
     render() {
-        const { values, service } = this.props;
+        const { values, handleChange, service } = this.props;
+        console.log(`typeofjob${this.props}`);
         const size = this.state.size;
         return (
-            <div>
+            <React.Fragment>
                 <div className="container">
                     <div className="row">
                         <div className="col-6  offset-3 text-center mb-5 mt-5">
@@ -46,9 +43,9 @@ export default class TypeOfJob extends Component {
                     <div className="row">
                         <div className="col-6  offset-3 text-center mb-5">
                             <React.Fragment>
-                                <Select defaultvalue={values.service} style={{ width: 300 }} onChange={this.handleChange}>
-                                    <Option id="option1" value="Junk Removal">Junk Removal</Option>
-                                    <Option id="option2" value="Cleaner Service">Cleaner Service</Option>
+                                <Select defaultvalue={values.service} id={service} style={{ width: 300 }} onChange={handleChange('service')}>
+                                    <Option value="Junk Removal">Junk Removal</Option>
+                                    <Option value="Cleaner Service">Cleaner Service</Option>
                                 </Select>
                             </React.Fragment>
                         </div>
@@ -58,24 +55,20 @@ export default class TypeOfJob extends Component {
                             <Button.Group size={size}>
                                 <Button type="primary" onClick={this.back} className="float-left">
                                     <Icon type="left" />Back
-                             </Button>
+                                </Button>
                                 <Button type="primary" onClick={this.continue}>
                                     Continue <Icon type="right" />
                                 </Button>
                             </Button.Group>
                         </div>
                     </div>
-
-
-
                 </div>
                 <div>
+                </div>
+            </React.Fragment>
 
 
 
-                </div>,
-
-            </div>
         );
     }
 }

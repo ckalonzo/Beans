@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ProjectList from '../../108_Browse/ProjectList'
 
 
-export default class currentbids extends Component {
+export default class Currentbids extends Component {
     render() {
         const { projects } = this.props;
         return (

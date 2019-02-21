@@ -15,16 +15,15 @@ export default class StreetAddress extends Component {
 
 
     render() {
-        const { handleChange } = this.props;
+        const { handleChange, address } = this.props;
         return (
-            <div>
-
+            <React.Fragment>
                 <InputGroup className="d-inline-flex" size="large">
                     <Col span={10} className="d-inline-flex mx-auto" >
-                        <Input style={{ width: '100%' }} id="address" onChange={handleChange} placeholder="Street Address" />
+                        <Input style={{ width: '100%' }} id={address} onChange={handleChange('address')} placeholder="Street Address" />
                     </Col>
                 </InputGroup>
-            </div>
+            </React.Fragment>
         )
     }
 }

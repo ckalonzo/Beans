@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Radio, Col, DatePicker, Input } from 'antd';
+import { Radio, DatePicker, Input } from 'antd';
 import "../../../Css/PostJob.css";
 
 const RadioGroup = Radio.Group;
@@ -14,14 +14,13 @@ export default class CustDatePicker extends Component {
 
 
     render() {
-        const { handleChange } = this.props;
+        const { handleChange, date } = this.props;
         return (
-            <div>
-                const {handleChange} = this.props;
-                <InputGroup onChange={handleChange} size="large">
+            <React.Fragment>
+                <InputGroup onChange={handleChange('date')} id={date} size="large">
                     <DatePicker size="large" />
                 </InputGroup>
-            </div>
+            </React.Fragment>
         )
     }
 }

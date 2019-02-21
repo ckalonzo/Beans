@@ -32,6 +32,7 @@ class UploadImages extends Component {
     }
     render() {
         const { getFieldDecorator } = this.props.form;
+        const { handleChange, attachements } = this.props;
         return (
             <div>
                 <div className="container">
@@ -51,7 +52,7 @@ class UploadImages extends Component {
                             }
                         ]
                     })(
-                        <Dragger {...props}>
+                        <Dragger {...props} id={attachements} onChange={handleChange('attachements')}>
                             <p className="ant-upload-drag-icon">
                                 <Icon type="inbox" />
                             </p>

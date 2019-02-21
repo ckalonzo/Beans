@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Radio, Input, Button } from 'antd';
+import { Input, Button } from 'antd';
 import "../../../Css/PostJob.css";
 
 const { TextArea } = Input;
@@ -7,9 +7,7 @@ const InputGroup = Input.Group;
 
 
 export default class SpecialInstructions extends Component {
-    constructor(props) {
-        super(props);
-    }
+
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
