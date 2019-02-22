@@ -66,12 +66,12 @@ export default class MainForm extends Component {
 
 
     // Handle fields change
-    handleChange = id => value => {
+    handleChange = input => value => {
         this.setState({
-            [id]: value
+            [input]: value
         },
             () => {
-                console.log(this.state.service);
+                console.log(`handle change value${value}`);
             })
 
 

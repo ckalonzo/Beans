@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Button } from 'antd';
+import { Collapse, Button, Icon} from 'antd';
 import MoneyValue from './MoneyValue';
 const Panel = Collapse.Panel;
 
@@ -12,7 +12,11 @@ export default class Budget extends Component {
         e.preventDefault()
         this.props.prevStep()
     }
+    state = {
+        size: 'large',
+    };
     render() {
+        const size = this.state.size;
         return (
             <div className="className container mt-5">
                 <div className="row">
@@ -23,8 +27,18 @@ export default class Budget extends Component {
                             </Panel>
                         </Collapse>,
                                 </div>
-                    <Button onClick={this.continue}> Continue </Button>
-                    <Button onClick={this.back}> Back</Button>
+                                <div className="row">
+                        <div className="mx-auto">
+                            <Button.Group size={size}>
+                                <Button type="primary" onClick={this.back} className="float-left">
+                                    <Icon type="left" />Back
+                                </Button>
+                                <Button type="primary" onClick={this.continue}>
+                                    Continue <Icon type="right" />
+                                </Button>
+                            </Button.Group>
+                        </div>
+                    </div>
                 </div>
             </div >
 

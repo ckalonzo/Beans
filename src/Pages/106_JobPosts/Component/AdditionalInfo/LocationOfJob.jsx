@@ -22,7 +22,7 @@ export default class LocationPage extends Component {
 
                             <h6>Address</h6>
                             <StreetAddress
-                                handleChange={this.handleChange}
+                                handleChange={this.props.handleChange}
                                 values={values}
                                 address={address}
 
@@ -33,7 +33,7 @@ export default class LocationPage extends Component {
                         <div className="col-4 text-center mb-5">
                             <h6>City</h6>
                             <City
-                                handleChange={this.handleChange}
+                                handleChange={this.props.handleChange}
                                 values={values}
                                 city={city}
                             />
@@ -41,7 +41,7 @@ export default class LocationPage extends Component {
                         <div className="col-4 text-center mb-5">
                             <h6>State</h6>
                             <Statee
-                                handleChange={this.handleChange}
+                                handleChange={this.props.handleChange}
                                 values={values}
                                 statee={statee}
                             />
@@ -49,7 +49,7 @@ export default class LocationPage extends Component {
                         <div className="col-4 text-center mb-5">
                             <h6>ZipCode</h6>
                             <ZipCode
-                                handleChange={this.handleChange}
+                                handleChange={this.props.handleChange}
                                 values={values}
                                 zipCode={ZipCode}
                             />

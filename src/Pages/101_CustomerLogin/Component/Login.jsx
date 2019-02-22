@@ -40,24 +40,46 @@ export default class Login extends Component {
                                                     <form onSubmit={this.handleSubmit}>
                                                         <div class="form-group mt-4">
                                                             <label htmlFor="Email">Email address</label>
-                                                            <input type="email" class="form-control" id="email" placeholder="Enter email" onChange={this.handleChange}></input>
+                                                            <input 
+                                                                type="email" 
+                                                                className="form-control" 
+                                                                id="email" 
+                                                                placeholder="Enter email" 
+                                                                onChange={this.handleChange}>
+                                                            </input>
 
                                                         </div>
                                                         <div class="form-group">
                                                             <label htmlFor="Password">Password</label>
-                                                            <input type="password" class="form-control" id="password" placeholder="Password" onChange={this.handleChange}></input>
+                                                            <input 
+                                                                type="password" 
+                                                                className="form-control" 
+                                                                id="password" 
+                                                                placeholder="Password" 
+                                                                onChange={this.handleChange}>
+                                                            </input>
                                                         </div>
                                                         <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
+                                                            <input 
+                                                                type="checkbox" 
+                                                                className="form-check-input" 
+                                                                id="exampleCheck1">
+                                                            </input>
                                                             <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                                                            <a href="#" class="float-right">Forgot Password?</a>
+                                                            <a 
+                                                                href="#" 
+                                                                className="float-right">Forgot Password?
+                                                            </a>
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary btn-block mt-3">Log In</button>
+                                                        <button 
+                                                            type="submit" 
+                                                            className="btn btn-primary btn-block mt-3">Log In
+                                                        </button>
 
-                                                        <div class="or-seperator  mt-5"><span>OR</span></div>
-                                                        <div class="text-center social-btn mb-5">
-                                                            <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
-                                                            <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
+                                                        <div className="or-seperator  mt-5"><span>OR</span></div>
+                                                        <div className="text-center social-btn mb-5">
+                                                            <a href="#" class="btn btn-primary btn-block"><i className="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
+                                                            <a href="#" class="btn btn-danger btn-block"><i className="fa fa-google"></i> Sign in with <b>Google</b></a>
                                                         </div>
 
                                                     </form>

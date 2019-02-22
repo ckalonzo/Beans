@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 
+import { InputNumber } from 'antd';
 
+function onChange(value) {
+  console.log('changed', value);
+}
 
 
 export default class MoneyValue extends Component {
     render() {
         return (
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">$</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></input>
-                <div class="input-group-append">
-                    <span class="input-group-text">.00</span>
-                </div>
-            </div>
+            <React.Fragment>
+                <InputNumber
+              defaultValue={1000}
+              formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+              parser={value => value.replace(/\$\s?|(,*)/g, '')}
+              onChange={onChange}
+            />
+            <InputNumber
+              defaultValue={100}
+              min={0}
+              max={100}
+              formatter={value => `${value}%`}
+              parser={value => value.replace('%', '')}
+              onChange={onChange}
+            />
+            </React.Fragment>
         );
     }
 }

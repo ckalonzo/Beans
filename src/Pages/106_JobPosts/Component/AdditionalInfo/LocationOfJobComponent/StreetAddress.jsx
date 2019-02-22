@@ -16,6 +16,7 @@ export default class StreetAddress extends Component {
 
     render() {
         const { handleChange, address } = this.props;
+        console.log(handleChange)
         return (
             <React.Fragment>
                 <InputGroup className="d-inline-flex" size="large">

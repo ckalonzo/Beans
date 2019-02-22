@@ -31,7 +31,7 @@ export default class AdditionalInfo extends Component {
                         <Collapse accordion>
                             <Panel header="Location Of Job" key="1">
                                 <LocationPage
-                                    handleChange={this.handleChange}
+                                    handleChange={this.props.handleChange}
                                     values={values}
                                     address={address}
                                     city={city}
