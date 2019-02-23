@@ -43,36 +43,49 @@ class App extends Component {
 
     return (
       <Router>
+        
         <div className="App">
           <Navbar />
           <Switch>
-            <Route path="/106_JobPosts/Component/ListJobs"
+            <Route 
+              path="/106_JobPosts/Component/ListJobs"
               component={ListJobs}
             />
-            <Route path="/106_JobPosts/PostJob"
+            <Route 
+            path="/106_JobPosts/PostJob"
               component={WizardForm}
             />
-            <Route path='/jobs/:id'
+            <Route 
+            path='/jobs/:id'
               component={ProjectDetails}
             />
-            <Route path="/108_Browse/ProjectList"
+            <Route 
+            path="/108_Browse/ProjectList"
               component={ProjectList}
             />
-            <Route path="/105_Dashboard/Dashboard"
+            <Route 
+            path="/105_Dashboard/Dashboard"
               component={Dashboard}
             />
-            <Route path="/104_SignUp/SignUp"
+            <Route 
+            path="/104_SignUp/SignUp"
               component={SignUp}
             />
-            <Route path="/103_Membership/Membership" component={Membership}
+            <Route 
+            path="/103_Membership/Membership" c
+            omponent={Membership}
             />
-            <Route path="/102_ContractorLogin/ContractorLogin"
+            <Route 
+            path="/102_ContractorLogin/ContractorLogin"
               component={ContractorLogin}
             />
-            <Route path="/101_CustomerLogin/CustomerLogin" component={CustomerLogin}
+            <Route 
+            path="/101_CustomerLogin/CustomerLogin" 
+            component={CustomerLogin}
             />
-            <Route exact path="/"
-              component={Home}
+            <Route 
+            exact path="/"
+            component={Home}
             />
           </Switch>
 

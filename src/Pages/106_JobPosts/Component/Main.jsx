@@ -66,12 +66,11 @@ export default class MainForm extends Component {
 
 
     // Handle fields change
-    handleChange = input => value => {
+    handleChange (e) {
+    
         this.setState({
-            [input]: value
-        },
-            () => {
-                console.log(`handle change value${value}`);
+            service: e.target.value
+        
             })
 
 
@@ -124,8 +123,12 @@ export default class MainForm extends Component {
                     nextStep={this.nextStep}
                     prevStep={this.prev}
                     handleChange={this.handleChange}
-
                     values={values}
+                    address={address}
+                    city={city}
+                    zipCode={zipCode}
+                    largeItems={largeItems}
+
                 />)
             case 5:
                 return (<Budget

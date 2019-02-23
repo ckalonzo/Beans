@@ -41,7 +41,7 @@ export default class AdditionalInfo extends Component {
                             </Panel>
                             <Panel header="Will There Be AnyLarge Items Involved" key="2">
                                 <AnyLargeItems
-                                    handleChange={this.handleChange}
+                                    handleChange={this.props.handleChange}
                                     values={values}
                                     largeItems={largeItems}
 
