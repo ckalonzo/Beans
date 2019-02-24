@@ -12,7 +12,7 @@ export default class City extends Component {
         return (
             <React.Fragment>
                 <InputGroup className="mx-auto" size="large">
-                    <Input className="city-container" onChange={handleChange('city')} style={{ width: '100%' }} id={city} placeholder="City" />
+                    <input className="city-container" onChange={handleChange('city')} style={{ width: '100%' }} id={city} placeholder="City" />
                 </InputGroup>
             </React.Fragment>
         )

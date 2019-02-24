@@ -4,7 +4,10 @@ import "../../../Css/PostJob.css";
 
 const RadioGroup = Radio.Group;
 const InputGroup = Input.Group;
-const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
+
+function onChangeDatePicker(date, dateString) {
+    console.log(date, dateString);
+}
 
 export default class CustDatePicker extends Component {
     constructor(props) {
@@ -14,11 +17,11 @@ export default class CustDatePicker extends Component {
 
 
     render() {
-        const { handleChange, date } = this.props;
+        const { handleChangeDatePicker, date } = this.props;
         return (
             <React.Fragment>
-                <InputGroup onChange={handleChange('date')} id={date} size="large">
-                    <DatePicker size="large" />
+                <InputGroup size="large">
+                    <DatePicker onChange={handleChangeDatePicker('date')} id={date} size="large" />
                 </InputGroup>
             </React.Fragment>
         )

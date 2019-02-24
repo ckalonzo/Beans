@@ -21,7 +21,7 @@ export default class StreetAddress extends Component {
             <React.Fragment>
                 <InputGroup className="d-inline-flex" size="large">
                     <Col span={10} className="d-inline-flex mx-auto" >
-                        <input style={{ width: '100%' }} id={address} onChange={handleChange.bind(this)} placeholder="Street Address" />
+                        <Input style={{ width: '100%' }} id={address} onChange={handleChange('address')} placeholder="Street Address" />
                     </Col>
                 </InputGroup>
             </React.Fragment>

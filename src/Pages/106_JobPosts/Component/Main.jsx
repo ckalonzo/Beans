@@ -8,18 +8,10 @@ import TypeOfJob from "../Component/TypeOfJob";
 import UploadImages from "../Component/UploadImages";
 import Third from "./Third";
 import { Steps, Button, message } from 'antd';
+import moment from 'moment'
 const Step = Steps.Step;
 
-const steps = [{
-    title: 'First',
-    content: 'First-content',
-}, {
-    title: 'Second',
-    content: 'Second-content',
-}, {
-    title: 'Last',
-    content: 'Last-content',
-}];
+
 
 
 
@@ -29,8 +21,8 @@ export default class MainForm extends Component {
         super(props);
 
         this.state = {
-            current: 1,
-            service: '',
+            current: 0,
+            service: 'Junk Removal',
             email: '',
             attachments: "",
             name: "",
@@ -47,6 +39,9 @@ export default class MainForm extends Component {
             specialInstructions: "",
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleChangeService = this.handleChangeService.bind(this);
+        this.handleChangeAttachments = this.handleChangeAttachments.bind(this);
+
     }
     //proceed to next step
     nextStep = () => {
@@ -66,59 +61,82 @@ export default class MainForm extends Component {
 
 
     // Handle fields change
-    handleChange (e) {
-    
+    handleChangeService(e) {
+
         this.setState({
             service: e.target.value
-        
-            })
 
-
-
+        });
     }
-    // UpdateJobType(e) {
-    //     console.log(e.target.service)
-    //     console.log(e.target.value)
-    // }
+
+    handleChange = id => e => {
+
+        this.setState({
+            [id]: e.target.value
+
+        });
+    }
+    handleChangeAttachments(e) {
+
+        this.setState({
+            attachments: e.target.value
+
+        });
+    }
+
+    handleChangeDatePicker = time => timeString => {
+        this.setState({
+            [time]: timeString
 
 
+        });
+    }
 
+    handleChangeTimePicker = date => dateString => {
+        console.log(date, dateString);
+    }
+    next() {
+        const current = this.state.current + 1;
+        this.setState({ current });
+    }
+
+    prev() {
+        const current = this.state.current - 1;
+        this.setState({ current });
+    }
 
     render() {
         console.log(this.props);
         const { current } = this.state;
         const { service, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.state;
         const values = { service, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
-
-        switch (current) {
-
-            case 1:
-                return (<IntroPostJob
+        let steps = [
+            {
+                title: "Introduction",
+                content: <IntroPostJob
                     nextStep={this.nextStep}
-                />)
-            case 2:
-                return (<TypeOfJob
-
+                />
+            },
+            {
+                title: "Type Of Job",
+                content: <TypeOfJob
                     nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    handleChangeService={this.handleChangeService}
+                    values={values}
+                />
+            },
+            {
+                title: "Upload Image",
+                content: <UploadImages nextStep={this.nextStep}
                     prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     values={values}
-                    service={service}
-
-
-
-
-                />)
-            case 3:
-                return (<UploadImages
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange={this.handleChange}
-                    values={values}
-                    attachments={attachments}
-                />)
-            case 4:
-                return (<AdditionalInfo
+                    attachments={attachments} />
+            },
+            {
+                title: "Additional Information",
+                content: <AdditionalInfo
                     form={this.props.form}
                     nextStep={this.nextStep}
                     prevStep={this.prev}
@@ -128,25 +146,125 @@ export default class MainForm extends Component {
                     city={city}
                     zipCode={zipCode}
                     largeItems={largeItems}
+                    handleChangeDatePicker={this.handleChangeDatePicker}
+                    handleChangeTimePicker={this.handleChangeTimePicker}
 
-                />)
-            case 5:
-                return (<Budget
+                />
+            },
+            {
+                title: "Second",
+                content: <Budget
                     form={this.props.form}
                     nextStep={this.nextStep}
                     prevStep={this.prev}
                     handleChange={this.handleChange}
                     values={values}
-                />)
-            case 6:
-                return (< Third
+                />
+            },
+            {
+                title: "Last",
+                content: < Third
                     form={this.props.form}
                     nextStep={this.nextStep}
                     handleChange={this.handleChange}
                     values={values}
-                />)
+                />
+            }
+        ];
+        return (
+            <div>
+                <div className="container">
+                    <div className="row">
+                        <div className="mx-auto">
+                            <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Avatar" class="avatar"></img>
+                        </div>
 
-        }
+                    </div>
+                </div>
+                <Steps current={current}>
+                    {steps.map(item => <Step key={item.title} title={item.title} />)}
+                </Steps>
+                {steps.map(({ title, content }, i) => (
+                    <div
+                        key={title}
+                        className={i === this.state.current ? "foo fade-in" : "foo"}
+                    >
+                        {content}
+                    </div>
+                ))}
+                <div className="row">
+                    <div className="mx-auto mb-5">
+                        <div className="steps-action">
+
+                            {this.state.current === steps.length - 1 && (
+                                <Button
+                                    type="primary"
+                                    onClick={() => message.success("Processing complete!")}
+                                >
+                                    Done
+            </Button>
+                            )}
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        );
+        // switch (current) {
+
+        //     case 1:
+        //         return (<IntroPostJob
+        //             nextStep={this.nextStep}
+        //         />)
+        //     case 2:
+        //         return (<TypeOfJob
+
+        //             nextStep={this.nextStep}
+        //             prevStep={this.prevStep}
+        //             handleChangeService={this.handleChangeService}
+        //             values={values}
+        //         />)
+        //     case 3:
+        //         return (<UploadImages
+        //             nextStep={this.nextStep}
+        //             prevStep={this.prevStep}
+        //             handleChange={this.handleChange}
+        //             values={values}
+        //             attachments={attachments}
+        //         />)
+        //     case 4:
+        //         return (<AdditionalInfo
+        //             form={this.props.form}
+        //             nextStep={this.nextStep}
+        //             prevStep={this.prev}
+        //             handleChange={this.handleChange}
+        //             values={values}
+        //             address={address}
+        //             city={city}
+        //             zipCode={zipCode}
+        //             largeItems={largeItems}
+        //             handleChangeDatePicker={this.handleChangeDatePicker}
+        //             handleChangeTimePicker={this.handleChangeTimePicker}
+
+        //         />)
+        //     case 5:
+        //         return (<Budget
+        //             form={this.props.form}
+        //             nextStep={this.nextStep}
+        //             prevStep={this.prev}
+        //             handleChange={this.handleChange}
+        //             values={values}
+        //         />)
+        //     case 6:
+        //         return (< Third
+        //             form={this.props.form}
+        //             nextStep={this.nextStep}
+        //             handleChange={this.handleChange}
+        //             values={values}
+        //         />)
+
+        // }
     }
 }
 

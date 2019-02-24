@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Button, Icon} from 'antd';
+import { Collapse, Button, Icon } from 'antd';
 import MoneyValue from './MoneyValue';
 const Panel = Collapse.Panel;
 
@@ -27,17 +27,17 @@ export default class Budget extends Component {
                             </Panel>
                         </Collapse>,
                                 </div>
-                                <div className="row">
-                        <div className="mx-auto">
-                            <Button.Group size={size}>
-                                <Button type="primary" onClick={this.back} className="float-left">
-                                    <Icon type="left" />Back
+                </div>
+                <div className="row">
+                    <div className="mx-auto">
+                        <Button.Group size={size}>
+                            <Button type="primary" onClick={this.back} className="float-left">
+                                <Icon type="left" />Back
                                 </Button>
-                                <Button type="primary" onClick={this.continue}>
-                                    Continue <Icon type="right" />
-                                </Button>
-                            </Button.Group>
-                        </div>
+                            <Button type="primary" onClick={this.continue}>
+                                Continue <Icon type="right" />
+                            </Button>
+                        </Button.Group>
                     </div>
                 </div>
             </div >

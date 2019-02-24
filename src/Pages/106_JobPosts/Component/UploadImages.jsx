@@ -22,6 +22,13 @@ const props = {
 };
 
 class UploadImages extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    state = {
+        size: 'large',
+    };
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
@@ -32,7 +39,8 @@ class UploadImages extends Component {
     }
     render() {
         const { getFieldDecorator } = this.props.form;
-        const { handleChange, attachements } = this.props;
+        const { handleChange, attachments } = this.props;
+        const size = this.state.size;
         return (
             <div>
                 <div className="container">
@@ -52,7 +60,7 @@ class UploadImages extends Component {
                             }
                         ]
                     })(
-                        <Dragger {...props} id={attachements} onChange={handleChange('attachements')}>
+                        <Dragger {...props} id={attachments} value={attachments} onChange={handleChange('attachments')}>
                             <p className="ant-upload-drag-icon">
                                 <Icon type="inbox" />
                             </p>
@@ -66,8 +74,18 @@ class UploadImages extends Component {
                         </Dragger>
                     )}
                 </FormItem>
-                <Button onClick={this.continue}> Continue </Button>
-                <Button onClick={this.back}> Back</Button>
+                <div className="row">
+                    <div className="mx-auto">
+                        <Button.Group size={size}>
+                            <Button type="primary" onClick={this.back} className="float-left">
+                                <Icon type="left" />Back
+                                </Button>
+                            <Button type="primary" onClick={this.continue}>
+                                Continue <Icon type="right" />
+                            </Button>
+                        </Button.Group>
+                    </div>
+                </div>
             </div>
         );
     }

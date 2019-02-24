@@ -15,14 +15,14 @@ class AvaliableTimeDate extends Component {
                         <div className="col-6 text-center mb-5">
                             <h6>Choose Date</h6>
                             <CustDatePicker
-                                handleChange={this.handleChange}
+                                handleChangeDatePicker={this.props.handleChangeDatePicker}
                                 date={date}
                             />
                         </div>
                         <div className="col-6 text-center mb-5">
                             <h6>Choose Time Slot</h6>
                             <AvaliableTime
-                                handleChange={this.handleChange}
+                                handleChangeTimePicker={this.props.handleChangeTimePicker}
                                 time={time}
 
                             />

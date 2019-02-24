@@ -26,9 +26,9 @@ export default class TypeOfJob extends Component {
     handleSizeChange = (e) => {
         this.setState({ size: e.target.value });
     }
+
     render() {
-        const { values, handleChange, service } = this.props;
-        console.log(`typeofjob${this.props}`);
+        const { values, handleChangeService } = this.props;
         const size = this.state.size;
         return (
             <React.Fragment>
@@ -43,10 +43,10 @@ export default class TypeOfJob extends Component {
                     <div className="row">
                         <div className="col-6  offset-3 text-center mb-5">
                             <React.Fragment>
-                                <Select defaultvalue={values.service} value={service} style={{ width: 300 }} onChange={handleChange.bind('service')}>
-                                    <Option value="Junk Removal">Junk Removal</Option>
-                                    <Option value="Cleaner Service">Cleaner Service</Option>
-                                </Select>
+                                <select defaultvalue={values.service} value={this.props.service} style={{ width: 300 }} onChange={handleChangeService}>
+                                    <option value="Junk Removal">Junk Removal</option>
+                                    <option value="Cleaner Service">Cleaner Service</option>
+                                </select>
                             </React.Fragment>
                         </div>
                     </div>

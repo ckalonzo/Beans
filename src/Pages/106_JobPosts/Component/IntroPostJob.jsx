@@ -31,10 +31,7 @@ export default class IntroPostJob extends Component {
                                     Continue
                                 </Button>
                             </Button.Group>
-
-
                         </div>
-
                     </div>
                 </div>
             </div>
