@@ -1,24 +1,23 @@
 import React, { Component } from "react";
-import { Form, Upload, Icon, message, Button } from "antd";
+import { Upload, Icon, message, Button } from "antd";
 
 const Dragger = Upload.Dragger;
-const FormItem = Form.Item;
 
 const props = {
-    name: "file",
+    name: 'file',
     multiple: true,
-    action: "//jsonplaceholder.typicode.com/posts/",
+    action: '//jsonplaceholder.typicode.com/posts/',
     onChange(info) {
         const status = info.file.status;
-        if (status !== "uploading") {
+        if (status !== 'uploading') {
             console.log(info.file, info.fileList);
         }
-        if (status === "done") {
+        if (status === 'done') {
             message.success(`${info.file.name} file uploaded successfully.`);
-        } else if (status === "error") {
+        } else if (status === 'error') {
             message.error(`${info.file.name} file upload failed.`);
         }
-    }
+    },
 };
 
 class UploadImages extends Component {
@@ -28,6 +27,12 @@ class UploadImages extends Component {
 
     state = {
         size: 'large',
+        fileList: [{
+            uid: '-1',
+            name: 'xxx.png',
+            status: 'done',
+            url: 'http://www.baidu.com/xxx.png',
+        }],
     };
     continue = (e) => {
         e.preventDefault()
@@ -37,9 +42,10 @@ class UploadImages extends Component {
         e.preventDefault()
         this.props.prevStep()
     }
+
     render() {
-        const { getFieldDecorator } = this.props.form;
-        const { handleChange, attachments } = this.props;
+
+        const { handleChangeAttachments, attachments } = this.props;
         const size = this.state.size;
         return (
             <div>
@@ -51,29 +57,20 @@ class UploadImages extends Component {
                         </div>
                     </div>
                 </div>
-                <FormItem>
-                    {getFieldDecorator("picture", {
-                        rules: [
-                            {
-                                required: true,
-                                message: "Please upload picture!"
-                            }
-                        ]
-                    })(
-                        <Dragger {...props} id={attachments} value={attachments} onChange={handleChange('attachments')}>
-                            <p className="ant-upload-drag-icon">
-                                <Icon type="inbox" />
-                            </p>
-                            <p className="ant-upload-text">
-                                Click or drag file to this area to upload
+
+                <Dragger {...props} id={attachments} value={attachments} onChange={handleChangeAttachments('attachments')}>
+                    <p className="ant-upload-drag-icon">
+                        <Icon type="inbox" />
+                    </p>
+                    <p className="ant-upload-text">
+                        Click or drag file to this area to upload
               </p>
-                            <p className="ant-upload-hint">
-                                Support for a single or bulk upload. Strictly prohibit from
-                                uploading company data or other band files
+                    <p className="ant-upload-hint">
+                        Support for a single or bulk upload. Strictly prohibit from
+                        uploading company data or other band files
               </p>
-                        </Dragger>
-                    )}
-                </FormItem>
+                </Dragger>
+
                 <div className="row">
                     <div className="mx-auto">
                         <Button.Group size={size}>
@@ -91,6 +88,4 @@ class UploadImages extends Component {
     }
 }
 
-const ImagesForm = Form.create({})(UploadImages);
-
-export default ImagesForm;
+export default UploadImages;

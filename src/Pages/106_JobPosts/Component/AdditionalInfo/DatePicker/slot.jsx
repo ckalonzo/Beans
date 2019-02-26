@@ -7,7 +7,7 @@ import AvaliableTime from "../DatePicker/AvaliableTime";
 class AvaliableTimeDate extends Component {
 
     render() {
-        const { date, time } = this.props;
+        const { date, time, values } = this.props;
         return (
             <div>
                 <div className="className container">
@@ -17,6 +17,7 @@ class AvaliableTimeDate extends Component {
                             <CustDatePicker
                                 handleChangeDatePicker={this.props.handleChangeDatePicker}
                                 date={date}
+                                values={values}
                             />
                         </div>
                         <div className="col-6 text-center mb-5">
@@ -24,6 +25,7 @@ class AvaliableTimeDate extends Component {
                             <AvaliableTime
                                 handleChangeTimePicker={this.props.handleChangeTimePicker}
                                 time={time}
+                                values={values}
 
                             />
                         </div>

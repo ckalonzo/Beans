@@ -30,11 +30,16 @@ export default class AdditionalInfo extends Component {
     }
 
     render() {
-        const { address, city, statee, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.props;
-        const values = { address, city, statee, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
+        const { values, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.props;
+
         const size = this.state.size;
         return (
-            <div className="className container mt-5">
+            <div className="className container ">
+                <div className="row">
+                    <div className="col-12   text-center mb-2 mt-3">
+                        <h1>Please Complete the Information below</h1>
+                    </div>
+                </div>
                 <div className="row">
                     <div className="col-12">
                         <Collapse accordion>
@@ -44,7 +49,7 @@ export default class AdditionalInfo extends Component {
                                     values={values}
                                     address={address}
                                     city={city}
-                                    statee={statee}
+                                    state={state}
                                     zipCode={zipCode}
                                 />
                             </Panel>
@@ -83,11 +88,13 @@ export default class AdditionalInfo extends Component {
                                 <TypeOfTruck
                                     handleChange={this.props.handleChange}
                                     values={values}
+
                                 />
                             </Panel>
                             <Panel header="Additional Information you would like to add " key="7">
                                 <SpecialInstructions
                                     handleChange={this.props.handleChange}
+                                    specialInstructions={specialInstructions}
                                     values={values}
                                 />
                             </Panel>

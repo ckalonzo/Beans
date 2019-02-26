@@ -17,11 +17,11 @@ export default class CustDatePicker extends Component {
 
 
     render() {
-        const { handleChangeDatePicker, date } = this.props;
+        const { handleChangeDatePicker, date, values } = this.props;
         return (
             <React.Fragment>
                 <InputGroup size="large">
-                    <DatePicker onChange={handleChangeDatePicker('date')} id={date} size="large" />
+                    <DatePicker onChange={handleChangeDatePicker('date')} defaultvalue={values.date} id={date} size="large" />
                 </InputGroup>
             </React.Fragment>
         )

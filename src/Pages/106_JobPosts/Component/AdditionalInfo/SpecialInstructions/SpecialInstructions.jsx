@@ -20,20 +20,19 @@ export default class SpecialInstructions extends Component {
 
 
     render() {
-        const { handleChange } = this.props;
+        const { handleChange, specialInstructions, values } = this.props;
+        console.log(handleChange);
         return (
 
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
-                        <InputGroup className="d-inline-flex  mx-auto" onChange={handleChange} size="large">
-                            <TextArea placeholder="Autosize height with minimum and maximum number of lines" autosize={{ minRows: 4, maxRows: 10 }} />
+                        <InputGroup className="d-inline-flex  mx-auto" size="large">
+                            <TextArea placeholder="Autosize height with minimum and maximum number of lines" defaultvalue={values.specialInstructions} id={specialInstructions} onChange={handleChange('specialInstructions')} autosize={{ minRows: 4, maxRows: 10 }} />
 
                             );
                         </InputGroup>
                     </div>
-                    <Button onClick={this.continue}> Continue </Button>
-                    <Button onClick={this.back}> Back</Button>
                 </div>
 
             </div>

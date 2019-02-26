@@ -9,14 +9,14 @@ const InputGroup = Input.Group;
 export default class FlightOfStairs extends Component {
 
     render() {
-        const { handleChange, flightOfStairs } = this.props;
+        const { handleChange, flightOfStairs, values } = this.props;
         return (
 
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
                         <InputGroup className="d-inline-flex  mx-auto" size="large">
-                            <RadioGroup className="mx-auto" id={flightOfStairs} onChange={handleChange('flightOfStairs')} >
+                            <RadioGroup className="mx-auto" defaultvalue={values.flightOfStairs} id={flightOfStairs} onChange={handleChange('flightOfStairs')} >
                                 <Radio value="0">0</Radio>
                                 <Radio value="1">1</Radio>
                                 <Radio value="2">2</Radio>

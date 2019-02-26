@@ -12,8 +12,7 @@ export default class LocationPage extends Component {
     }
 
     render() {
-        const { address, city, statee, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.props;
-        const values = { address, city, statee, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
+        const { values, address, city, state, zipCode } = this.props;
         return (
             <React.Fragment>
                 <div className="className container">
@@ -43,7 +42,7 @@ export default class LocationPage extends Component {
                             <Statee
                                 handleChange={this.props.handleChange}
                                 values={values}
-                                statee={statee}
+                                state={state}
                             />
                         </div>
                         <div className="col-4 text-center mb-5">
@@ -51,7 +50,7 @@ export default class LocationPage extends Component {
                             <ZipCode
                                 handleChange={this.props.handleChange}
                                 values={values}
-                                zipCode={ZipCode}
+                                zipCode={zipCode}
                             />
                         </div>
                     </div>

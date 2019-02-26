@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { CreatePost } from '../../Redux/Store/actions/JobPostActions';
 import "antd/dist/antd.css";
 import "../Css/PostJob.css";
 import Budget from "../Component/Budget";
@@ -6,9 +8,10 @@ import AdditionalInfo from "../Component/AdditionalInfo";
 import IntroPostJob from "../Component/IntroPostJob";
 import TypeOfJob from "../Component/TypeOfJob";
 import UploadImages from "../Component/UploadImages";
-import Third from "./Third";
-import { Steps, Button, message } from 'antd';
-import moment from 'moment'
+import Confirm from "./Confirm";
+import { Steps } from 'antd';
+import Success from "./Success";
+
 const Step = Steps.Step;
 
 
@@ -16,7 +19,7 @@ const Step = Steps.Step;
 
 
 
-export default class MainForm extends Component {
+class MainForm extends Component {
     constructor(props) {
         super(props);
 
@@ -37,9 +40,10 @@ export default class MainForm extends Component {
             truckLoads: "",
             typeOfTruck: "",
             specialInstructions: "",
+            budget: "",
+
         };
         this.handleChange = this.handleChange.bind(this);
-        this.handleChangeService = this.handleChangeService.bind(this);
         this.handleChangeAttachments = this.handleChangeAttachments.bind(this);
 
     }
@@ -61,27 +65,15 @@ export default class MainForm extends Component {
 
 
     // Handle fields change
-    handleChangeService(e) {
+    handleChange = input => e => {
 
         this.setState({
-            service: e.target.value
+            [input]: e.target.value
 
         });
     }
+    handleChangeAttachments() {
 
-    handleChange = id => e => {
-
-        this.setState({
-            [id]: e.target.value
-
-        });
-    }
-    handleChangeAttachments(e) {
-
-        this.setState({
-            attachments: e.target.value
-
-        });
     }
 
     handleChangeDatePicker = time => timeString => {
@@ -95,21 +87,15 @@ export default class MainForm extends Component {
     handleChangeTimePicker = date => dateString => {
         console.log(date, dateString);
     }
-    next() {
-        const current = this.state.current + 1;
-        this.setState({ current });
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.CreatePost(this.state)
     }
-
-    prev() {
-        const current = this.state.current - 1;
-        this.setState({ current });
-    }
-
     render() {
         console.log(this.props);
         const { current } = this.state;
-        const { service, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.state;
-        const values = { service, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
+        const { service, email, budget, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.state;
+        const values = { service, budget, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
         let steps = [
             {
                 title: "Introduction",
@@ -122,7 +108,7 @@ export default class MainForm extends Component {
                 content: <TypeOfJob
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
-                    handleChangeService={this.handleChangeService}
+                    handleChange={this.handleChange}
                     values={values}
                 />
             },
@@ -130,7 +116,7 @@ export default class MainForm extends Component {
                 title: "Upload Image",
                 content: <UploadImages nextStep={this.nextStep}
                     prevStep={this.prevStep}
-                    handleChange={this.handleChange}
+                    handleChangeAttachments={this.handleChangeAttachments}
                     values={values}
                     attachments={attachments} />
             },
@@ -139,7 +125,7 @@ export default class MainForm extends Component {
                 content: <AdditionalInfo
                     form={this.props.form}
                     nextStep={this.nextStep}
-                    prevStep={this.prev}
+                    prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     values={values}
                     address={address}
@@ -152,23 +138,28 @@ export default class MainForm extends Component {
                 />
             },
             {
-                title: "Second",
+                title: "Budget",
                 content: <Budget
-                    form={this.props.form}
                     nextStep={this.nextStep}
-                    prevStep={this.prev}
+                    prevStep={this.prevStep}
                     handleChange={this.handleChange}
+                    budget={budget}
                     values={values}
+
                 />
             },
             {
-                title: "Last",
-                content: < Third
-                    form={this.props.form}
+                title: "Confirm",
+                content: < Confirm
                     nextStep={this.nextStep}
-                    handleChange={this.handleChange}
+                    prevStep={this.prevStep}
                     values={values}
+
                 />
+            },
+            {
+                title: "Success",
+                content: < Success />
             }
         ];
         return (
@@ -180,91 +171,30 @@ export default class MainForm extends Component {
                         </div>
 
                     </div>
-                </div>
-                <Steps current={current}>
-                    {steps.map(item => <Step key={item.title} title={item.title} />)}
-                </Steps>
-                {steps.map(({ title, content }, i) => (
-                    <div
-                        key={title}
-                        className={i === this.state.current ? "foo fade-in" : "foo"}
-                    >
-                        {content}
-                    </div>
-                ))}
-                <div className="row">
-                    <div className="mx-auto mb-5">
-                        <div className="steps-action">
 
-                            {this.state.current === steps.length - 1 && (
-                                <Button
-                                    type="primary"
-                                    onClick={() => message.success("Processing complete!")}
-                                >
-                                    Done
-            </Button>
-                            )}
-
+                    <Steps current={current}>
+                        {steps.map(item => <Step key={item.title} title={item.title} />)}
+                    </Steps>
+                    {steps.map(({ title, content }, i) => (
+                        <div
+                            key={title}
+                            className={i === this.state.current ? "foo fade-in" : "foo"}
+                        >
+                            {content}
                         </div>
-                    </div>
-                </div>
+                    ))}
 
+
+                </div>
             </div>
         );
-        // switch (current) {
-
-        //     case 1:
-        //         return (<IntroPostJob
-        //             nextStep={this.nextStep}
-        //         />)
-        //     case 2:
-        //         return (<TypeOfJob
-
-        //             nextStep={this.nextStep}
-        //             prevStep={this.prevStep}
-        //             handleChangeService={this.handleChangeService}
-        //             values={values}
-        //         />)
-        //     case 3:
-        //         return (<UploadImages
-        //             nextStep={this.nextStep}
-        //             prevStep={this.prevStep}
-        //             handleChange={this.handleChange}
-        //             values={values}
-        //             attachments={attachments}
-        //         />)
-        //     case 4:
-        //         return (<AdditionalInfo
-        //             form={this.props.form}
-        //             nextStep={this.nextStep}
-        //             prevStep={this.prev}
-        //             handleChange={this.handleChange}
-        //             values={values}
-        //             address={address}
-        //             city={city}
-        //             zipCode={zipCode}
-        //             largeItems={largeItems}
-        //             handleChangeDatePicker={this.handleChangeDatePicker}
-        //             handleChangeTimePicker={this.handleChangeTimePicker}
-
-        //         />)
-        //     case 5:
-        //         return (<Budget
-        //             form={this.props.form}
-        //             nextStep={this.nextStep}
-        //             prevStep={this.prev}
-        //             handleChange={this.handleChange}
-        //             values={values}
-        //         />)
-        //     case 6:
-        //         return (< Third
-        //             form={this.props.form}
-        //             nextStep={this.nextStep}
-        //             handleChange={this.handleChange}
-        //             values={values}
-        //         />)
-
-        // }
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        CreatePost: (jobs) => dispatch(CreatePost(jobs))
     }
 }
 
+
+export default connect(null, mapDispatchToProps)(MainForm)

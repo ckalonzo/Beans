@@ -8,13 +8,13 @@ const Option = Select.Option;
 export default class statee extends Component {
 
     render() {
-        const { handleChange, statee, values } = this.props;
+        const { handleChange, state, values } = this.props;
         return (
             <div>
 
                 <InputGroup size="large">
 
-                    <select defaultValue={values.statee} onChange={handleChange('statee')} id={statee}>
+                    <select defaultValue={values.state} onChange={handleChange('state')} id={state}>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AZ">AZ</option>

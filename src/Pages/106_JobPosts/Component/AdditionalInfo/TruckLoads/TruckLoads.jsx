@@ -12,14 +12,14 @@ export default class TruckLoads extends Component {
     }
 
     render() {
-        const { handleChange } = this.props;
+        const { handleChange, values, truckLoads } = this.props;
         return (
 
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
                         <InputGroup className="d-inline-flex  mx-auto" size="large">
-                            <RadioGroup className="mx-auto" onChange={handleChange}>
+                            <RadioGroup className="mx-auto" defaultvalue={values.truckLoads} id={truckLoads} onChange={handleChange('truckLoads')}>
                                 <Radio value="0">0</Radio>
                                 <Radio value="1">1</Radio>
                                 <Radio value="2">2</Radio>

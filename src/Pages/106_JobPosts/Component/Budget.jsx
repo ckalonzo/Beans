@@ -4,6 +4,9 @@ import MoneyValue from './MoneyValue';
 const Panel = Collapse.Panel;
 
 export default class Budget extends Component {
+    constructor(props) {
+        super(props);
+    }
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
@@ -17,13 +20,17 @@ export default class Budget extends Component {
     };
     render() {
         const size = this.state.size;
+        const { handleChange, budget } = this.props;
         return (
             <div className="className container mt-5">
                 <div className="row">
                     <div className="col-12">
                         <Collapse accordion>
                             <Panel header="How much you willing to spend to get the job done?" key="1">
-                                <MoneyValue />
+                                <MoneyValue
+                                    handleChange={handleChange}
+                                    budget={budget}
+                                />
                             </Panel>
                         </Collapse>,
                                 </div>

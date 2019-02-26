@@ -8,6 +8,10 @@ const initState = {
 }
 
 const JobPostReducer = (state = initState, action) => {
+    switch (action.type) {
+        case 'CREATE_POST':
+            console.log("post created", action.jobs)
+    }
     return state
 
 }

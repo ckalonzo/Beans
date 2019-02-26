@@ -8,11 +8,11 @@ const InputGroup = Input.Group;
 export default class ZipCode extends Component {
 
     render() {
-        const { handleChange, zipCode } = this.props;
+        const { handleChange, zipCode, values } = this.props;
         return (
             <React.Fragment>
                 <InputGroup className="mx-auto" size="large">
-                    <Input style={{ width: '50%' }} onChange={handleChange('zipCode')} id={zipCode} placeholder="ZipCode" />
+                    <Input style={{ width: '50%' }} defaultvalue={values.zipCode} onChange={handleChange('zipCode')} id={zipCode} placeholder="ZipCode" />
                 </InputGroup>
             </React.Fragment>
         )

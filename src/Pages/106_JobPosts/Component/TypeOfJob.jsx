@@ -28,7 +28,7 @@ export default class TypeOfJob extends Component {
     }
 
     render() {
-        const { values, handleChangeService } = this.props;
+        const { values, handleChange } = this.props;
         const size = this.state.size;
         return (
             <React.Fragment>
@@ -43,7 +43,7 @@ export default class TypeOfJob extends Component {
                     <div className="row">
                         <div className="col-6  offset-3 text-center mb-5">
                             <React.Fragment>
-                                <select defaultvalue={values.service} value={this.props.service} style={{ width: 300 }} onChange={handleChangeService}>
+                                <select defaultvalue={values.service} style={{ width: 300 }} onChange={handleChange('service')}>
                                     <option value="Junk Removal">Junk Removal</option>
                                     <option value="Cleaner Service">Cleaner Service</option>
                                 </select>
