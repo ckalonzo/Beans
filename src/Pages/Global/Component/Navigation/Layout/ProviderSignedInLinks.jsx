@@ -11,7 +11,7 @@ export default class ProviderSignedInLinks extends Component {
                 <div className="navbar-collapse collapse" id="collapsingNavbar">
                     <ul className="navbar-nav mx-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link moveline" to="../../../../108_Browse/ProjectList">Browse</NavLink >
+                            <NavLink className="nav-link moveline" to="../../../../108_Browse/ProjectDashboard">Browse</NavLink >
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link moveline" to="/103_Membership/Membership">Profile</NavLink >

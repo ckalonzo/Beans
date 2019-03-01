@@ -3,6 +3,8 @@ import Activities from './Component/Activities';
 import DashboardHero from "./Component/dashboardHero";
 import "./Css/dashboard.css";
 import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux'
 
 class Dashboard extends Component {
     render() {

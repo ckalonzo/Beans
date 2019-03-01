@@ -14,16 +14,17 @@ export default class Confirm extends Component {
         e.preventDefault()
         //process Form//
         this.props.nextStep()
+        this.props.handleSubmit(e)
     }
     back = (e) => {
         e.preventDefault()
         this.props.prevStep()
     }
-
+   
     render() {
         const { values: { service, budget, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } } = this.props;
-        console.log(this.props);
         const size = this.state.size;
+
 
         const data = [
             {
@@ -107,7 +108,7 @@ export default class Confirm extends Component {
                             <Button type="primary" onClick={this.back} className="float-left">
                                 <Icon type="left" />Back
                                 </Button>
-                            <Button type="primary" htmlType="submit" onClick={this.continue}>
+                            <Button type="primary" onClick={this.continue}>
                                 Confirm 
                             </Button>
                         </Button.Group>

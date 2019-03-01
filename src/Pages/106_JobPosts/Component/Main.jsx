@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { CreatePost } from '../../Redux/Store/actions/JobPostActions';
+import { CreateProject } from '../../Redux/Store/actions/JobPostActions';
 import "antd/dist/antd.css";
 import "../Css/PostJob.css";
 import Budget from "../Component/Budget";
@@ -45,6 +45,7 @@ class MainForm extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeAttachments = this.handleChangeAttachments.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
     //proceed to next step
@@ -89,8 +90,9 @@ class MainForm extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.CreatePost(this.state)
+        this.props.CreateProject(this.state);
     }
+
     render() {
         console.log(this.props);
         const { current } = this.state;
@@ -154,7 +156,7 @@ class MainForm extends Component {
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
                     values={values}
-
+                    handleSubmit={this.handleSubmit}
                 />
             },
             {
@@ -192,7 +194,7 @@ class MainForm extends Component {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        CreatePost: (jobs) => dispatch(CreatePost(jobs))
+        CreateProject: (project) => dispatch(CreateProject(project))
     }
 }
 

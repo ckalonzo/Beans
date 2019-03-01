@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import "../Css/dashboard.css";
 import { Tabs, Icon, Badge } from 'antd';
 import Notification from "./Notifications";
-import Main from "./Chat/Main/Main";
 import Currentbids from '../../105_Dashboard/Component/currentbids'
 
 const TabPane = Tabs.TabPane;
@@ -36,10 +35,10 @@ export default class dashboard extends Component {
                         tab={<span><Icon type="clock-circle" theme="twoTone" />Past Bids
                             <Badge count={this.state.pastBidsCounter} /></span>} key="2">Content of tab 2
                     </TabPane>
-                    <TabPane
+                    {/* <TabPane
                         tab={<span><Icon type="mail" theme="twoTone" />Messages
                             <Badge count={this.state.messagesCounter} /></span>} key="3"><Main />
-                    </TabPane>
+                    </TabPane> */}
                     <TabPane
                         tab={<span><Icon type="alert" theme="twoTone" />Notifications
                             <Badge count={this.state.notificationsCounter} /></span>} key="4"><Notification />
