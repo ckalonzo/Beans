@@ -5,7 +5,7 @@ import './Css/Hero.css';
 export default class Hero extends Component {
     render() {
         return (
-            <section>
+            <section className="tw-Homehero">
                 <div className="jumbotron herosection">
                     <div className="container">
                         <div className="mt-5">

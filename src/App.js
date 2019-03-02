@@ -13,6 +13,8 @@ import ProjectDashboard from "./Pages/108_Browse/ProjectDashboard";
 import ProjectDetails from "./Pages/108_Browse/Component/ProjectDetail";
 import WizardForm from "./Pages/106_JobPosts/pj";
 import ListJobs from "./Pages/106_JobPosts/Component/ListJobs";
+import ForgotPassword from './Pages/101_CustomerLogin/Component/ForgotPassword';
+
 
 class App extends Component {
 
@@ -51,6 +53,10 @@ class App extends Component {
             <Route
               path="/103_Membership/Membership"
               component={Membership}
+            />
+            <Route
+              path="/101_CustomerLogin/Component/ForgotPassword"
+              component={ForgotPassword}
             />
             <Route
               path="/102_ContractorLogin/ContractorLogin"

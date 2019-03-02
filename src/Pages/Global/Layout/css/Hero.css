@@ -1,24 +1,42 @@
+@media (min-width: 320px){
+    .herosection {
+        background-image: url("../../../100_Home/Img/Hero.png");
+        background-repeat: no-repeat;
+        background-size: cover; 
+        height: 300px;
+        background-position:bottom;
+    }
+    .pj-btn{
+        background-color: #dc3545;
+        border-color: #dc3545;
+        border-radius:13px;
+    }
+    .hero-title{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 23px;
+        color: #ffffff;
+    }
+}
 
-.herosection{
-    background-image: url("../../../100_Home/Img/Hero.png");
-    background-repeat: no-repeat;
-    background-size: cover; 
-    height: 515px;
-    background-position:bottom;
-    
-}
-.pj-btn{
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius:13px;
-}
-.hero-title{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 60px;
-    color: #ffffff;
-}
+
+
+
 .hero-copy{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
     color: #ffffff;
+}
+@media (min-width: 1200px){
+    .herosection {
+        background-image: url("../../../100_Home/Img/Hero.png");
+        background-repeat: no-repeat;
+        background-size: cover; 
+        height: 515px;
+        background-position:bottom;
+    }
+    .hero-title{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 60px;
+        color: #ffffff;
+    }
 }

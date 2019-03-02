@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
 import ProviderSignedInLinks from "./ProviderSignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
+import { connect } from 'react-redux'
 
-export default class Navbar extends Component {
+class Navbar extends Component {
     render() {
         return (
             <div>
@@ -24,3 +25,12 @@ export default class Navbar extends Component {
     }
 
 }
+
+
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return {
+        auth: state.firebase.auth
+    }
+}
+export default connect(mapStateToProps)(Navbar)

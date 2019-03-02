@@ -22,7 +22,7 @@ export default class ProviderLogin extends Component {
 
     render() {
         return (
-            <section className="login-img-cus">
+            <section className="providerimg">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
