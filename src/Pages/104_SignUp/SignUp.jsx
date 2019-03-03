@@ -1,14 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { signUp } from '../Redux/Store/actions/authActions'
 
 
-
-export default class SignUp extends Component {
+class SignUp extends Component {
     state = {
         firstName: '',
         lastName: '',
         email: '',
         password: '',
-        zipcode: ''
+        zipCode: ''
     }
 
     handleChange = (e) => {
@@ -18,11 +20,13 @@ export default class SignUp extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
+        this.props.signUp(this.state);
     }
 
 
     render() {
+        const { auth, authError } = this.props;
+        if (auth.uid) return <Redirect to='/105_Dashboard/Dashboard' />
         return (
             <section className="signup-img-cus">
                 <div className="container">
@@ -84,6 +88,9 @@ export default class SignUp extends Component {
                                                         </div>
 
                                                         <button type="submit" className="btn btn-primary btn-block mt-5 mb-3">Sign Up</button>
+                                                        <div className="center red-text">
+                                                            {authError ? <p>{authError}</p> : null}
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>
@@ -100,3 +107,17 @@ export default class SignUp extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth,
+        authError: state.auth.authError
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signUp: (creds) => dispatch(signUp(creds))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)

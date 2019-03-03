@@ -11,8 +11,8 @@ import SignUp from './Pages/104_SignUp/SignUp';
 import Dashboard from "./Pages/105_Dashboard/Dashboard";
 import ProjectDashboard from "./Pages/108_Browse/ProjectDashboard";
 import ProjectDetails from "./Pages/108_Browse/Component/ProjectDetail";
-import WizardForm from "./Pages/106_JobPosts/pj";
-import ListJobs from "./Pages/106_JobPosts/Component/ListJobs";
+import WizardForm from "./Pages/106_JobPosts/PostJob";
+
 import ForgotPassword from './Pages/101_CustomerLogin/Component/ForgotPassword';
 
 
@@ -26,10 +26,6 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
-            <Route
-              path="/106_JobPosts/Component/ListJobs"
-              component={ListJobs}
-            />
             <Route
               path="/106_JobPosts/PostJob"
               component={WizardForm}

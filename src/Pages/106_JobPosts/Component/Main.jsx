@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom'
 import { CreateProject } from '../../Redux/Store/actions/JobPostActions';
 import "antd/dist/antd.css";
 import "../Css/PostJob.css";
@@ -11,6 +12,7 @@ import UploadImages from "../Component/UploadImages";
 import Confirm from "./Confirm";
 import { Steps } from 'antd';
 import Success from "./Success";
+
 
 const Step = Steps.Step;
 
@@ -96,8 +98,11 @@ class MainForm extends Component {
     render() {
         console.log(this.props);
         const { current } = this.state;
+        const { auth } = this.props;
+        if (!auth.uid) return <Redirect to='/101_CustomerLogin/CustomerLogin' />
         const { service, email, budget, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.state;
         const values = { service, budget, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
+
         let steps = [
             {
                 title: "Introduction",
@@ -192,6 +197,11 @@ class MainForm extends Component {
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
 const mapDispatchToProps = (dispatch) => {
     return {
         CreateProject: (project) => dispatch(CreateProject(project))
@@ -199,4 +209,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(null, mapDispatchToProps)(MainForm)
+export default connect(mapStateToProps, mapDispatchToProps)(MainForm)

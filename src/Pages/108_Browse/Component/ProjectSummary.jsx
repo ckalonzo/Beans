@@ -15,7 +15,7 @@ const ProjectSummary = ({ jobs }) => {
                 <p className="text-secondary">{jobs.service}</p>
                 <p className="text-secondary">tIMER</p>
                 <p className="text-secondary">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p className="text-secondary"><small className="text-muted">posted By: {jobs.name}</small></p>
+                <p className="text-secondary"><small className="text-muted">posted By: {jobs.firstName}  {jobs.lastName}</small></p>
                 <p className="text-secondary"><small className="text-muted">Avalibility</small></p>
                 <a href="#" className="btn btn-secondary float-left">More Details</a>
                 <a href="#" className="btn btn-success float-right">Bid Now</a>

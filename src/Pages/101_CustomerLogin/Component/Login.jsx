@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../Css/Login.css'
 import { connect } from 'react-redux';
 import { signIn } from '../../Redux/Store/actions/authActions'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -22,7 +23,8 @@ class Login extends Component {
 
 
     render() {
-        const { authError } = this.props;
+        const { authError, auth } = this.props;
+        if (auth.uid) return <Redirect to='/105_Dashboard/Dashboard' />
         return (
             <section className="customer-img">
                 <div className="container">
@@ -109,9 +111,12 @@ class Login extends Component {
     }
 }
 
+
+
 const mapStateToProps = (state) => {
     return {
-        authError: state.auth.authError
+        authError: state.auth.authError,
+        auth: state.firebase.auth
     }
 }
 

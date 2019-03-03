@@ -3,10 +3,12 @@ import "../Css/dashboard.css";
 import { Tabs, Icon, Badge } from 'antd';
 import Notification from "./Notifications";
 import Currentbids from '../../105_Dashboard/Component/currentbids'
-
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
 const TabPane = Tabs.TabPane;
 
-export default class dashboard extends Component {
+class Activities extends Component {
     state =
         {
             pastBidsCounter: 5,
@@ -20,7 +22,7 @@ export default class dashboard extends Component {
 
     render() {
         console.log(`activity${this.props}`);
-
+        const { notifications } = this.props;
         const { projects } = this.props;
         return (
             <div className="col-12">
@@ -41,7 +43,7 @@ export default class dashboard extends Component {
                     </TabPane> */}
                     <TabPane
                         tab={<span><Icon type="alert" theme="twoTone" />Notifications
-                            <Badge count={this.state.notificationsCounter} /></span>} key="4"><Notification />
+                            <Badge count={this.state.notificationsCounter} /></span>} key="4"><Notification notifications={notifications} />
                     </TabPane>
                     <TabPane
                         tab={<span><Icon type="crown" theme="twoTone" />Active Jobs
@@ -56,3 +58,19 @@ export default class dashboard extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return {
+        projects: state.firestore.ordered.projects,
+        notifications: state.firestore.ordered.notifications
+    }
+}
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        { collection: 'projects' },
+        { collection: 'notifications', limit: 3 }
+    ])
+)(Activities)

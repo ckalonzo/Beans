@@ -2,11 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
-import { Spin, Alert } from 'antd';
+import { Spin } from 'antd';
+import { Redirect } from 'react-router-dom'
 
 const ProjectDetails = (props) => {
   //getting project id
-  const { project } = props;
+  const { project, auth } = props;
+  if (!auth.uid) return <Redirect to='/101_CustomerLogin/CustomerLogin' />
   if (project) {
     return (
       <React.Fragment>
@@ -60,7 +62,8 @@ const mapStateToProps = (state, componentProps) => {
   const projects = state.firestore.data.projects;
   const project = projects ? projects[id] : null
   return {
-    project: project
+    project: project,
+    auth: state.firebase.auth
   }
 }
 

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import '../Css/ProviderLogin.css'
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux';
 
-export default class ProviderLogin extends Component {
+class ProviderLogin extends Component {
 
     state = {
         email: '',
@@ -21,6 +23,8 @@ export default class ProviderLogin extends Component {
     }
 
     render() {
+        const { auth } = this.props;
+        if (auth.uid) return <Redirect to='/105_Dashboard/Dashboard' />
         return (
             <section className="providerimg">
                 <div className="container">
@@ -96,3 +100,12 @@ export default class ProviderLogin extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps)(ProviderLogin)
