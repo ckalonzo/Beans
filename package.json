@@ -7,6 +7,8 @@
     "antd": "^3.12.3",
     "bootstrap": "^4.2.1",
     "firebase": "^5.7.3",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "react": "^16.6.3",
@@ -25,7 +27,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start gulp",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

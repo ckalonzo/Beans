@@ -11,7 +11,7 @@ const Navbar = () => {
                         <a className="nav-link moveline dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Customer</a>
                         <div className="dropdown-menu" aria-labelledby="dropdown08">
                             <a className="dropdown-item moveline" href="/104_SignUp/SignUp">Sign Up</a>
-                            <a className="dropdown-item moveline" href="/104_CustomerLogin/CustomerLogin">LogIn</a>
+                            <a className="dropdown-item moveline" href="/101_CustomerLogin/CustomerLogin">LogIn</a>
 
                         </div>
                     </li>
