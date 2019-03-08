@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../css/Navbar.css';
+import '../css/Navbar.scss';
 import { connect } from 'react-redux'
 import { signOut } from '../../../../Redux/Store/actions/authActions'
 
@@ -8,9 +8,8 @@ import { signOut } from '../../../../Redux/Store/actions/authActions'
 const ProviderSignedInLinks = (props) => {
 
     return (
-        <div>
-            <div className="navbar-collapse collapse" id="collapsingNavbar">
-                <ul className="navbar-nav mx-auto">
+        <React.Fragment>
+             <ul class="navbar-nav w-100 justify-content-center nav-section">
                     <li className="nav-item">
                         <NavLink className="nav-link moveline" to="../../../../108_Browse/ProjectDashboard">Browse</NavLink >
                     </li>
@@ -23,20 +22,20 @@ const ProviderSignedInLinks = (props) => {
                     <li className="nav-item">
                         <NavLink className="nav-link moveline" to="/103_Membership/Membership">Membership</NavLink >
                     </li>
-                    <li className="nav-item">
+                    
+                </ul>
+                <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                <li className="nav-item moveline">
                         <a onClick={props.signOut}>Log Out</a>
                     </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <NavLink to='/' className="btn btn-floating pink lighten-1">
+                <li>
+                        <NavLink to='/' className="btn nav-avatar">
                             {props.profile.initials}
                         </NavLink>
                     </li>
-                </ul>
-
-            </div>
-        </div>
+                    </ul>
+        </React.Fragment>
+            
     );
 }
 

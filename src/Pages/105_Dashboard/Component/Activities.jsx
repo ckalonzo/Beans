@@ -21,6 +21,7 @@ class Activities extends Component {
 
 
     render() {
+        console.log(this,"======>")
         console.log(`activity${this.props}`);
         const { notifications } = this.props;
         const { projects } = this.props;

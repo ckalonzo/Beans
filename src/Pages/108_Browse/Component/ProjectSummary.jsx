@@ -2,7 +2,7 @@ import React from 'react';
 import ProjectDetial from './ProjectDetail'
 const ProjectSummary = ({ jobs }) => {
     return (
-        <div className="card">
+        <div className="card mb-2">
             <div className="card-body">
                 <div className="row">
                     <div className="col-12">

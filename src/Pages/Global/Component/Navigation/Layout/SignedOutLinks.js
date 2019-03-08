@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import '../css/Navbar.css';
+import '../css/Navbar.scss';
 
 
 const Navbar = () => {
     return (
-        <div>
-            <div className="navbar-collapse collapse" id="collapsingNavbar">
-                <ul className="navbar-nav mx-auto">
+        <React.Fragment>
+<ul class="navbar-nav w-100 justify-content-center nav-section">
                     <li className="nav-item dropdown">
                         <a className="nav-link moveline dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Customer</a>
                         <div className="dropdown-menu" aria-labelledby="dropdown08">
@@ -26,9 +25,8 @@ const Navbar = () => {
                         </div>
                     </li>
                 </ul>
-
-            </div>
-        </div>
+        </React.Fragment>
+            
     );
 }
 export default Navbar;
