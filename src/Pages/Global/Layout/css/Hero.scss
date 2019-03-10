@@ -1,0 +1,67 @@
+.tw-Homehero{
+    .herosection {
+        @media (min-width: 320px){
+            background-image: url("../../../100_Home/Img/Hero.png");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            height: 167px;
+            background-position:bottom;
+        }
+        @media (min-width: 375px) {
+            height: 217px;
+          }
+          @media (min-width: 576px) {
+            height: 269px;
+          }
+          @media (min-width: 768px) {
+            height: 364px;
+          }
+          @media (min-width: 992px) {
+            height: 472px;
+          }
+        @media (min-width: 1200px){
+            height: 515px;
+        }
+    
+    }
+    .hero-title{
+        @media (min-width: 320px){
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 23px;
+            color: #ffffff; 
+        }
+        @media (min-width: 375px) {
+            
+          }
+          @media (min-width: 576px) {
+            
+          }
+          @media (min-width: 768px) {
+          
+          }
+          @media (min-width: 992px) {
+            
+          }
+        @media (min-width: 1200px){
+            font-size: 60px;
+        }
+    }
+
+    .pj-btn{
+        @media (min-width: 320px){
+            background-color: #dc3545;
+            border-color: #dc3545;
+            border-radius:13px;
+        }
+        @media (min-width: 1200px){}
+    }
+    .hero-copy{
+        @media (min-width: 320px){
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 16px;
+        color: #ffffff;
+        }
+        @media (min-width: 1200px){}
+    }
+
+}

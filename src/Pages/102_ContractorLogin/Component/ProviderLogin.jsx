@@ -88,7 +88,7 @@ class ProviderLogin extends Component {
                                         </div>
 
                                     </div>
-                                    <div className="mt-5 dontHaveAnAccount">Dont have an Account? <a className="signUpLink">Sign Up Here</a></div>
+                                    <div className="mt-5 dontHaveAnAccount">Dont have an Account? <a href="#" className="signUpLink">Sign Up Here</a></div>
                                 </div>
                             </div>
 
