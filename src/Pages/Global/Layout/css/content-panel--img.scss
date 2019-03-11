@@ -1,0 +1,26 @@
+.wwo{
+    .img-panel{
+        background-image: url("../../../100_Home/Img/skyscape.png");
+        height: 400px;
+        background-repeat: no-repeat;
+        background-position:bottom;
+    }
+    .img-content-title{
+        font-family: 'Source Sans Pro', sans-serif;
+        text-align: center;
+        font-size: 50px;
+        text-transform: uppercase;
+        color:  #003366;
+        font-weight: 700;
+    
+    }
+    .img-content-sub-title{
+        text-align: center;
+        font-size: 18px;
+        color:  #003366;
+    }
+    .img-content-copy{
+        text-align: center;
+        color:  #003366;
+    }
+}

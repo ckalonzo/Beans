@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Css/Hiw.css';
+import './Css/Hiw.scss';
 
 export default class HowItWorks extends Component {
     render() {
@@ -27,7 +27,7 @@ export default class HowItWorks extends Component {
 
                     </div>
                     <div class="card-deck">
-                        <div className="col-lg-4 col-md-12 col-sm-12">
+                        <div className="col-md-4 col-sm-12">
                             <div class="card border-0 ovbg">
                                 <div className="remo"></div>
                                 <div class="card-img-top mx-auto step-1" alt="..."> </div>
@@ -37,7 +37,7 @@ export default class HowItWorks extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-4 col-md-12 col-sm-12">
+                        <div className="col-md-4 col-sm-12">
                             <div class="card border-0 ovbg">
                                 <div class="card-img-top mx-auto step-2" alt="..."> </div>
                                 <div class="card-body">
@@ -47,7 +47,7 @@ export default class HowItWorks extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-4 col-md-12 col-sm-12">
+                        <div className="col-md-4 col-sm-12">
                             <div class="card border-0 ovbg">
                                 <div class="card-img-top mx-auto step-3" alt="..."> </div>
                                 <div class="card-body">

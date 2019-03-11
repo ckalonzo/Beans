@@ -9,7 +9,7 @@ export default class Hero extends Component {
                 <div className="jumbotron herosection">
                     <div className="container">
                         <div className="row">
-                            <div className="col-xl-4 col-lg-5 col-md-5 col-sm-4">
+                            <div className="col-xl-10 col-lg-10 col-md-8 col-sm-7 offset-lg-1">
                                 <div className="mt-2">
                                     <h1 className="font-weight-bold hero-title">Trucked Away</h1>
                                     <div className=" font-weight-bold hero-copy">Your # 1 site for Home Tasks.</div>
