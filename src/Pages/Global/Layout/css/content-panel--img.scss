@@ -1,17 +1,54 @@
 .wwo{
     .img-panel{
-        background-image: url("../../../100_Home/Img/skyscape.png");
-        height: 400px;
-        background-repeat: no-repeat;
-        background-position:bottom;
+      
+        @media (min-width: 320px){
+            background-image: url("../../../100_Home/Img/skyscape.png");
+            height: 191px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        @media (min-width: 375px) {
+            height: 217px;
+           
+          }
+          @media (min-width: 576px) {
+            height: 325px;
+           
+          }
+          @media (min-width: 768px) {
+            height: 452px;
+          }
+          @media (min-width: 992px) {
+            height: 310px;
+            
+          }
+        @media (min-width: 1200px){
+            height: 350px;
+        }
+    }
+    .no--bullets{
+        list-style: none;
     }
     .img-content-title{
-        font-family: 'Source Sans Pro', sans-serif;
-        text-align: center;
-        font-size: 50px;
-        text-transform: uppercase;
-        color:  #003366;
-        font-weight: 700;
+        @media (min-width: 320px){
+            font-family: 'Source Sans Pro', sans-serif;
+            text-align: center;
+            font-size: 32px;
+            text-transform: uppercase;
+            color:  #003366;
+            font-weight: 700;
+        }
+        @media (min-width: 375px) {
+            font-size: 32px;
+           
+          }
+          @media (min-width: 576px) {
+            font-size: 50px;
+           
+          }
+        
+        
     
     }
     .img-content-sub-title{
