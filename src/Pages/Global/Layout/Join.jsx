@@ -8,7 +8,7 @@ export default class Join extends Component {
             <section>
                 <div className="fluid-container">
                     <div className="row no-gutters ">
-                        <div className="col-6 col-md-6 col-sm-12 panel join-panel">
+                        <div className="col-md-6 col-sm-12 panel join-panel">
                             <div className="mt-5">
                                 <div className="mx-auto join-title-outter">
                                     <h2 className="join-title">Reasons Why You Should Join</h2>
@@ -28,7 +28,7 @@ export default class Join extends Component {
                             </div>
 
                         </div>
-                        <div className="col-6 col-md-6 col-sm-12">
+                        <div className="col-md-6 col-sm-12">
                             <div className="img-join">
                             </div>
                         </div>
