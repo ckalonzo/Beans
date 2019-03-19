@@ -1,4 +1,6 @@
-.projectListbtn{
+.panel-list{
+  background-color: #F9F9F9;
+  .projectListbtn{
     background-image: linear-gradient(to right, RGB 18,70,118  rgb(18, 70, 77),rgb(225, 10, 30), rgb(225, 250, 0),  rgb(225, 250, 0),rgb(225, 10, 30), rgb(225, 10, 90), rgb(225, 10, 140));
   }
   .projectListbtn{
@@ -22,3 +24,5 @@
   .projectListbtn:hover{
     background-position: 100% 0;
   }
+}
+

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "../Css/dashboard.css";
+import "../Css/dashboard.scss";
 import { Tabs, Icon, Badge } from 'antd';
 import Notification from "./Notifications";
 import Currentbids from '../../105_Dashboard/Component/currentbids'

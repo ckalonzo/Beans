@@ -4,12 +4,13 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
+import './Css/Project.scss';
 class ProjectDashboard extends Component {
     render() {
         const { projects, auth } = this.props;
         if (!auth.uid) return <Redirect to='/102_ContractorLogin/ContractorLogin' />
         return (
-            <section>
+            <section className="panel-list">
                 <div className=" container">
                     <div className="row">
                         <div className="col-12">
