@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Activities from './Component/Activities';
 import DashboardHero from "./Component/dashboardHero";
-import "./Css/dashboard.css";
+import "./Css/dashboard.scss";
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -13,7 +13,7 @@ class Dashboard extends Component {
         if (!auth.uid) return <Redirect to='/101_CustomerLogin/CustomerLogin' />
 
         return (
-            <section>
+            <section className="customer-dashboard">
                 <div className="projectList container">
                     <div className="row mb-5">
                         <DashboardHero />

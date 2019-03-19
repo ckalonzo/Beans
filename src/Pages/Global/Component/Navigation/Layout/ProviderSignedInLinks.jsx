@@ -14,7 +14,7 @@ const ProviderSignedInLinks = (props) => {
                     <NavLink className="nav-link chg-text moveline" to="../../../../108_Browse/ProjectDashboard">Browse</NavLink >
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link chg-text moveline" to="/103_Membership/Membership">Profile</NavLink >
+                    <NavLink className="nav-link chg-text moveline" to="/105_Dashboard/Dashboard">Profile</NavLink >
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link chg-text moveline" to="/103_Membership/Membership">Notifications</NavLink >
