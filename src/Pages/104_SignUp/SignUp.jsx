@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../Redux/Store/actions/authActions'
-
+import './Css/customer-signup.scss';
 
 class SignUp extends Component {
     state = {
@@ -28,16 +28,22 @@ class SignUp extends Component {
         const { auth, authError } = this.props;
         if (auth.uid) return <Redirect to='/105_Dashboard/Dashboard' />
         return (
-            <section className="signup-img-cus">
-                <div className="container">
+            <section className="customer-signup ">
+                <div className="container ">
+
                     <div className="row">
                         <div className="col-lg-8 offset-3">
-                            <div className="container ">
-                                <div className="signup-panel mt-2">
+                            <div className=" ">
+                                <div className="signup-panel">
                                     <div className="row">
-                                        <div className="container mt-3 login-outline">
+                                        <div className="mt-3 login-outline">
                                             <div className="mx-auto login">
                                                 <div className="">
+                                                    <div className="row">
+                                                        <div className="col-6  mt-4 offset-3">
+                                                            <h2 className="title">Customer Sign Up</h2>
+                                                        </div>
+                                                    </div>
                                                     <form onSubmit={this.handleSubmit}>
                                                         <div class="form-group mt-4">
                                                             <label htmlFor="firstName">First Name</label>
@@ -87,7 +93,7 @@ class SignUp extends Component {
 
                                                         </div>
 
-                                                        <button type="submit" className="btn btn-primary btn-block mt-5 mb-3">Sign Up</button>
+                                                        <button type="submit" className="btn btn-primary signUp-btn btn-block mt-5 mb-3">Sign Up</button>
                                                         <div className="center red-text">
                                                             {authError ? <p>{authError}</p> : null}
                                                         </div>

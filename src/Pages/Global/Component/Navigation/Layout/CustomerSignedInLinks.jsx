@@ -27,7 +27,7 @@ export default class CustomerSignedInLinks extends Component {
                                 <li className="nav-item dropdown">
                                     <a className="nav-link moveline dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contractor</a>
                                     <div className="dropdown-menu" aria-labelledby="dropdown08">
-                                        <NavLink className="dropdown-item moveline" href="/SignUp">Sign Up</NavLink >
+                                        <NavLink className="dropdown-item moveline" href="/ContractorSignUp">Sign Up</NavLink >
                                         <NavLink className="dropdown-item moveline" href="/102_ContractorLogin/ContractorLogin">LogIn</NavLink >
                                     </div>
                                 </li>

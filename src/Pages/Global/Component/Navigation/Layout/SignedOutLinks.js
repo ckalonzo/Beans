@@ -20,7 +20,7 @@ const Navbar = () => {
                 <li className="nav-item dropdown">
                     <a className="nav-link  chg-text moveline dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contractor</a>
                     <div className="dropdown-menu rmv-border" aria-labelledby="dropdown09">
-                        <a className="dropdown-item chg-text moveline" href="/104_SignUp/SignUp">Sign Up</a>
+                        <a className="dropdown-item chg-text moveline" href="/104_SignUp/contractorSignUp">Sign Up</a>
                         <a className="dropdown-item chg-text moveline" href="/102_ContractorLogin/ContractorLogin">LogIn</a>
                     </div>
                 </li>

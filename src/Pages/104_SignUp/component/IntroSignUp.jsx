@@ -21,7 +21,7 @@ export default class IntroSignUp extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-6  offset-3 text-center mb-5 mt-5">
-                            <h1>Hi There! Im Mathrew.I'll get you started on posting your job. Lets get started!</h1>
+                            <h1>Hi There! Im Sasha. Lets get you signed up. Ready to start!</h1>
                         </div>
                     </div>
                     <div className="row">

@@ -8,6 +8,7 @@ import ContractorLogin from './Pages/102_ContractorLogin/ContractorLogin';
 import Membership from './Pages/103_Membership/Membership';
 import firebase from './Config/Firebase';
 import SignUp from './Pages/104_SignUp/SignUp';
+import ContractorSignUp from './Pages/104_SignUp/contractorSignUp';
 import Dashboard from "./Pages/105_Dashboard/Dashboard";
 import ProjectDashboard from "./Pages/108_Browse/ProjectDashboard";
 import ProjectDetails from "./Pages/108_Browse/Component/ProjectDetail";
@@ -41,6 +42,10 @@ class App extends Component {
             <Route
               path="/105_Dashboard/Dashboard"
               component={Dashboard}
+            />
+            <Route
+              path="/104_SignUp/contractorSignUp"
+              component={ContractorSignUp}
             />
             <Route
               path="/104_SignUp/SignUp"

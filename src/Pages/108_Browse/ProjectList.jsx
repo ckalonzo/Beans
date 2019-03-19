@@ -11,7 +11,7 @@ const ProjectList = ({ projects }) => {
                     <div className="col-4">
                     </div>
                     <div className="col-8">
-                    {projects && projects.map(jobs => {
+                        {projects && projects.map(jobs => {
                             return (
                                 <Link to={'/jobs/' + jobs.id}>
                                     <ProjectSummary jobs={jobs} key={jobs.id} />
@@ -22,12 +22,12 @@ const ProjectList = ({ projects }) => {
                         })}
                     </div>
 
-                       
 
-                    </div>
 
                 </div>
+
             </div>
+
         </section>
 
     )
