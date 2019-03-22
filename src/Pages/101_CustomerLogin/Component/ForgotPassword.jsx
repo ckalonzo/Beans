@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import '../Css/ResetPassword.css'
+import '../Css/ResetPassword.scss'
 
 class ForgotPassword extends Component {
     render() {
         return (
-            <section className="mt-5">
+            <section className="forgotPassword mt-5">
                 <div className="container">
-                    <div className="row mb-3">
-                        <div className="col-4 mx-auto">
+                <div className="row">
+                <div className="col-7 mx-auto">
+                <div className="row mb-3">
+                        <div className="col-12 col-xl-10 mx-auto">
                             <div className="inline-block">
                                 <div className="navbar-brand float-left">
                                     <h2 className="col-3 float-right ovr-title">Trucked Away</h2>
@@ -41,6 +43,9 @@ class ForgotPassword extends Component {
                             className="btn btn-primary btn-block mt-3 resetbtn">Reset Password
                                                         </button>
                     </form>
+                </div>
+                </div>
+                    
                 </div>
 
             </section>

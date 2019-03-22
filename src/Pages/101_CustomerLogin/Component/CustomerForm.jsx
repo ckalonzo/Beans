@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signIn } from '../../Redux/Store/actions/authActions'
 import { Redirect } from 'react-router-dom'
 
-class Login extends Component {
+class CustomerForm extends Component {
 
     state = {
         email: '',
@@ -24,7 +24,7 @@ class Login extends Component {
 
     render() {
         const { authError, auth } = this.props;
-        if (auth.uid) return <Redirect to='/105_Dashboard/Dashboard' />
+        if (auth.uid) return <Redirect to='/109_CustomerDashboard/CustomerDashboard' />
         return (
             <section className="customer-img">
                 <div className="container">
@@ -126,4 +126,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(CustomerForm)

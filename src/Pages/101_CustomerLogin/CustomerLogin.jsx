@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Login from "../101_CustomerLogin/Component/Login"
+import CustomerForm from "./Component/CustomerForm"
 
 
 class CustomerLogin extends Component {
     render() {
         return (
             <div>
-                <Login />
+                <CustomerForm/>
             </div>
 
         );

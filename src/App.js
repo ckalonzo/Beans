@@ -13,7 +13,7 @@ import Dashboard from "./Pages/105_Dashboard/Dashboard";
 import ProjectDashboard from "./Pages/108_Browse/ProjectDashboard";
 import ProjectDetails from "./Pages/108_Browse/Component/ProjectDetail";
 import WizardForm from "./Pages/106_JobPosts/PostJob";
-
+import CustomerDashboard from "./Pages/109_CustomerDashboard/CustomerDashboard";
 import ForgotPassword from './Pages/101_CustomerLogin/Component/ForgotPassword';
 
 
@@ -38,6 +38,10 @@ class App extends Component {
             <Route
               path="/108_Browse/ProjectDashboard"
               component={ProjectDashboard}
+            />
+            <Route
+              path="/109_CustomerDashboard/CustomerDashboard"
+              component={CustomerDashboard}
             />
             <Route
               path="/105_Dashboard/Dashboard"
