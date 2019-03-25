@@ -2,7 +2,7 @@
     width: 18rem;
 }
 .sp-sectioncolor{
-    background-color: #7e7e7e;
+    background-color: #efefef;
 }
 .one-b{
     background-color: red;
@@ -15,7 +15,7 @@ h3.card-subtitle{
 }
 .sb-title{
     text-align: center;
-    color:white;
+    color:#124676;
     font-size:30px;
     text-transform: uppercase;
     margin-top: 100px;
@@ -32,14 +32,15 @@ h3.card-subtitle{
   }
 
   #hover4 {
-    background: #28344a;
-    color: #000000;
+    background: #ffffff;
+    border: 2px solid #124676;
+    
   }
   
   #hover4:hover {
-    background: #3c485e;
-    text-shadow: 0 0 10px #000, 0 0 15px #000;
-    box-shadow: 0 0 10px #fff, 0 0 15px #fff;
+    background: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+    box-shadow: 0 0 10px #124676, 0 0 15px #124676;
   }
   
 
@@ -48,8 +49,8 @@ h3.card-subtitle{
     transition: background-color .5s linear;
   }
   h2.card-title{
-      color:#fff;
+      color:#124676;
   }
   .card-text{
-      color:#ffffff;
+      color:#124676;;
   }

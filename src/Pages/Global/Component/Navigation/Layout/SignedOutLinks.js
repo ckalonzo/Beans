@@ -1,5 +1,7 @@
 import React from 'react';
+import { Icon } from 'antd';
 import '../css/Navbar.scss';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -24,6 +26,7 @@ const Navbar = () => {
                         <a className="dropdown-item chg-text moveline" href="/102_ContractorLogin/ContractorLogin">LogIn</a>
                     </div>
                 </li>
+                <li><Link to="/103_Membership/component/cart"><Icon type="shopping" theme="twoTone" /></Link></li>
             </ul>
         </React.Fragment>
 

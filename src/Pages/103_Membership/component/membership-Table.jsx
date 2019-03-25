@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "../Css/Price-Table.css"
 
-export default class Prices extends Component {
+export default class MembershipTable extends Component {
     render() {
         return (
             <section className="sectioncolor mt-5" >

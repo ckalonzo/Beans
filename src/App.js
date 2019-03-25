@@ -15,7 +15,8 @@ import ProjectDetails from "./Pages/108_Browse/Component/ProjectDetail";
 import WizardForm from "./Pages/106_JobPosts/PostJob";
 import CustomerDashboard from "./Pages/109_CustomerDashboard/CustomerDashboard";
 import ForgotPassword from './Pages/101_CustomerLogin/Component/ForgotPassword';
-
+import Recipe from "./Pages/103_Membership/component/Recipe"
+import Cart from "./Pages/103_Membership/component/Cart"
 
 class App extends Component {
 
@@ -54,6 +55,14 @@ class App extends Component {
             <Route
               path="/104_SignUp/SignUp"
               component={SignUp}
+            />
+            <Route
+              path="/103_Membership/component/Recipe"
+              component={Recipe}
+            />
+            <Route
+              path="/103_Membership/component/cart"
+              component={Cart}
             />
             <Route
               path="/103_Membership/Membership"

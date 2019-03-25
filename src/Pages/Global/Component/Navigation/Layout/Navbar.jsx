@@ -9,22 +9,25 @@ const Navbar = (props) => {
     // display links if user is signed in or out
     const links = auth.uid ? <ProviderSignedInLinks profile={profile} /> : <SignedOutLinks />;
     return (
-    
-    <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center nav-section hover-underline-menu">
-    <div className="container">
-    <Link to="/" class="navbar-brand d-flex w-50 mr-auto"></Link>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-        {links}
-    </div>
-    </div>
-    
-</nav>
+
+        <nav class="navbar navbar-light sticky-top navbar-expand-md bg-faded justify-content-center nav-section hover-underline-menu">
+            <div className="container">
+                <Link
+                    to="/"
+                    class="navbar-brand d-flex w-50 mr-auto">
+                </Link>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+                    {links}
+                </div>
+            </div>
+
+        </nav>
 
 
-       
+
     )
 }
 

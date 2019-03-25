@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "@types/react-stripe-elements": "^1.1.10",
+    "@types/stripe": "^6.25.6",
     "antd": "^3.12.3",
     "bootstrap": "^4.2.1",
     "firebase": "^5.7.3",
@@ -25,10 +27,12 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.5",
+    "react-stripe-elements": "^2.0.3",
     "react-toastify": "^4.5.2",
     "redux": "^4.0.1",
     "redux-firestore": "^0.7.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "stripe": "^6.28.0"
   },
   "scripts": {
     "start": "react-scripts start gulp",
