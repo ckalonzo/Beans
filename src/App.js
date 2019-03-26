@@ -15,7 +15,7 @@ import ProjectDetails from "./Pages/108_Browse/Component/ProjectDetail";
 import WizardForm from "./Pages/106_JobPosts/PostJob";
 import CustomerDashboard from "./Pages/109_CustomerDashboard/CustomerDashboard";
 import ForgotPassword from './Pages/101_CustomerLogin/Component/ForgotPassword';
-
+import Checkout from './Pages/Checkout/Checkout'
 
 class App extends Component {
 
@@ -27,6 +27,10 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
+          <Route
+              path="/Checkout/Checkout"
+              component={Checkout}
+            />
             <Route
               path="/106_JobPosts/PostJob"
               component={WizardForm}
