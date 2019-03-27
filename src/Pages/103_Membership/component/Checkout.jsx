@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-
+import { StripeProvider } from 'react-stripe-elements';
+import MyStoreCheckout from './MyStoreCheckout';
 class Checkout extends Component {
     render() {
         return (
-            <div>
-
-            </div>
+            <StripeProvider apiKey="pk_test_12345">
+                <MyStoreCheckout />
+            </StripeProvider>
         )
     }
 }
