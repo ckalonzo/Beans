@@ -1,7 +1,7 @@
 import React from 'react';
 import { injectStripe } from 'react-stripe-elements';
 
-import AddressSection from './AddressSection';
+
 import CardSection from './CardSection';
 
 class CheckoutForm extends React.Component {
@@ -30,7 +30,7 @@ class CheckoutForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <AddressSection />
+                {/* <AddressSection /> */}
                 <CardSection />
                 <button>Confirm order</button>
             </form>

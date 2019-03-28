@@ -17,7 +17,7 @@ import CustomerDashboard from "./Pages/109_CustomerDashboard/CustomerDashboard";
 import ForgotPassword from './Pages/101_CustomerLogin/Component/ForgotPassword';
 import Recipe from "./Pages/103_Membership/component/Recipe"
 import Cart from "./Pages/103_Membership/component/Cart"
-// import Checkout from './Pages/Checkout/Checkout'
+ import Checkout from './Pages/103_Membership/component/Checkout'
 
 class App extends Component {
 
@@ -29,10 +29,10 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
-            {/* <Route
-              path="/Checkout/Checkout"
+            <Route
+              path="/103_Membership/component/Checkout"
               component={Checkout}
-            /> */}
+            /> 
             <Route
               path="/106_JobPosts/PostJob"
               component={WizardForm}

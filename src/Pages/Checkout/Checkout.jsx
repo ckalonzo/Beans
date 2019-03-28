@@ -2,6 +2,7 @@ import { render } from 'react-dom'
 import Styles from './component/Styles'
 import { Form, Field } from 'react-final-form'
 import Card from './component/Card'
+import {injectStripe} from 'react-stripe-elements';
 import {
   formatCreditCardNumber,
   formatCVC,

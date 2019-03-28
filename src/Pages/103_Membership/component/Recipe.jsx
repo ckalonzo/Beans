@@ -32,7 +32,7 @@ class Recipe extends Component {
                     <li className="collection-item"><b>Total: ${this.props.total.toFixed(2)} </b></li>
                 </div>
                 <div className="checkout">
-                    <button className="waves-effect waves-light btn" href="/Checkout/Checkout">Checkout</button>
+                    <button className="waves-effect waves-light btn" href="/103_Membership/component/checkout">Checkout</button>
                 </div>
             </div>
         )
