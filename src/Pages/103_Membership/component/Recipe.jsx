@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 //import { addShipping } from './actions/cartActions'
 import "../Css/cart.css"
 class Recipe extends Component {
 
-    componentWillUnmount() {
-        if (this.refs.shipping.checked)
-            this.props.substractShipping()
-    }
+    // componentWillUnmount() {
+    //     if (this.refs.shipping.checked)
+    //         this.props.substractShipping()
+    // }
 
     handleChecked = (e) => {
         if (e.target.checked) {
@@ -32,7 +33,10 @@ class Recipe extends Component {
                     <li className="collection-item"><b>Total: ${this.props.total.toFixed(2)} </b></li>
                 </div>
                 <div className="checkout">
-                    <button className="waves-effect waves-light btn" href="/103_Membership/component/checkout">Checkout</button>
+                <Link to='/103_Membership/component/checkout'>
+                <button className="waves-effect waves-light btn">Checkout</button>
+                </Link>
+                    
                 </div>
             </div>
         )
