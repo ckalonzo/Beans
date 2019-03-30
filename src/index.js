@@ -18,6 +18,7 @@ const store = createStore(rootReducer,
     )
 );
 
+
 store.firebaseAuthIsReady.then(() => {
     ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
     serviceWorker.unregister();

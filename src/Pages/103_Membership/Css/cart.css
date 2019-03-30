@@ -1,3 +1,9 @@
+
+.tw-k{
+    padding: 20px;
+     border-Bottom: 'solid 1px #E8E8E8';
+
+}
 .box{
     display: flex;
     justify-content: space-between;

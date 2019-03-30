@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addToCart } from '../../Redux/Store/actions/cartActions'
 import "../Css/single-pricing-cards.css";
+import { Button } from 'antd';
 
 
 class SingleBid extends Component {

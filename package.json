@@ -16,6 +16,7 @@
     "firebase": "^5.7.3",
     "gulp": "^4.0.0",
     "gulp-sass": "^4.0.2",
+    "jquery": "^3.3.1",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "react": "^16.6.3",
@@ -30,13 +31,16 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.5",
+    "react-stripe-checkout": "^2.6.3",
     "react-stripe-elements": "^2.0.3",
     "react-toastify": "^4.5.2",
     "redux": "^4.0.1",
     "redux-firestore": "^0.7.0",
     "redux-thunk": "^2.3.0",
+    "socket.io": "^2.2.0",
     "stripe": "^6.28.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start gulp",
@@ -54,6 +58,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.10",
     "redux-devtools-extension": "^2.13.8"
   }
 }

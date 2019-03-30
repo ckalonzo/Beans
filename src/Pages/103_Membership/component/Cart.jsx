@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Icon } from 'antd'
+import { Card, Button } from 'antd';
 import { removeItem, addQuantity, subtractQuantity } from '../../Redux/Store/actions/cartActions'
 import Recipe from './Recipe'
 import '../Css/cart.css'
