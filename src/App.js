@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify'
 import Navbar from "./Pages/Global/Component/Navigation/Layout/Navbar";
 import Footer from "./Pages/Global/Component/Navigation/Layout/Footer";
 import Home from './Pages/100_Home/Home.jsx';
@@ -17,6 +18,9 @@ import CustomerDashboard from "./Pages/109_CustomerDashboard/CustomerDashboard";
 import ForgotPassword from './Pages/101_CustomerLogin/Component/ForgotPassword';
 import Recipe from "./Pages/103_Membership/component/Recipe"
 import Cart from "./Pages/103_Membership/component/Cart"
+import ChatModule from "./Pages/Chat/Chat-module"
+// import Main from './Pages/Chat/Component/Main/Main'
+import Profile from './Pages/Profile/Layout/Profile'
 
 class App extends Component {
 
@@ -28,10 +32,17 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
-
+            <Route
+              path="/Profile/Layout/Profile"
+              component={Profile}
+            />
             <Route
               path="/106_JobPosts/PostJob"
               component={WizardForm}
+            />
+            <Route
+              path="/Chat/Chat-module"
+              component={ChatModule}
             />
             <Route
               path='/jobs/:id'

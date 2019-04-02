@@ -19,6 +19,8 @@ firebase.firestore().settings({
 
 
 
+export const myFirestore = firebase.firestore()
+//export const myStorage = firebase.storage()
 
 
 export default firebase;

@@ -3,6 +3,7 @@ import "../Css/customer-dashboard.scss";
 import { Tabs, Icon, Badge } from 'antd';
 import Notification from "./Notifications";
 import Currentbids from '../../105_Dashboard/Component/currentbids'
+import ChatModule from '../../Chat/Chat-module'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
@@ -21,7 +22,7 @@ class Activities extends Component {
 
 
     render() {
-        console.log(this,"======>")
+        console.log(this, "======>")
         console.log(`activity${this.props}`);
         const { notifications } = this.props;
         const { projects } = this.props;
@@ -38,10 +39,10 @@ class Activities extends Component {
                         tab={<span><Icon type="clock-circle" theme="twoTone" />Past Bids
                             <Badge count={this.state.pastBidsCounter} /></span>} key="2">Content of tab 2
                     </TabPane>
-                    {/* <TabPane
+                    <TabPane
                         tab={<span><Icon type="mail" theme="twoTone" />Messages
-                            <Badge count={this.state.messagesCounter} /></span>} key="3"><Main />
-                    </TabPane> */}
+                            <Badge count={this.state.messagesCounter} /></span>} key="3"><ChatModule />
+                    </TabPane>
                     <TabPane
                         tab={<span><Icon type="alert" theme="twoTone" />Notifications
                             <Badge count={this.state.notificationsCounter} /></span>} key="4"><Notification notifications={notifications} />
