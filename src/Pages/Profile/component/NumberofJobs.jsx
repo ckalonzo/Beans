@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
-import { Statistic } from 'antd';
+import { Statistic, Row, Col, Button } from 'antd';
 
 export default class NumberofJobs extends Component {
     render() {
         return (
-            <div>
-                <div className="container">
+            <React.Fragment>
                     <div className="row">
                         <div className="col">
-                            <h6># of Jobs </h6>
+                        <Statistic title="# of Jobs" value={112893} />
                         </div>
                     </div>
-                </div>
-            </div>
+                    </React.Fragment>
+           
         )
     }
 }

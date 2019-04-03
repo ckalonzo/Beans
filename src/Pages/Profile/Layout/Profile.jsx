@@ -11,15 +11,16 @@ import TypeOfJobs from '../component/typeOfJobs'
 export default class Profile extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
+        <section className="profile mt-5">
         <div className="container">
           <div className="row">
             <div className="col-8">
               <div className="row">
-                <div className="col-3">
+                <div className="col-4">
                   <Picture />
                 </div>
-                <div className="col-9">
+                <div className="col-8">
                   <div className="row">
                     <div className="col-12">
                       <PersonName />
@@ -65,7 +66,8 @@ export default class Profile extends Component {
             </div>
           </div>
         </div>
-      </div>
+        </section>
+        </React.Fragment>
     )
   }
 }

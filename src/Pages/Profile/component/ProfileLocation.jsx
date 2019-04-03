@@ -3,8 +3,7 @@ import { Icon } from 'antd';
 export default class ProfileLocation extends Component {
     render() {
         return (
-            <div>
-                <div className="container">
+            <React.Fragment>
                     <div className="row">
                         <div className="col-1 p-0">
                             <Icon type="environment" theme="filled" />
@@ -13,8 +12,7 @@ export default class ProfileLocation extends Component {
                             <p>Atlanta, GA, United States</p>
                         </div>
                     </div>
-                </div>
-            </div>
+            </React.Fragment>
         )
     }
 }
