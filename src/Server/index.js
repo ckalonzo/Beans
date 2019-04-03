@@ -90,5 +90,5 @@ app.post('/voice/token', (req, res) => {
  const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 app.listen(PORT, () =>
-    console.log('Express server is running on' + PORT);
+    console.log('Express server is running on' + PORT)
 );

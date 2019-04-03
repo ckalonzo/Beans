@@ -7,7 +7,7 @@ import Picture from '../component/picture'
 import ProfileLocation from '../component/ProfileLocation'
 import Rating from '../component/Rating'
 import TypeOfJobs from '../component/typeOfJobs'
-
+import Divider from '@material-ui/core/Divider';
 export default class Profile extends Component {
   render() {
     return (
@@ -66,6 +66,7 @@ export default class Profile extends Component {
             </div>
           </div>
         </div>
+        <Divider variant="middle" />
         </section>
         </React.Fragment>
     )
