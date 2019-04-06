@@ -53,20 +53,18 @@ export default class Profile extends Component {
                   /> */}
                 </div>
               </div>
-              <div className="row">
-                <div className="col-12">
-                  <NumberofJobs />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-12">
-                  <ActiveMember />
-                </div>
-              </div>
             </div>
           </div>
         </div>
         <Divider variant="middle" />
+        <div className="row">
+        <div className="col-6">
+                  <NumberofJobs />
+                </div>
+                <div className="col-6">
+                  <ActiveMember />
+                </div>
+        </div>
         </section>
         </React.Fragment>
     )
