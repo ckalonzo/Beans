@@ -1,7 +1,10 @@
+nav{
+  background-color: #ffffff;
+}
 .nav-section {
-  background: #ffffff;
+ 
   .navbar-brand{
-    background-image: url("../Images/truckedaway-wh-bg.jpg");
+    background-image: url("../Images/truckedaway-logo-large-transparent.png");
     height: 70px; 
     background-size: 50% 100%;
     background-repeat: no-repeat;
@@ -16,6 +19,7 @@
 .dropdown-item:hover>.dropdown-menu {
   display: block;
 }
+
 .chg-text{
   font-size: 16px;
   font-weight: 600;

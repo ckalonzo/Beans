@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import "../Css/dashboard.scss";
-import { Tabs, Icon, Badge } from 'antd';
+import Icon from '@material-ui/core/Icon';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Badge from '@material-ui/core/Badge';
 import Notification from "./Notifications";
 import Currentbids from '../../105_Dashboard/Component/currentbids'
 import { connect } from 'react-redux'

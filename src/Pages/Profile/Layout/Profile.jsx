@@ -7,19 +7,20 @@ import Picture from '../component/picture'
 import ProfileLocation from '../component/ProfileLocation'
 import Rating from '../component/Rating'
 import TypeOfJobs from '../component/typeOfJobs'
-
+import Divider from '@material-ui/core/Divider';
 export default class Profile extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
+        <section className="profile mt-5">
         <div className="container">
           <div className="row">
             <div className="col-8">
               <div className="row">
-                <div className="col-3">
+                <div className="col-4">
                   <Picture />
                 </div>
-                <div className="col-9">
+                <div className="col-8">
                   <div className="row">
                     <div className="col-12">
                       <PersonName />
@@ -52,20 +53,20 @@ export default class Profile extends Component {
                   /> */}
                 </div>
               </div>
-              <div className="row">
-                <div className="col-12">
-                  <NumberofJobs />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-12">
-                  <ActiveMember />
-                </div>
-              </div>
             </div>
           </div>
         </div>
-      </div>
+        <Divider variant="middle" />
+        <div className="row">
+        <div className="col-6">
+                  <NumberofJobs />
+                </div>
+                <div className="col-6">
+                  <ActiveMember />
+                </div>
+        </div>
+        </section>
+        </React.Fragment>
     )
   }
 }
