@@ -1,30 +1,54 @@
 import React, { Component } from "react";
-import { Radio, Input } from 'antd';
 import "../../../Css/PostJob.css";
+import { withStyles } from '@material-ui/core/styles';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 
-const RadioGroup = Radio.Group;
-const InputGroup = Input.Group;
-
-
-export default class FlightOfStairs extends Component {
+const styles = theme => ({
+    root: {
+        display: 'flex',
+    },
+    formControl: {
+        margin: theme.spacing.unit * 3,
+    },
+    group: {
+        margin: `${theme.spacing.unit}px 0`,
+    },
+});
+class FlightOfStairs extends Component {
 
     render() {
-        const { handleChange, flightOfStairs, values } = this.props;
+        const { handleChange, flightOfStairs, values, classes } = this.props;
         return (
 
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
-                        <InputGroup className="d-inline-flex  mx-auto" size="large">
-                            <RadioGroup className="mx-auto" defaultvalue={values.flightOfStairs} id={flightOfStairs} onChange={handleChange('flightOfStairs')} >
-                                <Radio value="0">0</Radio>
-                                <Radio value="1">1</Radio>
-                                <Radio value="2">2</Radio>
-                                <Radio value="3">3</Radio>
-                                <Radio value="4">4</Radio>
-                                <Radio value="5">5</Radio>
-                            </RadioGroup>
-                        </InputGroup>
+                        <div className={classes.root}>
+                            <FormControl component="fieldset" className={classes.formControl}>
+                                <RadioGroup
+                                    required
+                                    aria-label="Gender"
+                                    name="gender1"
+                                    className={classes.group}
+                                    value={values.largeItems}
+                                    onChange={handleChange('flightOfStairs')}
+                                    defaultvalue={values.flightOfStairs}
+                                    id={flightOfStairs}
+                                >
+                                    <FormControlLabel value="0" control={<Radio />} label="0" />
+                                    <FormControlLabel value="1" control={<Radio />} label="1" />
+                                    <FormControlLabel value="2" control={<Radio />} label="2" />
+                                    <FormControlLabel value="3" control={<Radio />} label="3" />
+                                    <FormControlLabel value="4" control={<Radio />} label="4" />
+                                    <FormControlLabel value="5" control={<Radio />} label="5" />
+                                </RadioGroup>
+                            </FormControl>
+
+                        </div>
                     </div>
                 </div>
 
@@ -33,3 +57,4 @@ export default class FlightOfStairs extends Component {
     }
 }
 
+export default withStyles(styles)(FlightOfStairs);

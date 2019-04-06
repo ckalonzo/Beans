@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
+//css
 import "../Css/PostJob.css";
-import { Collapse, Button, size, Icon } from 'antd';
+import { withStyles } from '@material-ui/core/styles';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Button from '@material-ui/core/Button';
+// components
 import SpecialInstructions from "././AdditionalInfo/SpecialInstructions/SpecialInstructions";
 import TypeOfTruck from "../Component/AdditionalInfo/TypeOfTruck/TypeOfTruck";
 import TruckLoads from "../Component/AdditionalInfo/TruckLoads/TruckLoads";
@@ -10,16 +18,24 @@ import AnyLargeItems from "../Component/AdditionalInfo/AnyLargeItemsComponent/An
 import LocationPage from "./AdditionalInfo/LocationOfJob";
 
 
-const Panel = Collapse.Panel;
+const styles = theme => ({
+    root: {
+        width: '100%',
+    },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+    },
+    button: {
+        margin: theme.spacing.unit,
+    },
+    input: {
+        display: 'none',
+    },
+});
 
-export default class AdditionalInfo extends Component {
-    constructor(props) {
-        super(props);
-    }
+class AdditionalInfo extends Component {
 
-    state = {
-        size: 'large',
-    };
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
@@ -30,90 +46,146 @@ export default class AdditionalInfo extends Component {
     }
 
     render() {
-        const { values, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.props;
+        const { values, address, city, state, zipCode, largeItems, selectedDate, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions, classes } = this.props;
 
-        const size = this.state.size;
         return (
-            <div className="className container ">
+            <div className="container ">
                 <div className="row">
                     <div className="col-12   text-center mb-2 mt-3">
-                        <h1>Please Complete the Information below</h1>
+                        <h3>Please Complete the Information below</h3>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-12">
-                        <Collapse accordion>
-                            <Panel header="Location Of Job" key="1">
-                                <LocationPage
-                                    handleChange={this.props.handleChange}
-                                    values={values}
-                                    address={address}
-                                    city={city}
-                                    state={state}
-                                    zipCode={zipCode}
-                                />
-                            </Panel>
-                            <Panel header="Will There Be AnyLarge Items Involved" key="2">
-                                <AnyLargeItems
-                                    handleChange={this.props.handleChange}
-                                    values={values}
-                                    largeItems={largeItems}
+                        <div className={classes.root}>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                    <Typography className={classes.heading}>Location Of Job</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Typography>
+                                        <LocationPage
+                                            handleChange={this.props.handleChange}
+                                            values={values}
+                                            address={address}
+                                            city={city}
+                                            state={state}
+                                            zipCode={zipCode}
+                                        />
+                                    </Typography>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
 
-                                />
-                            </Panel>
-                            <Panel header="Choose Availibility" key="3">
-                                <Slot
-                                    handleChange={this.props.handleChange}
-                                    values={values}
-                                    date={date}
-                                    time={time}
-                                    handleChangeDatePicker={this.props.handleChangeDatePicker}
-                                    handleChangeTimePicker={this.props.handleChangeTimePicker}
-                                />
-                            </Panel>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                    <Typography className={classes.heading}>Will There Be AnyLarge Items Involved</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Typography>
+                                        <AnyLargeItems
+                                            handleChange={this.props.handleChange}
+                                            values={values}
+                                            largeItems={largeItems}
 
-                            <Panel header="How Many Flights Of Stairs " key="4">
-                                <FlightOfStairs
-                                    handleChange={this.props.handleChange}
-                                    values={values}
-                                />
-                            </Panel>
-                            <Panel header="How Many truck Loads " key="5">
-                                <TruckLoads
-                                    handleChange={this.props.handleChange}
-                                    values={values}
-                                />
-                            </Panel>
-                            <Panel header="What type of truck will best sute the Job " key="6">
-                                <TypeOfTruck
-                                    handleChange={this.props.handleChange}
-                                    values={values}
+                                        />
+                                    </Typography>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                    <Typography className={classes.heading}>Choose Availibility</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Typography>
+                                        <Slot
+                                            handleChange={this.props.handleChange}
+                                            values={values}
+                                            selectedDate={selectedDate}
+                                            time={time}
+                                            handleChangeDatePicker={this.props.handleChangeDatePicker}
+                                            handleChangeTimePicker={this.props.handleChangeTimePicker}
+                                        />
+                                    </Typography>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                    <Typography className={classes.heading}>How Many Flights Of Stairs </Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Typography>
+                                        <FlightOfStairs
+                                            handleChange={this.props.handleChange}
+                                            values={values}
+                                        />
+                                    </Typography>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                    <Typography className={classes.heading}>How Many truck Loads </Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Typography>
+                                        <TruckLoads
+                                            handleChange={this.props.handleChange}
+                                            values={values}
+                                        />
+                                    </Typography>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                    <Typography className={classes.heading}>What type of truck will best sute the Job</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Typography>
+                                        <TypeOfTruck
+                                            handleChange={this.props.handleChange}
+                                            values={values}
 
-                                />
-                            </Panel>
-                            <Panel header="Additional Information you would like to add " key="7">
-                                <SpecialInstructions
-                                    handleChange={this.props.handleChange}
-                                    specialInstructions={specialInstructions}
-                                    values={values}
-                                />
-                            </Panel>
-                        </Collapse>,
+                                        />
+                                    </Typography>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                    <Typography className={classes.heading}>Additional Information you would like to add</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Typography>
+                                        <SpecialInstructions
+                                            handleChange={this.props.handleChange}
+                                            specialInstructions={specialInstructions}
+                                            values={values}
+                                        />
+                                    </Typography>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+                        </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="mx-auto">
-                        <Button.Group size={size}>
-                            <Button type="primary" onClick={this.back} className="float-left">
-                                <Icon type="left" />Back
-                                </Button>
-                            <Button type="primary" onClick={this.continue}>
-                                Continue <Icon type="right" />
-                            </Button>
-                        </Button.Group>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={this.back}
+                            className={classes.button}>
+                            Back
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={this.continue}
+                            className={classes.button}>
+                            Continue
+                        </Button>
+
                     </div>
                 </div>
             </div >
         )
     }
 }
+export default withStyles(styles)(AdditionalInfo);

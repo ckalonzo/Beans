@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { Input } from 'antd';
 import "../../../Css/PostJob.css";
-
-const InputGroup = Input.Group;
+import TextField from '@material-ui/core/TextField';
 
 
 export default class ZipCode extends Component {
@@ -11,9 +9,16 @@ export default class ZipCode extends Component {
         const { handleChange, zipCode, values } = this.props;
         return (
             <React.Fragment>
-                <InputGroup className="mx-auto" size="large">
-                    <Input style={{ width: '50%' }} defaultvalue={values.zipCode} onChange={handleChange('zipCode')} id={zipCode} placeholder="ZipCode" />
-                </InputGroup>
+                <TextField
+                    required
+                    id={zipCode}
+                    name="zip"
+                    label="Zip / Postal code"
+                    fullWidth
+                    autoComplete="billing postal-code"
+                    defaultvalue={values.zipCode}
+                    onChange={handleChange('zipCode')}
+                />
             </React.Fragment>
         )
     }

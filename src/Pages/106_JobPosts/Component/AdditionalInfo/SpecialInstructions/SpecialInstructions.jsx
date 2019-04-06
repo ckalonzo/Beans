@@ -1,12 +1,30 @@
 import React, { Component } from "react";
-import { Input, Button } from 'antd';
 import "../../../Css/PostJob.css";
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
 
-const { TextArea } = Input;
-const InputGroup = Input.Group;
+
+const styles = theme => ({
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+    },
+    dense: {
+        marginTop: 16,
+    },
+    menu: {
+        width: 200,
+    },
+});
 
 
-export default class SpecialInstructions extends Component {
+class SpecialInstructions extends Component {
 
     continue = (e) => {
         e.preventDefault()
@@ -20,18 +38,26 @@ export default class SpecialInstructions extends Component {
 
 
     render() {
-        const { handleChange, specialInstructions, values } = this.props;
+        const { handleChange, specialInstructions, values, classes } = this.props;
         console.log(handleChange);
         return (
 
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
-                        <InputGroup className="d-inline-flex  mx-auto" size="large">
-                            <TextArea placeholder="Autosize height with minimum and maximum number of lines" defaultvalue={values.specialInstructions} id={specialInstructions} onChange={handleChange('specialInstructions')} autosize={{ minRows: 4, maxRows: 10 }} />
+                        <TextField
+                            id={specialInstructions}
+                            label="Multiline"
+                            multiline
+                            rows="4"
+                            defaultvalue={values.specialInstructions}
+                            className={classes.textField}
+                            margin="normal"
+                            variant="outlined"
+                            onChange={handleChange('specialInstructions')}
+                        />
 
-                            );
-                        </InputGroup>
+
                     </div>
                 </div>
 
@@ -40,3 +66,4 @@ export default class SpecialInstructions extends Component {
     }
 }
 
+export default withStyles(styles)(SpecialInstructions)

@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 
-import { Button, Icon, List } from 'antd';
-export default class Success extends Component {
-    state = {
-        size: 'large',
-    };
+const styles = theme => ({
+    button: {
+        margin: theme.spacing.unit,
+    },
+    input: {
+        display: 'none',
+    },
+});
+
+class Success extends Component {
 
     render() {
-        const size = this.state.size;
+        const { classes } = this.props;
         return (
             <React.Fragment>
                 <div className="container">
@@ -19,11 +26,14 @@ export default class Success extends Component {
 
                     <div className="row">
                         <div className="mx-auto">
-                            <Button.Group size={size}>
-                                <Button type="primary" href="/">
-                                    Dashboard
-                                </Button>
-                            </Button.Group>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.back}
+                                href="/"
+                                className={classes.button}>
+                                Dashboard
+                        </Button>
                         </div>
                     </div>
                 </div>
@@ -31,3 +41,5 @@ export default class Success extends Component {
         )
     }
 }
+
+export default withStyles(styles)(Success);

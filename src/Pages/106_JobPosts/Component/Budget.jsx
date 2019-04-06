@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
-import { Collapse, Button, Icon } from 'antd';
 import MoneyValue from './MoneyValue';
-const Panel = Collapse.Panel;
+import { withStyles } from '@material-ui/core/styles';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Button from '@material-ui/core/Button';
 
-export default class Budget extends Component {
-    constructor(props) {
-        super(props);
-    }
+const styles = theme => ({
+    root: {
+        width: '100%',
+    },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+    },
+    button: {
+        margin: theme.spacing.unit,
+    },
+    input: {
+        display: 'none',
+    },
+});
+
+class Budget extends Component {
+
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
@@ -19,45 +38,52 @@ export default class Budget extends Component {
         size: 'large',
     };
     render() {
-        const size = this.state.size;
-        const { handleChange, budget } = this.props;
+
+        const { handleChange, budget, classes } = this.props;
         return (
             <div className="className container mt-5">
                 <div className="row">
                     <div className="col-12">
-                        <Collapse accordion>
-                            <Panel header="How much you willing to spend to get the job done?" key="1">
-                                <MoneyValue
-                                    handleChange={handleChange}
-                                    budget={budget}
-                                />
-                            </Panel>
-                        </Collapse>,
-                                </div>
-                </div>
-                <div className="row">
-                    <div className="mx-auto">
-                        <Button.Group size={size}>
-                            <Button type="primary" onClick={this.back} className="float-left">
-                                <Icon type="left" />Back
-                                </Button>
-                            <Button type="primary" onClick={this.continue}>
-                                Continue <Icon type="right" />
-                            </Button>
-                        </Button.Group>
+                        <div className={classes.root}>
+                            <ExpansionPanel>
+                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                    <Typography className={classes.heading}>How much you willing to spend to get the job done?</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Typography>
+                                        <MoneyValue
+                                            handleChange={handleChange}
+                                            budget={budget}
+                                        />
+                                    </Typography>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+
+                        </div>
                     </div>
-                </div>
-            </div >
+                    <div className="row">
+                        <div className="mx-auto">
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.back}
+                                className={classes.button}>
+                                Back
+                        </Button>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.continue}
+                                className={classes.button}>
+                                Continue
+                        </Button>
 
-
-
-
-
-
-
-
-
+                        </div>
+                    </div>
+                </div >
+            </div>
         )
-
     }
-} 
+}
+
+export default withStyles(styles)(Budget);

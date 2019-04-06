@@ -3,7 +3,7 @@ import './css/TypeofTruck.css';
 
 export default class TypeOfTruck extends Component {
     render() {
-        const { typeOfTruck, handleChange, values } = this.props
+        const { typeOfTruck, handleChange, values, classes } = this.props
         return (
             <div className="container">
                 <div className="row">

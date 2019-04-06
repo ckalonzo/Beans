@@ -1,28 +1,26 @@
-import React, { Component } from "react";
-import { TimePicker } from 'antd';
+import React, { Fragment } from 'react';
 import "../../../Css/PostJob.css";
+import { TimePicker } from "material-ui-pickers";
 
 
 
-export default class AvaliableTime extends Component {
+class AvaliableTime extends React.Component {
 
     render() {
         const { time, handleChangeTimePicker, values } = this.props;
 
         return (
-            <div>
+            <Fragment>
                 <div className="col-12 text-center mb-5">
-                    <TimePicker
-                        use12Hours
-                        format="h:mm a"
-                        id={time}
-                        defaultvalue={values.time}
-                        onChange={handleChangeTimePicker('time')}
-                    />
-                </div>
 
-            </div>
+                    <div className="picker">
+                        <TimePicker autoOk label="12 hours" id={time} value={values.time} onChange={handleChangeTimePicker('time')} />
+                    </div>
+                </div>
+            </Fragment>
         )
     }
 }
 
+
+export default AvaliableTime

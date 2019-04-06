@@ -1,30 +1,34 @@
 import React, { Component } from "react";
-import { Radio, DatePicker, Input } from 'antd';
 import "../../../Css/PostJob.css";
+import 'date-fns';
+import { DatePicker } from "material-ui-pickers";
 
-const RadioGroup = Radio.Group;
-const InputGroup = Input.Group;
 
-function onChangeDatePicker(date, dateString) {
-    console.log(date, dateString);
-}
-
-export default class CustDatePicker extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+class CustDatePicker extends Component {
 
 
     render() {
-        const { handleChangeDatePicker, date, values } = this.props;
+        const { handleChangeDatePicker, selectedDate, props } = this.props;
         return (
             <React.Fragment>
-                <InputGroup size="large">
-                    <DatePicker onChange={handleChangeDatePicker('date')} defaultvalue={values.date} id={date} size="large" />
-                </InputGroup>
+                <div className="picker">
+                    <DatePicker
+                        keyboard
+                        clearable
+                        label="Uncontrolled input"
+                        value={selectedDate}
+                        onChange={handleChangeDatePicker('selectedDate')}
+                        animateYearScrolling={false}
+                        minDate={new Date()}
+                        onInputChange={e => console.log("Keyboard Input:", e.target.value)}
+                    />
+
+
+                </div>
             </React.Fragment>
         )
     }
+
 }
 
+export default CustDatePicker

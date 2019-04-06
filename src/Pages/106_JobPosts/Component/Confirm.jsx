@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
+import Button from '@material-ui/core/Button';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { withStyles } from '@material-ui/core/styles';
 
-import { Button, Icon, List } from 'antd';
-export default class Confirm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            size: 'large',
-        };
-    }
+const styles = theme => ({
+    button: {
+        margin: theme.spacing.unit,
+    },
+    input: {
+        display: 'none',
+    },
+});
+
+class Confirm extends Component {
 
 
     continue = (e) => {
@@ -20,102 +28,62 @@ export default class Confirm extends Component {
         e.preventDefault()
         this.props.prevStep()
     }
-   
+
     render() {
-        const { values: { service, budget, email, attachments, name, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } } = this.props;
-        const size = this.state.size;
-
-
-        const data = [
-            {
-                title: "Type of Job",
-                description: [service]
-            },
-            {
-                title: "Upload Images",
-                description: [attachments]
-            },
-            {
-                title: "Address",
-                description: [address]
-            },
-            {
-                title: "City",
-                description: [city]
-            },
-            {
-                title: "State",
-                description: [state]
-            },
-            {
-                title: "Zipcode",
-                description: [zipCode]
-            },
-            {
-                title: "Will There Be AnyLarge Items Involved?",
-                description: [largeItems]
-            },
-            {
-                title: "Date",
-                description: [date]
-            },
-            {
-                title: "Time",
-                description: [time]
-            },
-            {
-                title: "How Many Flights Of Stairs?",
-                description: [flightOfStairs]
-            },
-            {
-                title: "How Many truck Loads?",
-                description: [truckLoads]
-            },
-            {
-                title: "What type of truck will best sute the Job?",
-                description: [typeOfTruck]
-            },
-            {
-                title: "Additional Information you would like to add?",
-                description: [specialInstructions]
-            },
-            {
-                title: "Budget",
-                description: [budget]
-            },
-        ];
+        const { classes } = this.props;
+        const { values: { service, budget, attachments, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } } = this.props;
         return (
-            <React.Fragment>
-                <div className="container">
-                
-               
-                <List
-                    itemLayout="horizontal"
-                    dataSource={data}
-                    renderItem={item => (
-                        <List.Item>
-                            <List.Item.Meta
-                                title={item.title}
-                                description={item.description}
-                            />
-                        </List.Item>
-                    )}
-                />,
-               
-                <div className="row">
-                    <div className="mx-auto">
-                        <Button.Group size={size}>
-                            <Button type="primary" onClick={this.back} className="float-left">
-                                <Icon type="left" />Back
-                                </Button>
-                            <Button type="primary" onClick={this.continue}>
-                                Confirm 
-                            </Button>
-                        </Button.Group>
+            <div className="container">
+                <React.Fragment>
+                    <MuiThemeProvider>
+                        <List>
+                            <ListItemText primary="Type of Job" secondary={service} />
+                            <ListItemText primary="Upload Images" secondary={attachments} />
+                            <ListItemText primary="Address" secondary={address} />
+                            <ListItemText primary="City" secondary={city} />
+                            <ListItemText primary="State" secondary={state} />
+                            <ListItemText primary="Zipcode" secondary={zipCode} />
+                            <ListItemText primary="Will There Be AnyLarge Items Involved?" secondary={largeItems} />
+                            <ListItemText primary="Date" secondary={date} />
+                            <ListItemText primary="Time" secondary={time} />
+                            <ListItemText primary="How Many Flights Of Stairs?" secondary={flightOfStairs} />
+                            <ListItemText primary="How Many truck Loads?" secondary={truckLoads} />
+                            <ListItemText primary="What type of truck will best sute the Job?" secondary={typeOfTruck} />
+                            <ListItemText primary="Additional Information you would like to add?" secondary={specialInstructions} />
+                            <ListItemText primary="Budget" secondary={budget} />
+                        </List>
+
+                    </MuiThemeProvider>
+
+                    <br />
+
+
+
+
+                    <div className="row">
+                        <div className="mx-auto">
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.back}
+                                className={classes.button}>
+                                Back
+                        </Button>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.continue}
+                                className={classes.button}>
+                                Confirm
+                        </Button>
+                        </div>
                     </div>
-                </div>
-                </div>
-            </React.Fragment>
+
+                </React.Fragment>
+            </div >
         )
     }
 }
+
+
+export default withStyles(styles)(Confirm);

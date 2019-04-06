@@ -1,20 +1,42 @@
 import React, { Component } from 'react'
 import "../Css/PostJob.css";
-import { Select, Button, Icon } from 'antd';
+import ReactDOM from 'react-dom';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 
 
+const styles = theme => ({
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    formControl: {
+        margin: theme.spacing.unit,
+        minWidth: 400,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing.unit * 2,
+    },
+});
 
-const Option = Select.Option;
+class TypeOfJob extends Component {
 
-export default class TypeOfJob extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     state = {
         size: 'large',
+        labelWidth: 0,
     };
+    componentDidMount() {
+        this.setState({
+            labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
+        });
+    }
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
@@ -28,38 +50,70 @@ export default class TypeOfJob extends Component {
     }
 
     render() {
-        const { values, handleChange } = this.props;
+        const { values, handleChange, classes } = this.props;
         const size = this.state.size;
         return (
             <React.Fragment>
                 <div className="container">
                     <div className="row">
-                        <div className="col-6  offset-3 text-center mb-5 mt-5">
-                            <h1>What Type of Job you need?</h1>
+                        <div className="col-12  offset-0 text-center mb-5 mt-5">
+                            <h3>What Type of Job you need?</h3>
                         </div>
                     </div>
                 </div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-6  offset-3 text-center mb-5">
+                        <div className="col-12  offset-0 text-center mb-5">
                             <React.Fragment>
-                                <select defaultvalue={values.service} style={{ width: 300 }} onChange={handleChange('service')}>
-                                    <option value="Junk Removal">Junk Removal</option>
-                                    <option value="Cleaner Service">Cleaner Service</option>
-                                </select>
+                                <form className={classes.root} autoComplete="off">
+                                    <FormControl variant="outlined" className={classes.formControl}>
+                                        <InputLabel
+                                            ref={ref => {
+                                                this.InputLabelRef = ref;
+                                            }}
+                                            htmlFor="type-of-jobs"
+                                        >
+
+                                        </InputLabel>
+                                        <Select
+                                            required
+                                            value={values.service}
+                                            onChange={handleChange('service')}
+                                            input={
+                                                <OutlinedInput
+                                                    labelWidth={this.state.labelWidth}
+                                                    name="Type of Job"
+                                                    id="type-of-jobs"
+                                                />
+                                            }
+                                        >
+
+                                            <MenuItem value={"Junk Removal"}>Junk Removal</MenuItem>
+                                            <MenuItem value={"Cleaner Service"}>Cleaner Service</MenuItem>
+
+                                        </Select>
+
+                                    </FormControl>
+                                </form>
                             </React.Fragment>
                         </div>
                     </div>
                     <div className="row">
                         <div className="mx-auto">
-                            <Button.Group size={size}>
-                                <Button type="primary" onClick={this.back} className="float-left">
-                                    <Icon type="left" />Back
-                                </Button>
-                                <Button type="primary" onClick={this.continue}>
-                                    Continue <Icon type="right" />
-                                </Button>
-                            </Button.Group>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.back}
+                                className={classes.button}>
+                                Back
+                        </Button>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.continue}
+                                className={classes.button}>
+                                Continue
+                        </Button>
                         </div>
                     </div>
                 </div>
@@ -72,3 +126,5 @@ export default class TypeOfJob extends Component {
         );
     }
 }
+
+export default withStyles(styles)(TypeOfJob);
