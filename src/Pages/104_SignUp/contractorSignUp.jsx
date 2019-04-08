@@ -2,16 +2,20 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 //import { CreateProject } from '../../Redux/Store/actions/JobPostActions';
-import "antd/dist/antd.css";
+
 
 //import UploadImages from "../Component/UploadImages";
 //import Confirm from "./Confirm";
-import { Steps } from 'antd';
+// import { Steps } from 'antd';
 //import Success from "./Success";
 import IntroSignUp from "./component/IntroSignUp";
 import SignUpbasicinfo from "./component/signUp-basicinfo";
-
-const Step = Steps.Step;
+import { withStyles } from '@material-ui/core/styles';
+import Stepper from '@material-ui/core/Stepper';
+import Step from '@material-ui/core/Step';
+import StepButton from '@material-ui/core/StepButton';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 
 
@@ -102,7 +106,7 @@ class contractorSignUp extends Component {
         const { truckType, email, budget, attachments, firstName, phone, lastName, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.state;
         const values = { truckType, budget, email, attachments, firstName, phone, lastName, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
 
-        let steps = [
+        let step = [
             {
                 title: "Introduction",
                 content: <IntroSignUp
@@ -178,10 +182,10 @@ class contractorSignUp extends Component {
 
                     </div>
 
-                    <Steps current={current}>
-                        {steps.map(item => <Step key={item.title} title={item.title} />)}
-                    </Steps>
-                    {steps.map(({ title, content }, i) => (
+                    <Step current={current}>
+                        {step.map(item => <Step key={item.title} title={item.title} />)}
+                    </Step>
+                    {step.map(({ title, content }, i) => (
                         <div
                             key={title}
                             className={i === this.state.current ? "foo fade-in" : "foo"}

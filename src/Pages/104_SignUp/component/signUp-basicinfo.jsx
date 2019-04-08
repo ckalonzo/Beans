@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
-import { Button, Icon } from 'antd';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 
-export default class SignUpbasicinfo extends Component {
-    constructor(props) {
-        super(props);
-    }
+const styles = theme => ({
+    button: {
+        margin: theme.spacing.unit,
+    },
+    input: {
+        display: 'none',
+    },
+});
+
+class SignUpbasicinfo extends Component {
+
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
@@ -13,12 +21,10 @@ export default class SignUpbasicinfo extends Component {
         e.preventDefault()
         this.props.prevStep()
     }
-    state = {
-        size: 'large',
-    };
+
     render() {
-        const size = this.state.size;
-        const { handleChange, values } = this.props;
+
+        const { handleChange, values, classes } = this.props;
         return (
             <div>
                 <div className="container mt-5">
@@ -86,27 +92,26 @@ export default class SignUpbasicinfo extends Component {
                 </div>
                 <div className="row">
                     <div className="mx-auto">
-                        <Button.Group size={size}>
-                            <Button type="primary" onClick={this.back} className="float-left">
-                                <Icon type="left" />Back
-                                </Button>
-                            <Button type="primary" onClick={this.continue}>
-                                Continue <Icon type="right" />
-                            </Button>
-                        </Button.Group>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={this.back}
+                            className={classes.button}>
+                            Back
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={this.continue}
+                            className={classes.button}>
+                            Continue
+                        </Button>
                     </div>
                 </div>
             </div >
-
-
-
-
-
-
-
-
-
         )
 
     }
-} 
+}
+
+export default withStyles(styles)(SignUpbasicinfo);

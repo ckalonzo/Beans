@@ -4,6 +4,22 @@ import '../css/Navbar.scss';
 import { connect } from 'react-redux'
 import { signOut } from '../../../../Redux/Store/actions/authActions'
 
+import { addToCart } from '../../../../Redux/Store/actions/cartActions'
+import IconButton from '@material-ui/core/IconButton';
+import Badge from '@material-ui/core/Badge';
+import { withStyles } from '@material-ui/core/styles';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
+const styles = theme => ({
+    badge: {
+        top: '50%',
+        right: -3,
+        // The border color match the background color.
+        border: `2px solid ${
+            theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[900]
+            }`,
+    },
+});
 
 const ProviderSignedInLinks = (props) => {
 
@@ -25,6 +41,12 @@ const ProviderSignedInLinks = (props) => {
 
             </ul>
             <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                <li><NavLink to="/103_Membership/component/cart"><IconButton aria-label="Cart">
+                    <Badge badgeContent={4} color="primary" >
+                        <ShoppingCartIcon />
+                    </Badge>
+                </IconButton></NavLink></li>
+
                 <li className="nav-item  chg-text moveline">
                     <a onClick={props.signOut}>Log Out</a>
                 </li>
@@ -41,7 +63,8 @@ const ProviderSignedInLinks = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        signOut: () => dispatch(signOut())
+        signOut: () => dispatch(signOut()),
+        addToCart: (id) => { dispatch(addToCart(id)) }
     }
 }
 

@@ -1,10 +1,27 @@
 import React from 'react';
-import { Icon } from 'antd';
+
 import '../css/Navbar.scss';
 import { Link } from 'react-router-dom';
+//Material
+import PropTypes from 'prop-types';
+import IconButton from '@material-ui/core/IconButton';
+import Badge from '@material-ui/core/Badge';
+import { withStyles } from '@material-ui/core/styles';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
+const styles = theme => ({
+    badge: {
+        top: '50%',
+        right: -3,
+        // The border color match the background color.
+        border: `2px solid ${
+            theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[900]
+            }`,
+    },
+});
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const { classes } = props;
     return (
         <React.Fragment>
             <ul class="navbar-nav w-100 justify-content-center nav-section">
@@ -26,10 +43,14 @@ const Navbar = () => {
                         <a className="dropdown-item chg-text moveline" href="/102_ContractorLogin/ContractorLogin">LogIn</a>
                     </div>
                 </li>
-                <li><Link to="/103_Membership/component/cart"><Icon type="shopping" theme="twoTone" /></Link></li>
+                <li><Link to="/103_Membership/component/cart"><IconButton aria-label="Cart">
+                    <Badge badgeContent={this.props.addToCart} color="primary" classes={{ badge: classes.badge }}>
+                        <ShoppingCartIcon />
+                    </Badge>
+                </IconButton></Link></li>
             </ul>
         </React.Fragment>
 
     );
 }
-export default Navbar;
+export default withStyles(styles)(Navbar);

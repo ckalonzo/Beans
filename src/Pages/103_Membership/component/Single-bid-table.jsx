@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addToCart } from '../../Redux/Store/actions/cartActions'
 import "../Css/single-pricing-cards.css";
-import { Button } from 'antd';
+// import { Button } from 'antd';
 
 
 class SingleBid extends Component {
@@ -16,22 +16,22 @@ class SingleBid extends Component {
     render() {
         let itemList = this.props.items.items.map(item => {
             return (
-                <div class="row justify-content-center" key={item.id}>
-                    <div class="col-3 mx-auto mb-3">
-                        <div class="card-width colorch-btn" id="hover4">
-                            <a href="#" onClick={() => { this.handleClick(item.id) }} >
-                                <div class="card-body text-center">
-                                    <h2 class="card-title">{item.title}</h2>
-                                    <h3 class="card-subtitle mb-2 text-muted">Price: ${item.price}</h3>
-                                    <p class="card-text">{item.desc}</p>
-                                    <button type="button" class="btn btn-success">Buy Now</button>
 
-                                </div>
-                            </a>
+                <div class="col-3  mb-3" key={item.id}>
+                    <div class="card-width colorch-btn" id="hover4">
+                        <a href="#" onClick={() => { this.handleClick(item.id) }} >
+                            <div class="card-body text-center">
+                                <h2 class="card-title">{item.title}</h2>
+                                <h3 class="card-subtitle mb-2 text-muted">Price: ${item.price}</h3>
+                                <p class="card-text">{item.desc}</p>
+                                <button type="button" class="btn btn-success">Buy Now</button>
 
-                        </div>
+                            </div>
+                        </a>
+
                     </div>
                 </div>
+
 
             )
         })

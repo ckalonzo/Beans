@@ -13,13 +13,16 @@ class ProjectDashboard extends Component {
             <section className="panel-list">
                 <div className=" container">
                     <div className="row">
-                        <div className="col-12">
+                        <div className="col-6">
                             <h4>Current Projects</h4>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-12">
+                        <div className="col-8">
                             <ProjectList projects={projects} />
+                        </div>
+                        <div className="col-4">
+                            div.
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import 'date-fns';
 import { CreateProject } from '../../Redux/Store/actions/JobPostActions';
-import "antd/dist/antd.css";
 import "../Css/PostJob.css";
 import Budget from "../Component/Budget";
 import AdditionalInfo from "../Component/AdditionalInfo";

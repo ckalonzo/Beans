@@ -1,18 +1,32 @@
 import React, { Component } from 'react'
-import { Tag } from 'antd';
+import Chip from '@material-ui/core/Chip';
+import { withStyles } from '@material-ui/core/styles';
 
-export default class TypeOfJobs extends Component {
+const styles = theme => ({
+    root: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+    },
+    chip: {
+        margin: theme.spacing.unit,
+    },
+});
+class TypeOfJobs extends Component {
+
     render() {
+        const { classes } = this.props;
         return (
             <React.Fragment>
-                 <div className="row">
-                        <div className="col">
-                    <Tag color="magenta">Junk Removal</Tag>
-                    <Tag color="red">Lawn Service</Tag>
+                <div className="row">
+                    <div className="col">
+                        <Chip label="Junk Removal" className={classes.chip} />
+                        <Chip label="Lawn Service" className={classes.chip} />
                     </div>
-                    </div>
+                </div>
 
-           </React.Fragment>
+            </React.Fragment>
         )
     }
 }
+export default withStyles(styles)(TypeOfJobs);

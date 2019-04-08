@@ -36,7 +36,7 @@ class AvaliableTimeDate extends Component {
                                         onChange={handleChangeDatePicker.bind(selectedDate)}
                                         animateYearScrolling={false}
                                         minDate={new Date()}
-                                        onInputChange={e => console.log("Keyboard Input:", e.target.value)}
+
                                     />
 
 

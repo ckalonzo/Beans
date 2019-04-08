@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
-import { Button } from 'antd';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 
+const styles = theme => ({
+    button: {
+        margin: theme.spacing.unit,
+    },
+    input: {
+        display: 'none',
+    },
+});
 
-export default class IntroSignUp extends Component {
+class IntroSignUp extends Component {
     state = {
         size: 'large',
     };
@@ -13,24 +22,25 @@ export default class IntroSignUp extends Component {
     }
 
     render() {
-
-        const size = this.state.size;
-
+        const { classes } = this.props;
         return (
             <div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-6  offset-3 text-center mb-5 mt-5">
-                            <h1>Hi There! Im Sasha. Lets get you signed up. Ready to start!</h1>
+                        <div className="col-12  offset-0 text-center mb-5 mt-5">
+                            <h3>Hi There! Im Mathrew.I'll get you started on posting your job. Lets get started!</h3>
                         </div>
                     </div>
                     <div className="row">
                         <div className="mx-auto">
-                            <Button.Group size={size}>
-                                <Button type="primary" onClick={this.continue}>
-                                    Continue
-                                </Button>
-                            </Button.Group>
+
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.continue}
+                                className={classes.button}>
+                                Continue
+                        </Button>
                         </div>
                     </div>
                 </div>
@@ -38,3 +48,7 @@ export default class IntroSignUp extends Component {
         );
     }
 }
+
+export default withStyles(styles)(IntroSignUp);
+
+
