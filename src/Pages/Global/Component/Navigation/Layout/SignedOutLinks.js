@@ -44,7 +44,7 @@ const Navbar = (props) => {
                     </div>
                 </li>
                 <li><Link to="/103_Membership/component/cart"><IconButton aria-label="Cart">
-                    <Badge badgeContent={this.props.addToCart} color="primary" classes={{ badge: classes.badge }}>
+                    <Badge badgeContent={4} color="primary" classes={{ badge: classes.badge }}>
                         <ShoppingCartIcon />
                     </Badge>
                 </IconButton></Link></li>

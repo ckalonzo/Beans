@@ -7,15 +7,17 @@ import Picture from '../component/picture'
 import ProfileLocation from '../component/ProfileLocation'
 import Rating from '../component/Rating'
 import TypeOfJobs from '../component/typeOfJobs'
-import Divider from '@material-ui/core/Divider';
+import Divider from '@material-ui/core/Divider'
+import ProfileHero from '../component/ProfileHero'
 export default class Profile extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="profile mt-5">
+        <section className="profile">
+<ProfileHero/>
         <div className="container">
           <div className="row">
-            <div className="col-8">
+          <div className="col-12 adj-bot">
               <div className="row">
                 <div className="col-4">
                   <Picture />
@@ -43,27 +45,25 @@ export default class Profile extends Component {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-4">
+              <Divider variant="middle" />
               <div className="row">
-                <div className="col-12">
-                  {/* <Rating
-                    initialRating={3}
-                    readonly
-                  /> */}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Divider variant="middle" />
-        <div className="row">
-        <div className="col-6">
+        <div className="col-4">
                   <NumberofJobs />
                 </div>
-                <div className="col-6">
+                <div className="col-4">
                   <ActiveMember />
                 </div>
+                <div className="col-4">
+                   {/* <Rating
+                    initialRating={3}
+                    readonly
+                  />  */}
+                </div>
+        </div>
+          </div>
+          </div>
+       
+       
         </div>
         </section>
         </React.Fragment>
