@@ -1,21 +1,47 @@
 import React, { Component } from 'react'
 import Avatar from '@material-ui/core/Avatar';
+import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-export default class Picture extends Component {
+const styles = {
+    input: {
+        display: 'none',
+    },
+    bigAvatar: {
+        margin: 10,
+        width: 160,
+        height: 160,
+    },
+
+};
+
+class Picture extends Component {
     render() {
+        const { classes } = this.props;
+
         return (
             <React.Fragment>
                 <div className="row">
-                    <Avatar size={94} icon="user" />
+                    <Avatar size={94} icon="user" className={classes.bigAvatar} />
                 </div>
                 <div className="row">
-                    <Button size="small" style={{ marginLeft: 16, verticalAlign: 'middle' }} onClick={this.changeUser}>
-                        Change
+                    <input
+                        accept="image/*"
+                        className={classes.input}
+                        id="contained-button-file"
+                        multiple
+                        type="file"
+                    />
+                    <label htmlFor="contained-button-file">
+                        <Button variant="contained" component="span" className={classes.button}>
+                            Change
         </Button>
+                    </label>
+
                 </div>
 
             </React.Fragment>
         )
     }
 }
+export default withStyles(styles)(Picture);
