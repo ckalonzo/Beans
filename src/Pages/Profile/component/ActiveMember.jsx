@@ -7,11 +7,11 @@ export default class ActiveMember1 extends Component {
             <React.Fragment>
 
                 <div className="row">
-                    <div className="col-2 d-inline">
-                        <h6>Years:</h6>
+                    <div className="col-6">
+                        <h6>2</h6>
                     </div>
-                    <div className="col-2 d-inline">
-                <h6>2</h6>
+                    <div className="col-6">
+                <h6>Years</h6>
                 </div>
                 </div>
 
