@@ -62,18 +62,10 @@ export default class Profile extends Component {
                   </div>
                     </div>
                   </div>
-                  <div className="col-4">
-                  <div className="skills-shadow">
-                  <Skills/>
-                  </div>
-                    
                   </div>
                 </div>
               </div>
             </div>
-
-
-          </div>
         </section>
       </React.Fragment>
     )
