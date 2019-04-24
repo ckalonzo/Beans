@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Css/Hiw.scss';
+import './css/Hiw.scss';
 
 export default class HowItWorks extends Component {
     render() {
