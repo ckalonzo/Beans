@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Rating from 'react-rating'
-export default class AvgRating extends Component {
+export default class RateCompany extends Component {
     render() {
         return (
             <React.Fragment>
@@ -8,7 +8,7 @@ export default class AvgRating extends Component {
                     <h6>Ratings</h6>
                     <Rating
                       initialRating={2.5}
-                      readonly
+                      
                     />
                     </div>
                 </React.Fragment>

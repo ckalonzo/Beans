@@ -11,15 +11,23 @@
         position: relative;
          background-color: #ffffff;
      }
-     .OutlinedTextFields-textField-86{
+     .OutlinedTextFields-textField-86 {
         width: 524px;
      }
-     .shadow{
+     .shadow {
         box-shadow: 10px 10px 5px grey;
         width: 600px;
      }
-     .skills-shadow{
+     .skills-shadow {
         box-shadow: 10px 10px 5px grey;
+     }
+     .adj-border {
+        border-left: 2px solid black;
+        height: 145px;
+        margin-top: 31px;
+     }
+     .adj-num {
+        top: 18px;
      }
 }
 

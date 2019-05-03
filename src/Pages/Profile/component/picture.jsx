@@ -25,7 +25,8 @@ class Picture extends Component {
                     <Avatar size={94} icon="user" className={classes.bigAvatar} />
                 </div>
                 <div className="row">
-                    <input
+                <div className="col-7 mx-auto">
+                <input
                         accept="image/*"
                         className={classes.input}
                         id="contained-button-file"
@@ -37,7 +38,7 @@ class Picture extends Component {
                             Change
         </Button>
                     </label>
-
+                </div>
                 </div>
 
             </React.Fragment>

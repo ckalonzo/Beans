@@ -19,7 +19,7 @@ class TypeOfJobs extends Component {
         return (
             <React.Fragment>
                 <div className="row">
-                    <div className="col">
+                    <div className="col d-inline">
                         <Chip label="Junk Removal" className={classes.chip} />
                         <Chip label="Lawn Service" className={classes.chip} />
                     </div>
