@@ -1,27 +1,19 @@
 import React, { Component } from 'react'
-import Chip from '@material-ui/core/Chip';
+import { MDBBadge } from "mdbreact";
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
-    root: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-    },
-    chip: {
-        margin: theme.spacing.unit,
-    },
-});
+
 class TypeOfJobs extends Component {
 
     render() {
-        const { classes } = this.props;
+
         return (
             <React.Fragment>
                 <div className="row">
                     <div className="col">
-                        <Chip label="Junk Removal" className={classes.chip} />
-                        <Chip label="Lawn Service" className={classes.chip} />
+                        <MDBBadge pill color="light">Junk Removal</MDBBadge>
+                        <MDBBadge pill color="light">Lawn Service</MDBBadge>
+
                     </div>
                 </div>
 
@@ -29,4 +21,4 @@ class TypeOfJobs extends Component {
         )
     }
 }
-export default withStyles(styles)(TypeOfJobs);
+export default TypeOfJobs;

@@ -1,63 +1,43 @@
 import React, { Component } from "react";
 import 'date-fns';
-import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
-import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, TimePicker, DatePicker } from 'material-ui-pickers';
-
-//pages
-import CustDatePicker from "../DatePicker/DatePicker";
-import AvaliableTime from "../DatePicker/AvaliableTime";
-
-const styles = {
-    grid: {
-        width: '100%',
-    },
-};
-
+import { MDBDatePicker, MDBTimePicker, MDBCol } from 'mdbreact';
 
 class AvaliableTimeDate extends Component {
+    getPickerValue = (value) => {
+        console.log(value);
+    }
 
     render() {
-        const { selectedDate, handleChangeDatePicker, handleChangeTimePicker, time, values, classes } = this.props;
+        const { selectedDate, handleChangeDatePicker, handleChangeTimePicker, time } = this.props;
         return (
             <div>
                 <div className="className container">
                     <div className="row">
                         <div className="col-12 text-center mb-5">
                             <h6>Choose Date</h6>
-                            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                <Grid container className={classes.grid} justify="space-around">
-                                    <DatePicker
-                                        keyboard
-                                        clearable
-                                        label="Uncontrolled input"
-                                        value={selectedDate}
-                                        onChange={handleChangeDatePicker.bind(selectedDate)}
-                                        animateYearScrolling={false}
-                                        minDate={new Date()}
-
-                                    />
+                            <MDBDatePicker
+                                getValue={this.getPickerValue}
+                                value={selectedDate}
+                                onChange={handleChangeDatePicker.bind(selectedDate)}
+                                minDate={new Date()}
+                            />
 
 
-                                    <TimePicker
-                                        showTodayButton
-                                        todayLabel="now"
-                                        label="Step = 5"
-                                        value={time}
-                                        minutesStep={5}
-                                        onChange={handleChangeTimePicker.bind(time)}
-                                        id={time}
-                                    />
-
-                                </Grid>
-                            </MuiPickersUtilsProvider>
+                            <MDBCol md="3">
+                                <MDBTimePicker
+                                    id={time}
+                                    label="12hrs format"
+                                    getValue={this.getPickerValue}
+                                    onChange={handleChangeTimePicker.bind(time)}
+                                    value={time}
+                                />
+                            </MDBCol>
                         </div>
                     </div>
-                </div>
+                </div >
             </div >
         );
     }
 }
 
-export default withStyles(styles)(AvaliableTimeDate);
+export default AvaliableTimeDate;

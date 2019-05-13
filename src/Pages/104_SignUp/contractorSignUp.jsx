@@ -1,21 +1,9 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom'
-//import { CreateProject } from '../../Redux/Store/actions/JobPostActions';
-
-
-//import UploadImages from "../Component/UploadImages";
-//import Confirm from "./Confirm";
-// import { Steps } from 'antd';
-//import Success from "./Success";
 import IntroSignUp from "./component/IntroSignUp";
 import SignUpbasicinfo from "./component/signUp-basicinfo";
-import { withStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
-import StepButton from '@material-ui/core/StepButton';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+
 
 
 

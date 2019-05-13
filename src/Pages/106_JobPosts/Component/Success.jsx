@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Button from '@material-ui/core/Button';
+import { MDBBtn } from "mdbreact";
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -26,14 +26,14 @@ class Success extends Component {
 
                     <div className="row">
                         <div className="mx-auto">
-                            <Button
+                            <MDBBtn
                                 variant="contained"
                                 color="primary"
                                 onClick={this.back}
                                 href="/"
                                 className={classes.button}>
                                 Dashboard
-                        </Button>
+                        </MDBBtn>
                         </div>
                     </div>
                 </div>

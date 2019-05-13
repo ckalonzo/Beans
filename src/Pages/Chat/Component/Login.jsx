@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@progress/kendo-react-buttons';
 import { Input } from '@progress/kendo-react-inputs';
-
+import { MDBBtn } from "mdbreact";
 const Login = props => {
     return (
         <form className="k-form" onSubmit={props.handleLogin}>
@@ -18,9 +18,9 @@ const Login = props => {
                     />
                 </div>
                 <div>
-                    <Button type="submit" primary={true}>
+                    <MDBBtn type="submit" primary={true}>
                         Sign in
-            </Button>
+            </MDBBtn>
                 </div>
             </fieldset>
         </form>

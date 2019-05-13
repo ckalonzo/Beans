@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 
 import { removeItem, addQuantity, subtractQuantity } from '../../Redux/Store/actions/cartActions'
 import Recipe from './Recipe'
@@ -51,7 +45,7 @@ class Cart extends Component {
                                     <Link to="/103_Membership/component/cart"><i className="material-icons" onClick={() => { this.handleAddQuantity(item.id) }}>arrow_drop_up</i></Link>
                                     <Link to="/103_Membership/component/cart"><i className="material-icons" onClick={() => { this.handleSubtractQuantity(item.id) }}>arrow_drop_down</i></Link>
                                 </div>
-                                <button className="waves-effect waves-light btn pink remove" onClick={() => { this.handleRemove(item.id) }}>Remove</button>
+                                <MDBBtn color="indigo" onClick={() => { this.handleRemove(item.id) }}>Primary</MDBBtn>
                             </div>
 
                         </li>

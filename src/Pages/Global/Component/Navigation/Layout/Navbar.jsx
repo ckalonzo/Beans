@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import ProviderSignedInLinks from "./ProviderSignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 import { connect } from 'react-redux'
+import { MDBBtn } from "mdbreact";
 
 const Navbar = (props) => {
     const { auth, profile } = props;
@@ -16,9 +17,9 @@ const Navbar = (props) => {
                     to="/"
                     class="navbar-brand d-flex w-50 mr-auto">
                 </Link>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+                <MDBBtn class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </MDBBtn>
                 <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
                     {links}
                 </div>

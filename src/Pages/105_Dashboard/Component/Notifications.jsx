@@ -34,7 +34,7 @@ const Notifications = (props) => {
 //                     <ReactNotification ref={this.notificationDOMRef} />
 //                     <button onClick={this.addNotification} className="btn btn-primary">
 //                         Add Awesome Notification
-// </button>
+// </MDBBtn>
 //                 </div>
 //             </div>
 //         </div>

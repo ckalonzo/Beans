@@ -1,42 +1,14 @@
 import React, { Component } from 'react'
 import "../Css/PostJob.css";
-import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+
+import { MDBBtn } from "mdbreact";
 
 
-
-const styles = theme => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    formControl: {
-        margin: theme.spacing.unit,
-        minWidth: 400,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing.unit * 2,
-    },
-});
 
 class TypeOfJob extends Component {
 
 
-    state = {
-        size: 'large',
-        labelWidth: 0,
-    };
-    componentDidMount() {
-        this.setState({
-            labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
-        });
-    }
+
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
@@ -51,7 +23,7 @@ class TypeOfJob extends Component {
 
     render() {
         const { values, handleChange, classes } = this.props;
-        const size = this.state.size;
+
         return (
             <React.Fragment>
                 <div className="container">
@@ -65,55 +37,37 @@ class TypeOfJob extends Component {
                     <div className="row">
                         <div className="col-12  offset-0 text-center mb-5">
                             <React.Fragment>
-                                <form className={classes.root} autoComplete="off">
-                                    <FormControl variant="outlined" className={classes.formControl}>
-                                        <InputLabel
-                                            ref={ref => {
-                                                this.InputLabelRef = ref;
-                                            }}
-                                            htmlFor="type-of-jobs"
-                                        >
+                                    <select className="browser-default custom-select" value={values.service}
+                                        onChange={handleChange('service')}>
+                                        <option>Choose your option</option>
+                                        <option value={"Junk Removal"}>Junk Removal</option>
+                                        <option  value={"Cleaner Service"}>Cleaner Service</option>
+                                        
+                                    </select>
+                               
+                                    }
+                                >
 
-                                        </InputLabel>
-                                        <Select
-                                            required
-                                            value={values.service}
-                                            onChange={handleChange('service')}
-                                            input={
-                                                <OutlinedInput
-                                                    labelWidth={this.state.labelWidth}
-                                                    name="Type of Job"
-                                                    id="type-of-jobs"
-                                                />
-                                            }
-                                        >
-
-                                            <MenuItem value={"Junk Removal"}>Junk Removal</MenuItem>
-                                            <MenuItem value={"Cleaner Service"}>Cleaner Service</MenuItem>
-
-                                        </Select>
-
-                                    </FormControl>
-                                </form>
+                                  
                             </React.Fragment>
                         </div>
                     </div>
                     <div className="row">
                         <div className="mx-auto">
-                            <Button
+                            <MDBBtn
                                 variant="contained"
                                 color="primary"
                                 onClick={this.back}
                                 className={classes.button}>
                                 Back
-                        </Button>
-                            <Button
+                        </MDBBtn>
+                            <MDBBtn
                                 variant="contained"
                                 color="primary"
                                 onClick={this.continue}
                                 className={classes.button}>
                                 Continue
-                        </Button>
+                        </MDBBtn>
                         </div>
                     </div>
                 </div>
@@ -127,4 +81,4 @@ class TypeOfJob extends Component {
     }
 }
 
-export default withStyles(styles)(TypeOfJob);
+export default TypeOfJob;

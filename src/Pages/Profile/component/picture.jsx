@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
-import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import { MDBBtn } from "mdbreact";
 
 const styles = {
     input: {
         display: 'none',
     },
-    bigAvatar: {
-        margin: 10,
-        width: 160,
-        height: 160,
-    },
+
 
 };
 
@@ -22,7 +17,13 @@ class Picture extends Component {
         return (
             <React.Fragment>
                 <div className="row">
-                    <Avatar size={94} icon="user" className={classes.bigAvatar} />
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-6 col-md-4">
+                                <image src="holder.js/171x180" roundedCircle />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="row">
                     <input
@@ -33,9 +34,9 @@ class Picture extends Component {
                         type="file"
                     />
                     <label htmlFor="contained-button-file">
-                        <Button variant="contained" component="span" className={classes.button}>
+                        <MDBBtn variant="contained" component="span" className={classes.button}>
                             Change
-        </Button>
+        </MDBBtn>
                     </label>
 
                 </div>

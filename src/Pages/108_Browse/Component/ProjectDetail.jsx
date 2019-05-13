@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { MDBSpinner } from 'mdbreact';
 import { Redirect } from 'react-router-dom'
 
 const ProjectDetails = (props) => {
@@ -45,7 +45,7 @@ const ProjectDetails = (props) => {
   } else {
     return (
       <div className="container text-center">
-        <CircularProgress disableShrink />
+        <MDBSpinner />
       </div>
 
     )

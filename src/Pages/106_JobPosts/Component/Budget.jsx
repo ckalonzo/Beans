@@ -1,30 +1,18 @@
 import React, { Component } from 'react';
 import MoneyValue from './MoneyValue';
-import { withStyles } from '@material-ui/core/styles';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Button from '@material-ui/core/Button';
+import { MDBContainer, MDBCollapse, MDBCard, MDBCardBody, MDBCollapseHeader } from "mdbreact";
+import { MDBBtn } from "mdbreact";
 
-const styles = theme => ({
-    root: {
-        width: '100%',
-    },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        fontWeight: theme.typography.fontWeightRegular,
-    },
-    button: {
-        margin: theme.spacing.unit,
-    },
-    input: {
-        display: 'none',
-    },
-});
+
 
 class Budget extends Component {
+    state = {
+        collapseID: "collapse3"
+    }
+    toggleCollapse = collapseID => () =>
+        this.setState(prevState => ({
+            collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+        }));
 
     continue = (e) => {
         e.preventDefault()
@@ -34,56 +22,54 @@ class Budget extends Component {
         e.preventDefault()
         this.props.prevStep()
     }
-    state = {
-        size: 'large',
-    };
-    render() {
 
+    render() {
+        const { collapseID } = this.state;
         const { handleChange, budget, classes } = this.props;
         return (
-            <div className="className container mt-5">
+            <div className="container ">
+                <MDBContainer>
+                    <MDBContainer className="md-accordion mt-5">
+                        <MDBCard className="mt-3">
+                            <MDBCollapseHeader onClick={this.toggleCollapse("collapse1")}>
+                                How much you willing to spend to get the job done?
+                  <i className={collapseID === "collapse1" ? "fa fa-angle-down rotate-icon" : "fa fa-angle-down"} />
+                            </MDBCollapseHeader>
+                            <MDBCollapse id="collapse1" isOpen={collapseID}>
+                                <MDBCardBody>
+                                    <MoneyValue
+                                        handleChange={handleChange}
+                                        budget={budget}
+                                    />
+                                </MDBCardBody>
+                            </MDBCollapse>
+                        </MDBCard>
+                    </MDBContainer>
+                </MDBContainer>
+
+
                 <div className="row">
-                    <div className="col-12">
-                        <div className={classes.root}>
-                            <ExpansionPanel>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>How much you willing to spend to get the job done?</Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <Typography>
-                                        <MoneyValue
-                                            handleChange={handleChange}
-                                            budget={budget}
-                                        />
-                                    </Typography>
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
+                    <div className="mx-auto">
+                        <MDBBtn
+                            variant="contained"
+                            color="primary"
+                            onClick={this.back}
+                            className={classes.button}>
+                            Back
+                    </MDBBtn>
+                        <MDBBtn
+                            variant="contained"
+                            color="primary"
+                            onClick={this.continue}
+                            className={classes.button}>
+                            Continue
+                  </MDBBtn>
 
-                        </div>
                     </div>
-                    <div className="row">
-                        <div className="mx-auto">
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={this.back}
-                                className={classes.button}>
-                                Back
-                        </Button>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={this.continue}
-                                className={classes.button}>
-                                Continue
-                        </Button>
-
-                        </div>
-                    </div>
-                </div >
+                </div>
             </div>
         )
     }
 }
 
-export default withStyles(styles)(Budget);
+export default Budget;

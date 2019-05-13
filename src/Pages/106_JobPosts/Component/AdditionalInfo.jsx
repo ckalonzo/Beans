@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
 //css
 import "../Css/PostJob.css";
-import { withStyles } from '@material-ui/core/styles';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Button from '@material-ui/core/Button';
+import { MDBContainer, MDBCollapse, MDBCard, MDBCardBody, MDBCollapseHeader } from "mdbreact";
+import { MDBBtn } from "mdbreact";
 // components
 import SpecialInstructions from "././AdditionalInfo/SpecialInstructions/SpecialInstructions";
 import TypeOfTruck from "../Component/AdditionalInfo/TypeOfTruck/TypeOfTruck";
@@ -18,24 +13,17 @@ import AnyLargeItems from "../Component/AdditionalInfo/AnyLargeItemsComponent/An
 import LocationPage from "./AdditionalInfo/LocationOfJob";
 
 
-const styles = theme => ({
-    root: {
-        width: '100%',
-    },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        fontWeight: theme.typography.fontWeightRegular,
-    },
-    button: {
-        margin: theme.spacing.unit,
-    },
-    input: {
-        display: 'none',
-    },
-});
+
 
 class AdditionalInfo extends Component {
 
+    state = {
+        collapseID: "collapse3"
+    }
+    toggleCollapse = collapseID => () =>
+        this.setState(prevState => ({
+            collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+        }));
     continue = (e) => {
         e.preventDefault()
         this.props.nextStep()
@@ -47,7 +35,7 @@ class AdditionalInfo extends Component {
 
     render() {
         const { values, address, city, state, zipCode, largeItems, selectedDate, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions, classes } = this.props;
-
+        const { collapseID } = this.state;
         return (
             <div className="container ">
                 <div className="row">
@@ -55,132 +43,150 @@ class AdditionalInfo extends Component {
                         <h3>Please Complete the Information below</h3>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12">
-                        <div className={classes.root}>
-                            <ExpansionPanel>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>Location Of Job</Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <Typography>
-                                        <LocationPage
-                                            handleChange={this.props.handleChange}
-                                            values={values}
-                                            address={address}
-                                            city={city}
-                                            state={state}
-                                            zipCode={zipCode}
-                                        />
-                                    </Typography>
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
+                <MDBContainer>
+                    <MDBContainer className="md-accordion mt-5">
+                        <MDBCard className="mt-3">
+                            <MDBCollapseHeader onClick={this.toggleCollapse("collapse1")}>
+                                Location Of Job
+              <i className={collapseID === "collapse1" ? "fa fa-angle-down rotate-icon" : "fa fa-angle-down"} />
+                            </MDBCollapseHeader>
+                            <MDBCollapse id="collapse1" isOpen={collapseID}>
+                                <MDBCardBody>
+                                    <LocationPage
+                                        handleChange={this.props.handleChange}
+                                        values={values}
+                                        address={address}
+                                        city={city}
+                                        state={state}
+                                        zipCode={zipCode}
+                                    />
+                                </MDBCardBody>
+                            </MDBCollapse>
+                        </MDBCard>
 
-                            <ExpansionPanel>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>Will There Be AnyLarge Items Involved</Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <Typography>
-                                        <AnyLargeItems
-                                            handleChange={this.props.handleChange}
-                                            values={values}
-                                            largeItems={largeItems}
+                        <MDBCard>
+                            <MDBCollapseHeader onClick={this.toggleCollapse("collapse2")}>
+                                Will There Be AnyLarge Items Involved
+              <i className={collapseID === "collapse2" ? "fa fa-angle-down rotate-icon" : "fa fa-angle-down"} />
+                            </MDBCollapseHeader>
+                            <MDBCollapse id="collapse2" isOpen={collapseID}>
+                                <MDBCardBody>
 
-                                        />
-                                    </Typography>
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
-                            <ExpansionPanel>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>Choose Availibility</Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <Typography>
-                                        <Slot
-                                            handleChange={this.props.handleChange}
-                                            values={values}
-                                            selectedDate={selectedDate}
-                                            time={time}
-                                            handleChangeDatePicker={this.props.handleChangeDatePicker}
-                                            handleChangeTimePicker={this.props.handleChangeTimePicker}
-                                        />
-                                    </Typography>
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
-                            <ExpansionPanel>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>How Many Flights Of Stairs </Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <Typography>
-                                        <FlightOfStairs
-                                            handleChange={this.props.handleChange}
-                                            values={values}
-                                        />
-                                    </Typography>
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
-                            <ExpansionPanel>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>How Many truck Loads </Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <Typography>
-                                        <TruckLoads
-                                            handleChange={this.props.handleChange}
-                                            values={values}
-                                        />
-                                    </Typography>
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
-                            <ExpansionPanel>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>What type of truck will best sute the Job</Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <Typography>
-                                        <TypeOfTruck
-                                            handleChange={this.props.handleChange}
-                                            values={values}
+                                    <AnyLargeItems
+                                        handleChange={this.props.handleChange}
+                                        values={values}
+                                        largeItems={largeItems}
 
-                                        />
-                                    </Typography>
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
-                            <ExpansionPanel>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>Additional Information you would like to add</Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <Typography>
-                                        <SpecialInstructions
-                                            handleChange={this.props.handleChange}
-                                            specialInstructions={specialInstructions}
-                                            values={values}
-                                        />
-                                    </Typography>
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
-                        </div>
-                    </div>
-                </div>
+                                    />
+                                </MDBCardBody>
+                            </MDBCollapse>
+                        </MDBCard>
+
+                        <MDBCard>
+                            <MDBCollapseHeader onClick={this.toggleCollapse("collapse3")}>
+                                Choose Availibility
+              <i className={collapseID === "collapse3" ? "fa fa-angle-down rotate-icon" : "fa fa-angle-down"} />
+                            </MDBCollapseHeader>
+                            <MDBCollapse id="collapse3" isOpen={collapseID}>
+                                <MDBCardBody>
+
+                                    <Slot
+                                        handleChange={this.props.handleChange}
+                                        values={values}
+                                        selectedDate={selectedDate}
+                                        time={time}
+                                        handleChangeDatePicker={this.props.handleChangeDatePicker}
+                                        handleChangeTimePicker={this.props.handleChangeTimePicker}
+                                    />
+                                </MDBCardBody>
+                            </MDBCollapse>
+                        </MDBCard>
+
+                        <MDBCard>
+                            <MDBCollapseHeader onClick={this.toggleCollapse("collapse4")}>
+                                How Many Flights Of Stairs
+              <i className={collapseID === "collapse4" ? "fa fa-angle-down rotate-icon" : "fa fa-angle-down"} />
+                            </MDBCollapseHeader>
+                            <MDBCollapse id="collapse4" isOpen={collapseID}>
+                                <MDBCardBody>
+                                    <FlightOfStairs
+                                        handleChange={this.props.handleChange}
+                                        values={values}
+                                    />
+                                </MDBCardBody>
+                            </MDBCollapse>
+                        </MDBCard>
+                        <MDBCard>
+                            <MDBCollapseHeader onClick={this.toggleCollapse("collapse5")}>
+                                How Many truck Loads
+              <i className={collapseID === "collapse5" ? "fa fa-angle-down rotate-icon" : "fa fa-angle-down"} />
+                            </MDBCollapseHeader>
+                            <MDBCollapse id="collapse5" isOpen={collapseID}>
+                                <MDBCardBody>
+                                    <TruckLoads
+                                        handleChange={this.props.handleChange}
+                                        values={values}
+                                    />
+                                </MDBCardBody>
+                            </MDBCollapse>
+                        </MDBCard>
+                        <MDBCard>
+                            <MDBCollapseHeader onClick={this.toggleCollapse("collapse6")}>
+                                What type of truck will best sute the Job
+              <i className={collapseID === "collapse6" ? "fa fa-angle-down rotate-icon" : "fa fa-angle-down"} />
+                            </MDBCollapseHeader>
+                            <MDBCollapse id="collapse6" isOpen={collapseID}>
+                                <MDBCardBody>
+                                    <TypeOfTruck
+                                        handleChange={this.props.handleChange}
+                                        values={values}
+
+                                    />
+                                </MDBCardBody>
+                            </MDBCollapse>
+                        </MDBCard>
+                        <MDBCard>
+                            <MDBCollapseHeader onClick={this.toggleCollapse("collapse7")}>
+                                Additional Information you would like to add
+              <i className={collapseID === "collapse7" ? "fa fa-angle-down rotate-icon" : "fa fa-angle-down"} />
+                            </MDBCollapseHeader>
+                            <MDBCollapse id="collapse7" isOpen={collapseID}>
+                                <MDBCardBody>
+                                    <SpecialInstructions
+                                        handleChange={this.props.handleChange}
+                                        specialInstructions={specialInstructions}
+                                        values={values}
+                                    />
+                                </MDBCardBody>
+                            </MDBCollapse>
+                        </MDBCard>
+                        <MDBCard>
+                            <MDBCollapseHeader onClick={this.toggleCollapse("collapse4")}>
+                                How Many Flights Of Stairs
+ <i className={collapseID === "collapse4" ? "fa fa-angle-down rotate-icon" : "fa fa-angle-down"} />
+                            </MDBCollapseHeader>
+                            <MDBCollapse id="collapse3" isOpen={collapseID}>
+
+                            </MDBCollapse>
+                        </MDBCard>
+                    </MDBContainer>
+                </MDBContainer>
                 <div className="row">
                     <div className="mx-auto">
-                        <Button
+                        <MDBBtn
                             variant="contained"
                             color="primary"
                             onClick={this.back}
                             className={classes.button}>
                             Back
-                        </Button>
-                        <Button
+                        </MDBBtn>
+                        <MDBBtn
                             variant="contained"
                             color="primary"
                             onClick={this.continue}
                             className={classes.button}>
                             Continue
-                        </Button>
+                        </MDBBtn>
 
                     </div>
                 </div>
@@ -188,4 +194,4 @@ class AdditionalInfo extends Component {
         )
     }
 }
-export default withStyles(styles)(AdditionalInfo);
+export default AdditionalInfo;

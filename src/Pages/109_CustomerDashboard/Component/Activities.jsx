@@ -6,41 +6,7 @@ import ChatModule from '../../Chat/Chat-module'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
-import PropTypes from 'prop-types';
-//material ui
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import NoSsr from '@material-ui/core/NoSsr';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Badge from '@material-ui/core/Badge';
-
-function TabContainer(props) {
-    return (
-        <Typography component="div" style={{ padding: 8 * 3 }}>
-            {props.children}
-        </Typography>
-    );
-}
-
-TabContainer.propTypes = {
-    children: PropTypes.node.isRequired,
-};
-
-function LinkTab(props) {
-    return <Tab component="a" onClick={event => event.preventDefault()} {...props} />;
-}
-
-const styles = theme => ({
-    root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper,
-    },
-});
-
-
-
+import { MDBContainer, MDBTabPane, MDBTabContent, MDBNav, MDBNavItem, MDBNavLink } from "mdbreact";
 
 class Activities extends Component {
     state =
@@ -52,7 +18,16 @@ class Activities extends Component {
             activeJobs: 1,
             show: true,
             value: 0,
+            activeItemClassicTabs1: "1",
         }
+
+    toggleClassicTabs1 = tab => () => {
+        if (this.state.activeItemClassicTabs1 !== tab) {
+            this.setState({
+                activeItemClassicTabs1: tab
+            });
+        }
+    }
 
     handleChange = (event, value) => {
         this.setState({ value });
@@ -65,33 +40,60 @@ class Activities extends Component {
         const { value } = this.state;
         return (
             <div className="col-12">
-                <NoSsr>
-                    <div className={classes.root}>
-                        <AppBar position="static">
-                            <Tabs variant="fullWidth" value={value} onChange={this.handleChange}>
 
-                                <LinkTab label="Current Bids" href="page1" />
+                <MDBContainer>
+                    <div className="classic-tabs">
+                        <MDBNav classicTabs color="cyan">
+                            <MDBNavItem>
+                                <MDBNavLink to="#" className={this.state.activeItemClassicTabs1 === "1" ? "active" : ""} onClick={this.toggleClassicTabs1("1")}>
+                                    Current Bids
+              </MDBNavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
+                                <MDBNavLink to="#" className={this.state.activeItemClassicTabs1 === "2" ? "active" : ""} onClick={this.toggleClassicTabs1("2")}>
+                                    Past Jobs
+              </MDBNavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
+                                <MDBNavLink to="#" className={this.state.activeItemClassicTabs1 === "3" ? "active" : ""} onClick={this.toggleClassicTabs1("3")}>
+                                    Conversation
+              </MDBNavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
+                                <MDBNavLink to="#" className={this.state.activeItemClassicTabs1 === "4" ? "active" : ""} onClick={this.toggleClassicTabs1("4")}>
+                                    Notifications
+              </MDBNavLink>
+                            </MDBNavItem>
+                        </MDBNav>
+                        <MDBTabContent className="card" activeItem={this.state.activeItemClassicTabs1}>
+                            <MDBTabPane tabId="1">
+                                <Currentbids projects={projects} />
+                            </MDBTabPane>
+                            <MDBTabPane tabId="2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit. Nihil odit magnam minima, soluta doloribus
+                                    reiciendis molestiae placeat unde eos molestias.
+                                    Quisquam aperiam, pariatur. Tempora, placeat ratione
+                                    porro voluptate odit minima.
+              </p>
+                            </MDBTabPane>
+                            <MDBTabPane tabId="3">
+                                <ChatModule />
 
+                            </MDBTabPane>
+                            <MDBTabPane tabId="4">
+                                <Notification notifications={notifications} />
 
-                                <LinkTab label="Past Jobs" href="page2" />
-                                <LinkTab label="Conversation" href="page3" />
-                                <LinkTab label="Notifications" href="page4" />
-                            </Tabs>
-                        </AppBar>
-                        {value === 0 && <TabContainer><Currentbids projects={projects} /></TabContainer>}
-                        {value === 1 && <TabContainer>Past Jobs</TabContainer>}
-                        {value === 2 && <TabContainer><ChatModule /></TabContainer>}
-                        {value === 3 && <TabContainer><Notification notifications={notifications} /></TabContainer>}
-
+                            </MDBTabPane>
+                        </MDBTabContent>
                     </div>
-                </NoSsr>
+                </MDBContainer>
             </div>
         )
     }
 }
-Activities.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
+
 const mapStateToProps = (state) => {
     // console.log(state);
     return {
@@ -101,7 +103,6 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-    withStyles(styles),
     connect(mapStateToProps),
     firestoreConnect([
         { collection: 'projects' },

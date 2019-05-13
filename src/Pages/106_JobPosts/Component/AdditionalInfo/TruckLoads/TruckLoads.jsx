@@ -1,53 +1,94 @@
 import React, { Component } from "react";
 import "../../../Css/PostJob.css";
-import { withStyles } from '@material-ui/core/styles';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-
-const styles = theme => ({
-    root: {
-        display: 'flex',
-    },
-    formControl: {
-        margin: theme.spacing.unit * 3,
-    },
-    group: {
-        margin: `${theme.spacing.unit}px 0`,
-    },
-});
-
-
+import { MDBFormInline, MDBInput } from "mdbreact";
 class TruckLoads extends Component {
-
-
     render() {
-        const { handleChange, values, truckLoads, classes } = this.props;
+        const { handleChange, values, truckLoads } = this.props;
         return (
-
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
-                        <FormControl component="fieldset" className={classes.formControl}>
-                            <RadioGroup
-                                required
-                                aria-label="Gender"
-                                name="gender1"
-                                className={classes.group}
-                                value={values.largeItems}
+
+                        <MDBFormInline className="mt-5">
+                            <MDBInput
+                                gap
+                                onClick={this.onClick(1)}
+                                checked={this.state.radio === 1 ? true : false}
+                                label="0"
+                                type="radio"
+                                id={truckLoads}
+                                value={values.truckLoads}
                                 onChange={handleChange('truckLoads')}
                                 defaultvalue={values.truckLoads}
+                            />
+                            <MDBInput
+                                gap
+                                onClick={this.onClick(2)}
+                                checked={this.state.radio === 2 ? true : false}
+                                label="1"
+                                type="radio"
                                 id={truckLoads}
-                            >
-                                <FormControlLabel value="0" control={<Radio />} label="0" />
-                                <FormControlLabel value="1" control={<Radio />} label="1" />
-                                <FormControlLabel value="2" control={<Radio />} label="2" />
-                                <FormControlLabel value="3" control={<Radio />} label="3" />
-                                <FormControlLabel value="4" control={<Radio />} label="4" />
-                                <FormControlLabel value="5" control={<Radio />} label="5" />
-                            </RadioGroup>
-                        </FormControl>
+                                value={values.truckLoads}
+                                onChange={handleChange('truckLoads')}
+                                defaultvalue={values.truckLoads}
+                            />
+                            <MDBInput
+                                gap
+                                onClick={this.onClick(3)}
+                                checked={this.state.radio === 3 ? true : false}
+                                label="2"
+                                type="radio"
+                                id={truckLoads}
+                                value={values.truckLoads}
+                                onChange={handleChange('truckLoads')}
+                                defaultvalue={values.truckLoads}
+                            />
+                            <MDBInput
+                                gap
+                                onClick={this.onClick(4)}
+                                checked={this.state.radio === 4 ? true : false}
+                                label="3"
+                                type="radio"
+                                id={truckLoads}
+                                value={values.truckLoads}
+                                onChange={handleChange('truckLoads')}
+                                defaultvalue={values.truckLoads}
+                            />
+                            <MDBInput
+                                gap
+                                onClick={this.onClick(5)}
+                                checked={this.state.radio === 5 ? true : false}
+                                label="4"
+                                type="radio"
+                                id={truckLoads}
+                                value={values.truckLoads}
+                                onChange={handleChange('truckLoads')}
+                                defaultvalue={values.truckLoads}
+                            />
+                            <MDBInput
+                                gap
+                                onClick={this.onClick(6)}
+                                checked={this.state.radio === 6 ? true : false}
+                                label="5"
+                                type="radio"
+                                id={truckLoads}
+                                value={values.truckLoads}
+                                onChange={handleChange('truckLoads')}
+                                defaultvalue={values.truckLoads}
+                            />
+                            <MDBInput
+                                gap
+                                onClick={this.onClick(7)}
+                                checked={this.state.radio === 7 ? true : false}
+                                label="6"
+                                type="radio"
+                                id={truckLoads}
+                                value={values.truckLoads}
+                                onChange={handleChange('truckLoads')}
+                                defaultvalue={values.truckLoads}
+                            />
+                        </MDBFormInline>
+
                     </div>
                 </div>
 
@@ -56,4 +97,4 @@ class TruckLoads extends Component {
     }
 }
 
-export default withStyles(styles)(TruckLoads);
+export default TruckLoads;

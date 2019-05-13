@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { DropzoneArea } from 'material-ui-dropzone'
-import Button from '@material-ui/core/Button';
+import { MDBBtn } from "mdbreact";
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -42,20 +42,20 @@ class UploadImages extends Component {
 
                 <div className="row">
                     <div className="mx-auto">
-                        <Button
+                        <MDBBtn
                             variant="contained"
                             color="primary"
                             onClick={this.back}
                             className={classes.button}>
                             Back
-                        </Button>
-                        <Button
+                        </MDBBtn>
+                        <MDBBtn
                             variant="contained"
                             color="primary"
                             onClick={this.continue}
                             className={classes.button}>
                             Continue
-                        </Button>
+                        </MDBBtn>
                     </div>
                 </div>
             </div>

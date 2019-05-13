@@ -1,15 +1,6 @@
 import React, { Component } from 'react'
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
+import { MDBBtn } from "mdbreact";
 
-const styles = theme => ({
-    button: {
-        margin: theme.spacing.unit,
-    },
-    input: {
-        display: 'none',
-    },
-});
 
 class SignUpbasicinfo extends Component {
 
@@ -92,20 +83,20 @@ class SignUpbasicinfo extends Component {
                 </div>
                 <div className="row">
                     <div className="mx-auto">
-                        <Button
+                        <MDBBtn
                             variant="contained"
                             color="primary"
                             onClick={this.back}
                             className={classes.button}>
                             Back
-                        </Button>
-                        <Button
+                        </MDBBtn>
+                        <MDBBtn
                             variant="contained"
                             color="primary"
                             onClick={this.continue}
                             className={classes.button}>
                             Continue
-                        </Button>
+                        </MDBBtn>
                     </div>
                 </div>
             </div >
@@ -114,4 +105,4 @@ class SignUpbasicinfo extends Component {
     }
 }
 
-export default withStyles(styles)(SignUpbasicinfo);
+export default SignUpbasicinfo;

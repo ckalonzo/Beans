@@ -1,28 +1,6 @@
 import React, { Component } from "react";
 import "../../../Css/PostJob.css";
-import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-
-
-const styles = theme => ({
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-    },
-    dense: {
-        marginTop: 16,
-    },
-    menu: {
-        width: 200,
-    },
-});
-
+import { MDBInput } from "mdbreact";
 
 class SpecialInstructions extends Component {
 
@@ -45,19 +23,15 @@ class SpecialInstructions extends Component {
             <div className="className container">
                 <div className="row">
                     <div className="col-12 text-center mb-5">
-                        <TextField
-                            id={specialInstructions}
-                            label="Multiline"
-                            multiline
+                        <MDBInput
+                            type="textarea"
+                            label="Special Instructions"
                             rows="4"
+                            icon="pencil-alt"
+                            id={specialInstructions}
                             defaultvalue={values.specialInstructions}
-                            className={classes.textField}
-                            margin="normal"
-                            variant="outlined"
                             onChange={handleChange('specialInstructions')}
                         />
-
-
                     </div>
                 </div>
 
@@ -66,4 +40,4 @@ class SpecialInstructions extends Component {
     }
 }
 
-export default withStyles(styles)(SpecialInstructions)
+export default SpecialInstructions

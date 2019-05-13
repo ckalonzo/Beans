@@ -1,15 +1,7 @@
 import React, { Component } from 'react'
 import "../Css/dashboard.scss";
-import Icon from '@material-ui/core/Icon';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import NoSsr from '@material-ui/core/NoSsr';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Badge from '@material-ui/core/Badge';
+import { MDBContainer, MDBTabPane, MDBTabContent, MDBNav, MDBNavItem, MDBNavLink } from "mdbreact";
 import ChatModule from "../../Chat/Chat-module";
-import PropTypes from 'prop-types';
 import Notification from "./Notifications";
 import Currentbids from '../../105_Dashboard/Component/currentbids'
 import { connect } from 'react-redux'
@@ -17,33 +9,10 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 
 
-function TabContainer(props) {
-    return (
-        <Typography component="div" style={{ padding: 8 * 3 }}>
-            {props.children}
-        </Typography>
-    );
-}
-
-TabContainer.propTypes = {
-    children: PropTypes.node.isRequired,
-};
-
-function LinkTab(props) {
-    return <Tab component="a" onClick={event => event.preventDefault()} {...props} />;
-}
-
-const styles = theme => ({
-    root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper,
-    },
-});
-
-
 class Activities extends Component {
     state =
         {
+            activeItemClassicTabs1: "1",
             pastBidsCounter: 5,
             messagesCounter: 10,
             currentBidsCounter: 20,
@@ -57,6 +26,14 @@ class Activities extends Component {
         this.setState({ value });
     };
 
+    toggleClassicTabs1 = tab => () => {
+        if (this.state.activeItemClassicTabs1 !== tab) {
+            this.setState({
+                activeItemClassicTabs1: tab
+            });
+        }
+    }
+
     render() {
         console.log(this, "======>")
         console.log(`activity${this.props}`);
@@ -66,24 +43,50 @@ class Activities extends Component {
         const { value } = this.state;
         return (
             <div className="col-12">
-                <NoSsr>
-                    <div className={classes.root}>
-                        <AppBar position="static">
-                            <Tabs variant="fullWidth" value={value} onChange={this.handleChange}>
-                                <LinkTab label="Current Bids" href="page1" />
-                                <LinkTab label="Conversation" href="page2" />
-                                <LinkTab label="Notification" href="page3" />
-                                <LinkTab label="Active Jobs" href="page4" />
-                            </Tabs>
-                        </AppBar>
-                        {value === 0 && <TabContainer><Currentbids projects={projects} /></TabContainer>}
-                        {value === 1 && <TabContainer><ChatModule /></TabContainer>}
-                        {value === 2 && <TabContainer><Notification notifications={notifications} /></TabContainer>}
-                        {value === 3 && <TabContainer>Active Jobs</TabContainer>}
-                        {value === 4 && <TabContainer>Page Two</TabContainer>}
-                        {value === 5 && <TabContainer>Page Three</TabContainer>}
+                <MDBContainer>
+                    <div className="classic-tabs">
+                        <MDBNav classicTabs color="cyan">
+                            <MDBNavItem>
+                                <MDBNavLink to="#" className={this.state.activeItemClassicTabs1 === "1" ? "active" : ""} onClick={this.toggleClassicTabs1("1")}>
+                                    Current Bids
+              </MDBNavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
+                                <MDBNavLink to="#" className={this.state.activeItemClassicTabs1 === "2" ? "active" : ""} onClick={this.toggleClassicTabs1("2")}>
+                                    Conversation
+              </MDBNavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
+                                <MDBNavLink to="#" className={this.state.activeItemClassicTabs1 === "3" ? "active" : ""} onClick={this.toggleClassicTabs1("3")}>
+                                    Notification
+              </MDBNavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
+                                <MDBNavLink to="#" className={this.state.activeItemClassicTabs1 === "4" ? "active" : ""} onClick={this.toggleClassicTabs1("4")}>
+                                    Active Jobs
+              </MDBNavLink>
+                            </MDBNavItem>
+                        </MDBNav>
+                        <MDBTabContent className="card" activeItem={this.state.activeItemClassicTabs1}>
+                            <MDBTabPane tabId="1">
+                                <Currentbids projects={projects} />
+                            </MDBTabPane>
+                            <MDBTabPane tabId="2">
+                                <ChatModule />
+                            </MDBTabPane>
+                            <MDBTabPane tabId="3">
+                                <Notification notifications={notifications} />
+                            </MDBTabPane>
+                            <MDBTabPane tabId="4">
+                                <p>
+                                    Active Jobs
+              </p>
+                            </MDBTabPane>
+                        </MDBTabContent>
                     </div>
-                </NoSsr>
+                </MDBContainer>
+                );
+              }
             </div>
         )
     }
@@ -96,9 +99,8 @@ const mapStateToProps = (state) => {
         notifications: state.firestore.ordered.notifications
     }
 }
-
 export default compose(
-    connect(mapStateToProps), withStyles(styles),
+    connect(mapStateToProps),
     firestoreConnect([
         { collection: 'projects' },
         { collection: 'notifications', limit: 3 }
