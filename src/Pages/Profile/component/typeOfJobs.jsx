@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MDBBadge } from "mdbreact";
-import { withStyles } from '@material-ui/core/styles';
+
 
 
 class TypeOfJobs extends Component {
