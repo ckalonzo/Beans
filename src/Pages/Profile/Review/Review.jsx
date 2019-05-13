@@ -2,17 +2,9 @@ import React, { Component } from "react";
 import RateCompany from "./component/RateCompany";
 import WriteReview from './component/writeReview'
 import './scss/writeReview.scss'
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
+import { MDBBtn } from "mdbreact";
 
-const styles = theme => ({
-    button: {
-        margin: theme.spacing.unit,
-    },
-    input: {
-        display: 'none',
-    },
-});
+
 
 class Review extends Component {
   render() {
@@ -31,34 +23,34 @@ class Review extends Component {
                 <h6>Write Review to help the next customer</h6>
               </div>
               <div className="col-12 border">
-              <div className="row">
-                <div className="col-12">
-                  <RateCompany />
+                <div className="row">
+                  <div className="col-12">
+                    <RateCompany />
+                  </div>
                 </div>
-              </div>
-              <div className="row">
-                <div className="col-12">
-                <WriteReview />
+                <div className="row">
+                  <div className="col-12">
+                    <WriteReview />
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
             <div className="row">
-                        <div className="mx-auto">
+              <div className="mx-auto">
 
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={this.continue}
-                                className={classes.button}>
-                                Submit
-                        </Button>
-                        </div>
-                    </div>
+                <MDBBtn
+                  variant="contained"
+                  color="primary"
+                  onClick={this.continue}
+                  className={classes.button}>
+                  Submit
+                        </MDBBtn>
+              </div>
+            </div>
           </div>
         </section>
       </React.Fragment>
     );
   }
 }
-export default withStyles(styles)(Review)
+export default Review
