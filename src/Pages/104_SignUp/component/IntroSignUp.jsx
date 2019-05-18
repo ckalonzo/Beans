@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { MDBBtn } from "mdbreact";
 
 
 class IntroSignUp extends Component {
@@ -25,13 +24,14 @@ class IntroSignUp extends Component {
                     <div className="row">
                         <div className="mx-auto">
 
-                            <MDBBtn
-                                variant="contained"
-                                color="primary"
-                                onClick={this.continue}
-                                className={classes.button}>
+
+
+                            <button
+                                type="button"
+                                className="btn btn-primary"
+                                onClick={this.continue}>
                                 Continue
-                        </MDBBtn>
+                        </button>
                         </div>
                     </div>
                 </div>

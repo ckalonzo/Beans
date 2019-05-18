@@ -1,24 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import { MDBInput } from "mdbreact";
 
-const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-  },
-  dense: {
-    marginTop: 16,
-  },
-  menu: {
-    width: 600,
-  },
-});
+
 
 
 class OutlinedTextFields extends React.Component {
@@ -36,25 +19,21 @@ class OutlinedTextFields extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
     return (
-        <TextField
-          id="outlined-multiline-flexible"
-          label="Bio"
-          multiline
-          rowsMax="20"
-          value={this.state.multiline}
-          onChange={this.handleChange('multiline')}
-          className={classes.textField}
-          margin="normal"
-          variant="outlined"
-        />
+      <MDBInput
+        type="textarea"
+        id="outlined-multiline-flexible"
+        label="Bio"
+        multiline
+        rowsMax="20"
+        value={this.state.multiline}
+        onChange={this.handleChange('multiline')}
+        outline
+      />
     );
   }
 }
 
-OutlinedTextFields.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(OutlinedTextFields);
+
+export default OutlinedTextFields;

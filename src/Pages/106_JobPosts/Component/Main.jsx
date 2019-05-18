@@ -10,28 +10,16 @@ import IntroPostJob from "../Component/IntroPostJob";
 import TypeOfJob from "../Component/TypeOfJob";
 import UploadImages from "../Component/UploadImages";
 import Confirm from "./Confirm";
-
+import { MDBContainer, MDBRow, MDBCol, MDBStepper, MDBStep, MDBBtn, MDBInput } from "mdbreact";
 import Success from "./Success";
-import { withStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepButton from '@material-ui/core/StepButton';
-import { MDBBtn } from "mdbreact";
-import Typography from '@material-ui/core/Typography';
-
-
-
-
-
-
-
 
 class MainForm extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            current: 0,
+            formActivePanel1: 1,
+            formActivePanel1Changed: false,
             service: 'Junk Removal',
             email: '',
             files: [],
@@ -56,6 +44,15 @@ class MainForm extends Component {
         this.handleChangeTimePicker = this.handleChangeTimePicker.bind(this);
         this.handleChangeDatePicker = this.handleChangeDatePicker.bind(this);
     }
+
+    swapFormActive = (a) => (param) => (e) => {
+        this.setState({
+            ['formActivePanel' + a]: param,
+            ['formActivePanel' + a + 'Changed']: true
+        });
+    }
+
+
     //proceed to next step
     nextStep = () => {
         const { current } = this.state
@@ -65,14 +62,19 @@ class MainForm extends Component {
     }
 
     //go back to pevious step
-    prevStep = () => {
-        const { current } = this.state
+    handleNextPrevClick = (a) => (param) => (e) => {
         this.setState({
-            current: current - 1
-        })
+            ['formActivePanel' + a]: param,
+            ['formActivePanel' + a + 'Changed']: true
+        });
     }
 
 
+    calculateAutofocus = (a) => {
+        if (this.state['formActivePanel' + a + 'Changed']) {
+            return true
+        }
+    }
     // Handle fields change
     handleChange = input => e => {
 
@@ -93,7 +95,8 @@ class MainForm extends Component {
     handleChangeTimePicker = time => {
         this.setState({ time: time });
     }
-    handleSubmit = (e) => {
+
+    handleSubmission = (e) => {
         e.preventDefault();
         this.props.CreateProject(this.state);
     }
@@ -107,57 +110,6 @@ class MainForm extends Component {
         const values = { service, budget, email, files, name, address, city, state, zipCode, largeItems, selectedDate, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
 
         let step = [
-            {
-                title: "Introduction",
-                content: <IntroPostJob
-                    nextStep={this.nextStep}
-                />
-            },
-            {
-                title: "Type Of Job",
-                content: <TypeOfJob
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange={this.handleChange}
-                    values={values}
-                />
-            },
-            {
-                title: "Upload Image",
-                content: <UploadImages nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChangeAttachments={this.handleChangeAttachments}
-                    values={values}
-                    files={files} />
-            },
-            {
-                title: "Additional Information",
-                content: <AdditionalInfo
-                    form={this.props.form}
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange={this.handleChange}
-                    values={values}
-                    address={address}
-                    city={city}
-                    zipCode={zipCode}
-                    largeItems={largeItems}
-                    handleChangeDatePicker={this.handleChangeDatePicker}
-                    handleChangeTimePicker={this.handleChangeTimePicker}
-
-                />
-            },
-            {
-                title: "Budget",
-                content: <Budget
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange={this.handleChange}
-                    budget={budget}
-                    values={values}
-
-                />
-            },
             {
                 title: "Confirm",
                 content: < Confirm
@@ -181,24 +133,114 @@ class MainForm extends Component {
                         </div>
 
                     </div>
+                    <MDBStepper icon>
+                        <MDBStep far icon="folder-open" stepName="Basic Information" onClick={this.swapFormActive(1)(1)}></MDBStep>
+                        <MDBStep icon="pencil-alt" stepName="Personal Data" onClick={this.swapFormActive(1)(2)}></MDBStep>
+                        <MDBStep icon="photo" stepName="Terms and Conditions" onClick={this.swapFormActive(1)(3)}></MDBStep>
+                        <MDBStep icon="check" stepName="Finish" onClick={this.swapFormActive(1)(4)}></MDBStep>
+                    </MDBStepper>
+                    <form role="form" action="" method="post">
+                        <MDBRow>
+                            {this.state.formActivePanel1 == 1 &&
+                                (<MDBCol md="12">
+                                    <h3 className="font-weight-bold pl-0 my-4">
+                                        <strong>Introduction</strong></h3>
+                                    <IntroPostJob
+                                        nextStep={this.nextStep}
+                                    />
+                                    <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(2)}>Next</MDBBtn>
+                                </MDBCol>)}
 
-                    <Step current={current}>
-                        {step.map(item => <Step key={item.title} title={item.title} />)}
-                    </Step>
-                    {step.map(({ title, content }, i) => (
-                        <div
-                            key={title}
-                            className={i === this.state.current ? "foo fade-in" : "foo"}
-                        >
-                            {content}
-                        </div>
-                    ))}
+                            {this.state.formActivePanel1 == 2 &&
+                                (<MDBCol md="12">
+                                    <h3 className="font-weight-bold pl-0 my-4"><strong>Type Of Job</strong></h3>
+                                    <TypeOfJob
+                                        nextStep={this.nextStep}
+                                        prevStep={this.prevStep}
+                                        handleChange={this.handleChange}
+                                        values={values}
+                                    />
+                                    <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(1)}>previous</MDBBtn>
+                                    <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(3)}>next</MDBBtn>
+                                </MDBCol>)}
 
+                            {this.state.formActivePanel1 == 4 &&
+                                (<MDBCol md="12">
+                                    <h3 className="font-weight-bold pl-0 my-4"><strong>Upload Image</strong></h3>
+                                    <UploadImages nextStep={this.nextStep}
+                                        prevStep={this.prevStep}
+                                        handleChangeAttachments={this.handleChangeAttachments}
+                                        values={values}
+                                        files={files} />
+                                    <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(2)}>previous</MDBBtn>
+                                    <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(4)}>next</MDBBtn>
+                                </MDBCol>)}
+
+                            {this.state.formActivePanel1 == 5 &&
+                                (<MDBCol md="12">
+                                    <h3 className="font-weight-bold pl-0 my-4">
+                                        <strong>Additional Information</strong></h3>
+                                    <AdditionalInfo
+                                        form={this.props.form}
+                                        nextStep={this.nextStep}
+                                        prevStep={this.prevStep}
+                                        handleChange={this.handleChange}
+                                        values={values}
+                                        address={address}
+                                        city={city}
+                                        zipCode={zipCode}
+                                        largeItems={largeItems}
+                                        handleChangeDatePicker={this.handleChangeDatePicker}
+                                        handleChangeTimePicker={this.handleChangeTimePicker}
+
+                                    />
+                                    <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(1)}>previous</MDBBtn>
+                                    <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(5)}>next</MDBBtn>
+                                </MDBCol>)}
+
+                            {this.state.formActivePanel1 == 6 &&
+                                (<MDBCol md="12">
+                                    <h3 className="font-weight-bold pl-0 my-4"><strong>Budget</strong></h3>
+                                    <Budget
+                                        nextStep={this.nextStep}
+                                        prevStep={this.prevStep}
+                                        handleChange={this.handleChange}
+                                        budget={budget}
+                                        values={values}
+
+                                    />
+                                    <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(2)}>previous</MDBBtn>
+                                    <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(6)}>next</MDBBtn>
+                                </MDBCol>)}
+
+                            {this.state.formActivePanel1 == 7 &&
+                                (<MDBCol md="12">
+                                    <h3 className="font-weight-bold pl-0 my-4"><strong>Confirm</strong></h3>
+                                    < Confirm
+                                        nextStep={this.nextStep}
+                                        prevStep={this.prevStep}
+                                        values={values}
+                                        handleSubmit={this.handleSubmit}
+                                    />
+                                    <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(1)}>previous</MDBBtn>
+                                    <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(7)}>next</MDBBtn>
+                                </MDBCol>)}
+
+
+                            {this.state.formActivePanel1 == 8 &&
+                                (<MDBCol md="12">
+                                    <h3 className="font-weight-bold pl-0 my-4"><strong>Finish</strong></h3>
+                                    <h2 className="text-center font-weight-bold my-4">Registration completed!</h2>
+                                    <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(3)}>previous</MDBBtn>
+                                    <MDBBtn color="success" rounded className="float-right" onClick={this.handleSubmission}>submit</MDBBtn>
+                                </MDBCol>)}
+                        </MDBRow>
+                    </form>
 
                 </div>
             </div>
         );
-    }
+    };
 }
 const mapStateToProps = (state) => {
     return {

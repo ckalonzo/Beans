@@ -1,15 +1,7 @@
 import React, { Component } from 'react'
 import { MDBBtn } from "mdbreact";
-import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
-    button: {
-        margin: theme.spacing.unit,
-    },
-    input: {
-        display: 'none',
-    },
-});
+
 
 class Success extends Component {
 
@@ -42,4 +34,4 @@ class Success extends Component {
     }
 }
 
-export default withStyles(styles)(Success);
+export default Success;
