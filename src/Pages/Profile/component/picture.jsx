@@ -25,6 +25,7 @@ class Picture extends Component {
                     </div>
                 </div>
                 <div className="row">
+<<<<<<< HEAD
                     <div className="col-7 mx-auto">
                         <input
                             accept="image/*"
@@ -39,6 +40,21 @@ class Picture extends Component {
         </MDBBtn>
                         </label>
                     </div>
+=======
+                    <input
+                        accept="image/*"
+                        className={classes.input}
+                        id="contained-button-file"
+                        multiple
+                        type="file"
+                    />
+                    <label htmlFor="contained-button-file">
+                        <Button variant="contained" component="span" className={classes.button}>
+                            Change
+        </Button>
+                    </label>
+
+>>>>>>> parent of 79dc1689... adding profile component
                 </div>
 
             </React.Fragment>

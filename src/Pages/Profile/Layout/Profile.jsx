@@ -3,7 +3,10 @@ import ActiveMember from '../component/ActiveMember'
 import CompanyName from '../component/companyName'
 import NumberofJobs from '../component/NumberofJobs'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import BidsCompleted from '../component/BidsCompleted'
+=======
+>>>>>>> parent of 79dc1689... adding profile component
 =======
 >>>>>>> parent of 79dc1689... adding profile component
 import PersonName from '../component/personName'
@@ -12,7 +15,11 @@ import ProfileLocation from '../component/ProfileLocation'
 import AvgRating from '../component/Rating'
 import TypeOfJobs from '../component/typeOfJobs'
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+import Divider from '@material-ui/core/Divider'
+>>>>>>> parent of 79dc1689... adding profile component
 =======
 import Divider from '@material-ui/core/Divider'
 >>>>>>> parent of 79dc1689... adding profile component
@@ -36,7 +43,11 @@ export default class Profile extends Component {
                     <Picture />
                     <TypeOfJobs />
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <ProfileLocation />
+=======
+                    <ProfileLocation />                    
+>>>>>>> parent of 79dc1689... adding profile component
 =======
                     <ProfileLocation />                    
 >>>>>>> parent of 79dc1689... adding profile component
