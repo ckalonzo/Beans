@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../../../Css/PostJob.css";
-import TextField from '@material-ui/core/TextField';
+
 
 
 export default class ZipCode extends Component {
@@ -9,7 +9,9 @@ export default class ZipCode extends Component {
         const { handleChange, zipCode, values } = this.props;
         return (
             <React.Fragment>
-                <TextField
+                <input
+                    type="text"
+                    className="form-control"
                     required
                     id={zipCode}
                     name="zip"

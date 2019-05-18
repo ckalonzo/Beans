@@ -1,16 +1,8 @@
 import React, { Component } from "react";
-import { DropzoneArea } from 'material-ui-dropzone'
 import { MDBBtn } from "mdbreact";
-import { withStyles } from '@material-ui/core/styles';
+import { Form, Field, reduxForm } from "redux-form";
+import DropZone from "react-dropzone";
 
-const styles = theme => ({
-    button: {
-        margin: theme.spacing.unit,
-    },
-    input: {
-        display: 'none',
-    },
-});
 class UploadImages extends Component {
 
     continue = (e) => {
@@ -24,7 +16,7 @@ class UploadImages extends Component {
 
     render() {
 
-        const { handleChangeAttachments, files, classes } = this.props;
+        const { handleChangeAttachments, files, handleOnDrop, imagefile, input } = this.props;
         return (
             <div>
                 <div className="container">
@@ -35,10 +27,16 @@ class UploadImages extends Component {
                         </div>
                     </div>
                 </div>
-                <DropzoneArea
+                <DropZone
+                    accept="image/jpeg, image/png, image/gif, image/bmp"
+                    className="upload-container"
+                    onDrop={handleOnDrop}
                     onChange={handleChangeAttachments.bind(files)}
 
                 />
+
+
+
 
                 <div className="row">
                     <div className="mx-auto">
@@ -46,14 +44,14 @@ class UploadImages extends Component {
                             variant="contained"
                             color="primary"
                             onClick={this.back}
-                            className={classes.button}>
+                        >
                             Back
                         </MDBBtn>
                         <MDBBtn
                             variant="contained"
                             color="primary"
                             onClick={this.continue}
-                            className={classes.button}>
+                        >
                             Continue
                         </MDBBtn>
                     </div>
@@ -63,4 +61,4 @@ class UploadImages extends Component {
     }
 }
 
-export default withStyles(styles)(UploadImages);
+export default UploadImages;

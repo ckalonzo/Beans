@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MDBBtn } from "mdbreact";
+
 
 
 class SignUpbasicinfo extends Component {
@@ -15,7 +15,7 @@ class SignUpbasicinfo extends Component {
 
     render() {
 
-        const { handleChange, values, classes } = this.props;
+        const { handleChange, values } = this.props;
         return (
             <div>
                 <div className="container mt-5">
@@ -83,20 +83,19 @@ class SignUpbasicinfo extends Component {
                 </div>
                 <div className="row">
                     <div className="mx-auto">
-                        <MDBBtn
-                            variant="contained"
-                            color="primary"
-                            onClick={this.back}
-                            className={classes.button}>
+                        <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={this.back}>
                             Back
-                        </MDBBtn>
-                        <MDBBtn
-                            variant="contained"
-                            color="primary"
-                            onClick={this.continue}
-                            className={classes.button}>
+                        </button>
+
+                        <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={this.continue}>
                             Continue
-                        </MDBBtn>
+                        </button>
                     </div>
                 </div>
             </div >
