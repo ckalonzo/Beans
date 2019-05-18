@@ -26,8 +26,7 @@ class Picture extends Component {
                     </div>
                 </div>
                 <div className="row">
-                <div className="col-7 mx-auto">
-                <input
+                    <input
                         accept="image/*"
                         className={classes.input}
                         id="contained-button-file"
@@ -39,7 +38,7 @@ class Picture extends Component {
                             Change
         </MDBBtn>
                     </label>
-                </div>
+
                 </div>
 
             </React.Fragment>

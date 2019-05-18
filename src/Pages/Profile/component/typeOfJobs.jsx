@@ -11,9 +11,14 @@ class TypeOfJobs extends Component {
             <React.Fragment>
                 <div className="row">
                     <div className="col">
+<<<<<<< HEAD
                         <MDBBadge pill color="light">Junk Removal</MDBBadge>
                         <MDBBadge pill color="light">Lawn Service</MDBBadge>
 
+=======
+                        <Chip label="Junk Removal" className={classes.chip} />
+                        <Chip label="Lawn Service" className={classes.chip} />
+>>>>>>> parent of 79dc1689... adding profile component
                     </div>
                 </div>
 

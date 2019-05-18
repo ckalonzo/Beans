@@ -38,8 +38,7 @@ class CustomerForm extends Component {
                             <div className="container ">
                                 <div className="login-panel mt-5">
                                     <div className="row">
-                                    <div className="col-12">
-                                    <h5 className="mx-auto mt-2 login-title">Sign In Your Trucked Away Dashboard</h5>
+                                        <h5 className="mx-auto mt-2 login-title">Sign In Your Trucked Away Dashboard</h5>
                                         <div className="container mt-3 login-outline">
                                             <div className="mx-auto login">
                                                 <div className="">
@@ -99,8 +98,6 @@ class CustomerForm extends Component {
                                         </div>
 
                                     </div>
-                                    </div>
-                                        
                                     <div className="mt-5 dontHaveAnAccount">Dont have an Account? <a className="signUpLink" onClick={this.signup}>Sign Up Here</a></div>
                                 </div>
                             </div>

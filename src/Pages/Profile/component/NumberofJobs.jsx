@@ -7,11 +7,11 @@ export default class NumberofJobs extends Component {
             <React.Fragment>
                 <div className="row">   
                 <div className="col-6">
-                        <h6 className="font-weight-bold">Jobs: </h6>
-                    </div>
-                    <div className="col-6">
                 <h6>400</h6>
                 </div>
+                <div className="col-6">
+                        <h6>Jobs </h6>
+                    </div>
                 </div>
             </React.Fragment>
 
