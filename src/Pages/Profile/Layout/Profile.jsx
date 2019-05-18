@@ -2,27 +2,20 @@ import React, { Component } from 'react'
 import ActiveMember from '../component/ActiveMember'
 import CompanyName from '../component/companyName'
 import NumberofJobs from '../component/NumberofJobs'
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import BidsCompleted from '../component/BidsCompleted'
-=======
->>>>>>> parent of 79dc1689... adding profile component
-=======
->>>>>>> parent of 79dc1689... adding profile component
 import PersonName from '../component/personName'
 import Picture from '../component/picture'
 import ProfileLocation from '../component/ProfileLocation'
 import AvgRating from '../component/Rating'
 import TypeOfJobs from '../component/typeOfJobs'
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
 import Divider from '@material-ui/core/Divider'
->>>>>>> parent of 79dc1689... adding profile component
-=======
+
 import Divider from '@material-ui/core/Divider'
->>>>>>> parent of 79dc1689... adding profile component
+
+import Divider from '@material-ui/core/Divider'
+
 import ProfileHero from '../component/ProfileHero'
 import OutlinedTextFields from '../component/multiline-Input'
 import Skills from '../component/Skills'
@@ -42,15 +35,15 @@ export default class Profile extends Component {
                   <div className="col-3">
                     <Picture />
                     <TypeOfJobs />
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                     <ProfileLocation />
-=======
-                    <ProfileLocation />                    
->>>>>>> parent of 79dc1689... adding profile component
-=======
-                    <ProfileLocation />                    
->>>>>>> parent of 79dc1689... adding profile component
+
+                    <ProfileLocation />
+
+                    <ProfileLocation />
+
+                    <ProfileLocation />
+
                   </div>
                   <div className="col-6">
                     <div className="row">
@@ -60,7 +53,7 @@ export default class Profile extends Component {
                         <AvgRating />
                         <OutlinedTextFields />
                       </div>
-                    </div> 
+                    </div>
                   </div>
                   <div className="col-3">
                     <div className="row">
@@ -68,28 +61,28 @@ export default class Profile extends Component {
                         <NumberofJobs />
                         <ActiveMember />
                       </div>
-                    </div>  
+                    </div>
                   </div>
                 </div>
 
                 <div className="row">
                   <div className="col-8">
-                  <div className="row">
-                  <div className="shadow">
-                  <Reviews/>
-                  </div>
-                  </div>
-                  
                     <div className="row">
-                    <div className="shadow">
-                  <History/>
-                  </div>
+                      <div className="shadow">
+                        <Reviews />
+                      </div>
                     </div>
-                  </div>
+
+                    <div className="row">
+                      <div className="shadow">
+                        <History />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
         </section>
       </React.Fragment>
     )
