@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom'
-import 'date-fns';
-import { CreateProject } from '../../Redux/Store/actions/JobPostActions';
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import "date-fns";
+import { CreateProject } from "../../Redux/Store/actions/JobPostActions";
 import "../Css/PostJob.css";
 import Budget from "../Component/Budget";
 import AdditionalInfo from "../Component/AdditionalInfo";
@@ -10,130 +10,163 @@ import IntroPostJob from "../Component/IntroPostJob";
 import TypeOfJob from "../Component/TypeOfJob";
 import UploadImages from "../Component/UploadImages";
 import Confirm from "./Confirm";
-import { MDBContainer, MDBRow, MDBCol, MDBStepper, MDBStep, MDBBtn, MDBInput } from "mdbreact";
+
 import Success from "./Success";
 
 class MainForm extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            formActivePanel1: 1,
-            formActivePanel1Changed: false,
-            service: 'Junk Removal',
-            email: '',
-            files: [],
-            name: "",
-            address: "",
-            city: "",
-            state: "State",
-            zipCode: "",
-            largeItems: "",
-            selectedDate: new Date('2014-08-18T21:11:54'),
-            time: "",
-            flightOfStairs: "",
-            truckLoads: "",
-            typeOfTruck: "",
-            specialInstructions: "",
-            budget: "",
+    this.state = {
+      formActivePanel1: 1,
+      formActivePanel1Changed: false,
+      service: "Junk Removal",
+      email: "",
+      files: [],
+      name: "",
+      address: "",
+      city: "",
+      state: "State",
+      zipCode: "",
+      largeItems: "",
+      selectedDate: new Date("2014-08-18T21:11:54"),
+      time: "",
+      flightOfStairs: "",
+      truckLoads: "",
+      typeOfTruck: "",
+      specialInstructions: "",
+      budget: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeAttachments = this.handleChangeAttachments.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeTimePicker = this.handleChangeTimePicker.bind(this);
+    this.handleChangeDatePicker = this.handleChangeDatePicker.bind(this);
+  }
 
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleChangeAttachments = this.handleChangeAttachments.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChangeTimePicker = this.handleChangeTimePicker.bind(this);
-        this.handleChangeDatePicker = this.handleChangeDatePicker.bind(this);
+  swapFormActive = a => param => e => {
+    this.setState({
+      ["formActivePanel" + a]: param,
+      ["formActivePanel" + a + "Changed"]: true
+    });
+  };
+
+  //proceed to next step
+  nextStep = () => {
+    const { current } = this.state;
+    this.setState({
+      current: current + 1
+    });
+  };
+
+  //go back to pevious step
+  handleNextPrevClick = a => param => e => {
+    this.setState({
+      ["formActivePanel" + a]: param,
+      ["formActivePanel" + a + "Changed"]: true
+    });
+  };
+
+  calculateAutofocus = a => {
+    if (this.state["formActivePanel" + a + "Changed"]) {
+      return true;
     }
+  };
+  // Handle fields change
+  handleChange = input => e => {
+    this.setState({
+      [input]: e.target.value
+    });
+  };
+  handleChangeAttachments(files) {
+    this.setState({ files: files });
+  }
 
-    swapFormActive = (a) => (param) => (e) => {
-        this.setState({
-            ['formActivePanel' + a]: param,
-            ['formActivePanel' + a + 'Changed']: true
-        });
-    }
+  handleChangeDatePicker = date => {
+    this.setState({ selectedDate: date });
+  };
 
+  handleChangeTimePicker = time => {
+    this.setState({ time: time });
+  };
 
-    //proceed to next step
-    nextStep = () => {
-        const { current } = this.state
-        this.setState({
-            current: current + 1
-        });
-    }
+  handleSubmission = e => {
+    e.preventDefault();
+    this.props.CreateProject(this.state);
+  };
 
-    //go back to pevious step
-    handleNextPrevClick = (a) => (param) => (e) => {
-        this.setState({
-            ['formActivePanel' + a]: param,
-            ['formActivePanel' + a + 'Changed']: true
-        });
-    }
-
-
-    calculateAutofocus = (a) => {
-        if (this.state['formActivePanel' + a + 'Changed']) {
-            return true
-        }
-    }
-    // Handle fields change
-    handleChange = input => e => {
-
-        this.setState({
-            [input]: e.target.value
-
-        });
-    }
-    handleChangeAttachments(files) {
-        this.setState({ files: files });
-    }
-
-    handleChangeDatePicker = date => {
-        this.setState({ selectedDate: date });
+  render() {
+    console.log(this.props);
+    const { current } = this.state;
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/101_CustomerLogin/CustomerLogin" />;
+    const {
+      service,
+      email,
+      budget,
+      files,
+      name,
+      address,
+      city,
+      state,
+      zipCode,
+      largeItems,
+      selectedDate,
+      time,
+      flightOfStairs,
+      truckLoads,
+      typeOfTruck,
+      specialInstructions
+    } = this.state;
+    const values = {
+      service,
+      budget,
+      email,
+      files,
+      name,
+      address,
+      city,
+      state,
+      zipCode,
+      largeItems,
+      selectedDate,
+      time,
+      flightOfStairs,
+      truckLoads,
+      typeOfTruck,
+      specialInstructions
     };
 
-
-    handleChangeTimePicker = time => {
-        this.setState({ time: time });
-    }
-
-    handleSubmission = (e) => {
-        e.preventDefault();
-        this.props.CreateProject(this.state);
-    }
-
-    render() {
-        console.log(this.props);
-        const { current } = this.state;
-        const { auth } = this.props;
-        if (!auth.uid) return <Redirect to='/101_CustomerLogin/CustomerLogin' />
-        const { service, email, budget, files, name, address, city, state, zipCode, largeItems, selectedDate, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } = this.state;
-        const values = { service, budget, email, files, name, address, city, state, zipCode, largeItems, selectedDate, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions };
-
-        let step = [
-            {
-                title: "Confirm",
-                content: < Confirm
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    values={values}
-                    handleSubmit={this.handleSubmit}
-                />
-            },
-            {
-                title: "Success",
-                content: < Success />
-            }
-        ];
-        return (
-            <div className="pj-sec">
-                <div className="container">
-                    <div className="row">
-                        <div className="mx-auto">
-                            <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Avatar" class="avatar"></img>
-                        </div>
-
-                    </div>
-                    <MDBStepper icon>
+    let step = [
+      {
+        title: "Confirm",
+        content: (
+          <Confirm
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+            handleSubmit={this.handleSubmit}
+          />
+        )
+      },
+      {
+        title: "Success",
+        content: <Success />
+      }
+    ];
+    return (
+      <div className="pj-sec">
+        <div className="container">
+          <div className="row">
+            <div className="mx-auto">
+              <img
+                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                alt="Avatar"
+                class="avatar"
+              />
+            </div>
+          </div>
+          {/* <MDBStepper icon>
                         <MDBStep far icon="folder-open" stepName="Basic Information" onClick={this.swapFormActive(1)(1)}></MDBStep>
                         <MDBStep icon="pencil-alt" stepName="Personal Data" onClick={this.swapFormActive(1)(2)}></MDBStep>
                         <MDBStep icon="photo" stepName="Terms and Conditions" onClick={this.swapFormActive(1)(3)}></MDBStep>
@@ -160,7 +193,7 @@ class MainForm extends Component {
                                         handleChange={this.handleChange}
                                         values={values}
                                     />
-                                    <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(1)}>previous</MDBBtn>
+                                    <MDBBtn color="mdb-color" rounded className="float-left" >previous</MDBBtn>
                                     <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(3)}>next</MDBBtn>
                                 </MDBCol>)}
 
@@ -193,7 +226,17 @@ class MainForm extends Component {
                                         handleChangeDatePicker={this.handleChangeDatePicker}
                                         handleChangeTimePicker={this.handleChangeTimePicker}
 
-                                    />
+                                />
+                                 <button type="button" class="btn btn-primary" onClick={this.back}>
+              Back
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onClick={this.continue}
+            >
+              Continue
+            </button>
                                     <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(1)}>previous</MDBBtn>
                                     <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(5)}>next</MDBBtn>
                                 </MDBCol>)}
@@ -234,24 +277,26 @@ class MainForm extends Component {
                                     <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(3)}>previous</MDBBtn>
                                     <MDBBtn color="success" rounded className="float-right" onClick={this.handleSubmission}>submit</MDBBtn>
                                 </MDBCol>)}
-                        </MDBRow>
-                    </form>
-
-                </div>
-            </div>
-        );
-    };
+                        </MDBRow> */}
+          {/* </form> */}
+        </div>
+        //{" "}
+      </div>
+    );
+  }
 }
-const mapStateToProps = (state) => {
-    return {
-        auth: state.firebase.auth
-    }
-}
-const mapDispatchToProps = (dispatch) => {
-    return {
-        CreateProject: (project) => dispatch(CreateProject(project))
-    }
-}
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    CreateProject: project => dispatch(CreateProject(project))
+  };
+};
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(MainForm)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainForm);

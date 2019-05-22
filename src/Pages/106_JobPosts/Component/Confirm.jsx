@@ -1,76 +1,85 @@
-import React, { Component } from 'react'
-import { MDBBtn, MDBListGroup, MDBListGroupItem, MDBContainer } from "mdbreact";
-
+import React, { Component } from "react";
 
 class Confirm extends Component {
+  continue = e => {
+    e.preventDefault();
+    //process Form//
+    this.props.nextStep();
+    this.props.handleSubmit(e);
+  };
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
 
+  render() {
+    const {
+      values: {
+        service,
+        budget,
+        attachments,
+        address,
+        city,
+        state,
+        zipCode,
+        largeItems,
+        date,
+        time,
+        flightOfStairs,
+        truckLoads,
+        typeOfTruck,
+        specialInstructions
+      }
+    } = this.props;
+    return (
+      <div className="container">
+        <React.Fragment>
+          <ul class="list-group">
+            <li class="list-group-item">Type of Job: {service}</li>
+            <li class="list-group-item">Upload Images: {attachments}</li>
+            <li class="list-group-item">Address: {address}</li>
+            <li class="list-group-item">City: {city}</li>
+            <li class="list-group-item">State: {state}</li>
+            <li class="list-group-item">Zipcode: {zipCode}</li>
+            <li class="list-group-item">
+              Will There Be AnyLarge Items Involved?: {largeItems}
+            </li>
+            <li class="list-group-item">Date: {date}</li>
+            <li class="list-group-item">Time: {time}</li>
+            <li class="list-group-item">
+              How Many Flights Of Stairs?: {flightOfStairs}
+            </li>
+            <li class="list-group-item">How Many truck Loads?: {truckLoads}</li>
+            <li class="list-group-item">
+              What type of truck will best sute the Job?: {typeOfTruck}
+            </li>
+            <li class="list-group-item">
+              Additional Information you would like to add?:{" "}
+              {specialInstructions}
+            </li>
+            <li class="list-group-item">Budget:: {budget}</li>
+          </ul>
 
-    continue = (e) => {
-        e.preventDefault()
-        //process Form//
-        this.props.nextStep()
-        this.props.handleSubmit(e)
-    }
-    back = (e) => {
-        e.preventDefault()
-        this.props.prevStep()
-    }
+          <br />
 
-    render() {
-        const { classes } = this.props;
-        const { values: { service, budget, attachments, address, city, state, zipCode, largeItems, date, time, flightOfStairs, truckLoads, typeOfTruck, specialInstructions } } = this.props;
-        return (
-            <div className="container">
-                <React.Fragment>
-                    <MDBContainer>
-                        <MDBListGroup>
-                            <MDBListGroupItem primary="Type of Job" secondary={service} />
-                            <MDBListGroupItem primary="Upload Images" secondary={attachments} />
-                            <MDBListGroupItem primary="Address" secondary={address} />
-                            <MDBListGroupItem primary="City" secondary={city} />
-                            <MDBListGroupItem primary="State" secondary={state} />
-                            <MDBListGroupItem primary="Zipcode" secondary={zipCode} />
-                            <MDBListGroupItem primary="Will There Be AnyLarge Items Involved?" secondary={largeItems} />
-                            <MDBListGroupItem primary="Date" secondary={date} />
-                            <MDBListGroupItem primary="Time" secondary={time} />
-                            <MDBListGroupItem primary="How Many Flights Of Stairs?" secondary={flightOfStairs} />
-                            <MDBListGroupItem primary="How Many truck Loads?" secondary={truckLoads} />
-                            <MDBListGroupItem primary="What type of truck will best sute the Job?" secondary={typeOfTruck} />
-                            <MDBListGroupItem primary="Additional Information you would like to add?" secondary={specialInstructions} />
-                            <MDBListGroupItem primary="Budget" secondary={budget} />
-                        </MDBListGroup>
-
-                    </MDBContainer>
-
-                    <br />
-
-
-
-
-                    <div className="row">
-                        <div className="mx-auto">
-                            <MDBBtn
-                                variant="contained"
-                                color="primary"
-                                onClick={this.back}
-                                className={classes.button}>
-                                Back
-                        </MDBBtn>
-                            <MDBBtn
-                                variant="contained"
-                                color="primary"
-                                onClick={this.continue}
-                                className={classes.button}>
-                                Confirm
-                        </MDBBtn>
-                        </div>
-                    </div>
-
-                </React.Fragment >
-            </div >
-        )
-    }
+          <div className="row">
+            <div className="mx-auto">
+              <button type="button" class="btn btn-primary" onClick={this.back}>
+                Back
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onClick={this.continue}
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </React.Fragment>
+      </div>
+    );
+  }
 }
-
 
 export default Confirm;
