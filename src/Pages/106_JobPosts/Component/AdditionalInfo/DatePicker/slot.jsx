@@ -26,7 +26,7 @@ class AvaliableTimeDate extends Component {
               <DatePicker
                 inline
                 value={selectedDate}
-                selected={this.state.startDate}
+                //selected={this.state.startDate}
                 onChange={handleChangeDatePicker.bind(selectedDate)}
               />
 

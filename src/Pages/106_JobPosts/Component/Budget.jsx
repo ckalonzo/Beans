@@ -1,17 +1,11 @@
 import React, { Component } from "react";
 import MoneyValue from "./MoneyValue";
 class Budget extends Component {
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  };
-
   render() {
-    const { handleChange, budget } = this.props;
+    if (currentStep !== 5) {
+      return null;
+    }
+    const { handleChange, budget, currentStep } = this.props;
     return (
       <div className="container mt-5">
         <div id="accordion">
@@ -41,7 +35,7 @@ class Budget extends Component {
               </div>
             </div>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div className="mx-auto">
               <button type="button" class="btn btn-primary" onClick={this.back}>
                 Back
@@ -54,7 +48,7 @@ class Budget extends Component {
                 Continue
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

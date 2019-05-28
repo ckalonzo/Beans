@@ -75,11 +75,13 @@ const Navbar = props => {
         </li>
         <li>
           <Link to="/103_Membership/component/cart">
-            <ul class="navbar-right">
+            <ul class="navbar-right ta-list">
               <li>
                 <a href="#" id="cart">
-                  <i class="fa fa-shopping-cart" /> Cart{" "}
-                  <span class="badge">3</span>
+                  <span class="fa-stack fa-2x has-badge" data-count="5">
+                    <i class="fa fa-circle fa-stack-2x" />
+                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse" />
+                  </span>
                 </a>
               </li>
             </ul>

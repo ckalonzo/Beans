@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../Css/PostJob.css";
+import "../Css/PostJob.scss";
 
 class TypeOfJob extends Component {
   continue = e => {
@@ -39,7 +39,6 @@ class TypeOfJob extends Component {
                   <option value={"Junk Removal"}>Junk Removal</option>
                   <option value={"Cleaner Service"}>Cleaner Service</option>
                 </select>
-                } >
               </React.Fragment>
             </div>
           </div>
