@@ -12,13 +12,14 @@ class UploadImages extends Component {
   };
 
   render() {
-    const {
-      handleChangeAttachments,
-      files,
-      handleOnDrop,
-      imagefile,
-      input
-    } = this.props;
+    const { handleChangeAttachments, handleUpload, values } = this.props;
+    const style = {
+      height: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center"
+    };
     return (
       <div>
         <div className="container">
@@ -32,12 +33,19 @@ class UploadImages extends Component {
             </div>
           </div>
         </div>
-        <DropZone
-          accept="image/jpeg, image/png, image/gif, image/bmp"
-          className="upload-container"
-          onDrop={handleOnDrop}
-          onChange={handleChangeAttachments.bind(files)}
-        />
+        <div style={style}>
+          <progress value={this.props.progress} max="100" />
+          <br />
+          <input type="file" onChange={this.props.handleChange} />
+          <button onClick={this.handleUpload}>Upload</button>
+          <br />
+          <img
+            src={this.props.url || "http://via.placeholder.com/400x300"}
+            alt="Uploaded images"
+            height="300"
+            width="400"
+          />
+        </div>
 
         <div className="row">
           <div className="mx-auto">

@@ -50,6 +50,7 @@
     "react-toastify": "^4.5.2",
     "redux": "^4.0.1",
     "redux-firestore": "^0.7.0",
+    "redux-form": "^8.2.1",
     "redux-thunk": "^2.3.0",
     "socket.io": "^2.2.0",
     "stripe": "^6.28.0",

@@ -1,100 +1,95 @@
 import React, { Component } from "react";
-import "../../../Css/PostJob.css";
-import { MDBFormInline, MDBInput } from "mdbreact";
+import "../../../Css/PostJob.scss";
 class TruckLoads extends Component {
-    render() {
-        const { handleChange, values, truckLoads } = this.props;
-        return (
-            <div className="className container">
-                <div className="row">
-                    <div className="col-12 text-center mb-5">
-
-                        <MDBFormInline className="mt-5">
-                            <MDBInput
-                                gap
-                                onClick={this.onClick(1)}
-                                checked={this.state.radio === 1 ? true : false}
-                                label="0"
-                                type="radio"
-                                id={truckLoads}
-                                value={values.truckLoads}
-                                onChange={handleChange('truckLoads')}
-                                defaultvalue={values.truckLoads}
-                            />
-                            <MDBInput
-                                gap
-                                onClick={this.onClick(2)}
-                                checked={this.state.radio === 2 ? true : false}
-                                label="1"
-                                type="radio"
-                                id={truckLoads}
-                                value={values.truckLoads}
-                                onChange={handleChange('truckLoads')}
-                                defaultvalue={values.truckLoads}
-                            />
-                            <MDBInput
-                                gap
-                                onClick={this.onClick(3)}
-                                checked={this.state.radio === 3 ? true : false}
-                                label="2"
-                                type="radio"
-                                id={truckLoads}
-                                value={values.truckLoads}
-                                onChange={handleChange('truckLoads')}
-                                defaultvalue={values.truckLoads}
-                            />
-                            <MDBInput
-                                gap
-                                onClick={this.onClick(4)}
-                                checked={this.state.radio === 4 ? true : false}
-                                label="3"
-                                type="radio"
-                                id={truckLoads}
-                                value={values.truckLoads}
-                                onChange={handleChange('truckLoads')}
-                                defaultvalue={values.truckLoads}
-                            />
-                            <MDBInput
-                                gap
-                                onClick={this.onClick(5)}
-                                checked={this.state.radio === 5 ? true : false}
-                                label="4"
-                                type="radio"
-                                id={truckLoads}
-                                value={values.truckLoads}
-                                onChange={handleChange('truckLoads')}
-                                defaultvalue={values.truckLoads}
-                            />
-                            <MDBInput
-                                gap
-                                onClick={this.onClick(6)}
-                                checked={this.state.radio === 6 ? true : false}
-                                label="5"
-                                type="radio"
-                                id={truckLoads}
-                                value={values.truckLoads}
-                                onChange={handleChange('truckLoads')}
-                                defaultvalue={values.truckLoads}
-                            />
-                            <MDBInput
-                                gap
-                                onClick={this.onClick(7)}
-                                checked={this.state.radio === 7 ? true : false}
-                                label="6"
-                                type="radio"
-                                id={truckLoads}
-                                value={values.truckLoads}
-                                onChange={handleChange('truckLoads')}
-                                defaultvalue={values.truckLoads}
-                            />
-                        </MDBFormInline>
-
-                    </div>
-                </div>
-
+  render() {
+    const { handleChange, values, truckLoads } = this.props;
+    return (
+      <div className="className container">
+        <div className="row">
+          <div className="col-12 text-center mb-5">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox1"
+                id={truckLoads}
+                value={values.truckLoads}
+                onChange={handleChange("truckLoads")}
+              />
+              <label class="form-check-label" for="inlineCheckbox1">
+                1
+              </label>
             </div>
-        )
-    }
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox2"
+                id={truckLoads}
+                value={values.truckLoads}
+                onChange={handleChange("truckLoads")}
+              />
+              <label class="form-check-label" for="inlineCheckbox2">
+                2
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox3"
+                id={truckLoads}
+                value={values.truckLoads}
+                onChange={handleChange("truckLoads")}
+              />
+              <label class="form-check-label" for="inlineCheckbox3">
+                3
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox1"
+                id={truckLoads}
+                value={values.truckLoads}
+                onChange={handleChange("truckLoads")}
+              />
+              <label class="form-check-label" for="inlineCheckbox1">
+                4
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox2"
+                id={truckLoads}
+                value={values.truckLoads}
+                onChange={handleChange("truckLoads")}
+              />
+              <label class="form-check-label" for="inlineCheckbox2">
+                5
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox3"
+                id={truckLoads}
+                value={values.truckLoads}
+                onChange={handleChange("truckLoads")}
+              />
+              <label class="form-check-label" for="inlineCheckbox3">
+                6
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default TruckLoads;

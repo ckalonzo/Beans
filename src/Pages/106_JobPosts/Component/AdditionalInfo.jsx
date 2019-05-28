@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //css
-import "../Css/PostJob.css";
+import "../Css/PostJob.scss";
 // components
 import SpecialInstructions from "././AdditionalInfo/SpecialInstructions/SpecialInstructions";
 import TypeOfTruck from "../Component/AdditionalInfo/TypeOfTruck/TypeOfTruck";
@@ -11,22 +11,6 @@ import AnyLargeItems from "../Component/AdditionalInfo/AnyLargeItemsComponent/An
 import LocationPage from "./AdditionalInfo/LocationOfJob";
 
 class AdditionalInfo extends Component {
-  state = {
-    collapseID: "collapse3"
-  };
-  toggleCollapse = collapseID => () =>
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    }));
-  continue = e => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  };
-
   render() {
     const {
       values,
@@ -40,10 +24,9 @@ class AdditionalInfo extends Component {
       flightOfStairs,
       truckLoads,
       typeOfTruck,
-      specialInstructions,
-      classes
+      specialInstructions
     } = this.props;
-    const { collapseID } = this.state;
+
     return (
       <div className="container ">
         <div className="row">
@@ -114,23 +97,23 @@ class AdditionalInfo extends Component {
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingThree">
+          <div class="card-header" id="headingFour">
             <h5 class="mb-0">
               <button
                 class="btn btn-link collapsed"
                 data-toggle="collapse"
-                data-target="#collapseThree"
+                data-target="#collapseFour"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapseFour"
               >
                 Choose Availibility
               </button>
             </h5>
           </div>
           <div
-            id="collapseThree"
+            id="collapseFour"
             class="collapse"
-            aria-labelledby="headingThree"
+            aria-labelledby="headingFour"
             data-parent="#accordion"
           >
             <div class="card-body">
@@ -146,23 +129,23 @@ class AdditionalInfo extends Component {
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingThree">
+          <div class="card-header" id="headingFive">
             <h5 class="mb-0">
               <button
                 class="btn btn-link collapsed"
                 data-toggle="collapse"
-                data-target="#collapseThree"
+                data-target="#collapseFive"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapseFive"
               >
                 How Many Flights Of Stairs
               </button>
             </h5>
           </div>
           <div
-            id="collapseThree"
+            id="collapseFive"
             class="collapse"
-            aria-labelledby="headingThree"
+            aria-labelledby="headingFive"
             data-parent="#accordion"
           >
             <div class="card-body">
@@ -174,23 +157,23 @@ class AdditionalInfo extends Component {
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingThree">
+          <div class="card-header" id="headingSix">
             <h5 class="mb-0">
               <button
                 class="btn btn-link collapsed"
                 data-toggle="collapse"
-                data-target="#collapseThree"
+                data-target="#collapseSix"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapseSix"
               >
                 How Many truck Loads
               </button>
             </h5>
           </div>
           <div
-            id="collapseThree"
+            id="collapseSix"
             class="collapse"
-            aria-labelledby="headingThree"
+            aria-labelledby="headingSix"
             data-parent="#accordion"
           >
             <div class="card-body">
@@ -202,23 +185,23 @@ class AdditionalInfo extends Component {
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingThree">
+          <div class="card-header" id="headingSeven">
             <h5 class="mb-0">
               <button
                 class="btn btn-link collapsed"
                 data-toggle="collapse"
-                data-target="#collapseThree"
+                data-target="#collapseSeven"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapseSeven"
               >
                 What type of truck will best sute the Job
               </button>
             </h5>
           </div>
           <div
-            id="collapseThree"
+            id="collapseSeven"
             class="collapse"
-            aria-labelledby="headingThree"
+            aria-labelledby="headingSeven"
             data-parent="#accordion"
           >
             <div class="card-body">
@@ -231,23 +214,23 @@ class AdditionalInfo extends Component {
         </div>
 
         <div class="card">
-          <div class="card-header" id="headingThree">
+          <div class="card-header" id="headingEight">
             <h5 class="mb-0">
               <button
                 class="btn btn-link collapsed"
                 data-toggle="collapse"
-                data-target="#collapseThree"
+                data-target="#collapseEight"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapseEight"
               >
                 Additional Information you would like to add
               </button>
             </h5>
           </div>
           <div
-            id="collapseThree"
+            id="collapseEight"
             class="collapse"
-            aria-labelledby="headingThree"
+            aria-labelledby="headingEight"
             data-parent="#accordion"
           >
             <div class="card-body">
@@ -259,7 +242,6 @@ class AdditionalInfo extends Component {
             </div>
           </div>
         </div>
-
         <div className="row">
           <div className="mx-auto">
             <button type="button" class="btn btn-primary" onClick={this.back}>
@@ -278,4 +260,5 @@ class AdditionalInfo extends Component {
     );
   }
 }
+
 export default AdditionalInfo;

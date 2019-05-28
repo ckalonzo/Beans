@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 
 class Confirm extends Component {
-  continue = e => {
-    e.preventDefault();
-    //process Form//
-    this.props.nextStep();
-    this.props.handleSubmit(e);
-  };
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  };
+  // continue = e => {
+  //   e.preventDefault();
+  //   //process Form//
+  //   this.props.nextStep();
+  //   this.props.handleSubmit(e);
+  // };
+  // back = e => {
+  //   e.preventDefault();
+  //   this.props.prevStep();
+  // };
 
   render() {
+    if (currentStep !== 6) {
+      return null;
+    }
     const {
       values: {
         service,
@@ -28,6 +31,7 @@ class Confirm extends Component {
         flightOfStairs,
         truckLoads,
         typeOfTruck,
+        currentStep,
         specialInstructions
       }
     } = this.props;
@@ -62,7 +66,7 @@ class Confirm extends Component {
 
           <br />
 
-          <div className="row">
+          {/* <div className="row">
             <div className="mx-auto">
               <button type="button" class="btn btn-primary" onClick={this.back}>
                 Back
@@ -75,7 +79,7 @@ class Confirm extends Component {
                 Confirm
               </button>
             </div>
-          </div>
+          </div> */}
         </React.Fragment>
       </div>
     );
