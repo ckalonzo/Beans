@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
 class Success extends Component {
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
   render() {
     return (
       <React.Fragment>
@@ -13,14 +21,11 @@ class Success extends Component {
 
           <div className="row">
             <div className="mx-auto">
-              <button
-                type="button"
-                class="btn btn-primary"
-                onClick={this.back}
-                href="/"
-              >
-                Dashboard
-              </button>
+              <a href="/">
+                <button type="button" class="btn btn-primary">
+                  Dashboard
+                </button>
+              </a>
             </div>
           </div>
         </div>

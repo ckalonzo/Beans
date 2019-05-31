@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import "date-fns";
 import DatePicker from "react-datepicker";
-import TimePicker from "rc-time-picker";
+import AvaliableTime from "./AvaliableTime";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -15,7 +14,8 @@ class AvaliableTimeDate extends Component {
       selectedDate,
       handleChangeDatePicker,
       handleChangeTimePicker,
-      time
+      selectedTime,
+      values
     } = this.props;
     return (
       <div>
@@ -31,10 +31,10 @@ class AvaliableTimeDate extends Component {
               />
 
               <div className="col-3">
-                <TimePicker
-                  id={time}
-                  onChange={handleChangeTimePicker.bind(time)}
-                  value={time}
+                <AvaliableTime
+                  handleChangeTimePicker={handleChangeTimePicker}
+                  values={values}
+                  selectedTime={selectedTime}
                 />
               </div>
             </div>

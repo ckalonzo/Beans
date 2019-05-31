@@ -11,6 +11,14 @@ import AnyLargeItems from "../Component/AdditionalInfo/AnyLargeItemsComponent/An
 import LocationPage from "./AdditionalInfo/LocationOfJob";
 
 class AdditionalInfo extends Component {
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
   render() {
     const {
       values,
@@ -20,7 +28,7 @@ class AdditionalInfo extends Component {
       zipCode,
       largeItems,
       selectedDate,
-      time,
+      selectedTime,
       flightOfStairs,
       truckLoads,
       typeOfTruck,
@@ -34,211 +42,213 @@ class AdditionalInfo extends Component {
             <h3>Please Complete the Information below</h3>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-              <button
-                class="btn btn-link"
-                data-toggle="collapse"
-                data-target="#collapseOne"
-                aria-expanded="true"
-                aria-controls="collapseOne"
-              >
-                Location Of Job
-              </button>
-            </h5>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link"
+                  data-toggle="collapse"
+                  data-target="#collapseTALocate"
+                  aria-expanded="true"
+                  aria-controls="collapseTALocate"
+                >
+                  Location Of Job
+                </button>
+              </h5>
+            </div>
+
+            <div
+              id="collapseTALocate"
+              class="collapse show"
+              aria-labelledby="headingOne"
+              data-parent="#accordion"
+            >
+              <div class="card-body">
+                <LocationPage
+                  handleChange={this.props.handleChange}
+                  values={values}
+                  address={address}
+                  city={city}
+                  state={state}
+                  zipCode={zipCode}
+                />
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseTAItems"
+                  aria-expanded="false"
+                  aria-controls="collapseTAItems"
+                >
+                  Will There Be AnyLarge Items Involved
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseTAItems"
+              class="collapse"
+              aria-labelledby="headingTwo"
+              data-parent="#accordion"
+            >
+              <div class="card-body">
+                <AnyLargeItems
+                  handleChange={this.props.handleChange}
+                  values={values}
+                  largeItems={largeItems}
+                />
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseTAavalibility"
+                  aria-expanded="false"
+                  aria-controls="collapseTAavalibility"
+                >
+                  Choose Availibility
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseTAavalibility"
+              class="collapse"
+              aria-labelledby="headingFour"
+              data-parent="#accordion"
+            >
+              <div class="card-body">
+                <Slot
+                  handleChange={this.props.handleChange}
+                  values={values}
+                  selectedDate={selectedDate}
+                  selectedTime={selectedTime}
+                  handleChangeDatePicker={this.props.handleChangeDatePicker}
+                  handleChangeTimePicker={this.props.handleChangeTimePicker}
+                />
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseTAStairs"
+                  aria-expanded="false"
+                  aria-controls="collapseTAStairs"
+                >
+                  How Many Flights Of Stairs
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseTAStairs"
+              class="collapse"
+              aria-labelledby="headingFive"
+              data-parent="#accordion"
+            >
+              <div class="card-body">
+                <FlightOfStairs
+                  handleChange={this.props.handleChange}
+                  values={values}
+                />
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSix">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseTALoads"
+                  aria-expanded="false"
+                  aria-controls="collapseTALoads"
+                >
+                  How Many truck Loads
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseTALoads"
+              class="collapse"
+              aria-labelledby="headingSix"
+              data-parent="#accordion"
+            >
+              <div class="card-body">
+                <TruckLoads
+                  handleChange={this.props.handleChange}
+                  values={values}
+                />
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSeven">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseTAJobs"
+                  aria-expanded="false"
+                  aria-controls="collapseTAJobs"
+                >
+                  What type of truck will best sute the Job
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseTAJobs"
+              class="collapse"
+              aria-labelledby="headingSeven"
+              data-parent="#accordion"
+            >
+              <div class="card-body">
+                <TruckLoads
+                  handleChange={this.props.handleChange}
+                  values={values}
+                />
+              </div>
+            </div>
           </div>
 
-          <div
-            id="collapseOne"
-            class="collapse show"
-            aria-labelledby="headingOne"
-            data-parent="#accordion"
-          >
-            <div class="card-body">
-              <LocationPage
-                handleChange={this.props.handleChange}
-                values={values}
-                address={address}
-                city={city}
-                state={state}
-                zipCode={zipCode}
-              />
+          <div class="card">
+            <div class="card-header" id="headingEight">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseTAInfo"
+                  aria-expanded="false"
+                  aria-controls="collapseTAInfo"
+                >
+                  Additional Information you would like to add
+                </button>
+              </h5>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                data-toggle="collapse"
-                data-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-              >
-                Will There Be AnyLarge Items Involved
-              </button>
-            </h5>
-          </div>
-          <div
-            id="collapseTwo"
-            class="collapse"
-            aria-labelledby="headingTwo"
-            data-parent="#accordion"
-          >
-            <div class="card-body">
-              <AnyLargeItems
-                handleChange={this.props.handleChange}
-                values={values}
-                largeItems={largeItems}
-              />
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingFour">
-            <h5 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                data-toggle="collapse"
-                data-target="#collapseFour"
-                aria-expanded="false"
-                aria-controls="collapseFour"
-              >
-                Choose Availibility
-              </button>
-            </h5>
-          </div>
-          <div
-            id="collapseFour"
-            class="collapse"
-            aria-labelledby="headingFour"
-            data-parent="#accordion"
-          >
-            <div class="card-body">
-              <Slot
-                handleChange={this.props.handleChange}
-                values={values}
-                selectedDate={selectedDate}
-                time={time}
-                handleChangeDatePicker={this.props.handleChangeDatePicker}
-                handleChangeTimePicker={this.props.handleChangeTimePicker}
-              />
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingFive">
-            <h5 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                data-toggle="collapse"
-                data-target="#collapseFive"
-                aria-expanded="false"
-                aria-controls="collapseFive"
-              >
-                How Many Flights Of Stairs
-              </button>
-            </h5>
-          </div>
-          <div
-            id="collapseFive"
-            class="collapse"
-            aria-labelledby="headingFive"
-            data-parent="#accordion"
-          >
-            <div class="card-body">
-              <FlightOfStairs
-                handleChange={this.props.handleChange}
-                values={values}
-              />
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingSix">
-            <h5 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                data-toggle="collapse"
-                data-target="#collapseSix"
-                aria-expanded="false"
-                aria-controls="collapseSix"
-              >
-                How Many truck Loads
-              </button>
-            </h5>
-          </div>
-          <div
-            id="collapseSix"
-            class="collapse"
-            aria-labelledby="headingSix"
-            data-parent="#accordion"
-          >
-            <div class="card-body">
-              <TruckLoads
-                handleChange={this.props.handleChange}
-                values={values}
-              />
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingSeven">
-            <h5 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                data-toggle="collapse"
-                data-target="#collapseSeven"
-                aria-expanded="false"
-                aria-controls="collapseSeven"
-              >
-                What type of truck will best sute the Job
-              </button>
-            </h5>
-          </div>
-          <div
-            id="collapseSeven"
-            class="collapse"
-            aria-labelledby="headingSeven"
-            data-parent="#accordion"
-          >
-            <div class="card-body">
-              <TruckLoads
-                handleChange={this.props.handleChange}
-                values={values}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header" id="headingEight">
-            <h5 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                data-toggle="collapse"
-                data-target="#collapseEight"
-                aria-expanded="false"
-                aria-controls="collapseEight"
-              >
-                Additional Information you would like to add
-              </button>
-            </h5>
-          </div>
-          <div
-            id="collapseEight"
-            class="collapse"
-            aria-labelledby="headingEight"
-            data-parent="#accordion"
-          >
-            <div class="card-body">
-              <SpecialInstructions
-                handleChange={this.props.handleChange}
-                specialInstructions={specialInstructions}
-                values={values}
-              />
+            <div
+              id="collapseTAInfo"
+              class="collapse"
+              aria-labelledby="headingEight"
+              data-parent="#accordion"
+            >
+              <div class="card-body">
+                <SpecialInstructions
+                  handleChange={this.props.handleChange}
+                  specialInstructions={specialInstructions}
+                  values={values}
+                />
+              </div>
             </div>
           </div>
         </div>

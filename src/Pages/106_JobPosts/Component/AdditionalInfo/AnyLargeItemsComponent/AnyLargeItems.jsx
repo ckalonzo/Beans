@@ -8,7 +8,7 @@ class AnyLargeItems extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-12 text-center mb-5">
+          <div className="col-3 mx-auto text-center mb-5">
             <select
               className="browser-default custom-select"
               value={values.largeItems}

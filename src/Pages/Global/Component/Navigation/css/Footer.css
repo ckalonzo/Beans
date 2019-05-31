@@ -1,13 +1,17 @@
 .footer {
- 
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        /* Set the fixed height of the footer here */
-        height: 60px;
-        background-color: #f5f5f5;
-   
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }
-.ov-color{
-   color:#124676 !important;
+#sticky-footer {
+  flex-shrink: none;
+}
+.ov-color {
+  color: #124676 !important;
+}
+body {
+  height: 100%;
 }

@@ -6,7 +6,12 @@ class statee extends Component {
     const { handleChange, values } = this.props;
     return (
       <React.Fragment>
-        <select required value={values.state} onChange={handleChange("state")}>
+        <select
+          required
+          value={values.state}
+          className="browser-default custom-select"
+          onChange={handleChange("state")}
+        >
           <option value={"AL"}>AL</option>
           <option value={"AK"}>AK</option>
           <option value={"AZ"}>AZ</option>

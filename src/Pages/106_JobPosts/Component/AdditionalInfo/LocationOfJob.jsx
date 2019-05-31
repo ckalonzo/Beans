@@ -11,8 +11,7 @@ export default class LocationPage extends Component {
     return (
       <React.Fragment>
         <div className="row">
-          <div className="col-12 text-center mb-5">
-            <h6>Address</h6>
+          <div className="col-8 mx-auto text-center mb-5">
             <StreetAddress
               handleChange={this.props.handleChange}
               values={values}
@@ -22,14 +21,13 @@ export default class LocationPage extends Component {
         </div>
         <div className="row">
           <div className="col-4 text-center mb-5">
-            <h6>City</h6>
             <City
               handleChange={this.props.handleChange}
               values={values}
               city={city}
             />
           </div>
-          <div className="col-4 text-center mb-5">
+          <div className="col-1 mx-auto text-center mb-5">
             <h6>State</h6>
             <Statee
               handleChange={this.props.handleChange}
