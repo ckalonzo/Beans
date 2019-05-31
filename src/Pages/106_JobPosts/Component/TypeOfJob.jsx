@@ -28,7 +28,7 @@ class TypeOfJob extends Component {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-12  offset-0 text-center mb-5">
+            <div className="col-4 mx-auto text-center mb-5">
               <React.Fragment>
                 <select
                   className="browser-default custom-select"

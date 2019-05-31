@@ -30,8 +30,8 @@ class MainForm extends Component {
       state: "State",
       zipCode: "",
       largeItems: "",
-      selectedDate: new Date("2014-08-18T21:11:54"),
-      time: "",
+      selectedDate: "",
+      selectedTime: "",
       flightOfStairs: "",
       truckLoads: "",
       typeOfTruck: "",
@@ -42,7 +42,7 @@ class MainForm extends Component {
     this.prevStep = this.prevStep.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeAttachments = this.handleChangeAttachments.bind(this);
-    this.handleSubmission = this.handleSubmission.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeTimePicker = this.handleChangeTimePicker.bind(this);
     this.handleChangeDatePicker = this.handleChangeDatePicker.bind(this);
     // this.handleUpload = this.handleUpload.bind(this);
@@ -109,10 +109,10 @@ class MainForm extends Component {
   };
 
   handleChangeTimePicker = time => {
-    this.setState({ time: time });
+    //   this.setState({ selectedTime: time });
   };
 
-  handleSubmission = e => {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.CreateProject(this.state);
   };
@@ -134,7 +134,7 @@ class MainForm extends Component {
       zipCode,
       largeItems,
       selectedDate,
-      time,
+      selectedTime,
       flightOfStairs,
       truckLoads,
       typeOfTruck,
@@ -152,7 +152,7 @@ class MainForm extends Component {
       zipCode,
       largeItems,
       selectedDate,
-      time,
+      selectedTime,
       flightOfStairs,
       truckLoads,
       typeOfTruck,
@@ -223,9 +223,10 @@ class MainForm extends Component {
       case 6:
         return (
           <Confirm
-            handleSubmit={this.handleSubmit}
+            nextStep={this.nextStep}
             prevStep={this.prevStep}
             values={values}
+            handleSubmit={this.handleSubmit}
           />
         );
       case 7:

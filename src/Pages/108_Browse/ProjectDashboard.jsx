@@ -21,7 +21,7 @@ class ProjectDashboard extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-8">
+            <div class="card">
               <ProjectList projects={projects} />
             </div>
             <div className="col-4" />
