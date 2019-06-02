@@ -1,25 +1,46 @@
-.profile{
-    .cust-pro-hero {
-        height: 46vh;
-        background-image: url('../img/PROFILE.jpg'); 
-        background-position: center;
-        background-size: cover;
-        height: 305px;
-     }
-     .adj-bot{
-        bottom: 165px;
-        position: relative;
-         background-color: #ffffff;
-     }
-     .OutlinedTextFields-textField-86{
-        width: 524px;
-     }
-     .shadow{
-        box-shadow: 10px 10px 5px grey;
-        width: 600px;
-     }
-     .skills-shadow{
-        box-shadow: 10px 10px 5px grey;
-     }
+.profile {
+  background-color: #f8f9fa;
+  .cust-pro-hero {
+    height: 46vh;
+    background-image: url("../img/PROFILE.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 305px;
+  }
+  .adj-bot {
+    bottom: 165px;
+    position: relative;
+    background-color: #ffffff;
+  }
+  .OutlinedTextFields-textField-86 {
+    width: 524px;
+  }
+  .shadow {
+    box-shadow: 10px 10px 5px grey;
+    width: 600px;
+  }
+  .skills-shadow {
+    box-shadow: 10px 10px 5px grey;
+  }
+  .avatar {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 186px;
+    margin-top: -72px;
+    overflow: hidden;
+    border: 5px solid #fff;
+    height: 170px;
+  }
+  .avatar img {
+    width: 100%;
+  }
+  .rounded-circle {
+    border-radius: 50% !important;
+  }
+  .img-fluid,
+  .modal-dialog.cascading-modal.modal-avatar .modal-header,
+  .video-fluid {
+    max-width: 100%;
+    // height: auto;
+  }
 }
-

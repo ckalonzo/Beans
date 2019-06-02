@@ -17,7 +17,7 @@ class ProjectDashboard extends Component {
       <section className="panel-list">
         <div className=" container">
           <div className="row">
-            <div className="col-12">
+            <div className="col-12 mb-5">
               <Search />
             </div>
           </div>
