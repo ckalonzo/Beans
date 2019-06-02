@@ -41,36 +41,95 @@ class Activities extends Component {
     return (
       <div className="col-12">
         <div className="container">
-          <ul class="tabs-bar">
-            <li id="tab1" class="tab tab-active">
-              Current Bids
+          <ul class="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="ta-CurrentBids-tab-cust"
+                data-toggle="tab"
+                href="#ta-CurrentBids-cust"
+                role="tab"
+                aria-controls="home-md"
+                aria-selected="true"
+              >
+                Current Bids
+              </a>
             </li>
-            <li id="tab2" class="tab">
-              Conversation
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="ta-conversation-tab-cust"
+                data-toggle="tab"
+                href="#ta-conversation-cust"
+                role="tab"
+                aria-controls="ta-conversation-cust"
+                aria-selected="false"
+              >
+                Conversation
+              </a>
             </li>
-            <li id="tab3" class="tab">
-              Notification
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="ta-Notification-tab-cust"
+                data-toggle="tab"
+                href="#ta-Notification-cust"
+                role="tab"
+                aria-controls="ta-Notification-tab-cust"
+                aria-selected="false"
+              >
+                Notification
+              </a>
             </li>
-            <li id="tab4" class="tab">
-              {" "}
-              Active Jobs
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="ta-ActiveJobs-tab-cust"
+                data-toggle="tab"
+                href="#ta-ActiveJobs-cust"
+                role="tab"
+                aria-controls="ta-ActiveJobs-cust"
+                aria-selected="false"
+              >
+                Active Jobs
+              </a>
             </li>
           </ul>
-
-          <div class="content-container">
-            <div class="content content-tab1 content-active">
+          <div class="tab-content card pt-5" id="myTabContentMD">
+            <div
+              class="tab-pane fade show active"
+              id="ta-CurrentBids-cust"
+              role="tabpanel"
+              aria-labelledby="ta-CurrentBids-tab-cust"
+            >
               <Currentbids projects={projects} />
             </div>
-            <div class="content content-tab2">
+            <div
+              class="tab-pane fade"
+              id="ta-conversation-cust"
+              role="tabpanel"
+              aria-labelledby="ta-conversation-tab-cust"
+            >
               <ChatModule />
             </div>
-            <div class="content content-tab3">
+            <div
+              class="tab-pane fade"
+              id="ta-Notification-cust"
+              role="tabpanel"
+              aria-labelledby="ta-Notification-tab-cust"
+            >
               <Notification notifications={notifications} />
             </div>
-            <p class="content content-tab4">Active Jobs</p>
+            <div
+              class="tab-pane fade"
+              id="ta-ActiveJobs-cust"
+              role="tabpanel"
+              aria-labelledby="contact-tab-md"
+            >
+              <p class="content content-tab4">Active Jobs</p>
+            </div>
           </div>
         </div>
-        ); }
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../../../Css/PostJob.scss";
-import { MDBInput } from "mdbreact";
 
 class SpecialInstructions extends Component {
   continue = e => {
@@ -19,15 +18,17 @@ class SpecialInstructions extends Component {
       <div className="className container">
         <div className="row">
           <div className="col-12 text-center mb-5">
-            <MDBInput
-              type="textarea"
-              label="Special Instructions"
-              rows="4"
-              icon="pencil-alt"
-              id={specialInstructions}
-              defaultvalue={values.specialInstructions}
-              onChange={handleChange("specialInstructions")}
-            />
+            <div class="form-check-inline col-12">
+              <label class="form-check-label">
+                <textarea
+                  id={specialInstructions}
+                  rows="5"
+                  defaultvalue={values.specialInstructions}
+                  onChange={handleChange("specialInstructions")}
+                  class="form-control"
+                />{" "}
+              </label>
+            </div>
           </div>
         </div>
       </div>
