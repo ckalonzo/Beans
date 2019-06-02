@@ -22,17 +22,17 @@ const ProviderSignedInLinks = props => {
             className="nav-link chg-text moveline"
             to="/105_Dashboard/Dashboard"
           >
-            Profile
+            Dashboard
           </NavLink>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <NavLink
             className="nav-link chg-text moveline"
             to="/103_Membership/Membership"
           >
             Notifications
           </NavLink>
-        </li>
+        </li> */}
         <li className="nav-item">
           <NavLink
             className="nav-link chg-text moveline"
@@ -60,7 +60,7 @@ const ProviderSignedInLinks = props => {
           <a onClick={props.signOut}>Log Out</a>
         </li>
         <li>
-          <NavLink to="/" className="btn nav-avatar">
+          <NavLink to="/Profile/Layout/Profile" className="btn nav-avatar">
             {props.profile.initials}
           </NavLink>
         </li>

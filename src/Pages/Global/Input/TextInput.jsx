@@ -58,7 +58,7 @@ export class TextInput extends Component {
                   this.setState({ disableError: this.props.errorMessage });
             }
 
-            this.onChange(event){
+            this.onChange(event) {
                   event = this.onClean(event);
                   if (this.props.onChange) {
                         this.props.onChange(event);
@@ -67,7 +67,7 @@ export class TextInput extends Component {
                         this.onValidate(event);
                   }
                   return event;
-            }
+            };
             onBlur(event) {
                   if (!this.state.disableError) {
                         event = this.onValidate(event);

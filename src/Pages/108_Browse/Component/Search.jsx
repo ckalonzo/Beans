@@ -1,20 +1,24 @@
 import React, { Component } from "react";
-
+import "../Css/Search.scss";
 export default class Search extends Component {
   render() {
     return (
       <React.Fragment>
-        <form class="form-inline">
-          <input
-            class="form-control mr-sm-2 col-8"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
+        <div id="cover">
+          <form method="get" action="">
+            <div class="tb">
+              <div class="td">
+                <input type="text" placeholder="Search" required />
+              </div>
+              <div class="td" id="s-cover">
+                <button type="submit">
+                  <div id="s-circle" />
+                  <span />
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </React.Fragment>
     );
   }
