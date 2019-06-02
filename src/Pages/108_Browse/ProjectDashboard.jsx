@@ -5,8 +5,9 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import Search from "./Component/Search";
-
 import "./Css/Project.scss";
+import SelectFilter from "./Component/Filter/selectFilter";
+import RangeInput from "./Component/Filter/RangeInput";
 class ProjectDashboard extends Component {
   render() {
     const { projects, auth } = this.props;
@@ -21,10 +22,13 @@ class ProjectDashboard extends Component {
             </div>
           </div>
           <div className="row">
-            <div class="card">
+            <div className="col-3">
+              <SelectFilter />
+              <RangeInput />
+            </div>
+            <div class="col-9 card">
               <ProjectList projects={projects} />
             </div>
-            <div className="col-4" />
           </div>
         </div>
       </section>

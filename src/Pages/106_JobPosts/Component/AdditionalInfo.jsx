@@ -161,6 +161,7 @@ class AdditionalInfo extends Component {
                 <FlightOfStairs
                   handleChange={this.props.handleChange}
                   values={values}
+                  flightOfStairs={flightOfStairs}
                 />
               </div>
             </div>
@@ -214,7 +215,7 @@ class AdditionalInfo extends Component {
               data-parent="#accordion"
             >
               <div class="card-body">
-                <TruckLoads
+                <TypeOfTruck
                   handleChange={this.props.handleChange}
                   values={values}
                 />

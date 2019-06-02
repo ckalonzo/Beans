@@ -5,91 +5,88 @@ class FlightOfStairs extends Component {
   render() {
     const { handleChange, flightOfStairs, values } = this.props;
     return (
-      <div className="input-group mt-5">
-        <div class="form-check form-check-inline">
-          <div className="radio">
-            <label>
-              <input
-                type="radio"
-                checked={true}
-                id="iuiuipo"
-                onChange={handleChange("flightOfStairs")}
-                value={values.largeItems}
-              />
-              1
-            </label>
-          </div>
-          {/* <input
-            class="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id={flightOfStairs}
-            //value="option1"
-            onChange={handleChange("flightOfStairs")}
-            value={values.largeItems}
-          />
-          <label class="form-check-label" for="inlineRadio1">
+      <div className=" mt-5">
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input
+              type="radio"
+              id={flightOfStairs}
+              onChange={handleChange("flightOfStairs")}
+              value="1"
+              flightOfStairs={flightOfStairs}
+              class="form-check-input"
+              name="optradio"
+            />{" "}
             1
-          </label>*/}
+          </label>
         </div>
-        <div class="form-check form-check-inline">
-          <div className="radio">
-            <label>
-              <input
-                type="radio"
-                id="hghgh"
-                onChange={handleChange("flightOfStairs")}
-                value={values.largeItems}
-              />
-              2
-            </label>
-          </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input
+              type="radio"
+              id={flightOfStairs}
+              onChange={handleChange("flightOfStairs")}
+              value="2"
+              flightOfStairs={flightOfStairs}
+              class="form-check-input"
+              name="optradio"
+            />{" "}
+            2
+          </label>
         </div>
-        <div className="form-check form-check-inline">
-          <input
-            className="form-check-input"
-            type="radio"
-            id={flightOfStairs}
-            value={values.largeItems}
-            onChange={handleChange("flightOfStairs")}
-          />
-          <label className="form-check-label" for="flightofStairs3">
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input
+              type="radio"
+              id={flightOfStairs}
+              onChange={handleChange("flightOfStairs")}
+              value="3"
+              flightOfStairs={flightOfStairs}
+              class="form-check-input"
+              name="optradio"
+            />{" "}
             3
           </label>
         </div>
-        <div className="form-check form-check-inline">
-          <input
-            className="form-check-input"
-            type="radio"
-            id={flightOfStairs}
-            value={values.largeItems}
-            onChange={handleChange("flightOfStairs")}
-          />
-          <label className="form-check-label" for="flightofStairs4">
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input
+              type="radio"
+              id={flightOfStairs}
+              onChange={handleChange("flightOfStairs")}
+              value="4"
+              flightOfStairs={flightOfStairs}
+              class="form-check-input"
+              name="optradio"
+            />{" "}
             4
           </label>
         </div>
-        <div className="form-check form-check-inline">
-          <input
-            className="form-check-input"
-            type="radio"
-            id={flightOfStairs}
-            value={values.largeItems}
-            onChange={handleChange("flightOfStairs")}
-          />
-          <label className="form-check-label" for="flightofStairs5">
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input
+              type="radio"
+              id={flightOfStairs}
+              onChange={handleChange("flightOfStairs")}
+              value="5"
+              flightOfStairs={flightOfStairs}
+              class="form-check-input"
+              name="optradio"
+            />{" "}
             5
           </label>
         </div>
-        <div className="form-check form-check-inline">
-          <input
-            className="form-check-input"
-            type="radio"
-            id={flightOfStairs}
-            value={values.largeItems}
-            onChange={handleChange("flightOfStairs")}
-          />
-          <label className="form-check-label" for="flightofStairs6">
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input
+              type="radio"
+              id={flightOfStairs}
+              onChange={handleChange("flightOfStairs")}
+              value="6"
+              flightOfStairs={flightOfStairs}
+              class="form-check-input"
+              name="optradio"
+            />{" "}
             6
           </label>
         </div>
