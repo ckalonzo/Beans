@@ -57,7 +57,7 @@ export default class MembershipTable extends Component {
                         </ul>
                         <button
                           type="button"
-                          class="btn btn-lg btn-block btn-primary"
+                          class="btn btn-lg btn-block btn-outline-primary"
                         >
                           Get started
                         </button>
@@ -79,7 +79,7 @@ export default class MembershipTable extends Component {
                         </ul>
                         <button
                           type="button"
-                          class="btn btn-lg btn-block btn-primary"
+                          class="btn btn-lg btn-block btn-outline-primary"
                         >
                           Contact us
                         </button>
