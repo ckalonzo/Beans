@@ -52,7 +52,7 @@ class Activities extends Component {
                 aria-controls="home-md"
                 aria-selected="true"
               >
-                Job Posts
+                Current Jobs
               </a>
             </li>
             <li class="nav-item">
@@ -91,7 +91,7 @@ class Activities extends Component {
                 aria-controls="ta-ActiveJobs-cust"
                 aria-selected="false"
               >
-                Active Jobs
+                Past Jobs
               </a>
             </li>
           </ul>
