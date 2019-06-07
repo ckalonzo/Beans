@@ -28,22 +28,25 @@ class CustomerForm extends Component {
       <section className="customer-img">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-md-6 col-lg-5">
               <div className="login-copy">
                 <p>Pro Tips:Research Pricing Schemes For Fair </p>
               </div>
             </div>
-            <div className="col-lg-6">
-              <div className="container ">
-                <div className="login-panel mt-5">
+            <div className="col-md-6 p-md-0">
+              <div className="container p-0">
+                <div className="login-panel col-12 mt-5">
                   <div className="row">
-                    <h5 className="mx-auto mt-2 login-title">
-                      Sign In Your Trucked Away Dashboard
-                    </h5>
-                    <div className="container mt-3 login-outline">
+                    <div className="col-12">
+                      <h1 className="mx-auto mt-2 login-title">
+                        Sign In Your Trucked Away Dashboard
+                      </h1>
+                    </div>
+
+                    <div className="container mt-3 login-outline p-0">
                       <div className="mx-auto login">
-                        <div className="">
-                          <form onSubmit={this.handleSubmit}>
+                        <div>
+                          <form className="col-12" onSubmit={this.handleSubmit}>
                             <div class="form-group mt-4">
                               <label htmlFor="Email">Email address</label>
                               <input
@@ -78,7 +81,7 @@ class CustomerForm extends Component {
                               </label>
                               <a
                                 href="/101_CustomerLogin/Component/ForgotPassword"
-                                className="float-right"
+                                className="pt-3 pb-3 float-right"
                               >
                                 Forgot Password?
                               </a>
@@ -110,7 +113,7 @@ class CustomerForm extends Component {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-5 dontHaveAnAccount">
+                  <div className="mt-xl-5 mt-3 dontHaveAnAccount">
                     Dont have an Account?{" "}
                     <a className="signUpLink" onClick={this.signup}>
                       Sign Up Here

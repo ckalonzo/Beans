@@ -45,12 +45,14 @@ export default class Profile extends Component {
                           <PersonName />
                         </div>
                         <div className="mt-3">
+                          <h6>Company Name:</h6>
                           <CompanyName />
                         </div>
                         <div className="mt-3">
                           <AvgRating />
                         </div>
                         <div className="mt-3">
+                          <h3>Bio</h3>
                           <OutlinedTextFields />
                         </div>
                       </div>
@@ -66,7 +68,7 @@ export default class Profile extends Component {
                       </div>
                     </div>
 
-                    <div className="row">
+                    <div className="row mt-4">
                       <div className="shadow">
                         <History />
                       </div>

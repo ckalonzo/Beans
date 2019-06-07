@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../../Redux/Store/actions/cartActions";
-import "../Css/single-pricing-cards.css";
+import "../Css/single-pricing-cards.scss";
 
 class SingleBid extends Component {
   handleClick = id => {

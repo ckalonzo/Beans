@@ -20,6 +20,7 @@ import Recipe from "./Pages/103_Membership/component/Recipe";
 import Cart from "./Pages/103_Membership/component/Cart";
 import ChatModule from "./Pages/Chat/Chat-module";
 // import Main from './Pages/Chat/Component/Main/Main'
+import ContractorCreateAccount from "./Pages/104_SignUp/Contractor-Create-Account";
 import Profile from "./Pages/Profile/Layout/Profile";
 
 class App extends Component {
@@ -47,6 +48,10 @@ class App extends Component {
               component={ContractorSignUp}
             />
             <Route path="/104_SignUp/SignUp" component={SignUp} />
+            <Route
+              path="/104_SignUp/Contractor-Create-Account"
+              component={ContractorCreateAccount}
+            />
             <Route path="/103_Membership/component/Recipe" component={Recipe} />
             <Route path="/103_Membership/component/cart" component={Cart} />
             <Route path="/103_Membership/Membership" component={Membership} />

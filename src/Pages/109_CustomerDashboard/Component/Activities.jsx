@@ -45,14 +45,14 @@ class Activities extends Component {
             <li class="nav-item">
               <a
                 class="nav-link active"
-                id="ta-CurrentBids-tab-cust"
+                id="ta-JobPosts-tab-cust"
                 data-toggle="tab"
-                href="#ta-CurrentBids-cust"
+                href="#ta-JobPosts-cust"
                 role="tab"
                 aria-controls="home-md"
                 aria-selected="true"
               >
-                Current Bids
+                Job Posts
               </a>
             </li>
             <li class="nav-item">
@@ -98,9 +98,9 @@ class Activities extends Component {
           <div class="tab-content card pt-5" id="myTabContentMD">
             <div
               class="tab-pane fade show active"
-              id="ta-CurrentBids-cust"
+              id="ta-JobPosts-cust"
               role="tabpanel"
-              aria-labelledby="ta-CurrentBids-tab-cust"
+              aria-labelledby="ta-JobPosts-tab-cust"
             >
               <Currentbids projects={projects} />
             </div>

@@ -61,7 +61,7 @@ const Navbar = props => {
           >
             <a
               className="dropdown-item chg-text moveline"
-              href="/104_SignUp/contractorSignUp"
+              href="/104_SignUp/Contractor-Create-Account"
             >
               Sign Up
             </a>
