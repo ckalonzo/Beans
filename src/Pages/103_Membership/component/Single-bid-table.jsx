@@ -12,7 +12,7 @@ class SingleBid extends Component {
   render() {
     let itemList = this.props.items.items.map(item => {
       return (
-        <div class="col-auto mb-3 mx-auto" key={item.id}>
+        <div class="col-4 mb-3 mx-auto" key={item.id}>
           <div class="card-width colorch-btn" id="hover4">
             <a
               href="#"

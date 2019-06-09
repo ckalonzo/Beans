@@ -4,20 +4,21 @@ export default class Search extends Component {
   render() {
     return (
       <React.Fragment>
-        <div id="cover">
-          <form method="get" action="">
-            <div class="tb">
-              <div class="td">
-                <input type="text" placeholder="Search" required />
-              </div>
-              <div class="td" id="s-cover">
-                <button type="submit">
-                  <div id="s-circle" />
-                  <span />
+        <div className="tasearch mt-5">
+          <div class="container">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for..."
+              />
+              <span class="input-group-btn">
+                <button class="btn btn-search" type="button">
+                  <i class="fa fa-search fa-fw" /> Search
                 </button>
-              </div>
+              </span>
             </div>
-          </form>
+          </div>
         </div>
       </React.Fragment>
     );
