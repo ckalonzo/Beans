@@ -1,1 +1,0 @@
-import firebase from "../../app/config/firebase";
