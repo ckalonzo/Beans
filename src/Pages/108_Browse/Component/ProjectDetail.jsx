@@ -11,7 +11,95 @@ const ProjectDetails = props => {
   if (project) {
     return (
       <React.Fragment>
-        <div className="container section project-details">
+        <div class="card">
+          <div class="row no-gutters">
+            <aside class="col-sm-5 border-right">
+              <article class="gallery-wrap">
+                <div class="img-big-wrap">
+                  <div>
+                    {" "}
+                    <a href={project.attachments} data-fancybox="">
+                      <img src={project.attachments} />
+                    </a>
+                  </div>
+                </div>
+                <div class="img-small-wrap">
+                  <div class="item-gallery">
+                    {" "}
+                    <img src={project.attachments} />
+                  </div>
+                  <div class="item-gallery">
+                    {" "}
+                    <img src="images/items/2.jpg" />
+                  </div>
+                  <div class="item-gallery">
+                    {" "}
+                    <img src="images/items/3.jpg" />
+                  </div>
+                  <div class="item-gallery">
+                    {" "}
+                    <img src="images/items/4.jpg" />
+                  </div>
+                </div>
+              </article>
+            </aside>
+            <aside class="col-sm-7">
+              <article class="p-5">
+                <h3 class="title mb-3">{project.service}</h3>
+                <div class="mb-3">
+                  <var class="price h3 text-warning">
+                    <span class="currency">US $</span>
+                    <span class="num">{project.budget}</span>
+                  </var>
+                </div>
+                <dl>
+                  <dt>Description</dt>
+                  <dd>
+                    <p>{project.specialInstructions} </p>
+                  </dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3">Zipcode</dt>
+                  <dd class="col-sm-9">{project.zipCode}</dd>
+
+                  <dt class="col-sm-3">AnyLarge Items Involved?</dt>
+                  <dd class="col-sm-9">{project.largeItems}</dd>
+
+                  <dt class="col-sm-3">Date</dt>
+                  <dd class="col-sm-9">{project.date} </dd>
+
+                  <dt class="col-sm-3">Flights Of Stairs</dt>
+                  <dd class="col-sm-9">{project.flightOfStairs}</dd>
+
+                  <dt class="col-sm-3">Truck Loads</dt>
+                  <dd class="col-sm-9">{project.truckLoads} </dd>
+
+                  <dt class="col-sm-3">type of truck will best sute the Job</dt>
+                  <dd class="col-sm-9">{project.typeOfTruck} </dd>
+
+                  <dt class="col-sm-3">Time</dt>
+                  <dd class="col-sm-9">{project.time}</dd>
+                </dl>
+                <div class="rating-wrap">
+                  <div class="label-rating">132 reviews</div>
+                  <div class="label-rating">154 orders </div>
+                </div>
+                {/*<hr>
+                  <a href="#" class="btn  btn-primary">
+                    {" "}
+                    Buy now{" "}
+                  </a>
+                  <a href="#" class="btn  btn-outline-primary">
+                    {" "}
+                    <i class="" /> Add to cart{" "}
+                  </a>
+                </hr>*/}
+              </article>
+            </aside>
+          </div>
+        </div>
+
+        {/* <div className="container section project-details">
           <div className="card z-depth-0">
             <div className="card-body">
               <h5 className="card-title">{project.title}</h5>
@@ -53,7 +141,7 @@ const ProjectDetails = props => {
             </div>
             <img className="card-img-bottom" src="..." alt="Card image cap" />
           </div>
-        </div>
+        </div> */}
       </React.Fragment>
     );
   } else {
