@@ -37,7 +37,7 @@ export default class MembershipTable extends Component {
                           type="button"
                           class="btn btn-lg btn-block btn-outline-primary"
                         >
-                          Sign up for free
+                          Buy Now
                         </button>
                       </div>
                     </div>
@@ -59,7 +59,7 @@ export default class MembershipTable extends Component {
                           type="button"
                           class="btn btn-lg btn-block btn-outline-primary"
                         >
-                          Get started
+                          Buy Now
                         </button>
                       </div>
                     </div>
@@ -81,7 +81,7 @@ export default class MembershipTable extends Component {
                           type="button"
                           class="btn btn-lg btn-block btn-outline-primary"
                         >
-                          Contact us
+                          Buy Now
                         </button>
                       </div>
                     </div>
