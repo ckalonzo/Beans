@@ -7,7 +7,7 @@ import Picture from "../component/picture";
 import ProfileLocation from "../component/ProfileLocation";
 import AvgRating from "../component/Rating";
 import TypeOfJobs from "../component/typeOfJobs";
-import Divider from "@material-ui/core/Divider";
+
 import ProfileHero from "../component/ProfileHero";
 import OutlinedTextFields from "../component/multiline-Input";
 import Skills from "../component/Skills";

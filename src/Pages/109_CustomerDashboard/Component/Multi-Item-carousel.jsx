@@ -9,41 +9,55 @@ export default class MultiItemcarousel extends Component {
           id="carouselExampleFade"
           class="carousel slide "
           data-ride="carousel"
+          data-interval="false"
         >
           <div class="carousel-inner d-flex justify-content-between">
             <div class="carousel-item active">
               <div class="card-deck">
                 <div class="card">
-                  <div class="avatar mx-auto white pt-4">
-                    <img
-                      src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
-                      alt="avatar mx-auto white"
-                      class="rounded-circle img-fluid"
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Highly recommended LLC</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <div className="row">
-                      <div className="col-12">
-                        <button type="button" class="btn btn-primary">
-                          View Profile
-                        </button>
+                  <div className="row">
+                    <div className="col-5">
+                      <div class="avatar white pt-4 pl-2">
+                        <img
+                          src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
+                          alt="avatar mx-auto white"
+                          class="rounded-circle img-fluid"
+                        />
                       </div>
                     </div>
-
-                    <dt>
-                      <span className="col-sm-12">Budget</span>
-                    </dt>
-                    <dd>
-                      <span className="col-sm-12">$10</span>
-                    </dd>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-
-                    <div class="btn-group" role="group" aria-label="...">
+                    <div className="col-7 pl-4 adj-button">
                       <button type="button" class="btn btn-primary">
+                        View Profile
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-title mt-2 ">Highly recommended LLC</h6>
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="row">
+                          {" "}
+                          <div className="col-6">
+                            <dt>
+                              <span className="col-sm-12">Budget</span>
+                            </dt>
+                            <dd>
+                              <span className="col-sm-12">$10</span>
+                            </dd>
+                          </div>
+                          <div className="col-6">
+                            <dt>
+                              <span className="col-sm-12">Rating</span>
+                            </dt>
+                            <dd>
+                              <span className="col-sm-12">3.5 Star</span>
+                            </dd>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-container" role="group" aria-label="...">
+                      <button type="button" class="btn btn-primary mr-3">
                         Accept
                       </button>
                       <button type="button" class="btn btn-danger">
@@ -53,39 +67,107 @@ export default class MultiItemcarousel extends Component {
                   </div>
                 </div>
                 <div class="card">
-                  <img
-                    src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                    class="card-img-top"
-                    alt="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                  />
+                  <div className="row">
+                    <div className="col-5">
+                      <div class="avatar white pt-4 pl-2">
+                        <img
+                          src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
+                          alt="avatar mx-auto white"
+                          class="rounded-circle img-fluid"
+                        />
+                      </div>
+                    </div>
+                    <div className="col-7 pl-4 adj-button">
+                      <button type="button" class="btn btn-primary">
+                        View Profile
+                      </button>
+                    </div>
+                  </div>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This card has supporting text below as a natural lead-in
-                      to additional content.
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
+                    <h6 class="card-title mt-2 ">Highly recommended LLC</h6>
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="row">
+                          {" "}
+                          <div className="col-6">
+                            <dt>
+                              <span className="col-sm-12">Budget</span>
+                            </dt>
+                            <dd>
+                              <span className="col-sm-12">$10</span>
+                            </dd>
+                          </div>
+                          <div className="col-6">
+                            <dt>
+                              <span className="col-sm-12">Rating</span>
+                            </dt>
+                            <dd>
+                              <span className="col-sm-12">3.5 Star</span>
+                            </dd>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-container" role="group" aria-label="...">
+                      <button type="button" class="btn btn-primary mr-3">
+                        Accept
+                      </button>
+                      <button type="button" class="btn btn-danger">
+                        Deny
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div class="card">
-                  <img
-                    src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                    class="card-img-top"
-                    alt="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                  />
+                  <div className="row">
+                    <div className="col-5">
+                      <div class="avatar white pt-4 pl-2">
+                        <img
+                          src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
+                          alt="avatar mx-auto white"
+                          class="rounded-circle img-fluid"
+                        />
+                      </div>
+                    </div>
+                    <div className="col-7 pl-4 adj-button">
+                      <button type="button" class="btn btn-primary">
+                        View Profile
+                      </button>
+                    </div>
+                  </div>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This card has even
-                      longer content than the first to show that equal height
-                      action.
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
+                    <h6 class="card-title mt-2 ">Highly recommended LLC</h6>
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="row">
+                          {" "}
+                          <div className="col-6">
+                            <dt>
+                              <span className="col-sm-12">Budget</span>
+                            </dt>
+                            <dd>
+                              <span className="col-sm-12">$10</span>
+                            </dd>
+                          </div>
+                          <div className="col-6">
+                            <dt>
+                              <span className="col-sm-12">Rating</span>
+                            </dt>
+                            <dd>
+                              <span className="col-sm-12">3.5 Star</span>
+                            </dd>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-container" role="group" aria-label="...">
+                      <button type="button" class="btn btn-primary mr-3">
+                        Accept
+                      </button>
+                      <button type="button" class="btn btn-danger">
+                        Deny
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -100,11 +182,7 @@ export default class MultiItemcarousel extends Component {
                   />
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
+                    <p class="card-text">This</p>
                     <p class="card-text">
                       <small class="text-muted">Last updated 3 mins ago</small>
                     </p>
