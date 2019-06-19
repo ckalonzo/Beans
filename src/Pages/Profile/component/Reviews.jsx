@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBContainer } from "mdbreact";
+import Divider from "../../Global/Layout/divider";
 
 class Reviews extends Component {
   render() {
@@ -16,34 +16,25 @@ class Reviews extends Component {
             <li class="media">
               <img src="..." class="mr-3" alt="..." />
               <div class="media-body">
-                <h5 class="mt-0 mb-1">List-based media object</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-                nisi vulputate fringilla. Donec lacinia congue felis in
-                faucibus.
+                <h5 class="mt-0 mb-1">Great Company!!!!!</h5>
+                Brandon came to clean my Garage very professional and ontime.
               </div>
             </li>
+            <Divider className={"col-12 pt-4"} />
             <li class="media my-4">
               <img src="..." class="mr-3" alt="..." />
               <div class="media-body">
-                <h5 class="mt-0 mb-1">List-based media object</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-                nisi vulputate fringilla. Donec lacinia congue felis in
-                faucibus.
+                <h5 class="mt-0 mb-1">Remove all Junk and clean Garage</h5>
+                Brandon came to clean my Garage swept pressure washed my drive
+                way very professional and ontime.
               </div>
             </li>
+            <Divider className={"col-12 pt-4"} />
             <li class="media">
               <img src="..." class="mr-3" alt="..." />
               <div class="media-body">
-                <h5 class="mt-0 mb-1">List-based media object</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-                nisi vulputate fringilla. Donec lacinia congue felis in
-                faucibus.
+                <h5 class="mt-0 mb-1">COULDVE DONE BETTER</h5>
+                Clean my garage and left trash on drivway
               </div>
             </li>
           </ul>

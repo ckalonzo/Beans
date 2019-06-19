@@ -5,28 +5,8 @@ import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 
 const ProjectDetails = props => {
-  const { project, auth } = props;
   //getting project id
-  // const projectImage = projects.length ? (
-  //   projects.map(project => {
-  //     return (
-  //       <div>
-  //         {" "}
-  //         <a href={project.image} data-fancybox="">
-  //           <img src={project.image} />
-  //         </a>
-  //       </div>
-  //     );
-  //   })
-  // ) : (
-  //   <div>
-  //     {" "}
-  //     <a href="https://imgur.com/EmHdidw" data-fancybox="">
-  //       <img src="https://imgur.com/EmHdidw" />
-  //     </a>
-  //   </div>
-  // );
-
+  const { project, auth } = props;
   if (!auth.uid) return <Redirect to="/101_CustomerLogin/CustomerLogin" />;
   if (project) {
     return (
@@ -35,7 +15,14 @@ const ProjectDetails = props => {
           <div class="row no-gutters">
             <aside class="col-sm-5 border-right">
               <article class="gallery-wrap">
-                {/* {projectImage} */}
+                <div class="img-big-wrap">
+                  <div>
+                    {" "}
+                    <a href="https://imgur.com/EmHdidw" data-fancybox="">
+                      <img src="https://imgur.com/EmHdidw" />
+                    </a>
+                  </div>
+                </div>
                 <div class="img-small-wrap">
                   <div class="item-gallery">
                     {" "}

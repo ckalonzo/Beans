@@ -32,8 +32,8 @@ class Activities extends Component {
   };
 
   render() {
-    console.log(this, "======>");
-    console.log(`activity${this.props}`);
+    // console.log(this, "======>");
+    // console.log(`activity${this.props}`);
     const { notifications } = this.props;
     const { projects } = this.props;
     const { classes } = this.props;
@@ -136,7 +136,7 @@ class Activities extends Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state);
+  //console.log(state);
   return {
     projects: state.firestore.ordered.projects,
     notifications: state.firestore.ordered.notifications
@@ -145,7 +145,7 @@ const mapStateToProps = state => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: "projects" },
+    { collection: "projects", orderBy: ["createdAt"] },
     { collection: "notifications", limit: 3 }
   ])
 )(Activities);

@@ -8,6 +8,7 @@ import Search from "./Component/Search";
 import "./Css/Project.scss";
 import SelectFilter from "./Component/Filter/selectFilter";
 import RangeInput from "./Component/Filter/RangeInput";
+import BudgetRangeInput from "./Component/Filter/BudgetRangeInput";
 class ProjectDashboard extends Component {
   render() {
     const { projects, auth } = this.props;
@@ -24,6 +25,7 @@ class ProjectDashboard extends Component {
           <div className="row">
             <div className="col-3">
               <SelectFilter />
+              <BudgetRangeInput />
               <RangeInput />
             </div>
             <div class="col-9 card">
@@ -37,7 +39,7 @@ class ProjectDashboard extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
+  //console.log(state);
   return {
     projects: state.firestore.ordered.projects,
     auth: state.firebase.auth
@@ -45,5 +47,5 @@ const mapStateToProps = state => {
 };
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "projects" }])
+  firestoreConnect([{ collection: "projects", orderBy: ["createdAt"] }])
 )(ProjectDashboard);

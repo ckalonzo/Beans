@@ -94,9 +94,7 @@ class Confirm extends Component {
                 </dl>
                 <dl>
                   <dt>
-                    <span className="col-sm-6">
-                      Will There Be AnyLarge Items Involved?
-                    </span>
+                    <span className="col-sm-6">AnyLarge Items Involved?</span>
                   </dt>
                   <dd>
                     <span className="col-sm-12">{largeItems}</span>

@@ -19,7 +19,6 @@ class OutlinedTextFields extends React.Component {
     return (
       <textarea
         type="textarea"
-        label="Bio"
         multiline
         rows="10"
         className="col-12 border"
