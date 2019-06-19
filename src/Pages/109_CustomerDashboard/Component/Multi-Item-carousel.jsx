@@ -26,7 +26,7 @@ export default class MultiItemcarousel extends Component {
                       </div>
                     </div>
                     <div className="col-7 pl-4 adj-button">
-                      <button type="button" class="btn btn-primary">
+                      <button type="button" class="btn btn-secondary">
                         View Profile
                       </button>
                     </div>
@@ -78,7 +78,7 @@ export default class MultiItemcarousel extends Component {
                       </div>
                     </div>
                     <div className="col-7 pl-4 adj-button">
-                      <button type="button" class="btn btn-primary">
+                      <button type="button" class="btn btn-secondary">
                         View Profile
                       </button>
                     </div>
@@ -130,7 +130,7 @@ export default class MultiItemcarousel extends Component {
                       </div>
                     </div>
                     <div className="col-7 pl-4 adj-button">
-                      <button type="button" class="btn btn-primary">
+                      <button type="button" class="btn btn-secondary">
                         View Profile
                       </button>
                     </div>
