@@ -4,11 +4,11 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
   return (
     <article class="itemlist mt-4">
       <div class="row row-sm">
-        {/* <aside class="col-sm-3">
+        <aside class="col-sm-3">
           <div class="img-wrap">
             <img src="images/items/1.jpg" class="img-md" />
           </div>
-        </aside> */}
+        </aside>
         <div class="col-sm-6">
           <div class="text-wrap">
             <h4 class="title"> {jobs.service} </h4>
@@ -37,13 +37,7 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
               <span class="h3 price"> ${jobs.budget} </span>
             </div>
             <p>
-              <a
-                href="#"
-                onclick={() => {
-                  deleteProject();
-                }}
-                class="btn btn-warning"
-              >
+              <a href="#" class="btn btn-warning">
                 {" "}
                 Delete{" "}
               </a>

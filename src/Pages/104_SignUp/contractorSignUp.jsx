@@ -37,6 +37,7 @@ export default class contractorSignUp extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeSSN = this.handleChangeSSN.bind(this);
     this.handleBlurSSN = this.handleBlurSSN.bind(this);
+
     // this.handleUpload = this.handleUpload.bind(this);
   }
 
@@ -66,6 +67,37 @@ export default class contractorSignUp extends Component {
       this.setState(() => ({ image }));
     }
   };
+
+  handleChangeSSN(event) {
+    const prevValue = this.state.maskedSsn;
+    const newValue = event.target.value;
+    let actual = this.state.actualSsn;
+
+    if (newValue.length > 11) {
+      return;
+    }
+
+    // typing forward
+    if (newValue.length > prevValue.length) {
+      let newChar = newValue.split("").pop();
+
+      actual = `${actual}${newChar}`;
+    }
+    // backspacing / deleting
+    else {
+      const charsRemovedCount = prevValue.length - newValue.length;
+
+      actual = actual.substr(0, actual.length - charsRemovedCount);
+    }
+
+    this.setState({
+      actualSsn: actual,
+      maskedSsn: this.starredMask(actual)
+    });
+
+    // this.props.change(`owner_${this.props.match.params.idx}_ssn`, actual);
+  }
+
   handleBlurSSN() {
     let ssnLocked = true;
 
@@ -81,44 +113,44 @@ export default class contractorSignUp extends Component {
       });
     }
   }
-  // handleUpload = () => {
-  //   const { image } = this.state;
-  //   const uploadTask = storage.ref(`images/${image.name}`).put(image);
-  //   uploadTask.on(
-  //     "state_changed",
-  //     snapshot => {
-  //       // progrss function ....
-  //       const progress = Math.round(
-  //         (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-  //       );
-  //       this.setState({ progress });
-  //     },
-  //     error => {
-  //       // error function ....
-  //       console.log(error);
-  //     },
-  //     () => {
-  //       // complete function ....
-  //       storage
-  //         .ref("images")
-  //         .child(image.name)
-  //         .getDownloadURL()
-  //         .then(url => {
-  //           console.log(url);
-  //           this.setState({ url });
-  //         });
-  //     }
-  //   );
-  // };
 
-  handleChangeSSN(event) {
-    const prevValue = this.state.maskedSsn;
-    const newValue = event.target.value;
-    let actual = this.state.actualSsn;
+  starredMask(ssn, showLast4 = true) {
+    // replace numeric digits with * asterisk
+    let valueHidden = ssn.replace(/[\d]/g, "*");
 
-    if (newValue.length > 11) {
-      return;
+    if (valueHidden.length <= 3) {
+      return valueHidden;
     }
+
+    if (valueHidden.length <= 5) {
+      return valueHidden.slice(0, 3) + "-" + valueHidden.slice(3, 5);
+    }
+
+    if (showLast4) {
+      return (
+        valueHidden.slice(0, 3) +
+        "-" +
+        valueHidden.slice(3, 5) +
+        "-" +
+        ssn.substr(5)
+      );
+    } else {
+      return (
+        valueHidden.slice(0, 3) +
+        "-" +
+        valueHidden.slice(3, 5) +
+        "-" +
+        valueHidden.slice(5, 9)
+      );
+    }
+  }
+
+  clearSsn() {
+    this.setState({
+      actualSsn: "",
+      maskedSsn: "",
+      ssnLocked: false
+    });
   }
 
   handleChangeTimePicker = time => {
@@ -151,6 +183,9 @@ export default class contractorSignUp extends Component {
       flightOfStairs,
       truckLoads,
       typeOfTruck,
+      actualSsn,
+      maskedSsn,
+      ssnLocked,
       specialInstructions
     } = this.state;
     const values = {
@@ -205,7 +240,12 @@ export default class contractorSignUp extends Component {
             prevStep={this.prevStep}
             handleChangeSSN={this.handleChangeSSN}
             handleBlurSSN={this.handleBlurSSN}
-            values={values}
+            ssnLocked={this.ssnLocked}
+            clearSsn={this.clearSsn}
+            actualSsn={actualSsn}
+            ssnLocked={ssnLocked}
+            maskedSsn={maskedSsn}
+            starredMask={this.starredMask}
           />
         );
       //   case 4:

@@ -1,8 +1,20 @@
 import React, { Component } from "react";
 import "../js/ssnmask";
 import "../Css/customer-signup.scss";
+import SsnInput from "./SSNInput";
+import TermAndConditions from "./termAndConditions";
 export default class SocialNumberAknowledgement extends Component {
   render() {
+    const {
+      maskedSsn,
+      handleChangeSSN,
+      handleBlurSSN,
+      ssnLocked,
+      starredMask,
+      actualSsn,
+      clearSsn
+    } = this.props;
+    console.log(this.props);
     return (
       <section>
         <div className="container">
@@ -18,10 +30,20 @@ export default class SocialNumberAknowledgement extends Component {
           <div className="row">
             <div className="col-4 text-center mx-auto">
               <label for="fieldSsn">SSN: </label>
-              <p class="num">
-                <input class="number" />
-                <input class="value" />
-              </p>
+              <SsnInput
+                maskedSsn={maskedSsn}
+                handleChangeSSN={handleChangeSSN}
+                handleBlurSSN={handleBlurSSN}
+                clearSsn={clearSsn}
+                actualSsn={actualSsn}
+                ssnLocked={ssnLocked}
+                starredMask={starredMask}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-8  mx-auto">
+              <TermAndConditions />
             </div>
           </div>
         </div>

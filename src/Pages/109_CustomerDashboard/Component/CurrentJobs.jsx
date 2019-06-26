@@ -17,8 +17,9 @@ export default class CurrentJobs extends Component {
             <div className="col-12">
               <ProjectList
                 customerId={customerId}
-                deleteProject={this.props.deleteProject}
+                deleteProject={deleteProject}
                 projects={projects}
+                // id={id}
               />
             </div>
           </div>

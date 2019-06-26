@@ -22,8 +22,8 @@ class Activities extends Component {
   handleChange = (event, value) => {
     this.setState({ value });
   };
-  deleteProject = id => {
-    console.log(id);
+  deleteProject = e => {
+    console.log(e);
   };
   toggleClassicTabs1 = tab => () => {
     if (this.state.activeItemClassicTabs1 !== tab) {
@@ -106,6 +106,7 @@ class Activities extends Component {
                 customerId={customerId}
                 deleteProject={this.deleteProject}
                 projects={projects}
+                // id={id}
               />
             </div>
             <div

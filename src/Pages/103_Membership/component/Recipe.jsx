@@ -62,7 +62,6 @@ class Recipe extends Component {
             zipCode
             panelLabel="Pay {amount}"
           />
-          />
         </div>
       </div>
     );
