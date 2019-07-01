@@ -14,6 +14,60 @@ export default class MultiItemcarousel extends Component {
           <div class="carousel-inner d-flex justify-content-between">
             <div class="carousel-item active">
               <div class="card-deck">
+                <div class="card disableClick ">
+                  <div className="row">
+                    <div className="col-5">
+                      <div class="avatar white pt-4 pl-2">
+                        <img
+                          src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
+                          alt="avatar mx-auto white"
+                          class="rounded-circle img-fluid disableClick "
+                        />
+                      </div>
+                    </div>
+                    <div className="col-7 pl-4 adj-button">
+                      <button type="button" class="btn btn-secondary">
+                        View Profile
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-title mt-2 disableClick ">
+                      Highly recommended LLC
+                    </h6>
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="row">
+                          {" "}
+                          <div className="col-12">
+                            <dt>
+                              <span className="col-12">Budget</span>
+                            </dt>
+                            <dd>
+                              <span className="col-12">$10</span>
+                            </dd>
+                          </div>
+                          <div className="col-12">
+                            <dt>
+                              <span className="col-12">Rating</span>
+                            </dt>
+                            <dd>
+                              <span className="col-sm-12">3.5 Star</span>
+                            </dd>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-container" role="group" aria-label="...">
+                      <button type="button" class="btn btn-primary mr-3">
+                        Accept
+                      </button>
+                      <button type="button" class="btn btn-danger">
+                        Deny
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 <div class="card">
                   <div className="row">
                     <div className="col-5">
@@ -37,7 +91,7 @@ export default class MultiItemcarousel extends Component {
                       <div className="col-12">
                         <div className="row">
                           {" "}
-                          <div className="col-6">
+                          <div className="col-12">
                             <dt>
                               <span className="col-sm-12">Budget</span>
                             </dt>
@@ -45,7 +99,7 @@ export default class MultiItemcarousel extends Component {
                               <span className="col-sm-12">$10</span>
                             </dd>
                           </div>
-                          <div className="col-6">
+                          <div className="col-12">
                             <dt>
                               <span className="col-sm-12">Rating</span>
                             </dt>
@@ -89,7 +143,7 @@ export default class MultiItemcarousel extends Component {
                       <div className="col-12">
                         <div className="row">
                           {" "}
-                          <div className="col-6">
+                          <div className="col-12">
                             <dt>
                               <span className="col-sm-12">Budget</span>
                             </dt>
@@ -97,59 +151,7 @@ export default class MultiItemcarousel extends Component {
                               <span className="col-sm-12">$10</span>
                             </dd>
                           </div>
-                          <div className="col-6">
-                            <dt>
-                              <span className="col-sm-12">Rating</span>
-                            </dt>
-                            <dd>
-                              <span className="col-sm-12">3.5 Star</span>
-                            </dd>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="button-container" role="group" aria-label="...">
-                      <button type="button" class="btn btn-primary mr-3">
-                        Accept
-                      </button>
-                      <button type="button" class="btn btn-danger">
-                        Deny
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div className="row">
-                    <div className="col-5">
-                      <div class="avatar white pt-4 pl-2">
-                        <img
-                          src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
-                          alt="avatar mx-auto white"
-                          class="rounded-circle img-fluid"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-7 pl-4 adj-button">
-                      <button type="button" class="btn btn-secondary">
-                        View Profile
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <h6 class="card-title mt-2 ">Highly recommended LLC</h6>
-                    <div className="row">
-                      <div className="col-12">
-                        <div className="row">
-                          {" "}
-                          <div className="col-6">
-                            <dt>
-                              <span className="col-sm-12">Budget</span>
-                            </dt>
-                            <dd>
-                              <span className="col-sm-12">$10</span>
-                            </dd>
-                          </div>
-                          <div className="col-6">
+                          <div className="col-12">
                             <dt>
                               <span className="col-sm-12">Rating</span>
                             </dt>

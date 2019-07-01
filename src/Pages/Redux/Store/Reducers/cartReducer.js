@@ -6,6 +6,7 @@ import {
 } from "../actions/actionTypes/cart-actionTypes";
 
 const initState = {
+  cart: [],
   items: [
     { id: 1, title: "1 Bids", desc: "1 Bid from TruckAway", price: 0.99 },
     { id: 2, title: "3 Bids", desc: "3 Bids from TruckAway", price: 2.99 },
@@ -86,6 +87,29 @@ const cartReducer = (state = initState, action) => {
     }
   }
   return state;
+};
+
+// cartItem
+const cartItem = (state = initState, action) => {
+  switch (action.type) {
+    case "ADD_TO_CART":
+      return {
+        id: action.id,
+        count: action.count
+      };
+    case "REMOVE_FROM_CART":
+      return state.id !== action.id;
+    case "UPDATE_CART_ITEM":
+      if (state.id !== action.id) {
+        return state;
+      }
+
+      return Object.assign({}, state, {
+        count: action.count
+      });
+    default:
+      return state;
+  }
 };
 
 export default cartReducer;

@@ -16,14 +16,21 @@ class Activities extends Component {
     notificationsCounter: 50,
     activeJobs: 1,
     show: true,
-    value: 0
+    value: 0,
+    projects: []
   };
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
   deleteProject = id => {
-    console.log(id);
+    let projects = this.state.firestore.data.projects.filter(jobs => {
+      console.log("hi");
+      return jobs.id !== id;
+    });
+    this.setState({
+      projects: projects
+    });
   };
   toggleClassicTabs1 = tab => () => {
     if (this.state.activeItemClassicTabs1 !== tab) {
@@ -36,7 +43,7 @@ class Activities extends Component {
   render() {
     // console.log(this, "======>");
     // console.log(`activity${this.props}`);
-    const { notifications, deleteProject } = this.props;
+    const { notifications } = this.props;
     const { projects, customerId } = this.props;
     return (
       <div className="col-12">

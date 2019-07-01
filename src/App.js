@@ -22,6 +22,7 @@ import ChatModule from "./Pages/Chat/Chat-module";
 // import Main from './Pages/Chat/Component/Main/Main'
 import ContractorCreateAccount from "./Pages/104_SignUp/Contractor-Create-Account";
 import Profile from "./Pages/Profile/Layout/Profile";
+import Thankyou from "./Pages/104_SignUp/component/Thankyou";
 
 class App extends Component {
   render() {
@@ -38,6 +39,7 @@ class App extends Component {
               path="/108_Browse/ProjectDashboard"
               component={ProjectDashboard}
             />
+            <Route path="/104_SignUp/component/Thankyou" component={Thankyou} />
             <Route
               path="/109_CustomerDashboard/CustomerDashboard"
               component={CustomerDashboard}

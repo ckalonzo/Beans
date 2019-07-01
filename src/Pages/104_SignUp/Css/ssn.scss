@@ -1,0 +1,53 @@
+.ssninputSection {
+  h3,
+  pre {
+    text-align: left;
+  }
+
+  .ssnInput {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 80%;
+    background: #fff;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    height: 48px;
+  }
+  .ssnInput > input {
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: none;
+    font-size: 1.3em;
+    text-align: center;
+  }
+  .ssnInput > input[disabled],
+  .ssnInput.disabled {
+    background: #ededed;
+  }
+  .ssnInput > input:focus {
+    outline-color: transparent;
+    outline-style: none;
+    left: 0;
+  }
+  .ssnInput:focus-within {
+    border-color: #31cda8;
+  }
+  .ssnInput .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .ssnInput .close-icon {
+    opacity: 0;
+    z-index: 30;
+    cursor: pointer;
+  }
+  .ssnInput .close-icon.force-show {
+    opacity: 1 !important;
+  }
+}
