@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "../Css/Price-Table.scss";
-
-export default class MembershipTable extends Component {
+import { connect } from "react-redux";
+class MembershipTable extends Component {
   render() {
+    const { subscription } = this.props;
     return (
       <section className="sectioncolor mt-5">
         <div className="container">
@@ -95,3 +96,4 @@ export default class MembershipTable extends Component {
     );
   }
 }
+export default connect()(MembershipTable);

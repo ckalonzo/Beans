@@ -90,7 +90,7 @@ const cartReducer = (state = initState, action) => {
 };
 
 // cartItem
-const cartItem = (state, action) => {
+const cartItem = (state = initState, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
       return {

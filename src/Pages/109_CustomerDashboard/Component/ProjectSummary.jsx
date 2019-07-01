@@ -1,12 +1,13 @@
 import React from "react";
 import MultiItemcarousel from "./Multi-Item-carousel";
+import NoImage from "../../108_Browse/img/no-image.png";
 const ProjectSummary = ({ jobs, deleteProject }) => {
   return (
     <article class="itemlist mt-4">
       <div class="row row-sm">
         <aside class="col-sm-3">
           <div class="img-wrap">
-            <img src="images/items/1.jpg" class="img-md" />
+            <img src={NoImage} class="img-md" />
           </div>
         </aside>
         <div class="col-sm-6">
@@ -37,10 +38,13 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
               <span class="h3 price"> ${jobs.budget} </span>
             </div>
             <p>
-              <a href="#" class="btn btn-warning">
-                {" "}
-                Delete{" "}
-              </a>
+              <button
+                onClick={() => {
+                  deleteProject(jobs.id);
+                }}
+              >
+                Delete
+              </button>
               <a href="#" class="btn btn-light">
                 {" "}
                 Details{" "}

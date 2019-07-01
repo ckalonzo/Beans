@@ -3,7 +3,7 @@ import ProjectList from "../../109_CustomerDashboard/Component/ProjectList";
 
 export default class CurrentJobs extends Component {
   render() {
-    const { projects, deleteProject, customerId } = this.props;
+    const { projects, deleteProject } = this.props;
 
     return (
       <section>
@@ -15,12 +15,7 @@ export default class CurrentJobs extends Component {
           </div>
           <div className="row">
             <div className="col-12">
-              <ProjectList
-                customerId={customerId}
-                deleteProject={deleteProject}
-                projects={projects}
-                // id={id}
-              />
+              <ProjectList deleteProject={deleteProject} projects={projects} />
             </div>
           </div>
         </div>
