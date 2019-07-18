@@ -1,14 +1,12 @@
 import React from "react";
 import MultiItemcarousel from "./Multi-Item-carousel";
-import NoImage from "../../108_Browse/img/no-image.png";
+import NoImage from "../../Global/Component/NoImage";
 const ProjectSummary = ({ jobs, deleteProject }) => {
   return (
     <article class="itemlist mt-4">
       <div class="row row-sm">
-        <aside class="col-sm-3">
-          <div class="img-wrap">
-            <img src={NoImage} class="img-md" />
-          </div>
+        <aside class="col-12 col-sm-3">
+          <NoImage />
         </aside>
         <div class="col-sm-6">
           <div class="text-wrap">

@@ -6,20 +6,18 @@ export default class CurrentJobs extends Component {
     const { projects, deleteProject } = this.props;
 
     return (
-      <section>
-        <div className="app-content container">
-          <div className="row">
-            <div className="col-12">
-              <h4>Current Jobs</h4>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <ProjectList deleteProject={deleteProject} projects={projects} />
-            </div>
+      <div className="app-content container">
+        <div className="row">
+          <div className="col-12">
+            <h4>Current Jobs</h4>
           </div>
         </div>
-      </section>
+        <div className="row">
+          <div className="col-12">
+            <ProjectList deleteProject={deleteProject} projects={projects} />
+          </div>
+        </div>
+      </div>
     );
   }
 }
