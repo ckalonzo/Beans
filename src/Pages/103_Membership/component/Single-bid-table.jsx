@@ -12,7 +12,7 @@ class SingleBid extends Component {
   render() {
     let itemList = this.props.items.items.map(item => {
       return (
-        <div class="col-4 mb-3 mx-auto" key={item.id}>
+        <div class="col-md-4 mb-3 " key={item.id}>
           <div class="card-width colorch-btn" id="hover4">
             <a
               href="#"
@@ -40,7 +40,7 @@ class SingleBid extends Component {
       <section className="sp-sectioncolor mt-5 ">
         <div className="container  mt-3">
           <div className="row ">
-            <div className="mx-auto mb-5">
+            <div className="col-12 mx-auto mb-5">
               <h1 className="sb-title">individual Bids </h1>
             </div>
           </div>
