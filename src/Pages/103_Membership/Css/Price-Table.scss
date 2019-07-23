@@ -2,8 +2,15 @@
 
 .sectioncolor {
   background-color: rgba(0, 0, 0, 0.03);
-
-  #glow {
+  .adj-font {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
+  .adj #glow {
     /* background: #28344a; */
     color: #000000;
   }

@@ -8,9 +8,9 @@ class MembershipTable extends Component {
       <section className="sectioncolor mt-5">
         <div className="container">
           <div className="row">
-            <div class="col-xs-12 col-md-12">
+            <div class="col-12">
               <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-                <h1 class="display-4">Monthly Subscription Packages</h1>
+                <h1 class="col-12 adj-font">Monthly Subscription Packages</h1>
                 <p class="lead">
                   Quickly build an effective pricing table for your potential
                   customers with this Bootstrap example. It's built with default
@@ -25,7 +25,7 @@ class MembershipTable extends Component {
                         <h4 class="my-0 font-weight-normal">Starter</h4>
                       </div>
                       <div class="card-body">
-                        <h1 class="card-title pricing-card-title">
+                        <h1 class="card-title pricing-card-title adj-prices">
                           $1,000 <small class="text-muted">/ mo</small>
                         </h1>
                         <ul class="list-unstyled mt-3 mb-4">

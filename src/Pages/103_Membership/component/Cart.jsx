@@ -103,7 +103,7 @@ class Cart extends Component {
         <div className="cart">
           <header className="header">
             <div className="header-contents">
-              <Link to="/" className="back-button">
+              <Link to="/103_Membership/Membership" className="back-button">
                 &lt; Back to shop
               </Link>
             </div>

@@ -71,10 +71,18 @@ ul {
     transform: scaleX(1);
   }
   .nav-link:hover {
-    color: #000 !important;
+    color: #124676 !important;
   }
   .nav-link {
     color: #124676 !important;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .avatarlink:hover {
+    color: #ffffff !important;
+  }
+  .avatarlink {
+    color: #ffffff !important;
     font-size: 16px;
     font-weight: 600;
   }

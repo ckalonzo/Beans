@@ -1,32 +1,46 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 //import { addShipping } from './actions/cartActions'
-
 import "../Css/cart.css";
-import axios from "axios";
+import STRIPE_PUBLISHABLE from "./constants/stripe";
+import PAYMENT_SERVER_URL from "./constants/server";
 
-class Recipe extends Component {
-  handleToken(token) {
-    console.log("handleToken", token);
+const CURRENCY = "USD";
+const fromEuroToCent = amount => amount * 100;
 
-    fetch("/api/stripe", {
-      method: "POST",
-      headers: {
-        Accept: "application.json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        stripeToken: token.id
-      })
+const successPayment = data => {
+  alert("Payment Successful");
+};
+
+const errorPayment = data => {
+  alert("Payment Error");
+  console.log(data);
+};
+
+const onToken = (amount, description) => token =>
+  axios
+    .post(PAYMENT_SERVER_URL, {
+      description,
+      source: token.id,
+      currency: CURRENCY,
+      amount: fromEuroToCent(amount)
     })
-      .then(res => res.json())
-      .then(json => {
-        console.log("json");
-        console.log(json);
-      });
-  }
+    .then(successPayment)
+    .catch(errorPayment);
+const Checkout = ({ name, description, amount }) => (
+  <StripeCheckout
+    name={name}
+    description={description}
+    amount={fromEuroToCent(amount)}
+    token={onToken(amount, description)}
+    currency={CURRENCY}
+    stripeKey={STRIPE_PUBLISHABLE}
+  />
+);
+class Recipe extends Component {
   handleChecked = e => {
     if (e.target.checked) {
       this.props.addShipping();
@@ -36,6 +50,7 @@ class Recipe extends Component {
   };
 
   render() {
+    const { name, description, amount } = this.props;
     return (
       <div className="container">
         <div className="collection">
@@ -51,16 +66,12 @@ class Recipe extends Component {
         </div>
         <div className="checkout">
           <StripeCheckout
-            stripeKey="pk_test_CxStMAxOuuw4Xz6gCv1vmNUa00QntDzcq0"
-            token={this.handleToken}
-            amount={this.props.total * 100}
-            billingAddress
-            description="Awesome Product"
-            image="https://yourdomain.tld/images/logo.svg"
-            locale="auto"
-            name="test"
-            zipCode
-            panelLabel="Pay {amount}"
+            name={name}
+            description={description}
+            amount={fromEuroToCent(amount)}
+            token={onToken(amount, description)}
+            currency={CURRENCY}
+            stripeKey={STRIPE_PUBLISHABLE}
           />
         </div>
       </div>
@@ -72,7 +83,9 @@ const mapStateToProps = state => {
   return {
     addedItems: state.items.addedItems,
     total: state.items.total,
-    title: state.items.title
+    amount: state.items.total,
+    title: state.items.title,
+    description: state.items.desc
   };
 };
 

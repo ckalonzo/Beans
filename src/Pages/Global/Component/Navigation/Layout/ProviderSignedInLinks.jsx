@@ -57,14 +57,32 @@ const ProviderSignedInLinks = props => {
             </ul>
           </NavLink>
         </li>
-
-        <li className="nav-item  chg-text moveline">
-          <a onClick={props.signOut}>Log Out</a>
-        </li>
-        <li>
-          <NavLink to="/Profile/Layout/Profile" className="btn nav-avatar">
+        <li class="nav-item dropdown">
+          <NavLink
+            to="#"
+            className="nav-link avatarlink dropdown-toggle nav-avatar"
+            id="navbarDropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="false"
+            aria-expanded="false"
+          >
             {props.profile.initials}
           </NavLink>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item nav-link" href="/Profile/Layout/Profile">
+              Profile
+            </a>
+            <a
+              class="dropdown-item nav-link chg-text"
+              href="#"
+              onClick={props.signOut}
+            >
+              Log Out
+            </a>
+            <a class="dropdown-item nav-link" href="#">
+              Something else here
+            </a>
+          </div>
         </li>
       </ul>
     </React.Fragment>
