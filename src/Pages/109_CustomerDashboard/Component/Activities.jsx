@@ -3,6 +3,7 @@ import "../Css/customer-dashboard.scss";
 import Notification from "./Notifications";
 import CurrentJobs from "../../109_CustomerDashboard/Component/CurrentJobs";
 import ChatModule from "../../Chat/Chat-module";
+import MainChat from "../../Chat/mainChat";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
@@ -121,7 +122,7 @@ class Activities extends Component {
               role="tabpanel"
               aria-labelledby="ta-conversation-tab-cust"
             >
-              <ChatModule />
+              <MainChat />
             </div>
             <div
               class="tab-pane fade"

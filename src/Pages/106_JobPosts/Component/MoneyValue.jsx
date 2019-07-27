@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "../Css/currency.css";
+import "../Css/currency.scss";
 
 class MoneyValue extends Component {
   render() {
     const { handleChange, budget } = this.props;
     return (
       <React.Fragment>
-        <div class="input-group">
+        <div class="input-group ta-currency">
           <span class="input-group-addon">$</span>
           <input
             type="text"

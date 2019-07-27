@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../Css/dashboard.scss";
-import ChatModule from "../../Chat/Chat-module";
+import mainChat from "../../Chat/mainChat";
 import Notification from "./Notifications";
 import Currentbids from "../../105_Dashboard/Component/currentbids";
 import { connect } from "react-redux";
@@ -110,7 +110,7 @@ class Activities extends Component {
               role="tabpanel"
               aria-labelledby="ta-conversation-tab-cust"
             >
-              <ChatModule />
+              <mainChat />
             </div>
             <div
               class="tab-pane fade"
