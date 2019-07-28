@@ -45,7 +45,7 @@ class SignUp extends Component {
                                                         </div>
                                                     </div>
                                                     <form onSubmit={this.handleSubmit}>
-                                                        <div class="form-group mt-4">
+                                                        <div className="form-group mt-4">
                                                             <label htmlFor="firstName">First Name</label>
                                                             <input
                                                                 type="text"
@@ -54,7 +54,7 @@ class SignUp extends Component {
                                                                 onChange={this.handleChange}
                                                             />
                                                         </div>
-                                                        <div class="form-group mt-4">
+                                                        <div className="form-group mt-4">
                                                             <label htmlFor="lastName">Last Name</label>
                                                             <input
                                                                 type="text"

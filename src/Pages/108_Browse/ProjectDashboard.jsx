@@ -10,8 +10,33 @@ import SelectFilter from "./Component/Filter/selectFilter";
 import RangeInput from "./Component/Filter/RangeInput";
 import BudgetRangeInput from "./Component/Filter/BudgetRangeInput";
 class ProjectDashboard extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      bidNow: "",
+      Price: "",
+      uid: ""
+    };
+    this.handleBidNow = this.handleBidNow.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleBidNow(e) {
+    e.preventDefault();
+    console.log("The link was clicked.");
+  }
+
+  handleChange = input => e => {
+    e.preventDefault();
+    this.setState({
+      [input]: e.target.value
+    });
+  };
+
   render() {
     const { projects, auth } = this.props;
+    const { bidNow } = this.state;
     if (!auth.uid)
       return <Redirect to="/102_ContractorLogin/ContractorLogin" />;
     return (
@@ -28,8 +53,13 @@ class ProjectDashboard extends Component {
               <BudgetRangeInput />
               <RangeInput />
             </div>
-            <div class="col-9 card">
-              <ProjectList projects={projects} />
+            <div className="col-9 card">
+              <ProjectList
+                handleBidNow={this.handleBidNow}
+                projects={projects}
+                bidNow={bidNow}
+                handleChange={this.handleChange}
+              />
             </div>
           </div>
         </div>

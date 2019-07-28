@@ -3,9 +3,12 @@ import io from "socket.io-client";
 import { USER_CONNECTED, LOGOUT } from "../Events/Events";
 import LoginForm from "./LoginForm";
 import ChatContainer from "./chats/ChatContainer";
+import { connect } from "react-redux";
+import { signIn } from "../../Redux/Store/actions/authActions";
 
 const socketUrl = "http://localhost:3231";
-export default class Layout extends Component {
+
+class Layout extends Component {
   constructor(props) {
     super(props);
 
@@ -45,7 +48,7 @@ export default class Layout extends Component {
   };
 
   render() {
-    const { title } = this.props;
+    const { authError, auth } = this.props;
     const { socket, user } = this.state;
     return (
       <div className="container">
@@ -58,3 +61,21 @@ export default class Layout extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    authError: state.auth.authError,
+    auth: state.firebase.auth
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    signIn: creds => dispatch(signIn(creds))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Layout);

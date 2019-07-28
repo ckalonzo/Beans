@@ -8,7 +8,7 @@ import { addToCart } from "../../../../Redux/Store/actions/cartActions";
 const ProviderSignedInLinks = props => {
   return (
     <React.Fragment>
-      <ul class="navbar-nav w-100 justify-content-center nav-section">
+      <ul className="navbar-nav w-100 justify-content-center nav-section">
         <li className="nav-item">
           <NavLink
             className="nav-link chg-text moveline"
@@ -42,22 +42,22 @@ const ProviderSignedInLinks = props => {
           </NavLink>
         </li>
       </ul>
-      <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+      <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
         <li>
           <NavLink to="/103_Membership/component/cart">
-            <ul class="navbar-right">
+            <ul className="navbar-right">
               <li className="ovr-chartContainer">
                 <a href="#" className="ta-shoppingChart" id="cart">
-                  <span class="fa-stack fa-1x has-badge" data-count="5">
-                    {/* <i class="fa fa-circle fa-stack-2x" /> */}
-                    <i class="fas fa-shopping-cart fa-stack-2x " />
+                  <span className="fa-stack fa-1x has-badge" data-count="5">
+                    {/* <i className="fa fa-circle fa-stack-2x" /> */}
+                    <i className="fas fa-shopping-cart fa-stack-2x " />
                   </span>
                 </a>
               </li>
             </ul>
           </NavLink>
         </li>
-        <li class="nav-item dropdown">
+        <li className="nav-item dropdown">
           <NavLink
             to="#"
             className="nav-link avatarlink dropdown-toggle nav-avatar"
@@ -68,18 +68,18 @@ const ProviderSignedInLinks = props => {
           >
             {props.profile.initials}
           </NavLink>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item nav-link" href="/Profile/Layout/Profile">
+          <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a className="dropdown-item nav-link" href="/Profile/Layout/Profile">
               Profile
             </a>
             <a
-              class="dropdown-item nav-link chg-text"
+              className="dropdown-item nav-link chg-text"
               href="#"
               onClick={props.signOut}
             >
               Log Out
             </a>
-            <a class="dropdown-item nav-link" href="#">
+            <a className="dropdown-item nav-link" href="#">
               Something else here
             </a>
           </div>

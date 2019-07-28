@@ -4,9 +4,9 @@ export default class TermAndConditions extends Component {
   render() {
     return (
       <div className="termandconditionSection">
-        <div class="form-group">
-          <label class="col-xs-3 control-label">Terms of use</label>
-          <div class="col-xs-9">
+        <div className="form-group">
+          <label className="col-xs-3 control-label">Terms of use</label>
+          <div className="col-xs-9">
             <div className="taContainer-outter">
               <p>
                 Lorem ipsum dolor sit amet, veniam numquam has te. No suas
@@ -51,9 +51,9 @@ export default class TermAndConditions extends Component {
           </div>
         </div>
 
-        <div class="form-group">
-          <div class="col-xs-6 col-xs-offset-3">
-            <div class="checkbox">
+        <div className="form-group">
+          <div className="col-xs-6 col-xs-offset-3">
+            <div className="checkbox">
               <label>
                 <input type="checkbox" name="agree" value="agree" /> Agree with
                 the terms and conditions
@@ -65,7 +65,7 @@ export default class TermAndConditions extends Component {
         <div className="row">
           <div className="mx-auto">
             <a href="/104_SignUp/component/Thankyou">
-              <button type="button" class="btn btn-primary">
+              <button type="button" className="btn btn-primary">
                 Submit
               </button>
             </a>

@@ -12,21 +12,21 @@ class SingleBid extends Component {
   render() {
     let itemList = this.props.items.items.map(item => {
       return (
-        <div class="col-md-4 mb-3 " key={item.id}>
-          <div class="card-width colorch-btn" id="hover4">
+        <div className="col-md-4 mb-3 " key={item.id}>
+          <div className="card-width colorch-btn" id="hover4">
             <a
               href="#"
               onClick={() => {
                 this.handleClick(item.id);
               }}
             >
-              <div class="card-body text-center">
-                <h2 class="card-title">{item.title}</h2>
-                <h3 class="card-subtitle mb-2 text-muted">
+              <div className="card-body text-center">
+                <h2 className="card-title">{item.title}</h2>
+                <h3 className="card-subtitle mb-2 text-muted">
                   Price: ${item.price}
                 </h3>
-                <p class="card-text">{item.desc}</p>
-                <button type="button" class="btn btn-success">
+                <p className="card-text">{item.desc}</p>
+                <button type="button" className="btn btn-success">
                   Buy Now
                 </button>
               </div>
@@ -44,7 +44,7 @@ class SingleBid extends Component {
               <h1 className="sb-title">individual Bids </h1>
             </div>
           </div>
-          <div class="card-group">{itemList}</div>
+          <div className="card-group">{itemList}</div>
         </div>
       </section>
     );

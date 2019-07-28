@@ -49,10 +49,10 @@ class Activities extends Component {
     return (
       <div className="col-12">
         <div className="container">
-          <ul class="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
-            <li class="nav-item">
+          <ul className="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
+            <li className="nav-item">
               <a
-                class="nav-link active"
+                className="nav-link active"
                 id="ta-JobPosts-tab-cust"
                 data-toggle="tab"
                 href="#ta-JobPosts-cust"
@@ -63,9 +63,9 @@ class Activities extends Component {
                 Current Jobs
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 id="ta-conversation-tab-cust"
                 data-toggle="tab"
                 href="#ta-conversation-cust"
@@ -76,9 +76,9 @@ class Activities extends Component {
                 Conversation
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 id="ta-Notification-tab-cust"
                 data-toggle="tab"
                 href="#ta-Notification-cust"
@@ -89,9 +89,9 @@ class Activities extends Component {
                 Notification
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 id="ta-ActiveJobs-tab-cust"
                 data-toggle="tab"
                 href="#ta-ActiveJobs-cust"
@@ -103,9 +103,9 @@ class Activities extends Component {
               </a>
             </li>
           </ul>
-          <div class="tab-content card pt-5" id="myTabContentMD">
+          <div className="tab-content card pt-5" id="myTabContentMD">
             <div
-              class="tab-pane fade show active"
+              className="tab-pane fade show active"
               id="ta-JobPosts-cust"
               role="tabpanel"
               aria-labelledby="ta-JobPosts-tab-cust"
@@ -117,7 +117,7 @@ class Activities extends Component {
               />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="ta-conversation-cust"
               role="tabpanel"
               aria-labelledby="ta-conversation-tab-cust"
@@ -125,7 +125,7 @@ class Activities extends Component {
               <MainChat />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="ta-Notification-cust"
               role="tabpanel"
               aria-labelledby="ta-Notification-tab-cust"
@@ -133,12 +133,12 @@ class Activities extends Component {
               <Notification notifications={notifications} />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="ta-ActiveJobs-cust"
               role="tabpanel"
               aria-labelledby="contact-tab-md"
             >
-              <p class="content content-tab4">Active Jobs</p>
+              <p className="content content-tab4">Active Jobs</p>
             </div>
           </div>
         </div>

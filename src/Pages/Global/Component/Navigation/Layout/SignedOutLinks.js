@@ -6,7 +6,7 @@ import { MDBBadge, MDBIcon } from "mdbreact";
 const Navbar = props => {
   return (
     <React.Fragment>
-      <ul class="navbar-nav w-100 justify-content-center nav-section">
+      <ul className="navbar-nav w-100 justify-content-center nav-section">
         <li className="nav-item dropdown">
           <a
             className="nav-link chg-text moveline dropdown-toggle"
@@ -75,12 +75,12 @@ const Navbar = props => {
         </li>
         <li>
           <Link to="/103_Membership/component/cart">
-            <ul class="navbar-right ta-list">
+            <ul className="navbar-right ta-list">
               <li>
                 <a href="#" className="ta-shoppingChart" id="cart">
-                  <span class="fa-stack fa-1x has-badge" data-count="5">
-                    {/* <i class="fa fa-circle fa-stack-2x" /> */}
-                    <i class="fas fa-shopping-cart fa-stack-2x " />
+                  <span className="fa-stack fa-1x has-badge" data-count="5">
+                    {/* <i className="fa fa-circle fa-stack-2x" /> */}
+                    <i className="fas fa-shopping-cart fa-stack-2x " />
                   </span>
                 </a>
               </li>

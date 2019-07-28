@@ -6,11 +6,11 @@ class MoneyValue extends Component {
     const { handleChange, budget } = this.props;
     return (
       <React.Fragment>
-        <div class="input-group ta-currency">
-          <span class="input-group-addon">$</span>
+        <div className="input-group ta-currency">
+          <span className="input-group-addon">$</span>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             value={budget}
             onChange={handleChange("budget")}
             placeholder="Price"

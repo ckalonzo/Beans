@@ -19,7 +19,7 @@ class SignUpbasicinfo extends Component {
             <h1>Basic Information</h1>
           </div>
           <form onSubmit={this.handleSubmit}>
-            <div class="form-group mt-4">
+            <div className="form-group mt-4">
               <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
@@ -28,7 +28,7 @@ class SignUpbasicinfo extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <div class="form-group mt-4">
+            <div className="form-group mt-4">
               <label htmlFor="lastName">Last Name</label>
               <input
                 type="text"
@@ -65,7 +65,7 @@ class SignUpbasicinfo extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <div class="form-group mt-4">
+            <div className="form-group mt-4">
               <label htmlFor="typeofcar">
                 What type of vehicle you will be driving
               </label>

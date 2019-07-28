@@ -11,11 +11,11 @@ const ProjectDetails = props => {
   if (project) {
     return (
       <React.Fragment>
-        <div class="card">
-          <div class="row no-gutters">
-            <aside class="col-sm-5 border-right">
-              <article class="gallery-wrap">
-                <div class="img-big-wrap">
+        <div className="card">
+          <div className="row no-gutters">
+            <aside className="col-sm-5 border-right">
+              <article className="gallery-wrap">
+                <div className="img-big-wrap">
                   <div>
                     {" "}
                     <a href="https://imgur.com/EmHdidw" data-fancybox="">
@@ -23,33 +23,33 @@ const ProjectDetails = props => {
                     </a>
                   </div>
                 </div>
-                <div class="img-small-wrap">
-                  <div class="item-gallery">
+                <div className="img-small-wrap">
+                  <div className="item-gallery">
                     {" "}
                     <img src="https://imgur.com/EmHdidw" />
                   </div>
-                  <div class="item-gallery">
+                  <div className="item-gallery">
                     {" "}
                     <img src="https://imgur.com/EmHdidw" />
                   </div>
-                  <div class="item-gallery">
+                  <div className="item-gallery">
                     {" "}
                     <img src="https://imgur.com/EmHdidw" />
                   </div>
-                  <div class="item-gallery">
+                  <div className="item-gallery">
                     {" "}
                     <img src="https://imgur.com/EmHdidw" />
                   </div>
                 </div>
               </article>
             </aside>
-            <aside class="col-sm-7">
-              <article class="p-5">
-                <h3 class="title mb-3">{project.service}</h3>
-                <div class="mb-3">
-                  <var class="price h3 text-warning">
-                    <span class="currency">US $</span>
-                    <span class="num">{project.budget}</span>
+            <aside className="col-sm-7">
+              <article className="p-5">
+                <h3 className="title mb-3">{project.service}</h3>
+                <div className="mb-3">
+                  <var className="price h3 text-warning">
+                    <span className="currency">US $</span>
+                    <span className="num">{project.budget}</span>
                   </var>
                 </div>
                 <dl>
@@ -58,40 +58,40 @@ const ProjectDetails = props => {
                     <p>{project.specialInstructions} </p>
                   </dd>
                 </dl>
-                <dl class="row">
-                  <dt class="col-sm-3">Zipcode</dt>
-                  <dd class="col-sm-9">{project.zipCode}</dd>
+                <dl className="row">
+                  <dt className="col-sm-3">Zipcode</dt>
+                  <dd className="col-sm-9">{project.zipCode}</dd>
 
-                  <dt class="col-sm-3">AnyLarge Items Involved?</dt>
-                  <dd class="col-sm-9">{project.largeItems}</dd>
+                  <dt className="col-sm-3">AnyLarge Items Involved?</dt>
+                  <dd className="col-sm-9">{project.largeItems}</dd>
 
-                  <dt class="col-sm-3">Date</dt>
-                  <dd class="col-sm-9">{project.date} </dd>
+                  <dt className="col-sm-3">Date</dt>
+                  <dd className="col-sm-9">{project.date} </dd>
 
-                  <dt class="col-sm-3">Flights Of Stairs</dt>
-                  <dd class="col-sm-9">{project.flightOfStairs}</dd>
+                  <dt className="col-sm-3">Flights Of Stairs</dt>
+                  <dd className="col-sm-9">{project.flightOfStairs}</dd>
 
-                  <dt class="col-sm-3">Truck Loads</dt>
-                  <dd class="col-sm-9">{project.truckLoads} </dd>
+                  <dt className="col-sm-3">Truck Loads</dt>
+                  <dd className="col-sm-9">{project.truckLoads} </dd>
 
-                  <dt class="col-sm-3">type of truck will best sute the Job</dt>
-                  <dd class="col-sm-9">{project.typeOfTruck} </dd>
+                  <dt className="col-sm-3">type of truck will best sute the Job</dt>
+                  <dd className="col-sm-9">{project.typeOfTruck} </dd>
 
-                  <dt class="col-sm-3">Time</dt>
-                  <dd class="col-sm-9">{project.time}</dd>
+                  <dt className="col-sm-3">Time</dt>
+                  <dd className="col-sm-9">{project.time}</dd>
                 </dl>
-                <div class="rating-wrap">
-                  <div class="label-rating">132 reviews</div>
-                  <div class="label-rating">154 orders </div>
+                <div className="rating-wrap">
+                  <div className="label-rating">132 reviews</div>
+                  <div className="label-rating">154 orders </div>
                 </div>
                 {/*<hr>
-                  <a href="#" class="btn  btn-primary">
+                  <a href="#" className="btn  btn-primary">
                     {" "}
                     Buy now{" "}
                   </a>
-                  <a href="#" class="btn  btn-outline-primary">
+                  <a href="#" className="btn  btn-outline-primary">
                     {" "}
-                    <i class="" /> Add to cart{" "}
+                    <i className="" /> Add to cart{" "}
                   </a>
                 </hr>*/}
               </article>
@@ -132,10 +132,10 @@ const ProjectDetails = props => {
                   {project.customerLastName}
                 </small>
               </p>
-              <a href="#" class="btn btn-secondary float-left">
+              <a href="#" className="btn btn-secondary float-left">
                 More Details
               </a>
-              <a href="#" class="btn btn-success float-right">
+              <a href="#" className="btn btn-success float-right">
                 Bid Now
               </a>
             </div>
@@ -147,8 +147,8 @@ const ProjectDetails = props => {
   } else {
     return (
       <div className="container text-center">
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
         </div>
       </div>
     );
