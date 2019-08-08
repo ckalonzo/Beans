@@ -18,14 +18,14 @@ class SpecialInstructions extends Component {
       <div className="className container">
         <div className="row">
           <div className="col-12 text-center mb-5">
-            <div class="form-check-inline col-12">
-              <label class="form-check-label">
+            <div className="form-check-inline col-12">
+              <label className="form-check-label">
                 <textarea
                   id={specialInstructions}
                   rows="5"
                   defaultvalue={values.specialInstructions}
                   onChange={handleChange("specialInstructions")}
-                  class="form-control"
+                  className="form-control"
                 />{" "}
               </label>
             </div>

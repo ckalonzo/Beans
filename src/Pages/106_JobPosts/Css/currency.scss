@@ -1,26 +1,28 @@
-form {
+.ta-currency {
+  form {
     margin: 20px auto;
     width: 420px;
-}
-.form-row {
+  }
+  .form-row {
     padding: 5px 10px;
-}
-label {
+  }
+  label {
     display: block;
     margin: 3px 0;
-}
-.form-row input {
+  }
+  .form-row input {
     padding: 3px 1px;
     width: 100%;
-}
-input.currency {
+  }
+  input.currency {
     text-align: right;
     padding-right: 15px;
-}
-.input-group .form-control {
+  }
+  .input-group .form-control {
     float: none;
-}
-.input-group .input-buttons {
+  }
+  .input-group .input-buttons {
     position: relative;
     z-index: 3;
+  }
 }

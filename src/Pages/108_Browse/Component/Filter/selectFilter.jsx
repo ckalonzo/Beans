@@ -4,38 +4,38 @@ export default class SelectFilter extends Component {
   render() {
     return (
       <div>
-        <aside class="col-sm-12">
-          <div class="card">
-            <article class="card-group-item">
-              <header class="card-header">
-                <h6 class="title ta-filtertext">Type of Job </h6>
+        <aside className="col-sm-12">
+          <div className="card">
+            <article className="card-group-item">
+              <header className="card-header">
+                <h6 className="title ta-filtertext">Type of Job </h6>
               </header>
-              <div class="filter-content">
-                <div class="card-body">
+              <div className="filter-content">
+                <div className="card-body">
                   <form>
-                    <label class="form-check">
+                    <label className="form-check">
                       <input
-                        class="form-check-input"
+                        className="form-check-input"
                         type="checkbox"
                         value=""
                       />
-                      <span class="form-check-label">Junk Removal</span>
+                      <span className="form-check-label">Junk Removal</span>
                     </label>
-                    <label class="form-check">
+                    <label className="form-check">
                       <input
-                        class="form-check-input"
+                        className="form-check-input"
                         type="checkbox"
                         value=""
                       />
-                      <span class="form-check-label">Lawn Care</span>
+                      <span className="form-check-label">Lawn Care</span>
                     </label>
-                    <label class="form-check">
+                    <label className="form-check">
                       <input
-                        class="form-check-input"
+                        className="form-check-input"
                         type="checkbox"
                         value=""
                       />
-                      <span class="form-check-label">Another Brand</span>
+                      <span className="form-check-label">Another Brand</span>
                     </label>
                   </form>
                 </div>

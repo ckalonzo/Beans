@@ -22,7 +22,7 @@ class Success extends Component {
           <div className="row">
             <div className="mx-auto">
               <a href="/">
-                <button type="button" class="btn btn-primary">
+                <button type="button" className="btn btn-primary">
                   Dashboard
                 </button>
               </a>

@@ -47,7 +47,7 @@ class CustomerForm extends Component {
                       <div className="mx-auto login">
                         <div>
                           <form className="col-12" onSubmit={this.handleSubmit}>
-                            <div class="form-group mt-4">
+                            <div className="form-group mt-4">
                               <label htmlFor="Email">Email address</label>
                               <input
                                 type="email"
@@ -57,7 +57,7 @@ class CustomerForm extends Component {
                                 onChange={this.handleChange}
                               />
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                               <label htmlFor="Password">Password</label>
                               <input
                                 type="password"
@@ -67,14 +67,14 @@ class CustomerForm extends Component {
                                 onChange={this.handleChange}
                               />
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
                                 type="checkbox"
                                 className="form-check-input"
                                 id="exampleCheck1"
                               />
                               <label
-                                class="form-check-label"
+                                className="form-check-label"
                                 for="exampleCheck1"
                               >
                                 Remember Me
@@ -99,14 +99,14 @@ class CustomerForm extends Component {
                               <span>OR</span>
                             </div>
                             <div className="text-center social-btn mb-5">
-                              <a href="#" class="btn btn-primary btn-block">
+                              <button className="btn btn-primary btn-block">
                                 <i className="fab fa-facebook-f" /> Sign in with{" "}
                                 <b>Facebook</b>
-                              </a>
-                              <a href="#" class="btn btn-danger btn-block">
-                                <i class="fab fa-google" /> Sign in with{" "}
+                              </button>
+                              <button className="btn btn-danger btn-block">
+                                <i className="fab fa-google" /> Sign in with{" "}
                                 <b>Google</b>
-                              </a>
+                              </button>
                             </div>
                           </form>
                         </div>

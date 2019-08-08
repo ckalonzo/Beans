@@ -14,7 +14,7 @@ export default class Thankyou extends Component {
           <div className="row">
             <div className="mx-auto">
               <a href="/">
-                <button type="button" class="btn btn-primary">
+                <button type="button" className="btn btn-primary">
                   Return to Homepage
                 </button>
               </a>

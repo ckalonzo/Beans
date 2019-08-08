@@ -5,7 +5,9 @@
     background-position: center;
     background-size: cover;
   }
-
+  .img-md {
+    width: 187px;
+  }
   .tw-title {
     color: #ffffff;
     font-size: 50px;
@@ -13,6 +15,9 @@
   .tw-subtitle {
     color: #ffffff;
     margin-top: 64px;
+  }
+  .tab-content {
+    padding: 2rem !important;
   }
 
   .notification-close {

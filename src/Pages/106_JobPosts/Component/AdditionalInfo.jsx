@@ -43,11 +43,11 @@ class AdditionalInfo extends Component {
           </div>
         </div>
         <div id="accordion">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
+          <div className="card">
+            <div className="card-header" id="headingOne">
+              <h5 className="mb-0">
                 <button
-                  class="btn btn-link"
+                  className="btn btn-link"
                   data-toggle="collapse"
                   data-target="#collapseTALocate"
                   aria-expanded="true"
@@ -60,11 +60,11 @@ class AdditionalInfo extends Component {
 
             <div
               id="collapseTALocate"
-              class="collapse show"
+              className="collapse show"
               aria-labelledby="headingOne"
               data-parent="#accordion"
             >
-              <div class="card-body">
+              <div className="card-body">
                 <LocationPage
                   handleChange={this.props.handleChange}
                   values={values}
@@ -76,11 +76,11 @@ class AdditionalInfo extends Component {
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h5 class="mb-0">
+          <div className="card">
+            <div className="card-header" id="headingTwo">
+              <h5 className="mb-0">
                 <button
-                  class="btn btn-link collapsed"
+                  className="btn btn-link collapsed"
                   data-toggle="collapse"
                   data-target="#collapseTAItems"
                   aria-expanded="false"
@@ -92,11 +92,11 @@ class AdditionalInfo extends Component {
             </div>
             <div
               id="collapseTAItems"
-              class="collapse"
+              className="collapse"
               aria-labelledby="headingTwo"
               data-parent="#accordion"
             >
-              <div class="card-body">
+              <div className="card-body">
                 <AnyLargeItems
                   handleChange={this.props.handleChange}
                   values={values}
@@ -105,11 +105,11 @@ class AdditionalInfo extends Component {
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingFour">
-              <h5 class="mb-0">
+          <div className="card">
+            <div className="card-header" id="headingFour">
+              <h5 className="mb-0">
                 <button
-                  class="btn btn-link collapsed"
+                  className="btn btn-link collapsed"
                   data-toggle="collapse"
                   data-target="#collapseTAavalibility"
                   aria-expanded="false"
@@ -121,11 +121,11 @@ class AdditionalInfo extends Component {
             </div>
             <div
               id="collapseTAavalibility"
-              class="collapse"
+              className="collapse"
               aria-labelledby="headingFour"
               data-parent="#accordion"
             >
-              <div class="card-body">
+              <div className="card-body">
                 <Slot
                   handleChange={this.props.handleChange}
                   values={values}
@@ -137,11 +137,11 @@ class AdditionalInfo extends Component {
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingFive">
-              <h5 class="mb-0">
+          <div className="card">
+            <div className="card-header" id="headingFive">
+              <h5 className="mb-0">
                 <button
-                  class="btn btn-link collapsed"
+                  className="btn btn-link collapsed"
                   data-toggle="collapse"
                   data-target="#collapseTAStairs"
                   aria-expanded="false"
@@ -153,11 +153,11 @@ class AdditionalInfo extends Component {
             </div>
             <div
               id="collapseTAStairs"
-              class="collapse"
+              className="collapse"
               aria-labelledby="headingFive"
               data-parent="#accordion"
             >
-              <div class="card-body">
+              <div className="card-body">
                 <FlightOfStairs
                   handleChange={this.props.handleChange}
                   values={values}
@@ -166,11 +166,11 @@ class AdditionalInfo extends Component {
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingSix">
-              <h5 class="mb-0">
+          <div className="card">
+            <div className="card-header" id="headingSix">
+              <h5 className="mb-0">
                 <button
-                  class="btn btn-link collapsed"
+                  className="btn btn-link collapsed"
                   data-toggle="collapse"
                   data-target="#collapseTALoads"
                   aria-expanded="false"
@@ -182,11 +182,11 @@ class AdditionalInfo extends Component {
             </div>
             <div
               id="collapseTALoads"
-              class="collapse"
+              className="collapse"
               aria-labelledby="headingSix"
               data-parent="#accordion"
             >
-              <div class="card-body">
+              <div className="card-body">
                 <TruckLoads
                   handleChange={this.props.handleChange}
                   values={values}
@@ -194,11 +194,11 @@ class AdditionalInfo extends Component {
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingSeven">
-              <h5 class="mb-0">
+          <div className="card">
+            <div className="card-header" id="headingSeven">
+              <h5 className="mb-0">
                 <button
-                  class="btn btn-link collapsed"
+                  className="btn btn-link collapsed"
                   data-toggle="collapse"
                   data-target="#collapseTAJobs"
                   aria-expanded="false"
@@ -210,11 +210,11 @@ class AdditionalInfo extends Component {
             </div>
             <div
               id="collapseTAJobs"
-              class="collapse"
+              className="collapse"
               aria-labelledby="headingSeven"
               data-parent="#accordion"
             >
-              <div class="card-body">
+              <div className="card-body">
                 <TypeOfTruck
                   handleChange={this.props.handleChange}
                   values={values}
@@ -223,11 +223,11 @@ class AdditionalInfo extends Component {
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-header" id="headingEight">
-              <h5 class="mb-0">
+          <div className="card">
+            <div className="card-header" id="headingEight">
+              <h5 className="mb-0">
                 <button
-                  class="btn btn-link collapsed"
+                  className="btn btn-link collapsed"
                   data-toggle="collapse"
                   data-target="#collapseTAInfo"
                   aria-expanded="false"
@@ -239,11 +239,11 @@ class AdditionalInfo extends Component {
             </div>
             <div
               id="collapseTAInfo"
-              class="collapse"
+              className="collapse"
               aria-labelledby="headingEight"
               data-parent="#accordion"
             >
-              <div class="card-body">
+              <div className="card-body">
                 <SpecialInstructions
                   handleChange={this.props.handleChange}
                   specialInstructions={specialInstructions}
@@ -255,12 +255,16 @@ class AdditionalInfo extends Component {
         </div>
         <div className="row">
           <div className="mx-auto">
-            <button type="button" class="btn btn-primary" onClick={this.back}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={this.back}
+            >
               Back
             </button>
             <button
               type="button"
-              class="btn btn-primary"
+              className="btn btn-primary"
               onClick={this.continue}
             >
               Continue

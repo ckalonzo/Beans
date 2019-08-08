@@ -18,6 +18,7 @@ import CustomerDashboard from "./Pages/109_CustomerDashboard/CustomerDashboard";
 import ForgotPassword from "./Pages/101_CustomerLogin/Component/ForgotPassword";
 import Recipe from "./Pages/103_Membership/component/Recipe";
 import Cart from "./Pages/103_Membership/component/Cart";
+import MainChat from "./Pages/Chat/mainChat";
 import ChatModule from "./Pages/Chat/Chat-module";
 // import Main from './Pages/Chat/Component/Main/Main'
 import ContractorCreateAccount from "./Pages/104_SignUp/Contractor-Create-Account";
@@ -34,6 +35,7 @@ class App extends Component {
             <Route path="/Profile/Layout/Profile" component={Profile} />
             <Route path="/106_JobPosts/PostJob" component={WizardForm} />
             <Route path="/Chat/Chat-module" component={ChatModule} />
+            <Route path="/Chat/mainChat" component={MainChat} />
             <Route path="/jobs/:id" component={ProjectDetails} />
             <Route
               path="/108_Browse/ProjectDashboard"

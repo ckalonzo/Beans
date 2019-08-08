@@ -4,40 +4,40 @@ export default class BudgetRangeInput extends Component {
   render() {
     return (
       <div>
-        <aside class="col-sm-12">
-          <div class="card">
-            <article class="card-group-item">
-              <header class="card-header">
-                <h6 class="title ta-filtertext">Truck </h6>
+        <aside className="col-sm-12">
+          <div className="card">
+            <article className="card-group-item">
+              <header className="card-header">
+                <h6 className="title ta-filtertext">Truck </h6>
               </header>
-              <div class="filter-content">
-                <div class="card-body">
-                  <label class="form-check">
+              <div className="filter-content">
+                <div className="card-body">
+                  <label className="form-check">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="radio"
                       name="exampleRadio"
                       value=""
                     />
-                    <span class="form-check-label">Small</span>
+                    <span className="form-check-label">Small</span>
                   </label>
-                  <label class="form-check">
+                  <label className="form-check">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="radio"
                       name="exampleRadio"
                       value=""
                     />
-                    <span class="form-check-label">Regular</span>
+                    <span className="form-check-label">Regular</span>
                   </label>
-                  <label class="form-check">
+                  <label className="form-check">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="radio"
                       name="exampleRadio"
                       value=""
                     />
-                    <span class="form-check-label">Some other option</span>
+                    <span className="form-check-label">Some other option</span>
                   </label>
                 </div>
               </div>

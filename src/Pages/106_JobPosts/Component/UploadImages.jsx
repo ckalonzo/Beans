@@ -49,12 +49,16 @@ class UploadImages extends Component {
 
         <div className="row">
           <div className="mx-auto">
-            <button type="button" class="btn btn-primary" onClick={this.back}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={this.back}
+            >
               Back
             </button>
             <button
               type="button"
-              class="btn btn-primary"
+              className="btn btn-primary"
               onClick={this.continue}
             >
               Continue

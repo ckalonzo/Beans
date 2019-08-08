@@ -3,14 +3,20 @@ import MultiItemcarousel from "./Multi-Item-carousel";
 import NoImage from "../../Global/Component/NoImage";
 const ProjectSummary = ({ jobs, deleteProject }) => {
   return (
-    <article class="itemlist mt-4">
-      <div class="row row-sm">
-        <aside class="col-12 col-sm-3">
-          <NoImage />
+    <article className="itemlist mt-4">
+      <div className="row row-sm">
+        <aside className="col-sm-3">
+          <div className="img-wrap">
+            <img
+              src={NoImage}
+              alt="product with no image avaliable"
+              className="img-md"
+            />
+          </div>
         </aside>
-        <div class="col-sm-6">
-          <div class="text-wrap">
-            <h4 class="title"> {jobs.service} </h4>
+        <div className="col-sm-6">
+          <div className="text-wrap">
+            <h4 className="title"> {jobs.service} </h4>
             <p className="text-secondary">
               <small className="text-muted">
                 posted By: {jobs.customerFirstName} {jobs.customerLastName}
@@ -22,18 +28,18 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
               ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim
               ad minim veniam{" "}
             </p>
-            <p class="rating-wrap my-0 text-muted">
-              <span class="label-rating">
+            <p className="rating-wrap my-0 text-muted">
+              <span className="label-rating">
                 Number of bids: 11 {jobs.bidders}
               </span>
-              {/* <span class="label-rating">154 orders </span> */}
+              {/* <span className="label-rating">154 orders </span> */}
             </p>
           </div>
         </div>
-        <aside class="col-sm-3">
-          <div class="border-left pl-3">
-            <div class="price-wrap">
-              <span class="h3 price"> ${jobs.budget} </span>
+        <aside className="col-sm-3">
+          <div className="border-left pl-3">
+            <div className="price-wrap">
+              <span className="h3 price"> ${jobs.budget} </span>
             </div>
             <p>
               <button
@@ -43,7 +49,7 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
               >
                 Delete
               </button>
-              <a href="#" class="btn btn-light">
+              <a href="#" className="btn btn-light">
                 {" "}
                 Details{" "}
               </a>{" "}

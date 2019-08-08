@@ -5,16 +5,16 @@ export default class Search extends Component {
     return (
       <React.Fragment>
         <div className="tasearch mt-5">
-          <div class="container">
-            <div class="input-group">
+          <div className="container">
+            <div className="input-group">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Search for..."
               />
-              <span class="input-group-btn">
-                <button class="btn btn-search" type="button">
-                  <i class="fa fa-search fa-fw" /> Search
+              <span className="input-group-btn">
+                <button className="btn btn-search" type="button">
+                  <i className="fa fa-search fa-fw" /> Search
                 </button>
               </span>
             </div>

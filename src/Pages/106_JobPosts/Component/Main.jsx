@@ -166,12 +166,12 @@ class MainForm extends Component {
     //           <img
     //             src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
     //             alt="Avatar"
-    //             class="avatar"
+    //             className="avatar"
     //           />
     //         </div>
     //       </div>
-    //       <div class="row">
-    //         <div class="col-md-6 col-md-offset-3 mx-auto">
+    //       <div className="row">
+    //         <div className="col-md-6 col-md-offset-3 mx-auto">
     //       );
     switch (step) {
       case 1:

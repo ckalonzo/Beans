@@ -29,7 +29,7 @@ export default class MembershipMockup extends Component {
                   <div className="see-our-plan">
                     <button
                       type="button"
-                      class="btn btn-primary"
+                      className="btn btn-primary"
                       data-toggle="button"
                       aria-pressed="false"
                       autocomplete="off"
