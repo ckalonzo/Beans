@@ -1,6 +1,12 @@
 .sp-sectioncolor {
   .card-width {
-    width: 18rem;
+    width: 259px;
+    @media (min-width: 375px) {
+      width: 314px;
+    }
+    @media (min-width: 1200px) {
+      width: 18rem;
+    }
   }
   .sp-sectioncolor {
     background-color: #efefef;

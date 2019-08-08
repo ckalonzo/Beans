@@ -1,26 +1,31 @@
 .providerlogin {
   background-image: url("../Img/truck-at-the-house.png");
-  height: 754px;
+  height: 854px;
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-
+  @media (min-width: 768px) {
+    height: 754px;
+  }
   .login-panel {
     background-color: #fefefe;
     background-size: cover;
-    height: 654px;
+    height: 686px;
     margin-top: 67px !important;
+    @media (min-width: 768px) {
+      height: 681px;
+    }
   }
   .login-title {
     font-size: 25px;
-    font-family: "Source Sans Pro", sans-serif;
     text-align: center;
+    color: #124676;
     @media (min-width: 576px) {
       margin-top: 33px;
     }
   }
   .login-copy {
-    top: 33px;
+    top: 71px;
     position: relative;
     color: #ffffff;
     font-size: 25px;

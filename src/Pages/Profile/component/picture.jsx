@@ -13,8 +13,11 @@ class Picture extends Component {
         <div className="container">
           <div className="row">
             <div class="avatar mx-auto white">
-              <img src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg" />
-              alt="avatar mx-auto white" class="rounded-circle img-fluid">
+              <img
+                src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
+                alt="avatar mx-auto white"
+                class="rounded-circle img-fluid"
+              />
             </div>
             <input
               accept="image/*"

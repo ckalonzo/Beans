@@ -3,6 +3,14 @@ $shopping-cart-red: #124676;
 nav {
   background-color: #ffffff;
 }
+ul {
+  .navbar-right {
+    list-style-type: none;
+  }
+}
+.ovr-chartContainer {
+  padding-right: 37px;
+}
 .nav-section {
   .navbar-brand {
     background-image: url("../Images/truckedaway-logo-large-transparent.png");
@@ -63,10 +71,18 @@ nav {
     transform: scaleX(1);
   }
   .nav-link:hover {
-    color: #000 !important;
+    color: #124676 !important;
   }
   .nav-link {
     color: #124676 !important;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .avatarlink:hover {
+    color: #ffffff !important;
+  }
+  .avatarlink {
+    color: #ffffff !important;
     font-size: 16px;
     font-weight: 600;
   }
@@ -89,8 +105,8 @@ nav {
 
 .fa-stack[data-count]:after {
   position: absolute;
-  right: 0%;
-  top: 0%;
+  left: 86%;
+  bottom: 58%;
   content: attr(data-count);
   font-size: 40%;
   padding: 0.6em;
@@ -107,7 +123,9 @@ nav {
 .fa-circle {
   color: #124676;
 }
-
+.ta-shoppingChart {
+  color: #124676;
+}
 .red-cart {
   color: #124676;
   background: white;

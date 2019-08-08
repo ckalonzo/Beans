@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../Css/customer-dashboard.scss";
 import Notification from "./Notifications";
-import Currentbids from "../../105_Dashboard/Component/currentbids";
+import CurrentJobs from "../../109_CustomerDashboard/Component/CurrentJobs";
 import ChatModule from "../../Chat/Chat-module";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
@@ -16,13 +16,22 @@ class Activities extends Component {
     notificationsCounter: 50,
     activeJobs: 1,
     show: true,
-    value: 0
+    value: 0,
+    projects: []
   };
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
-
+  deleteProject = id => {
+    let projects = this.state.firestore.data.projects.filter(jobs => {
+      console.log("hi");
+      return jobs.id !== id;
+    });
+    this.setState({
+      projects: projects
+    });
+  };
   toggleClassicTabs1 = tab => () => {
     if (this.state.activeItemClassicTabs1 !== tab) {
       this.setState({
@@ -32,12 +41,10 @@ class Activities extends Component {
   };
 
   render() {
-    console.log(this, "======>");
-    console.log(`activity${this.props}`);
+    // console.log(this, "======>");
+    // console.log(`activity${this.props}`);
     const { notifications } = this.props;
-    const { projects } = this.props;
-    const { classes } = this.props;
-    const { value } = this.state;
+    const { projects, customerId } = this.props;
     return (
       <div className="col-12">
         <div className="container">
@@ -102,7 +109,11 @@ class Activities extends Component {
               role="tabpanel"
               aria-labelledby="ta-JobPosts-tab-cust"
             >
-              <Currentbids projects={projects} />
+              <CurrentJobs
+                customerId={customerId}
+                deleteProject={this.deleteProject}
+                projects={projects}
+              />
             </div>
             <div
               class="tab-pane fade"
@@ -136,7 +147,7 @@ class Activities extends Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state);
+  console.log(state);
   return {
     projects: state.firestore.ordered.projects,
     notifications: state.firestore.ordered.notifications
@@ -145,7 +156,7 @@ const mapStateToProps = state => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: "projects" },
+    { collection: "projects", orderBy: ["createdAt"] },
     { collection: "notifications", limit: 3 }
   ])
 )(Activities);

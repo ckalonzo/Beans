@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Activities from "./Component/Activities";
+import Activities from "../109_CustomerDashboard/Component/Activities";
 import DashboardHero from "./Component/dashboardHero";
 import "./Css/dashboard.scss";
 import { connect } from "react-redux";

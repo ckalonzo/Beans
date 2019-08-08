@@ -46,23 +46,43 @@ const ProviderSignedInLinks = props => {
         <li>
           <NavLink to="/103_Membership/component/cart">
             <ul class="navbar-right">
-              <li>
-                <a href="#" id="cart">
-                  <i class="fa fa-shopping-cart" /> Cart{" "}
-                  <span class="badge">3</span>
+              <li className="ovr-chartContainer">
+                <a href="#" className="ta-shoppingChart" id="cart">
+                  <span class="fa-stack fa-1x has-badge" data-count="5">
+                    {/* <i class="fa fa-circle fa-stack-2x" /> */}
+                    <i class="fas fa-shopping-cart fa-stack-2x " />
+                  </span>
                 </a>
               </li>
             </ul>
           </NavLink>
         </li>
-
-        <li className="nav-item  chg-text moveline">
-          <a onClick={props.signOut}>Log Out</a>
-        </li>
-        <li>
-          <NavLink to="/Profile/Layout/Profile" className="btn nav-avatar">
+        <li class="nav-item dropdown">
+          <NavLink
+            to="#"
+            className="nav-link avatarlink dropdown-toggle nav-avatar"
+            id="navbarDropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="false"
+            aria-expanded="false"
+          >
             {props.profile.initials}
           </NavLink>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item nav-link" href="/Profile/Layout/Profile">
+              Profile
+            </a>
+            <a
+              class="dropdown-item nav-link chg-text"
+              href="#"
+              onClick={props.signOut}
+            >
+              Log Out
+            </a>
+            <a class="dropdown-item nav-link" href="#">
+              Something else here
+            </a>
+          </div>
         </li>
       </ul>
     </React.Fragment>

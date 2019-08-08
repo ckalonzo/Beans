@@ -5,6 +5,7 @@ import Divider from "../Global/Layout/divider";
 import "./Css/Project.scss";
 
 const ProjectList = ({ projects }) => {
+  console.log(projects);
   return (
     <section>
       <div className="col-12">
@@ -12,7 +13,7 @@ const ProjectList = ({ projects }) => {
           projects.map(jobs => {
             return (
               <Link to={"/jobs/" + jobs.id}>
-                <ProjectSummary jobs={jobs} key={jobs.id} />
+                <ProjectSummary jobs={jobs} key={jobs.authUid} />
                 <Divider className={"col-8 pt-4"} />
               </Link>
             );
