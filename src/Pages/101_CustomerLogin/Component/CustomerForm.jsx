@@ -25,7 +25,7 @@ class CustomerForm extends Component {
     if (auth.uid)
       return <Redirect to="/109_CustomerDashboard/CustomerDashboard" />;
     return (
-      <section className="customer-img">
+      <section className="customer-img login-form">
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-lg-5">

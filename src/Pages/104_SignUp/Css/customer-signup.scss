@@ -10,6 +10,9 @@
   .title {
     color: #124676;
     font-size: 24px;
+    @media (min-width: 375px) {
+      font-size: 27px;
+    }
     @media (min-width: 768px) {
       font-size: 32px;
     }
