@@ -13,7 +13,6 @@ class SpecialInstructions extends Component {
 
   render() {
     const { handleChange, specialInstructions, values, classes } = this.props;
-    console.log(handleChange);
     return (
       <div className="className container">
         <div className="row">

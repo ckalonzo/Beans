@@ -22,7 +22,7 @@ export default class RangeInput extends Component {
                         placeholder="$0"
                       />
                     </div>
-                    <div className="form-group col-md-6 text-right">
+                    <div className="form-group col-md-6 text-left">
                       <label>Max</label>
                       <input
                         type="number"
@@ -41,7 +41,9 @@ export default class RangeInput extends Component {
               <div className="filter-content">
                 <div className="card-body">
                   <div className="custom-control custom-checkbox">
-                    <span className="float-right badge badge-light round">52</span>
+                    <span className="float-right badge badge-light round">
+                      52
+                    </span>
                     <input
                       type="checkbox"
                       className="custom-control-input"
@@ -53,7 +55,9 @@ export default class RangeInput extends Component {
                   </div>
 
                   <div className="custom-control custom-checkbox">
-                    <span className="float-right badge badge-light round">132</span>
+                    <span className="float-right badge badge-light round">
+                      132
+                    </span>
                     <input
                       type="checkbox"
                       className="custom-control-input"
@@ -65,7 +69,9 @@ export default class RangeInput extends Component {
                   </div>
 
                   <div className="custom-control custom-checkbox">
-                    <span className="float-right badge badge-light round">17</span>
+                    <span className="float-right badge badge-light round">
+                      17
+                    </span>
                     <input
                       type="checkbox"
                       className="custom-control-input"
@@ -77,7 +83,9 @@ export default class RangeInput extends Component {
                   </div>
 
                   <div className="custom-control custom-checkbox">
-                    <span className="float-right badge badge-light round">7</span>
+                    <span className="float-right badge badge-light round">
+                      7
+                    </span>
                     <input
                       type="checkbox"
                       className="custom-control-input"

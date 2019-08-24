@@ -4,7 +4,7 @@ class TruckLoads extends Component {
   render() {
     const { handleChange, values, truckLoads } = this.props;
     return (
-      <div className="className container">
+      <div className="container">
         <div className="row">
           <div className="col-12 text-center mb-5">
             <div className="form-check-inline">

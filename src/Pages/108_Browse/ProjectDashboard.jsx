@@ -39,6 +39,7 @@ class ProjectDashboard extends Component {
     const { bidNow } = this.state;
     if (!auth.uid)
       return <Redirect to="/102_ContractorLogin/ContractorLogin" />;
+    console.log(this.props);
     return (
       <section className="panel-list">
         <div className=" container">
@@ -48,12 +49,12 @@ class ProjectDashboard extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-3">
+            <div className="col-12 col-sm-3">
               <SelectFilter />
               <BudgetRangeInput />
               <RangeInput />
             </div>
-            <div className="col-9 card">
+            <div className="col-12 col-sm-9 card">
               <ProjectList
                 handleBidNow={this.handleBidNow}
                 projects={projects}
@@ -72,7 +73,8 @@ const mapStateToProps = state => {
   //console.log(state);
   return {
     projects: state.firestore.ordered.projects,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    bids: state.submitBid.bids
   };
 };
 export default compose(

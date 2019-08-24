@@ -5,7 +5,9 @@ class FlightOfStairs extends Component {
   render() {
     const { handleChange, flightOfStairs, values } = this.props;
     return (
-      <div className=" mt-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 text-center mb-5">
         <div className="form-check-inline">
           <label className="form-check-label">
             <input
@@ -90,7 +92,9 @@ class FlightOfStairs extends Component {
             6
           </label>
         </div>
-      </div>
+          </div>
+        </div>
+        </div>
     );
   }
 }

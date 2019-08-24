@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { signUp } from "../Redux/Store/actions/authActions";
+import { customerSignUp } from "../Redux/Store/actions/authActions";
 import "./Css/customer-signup.scss";
 
 class SignUp extends Component {
@@ -20,7 +20,7 @@ class SignUp extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.signUp(this.state);
+    this.props.customerSignUp(this.state);
   };
 
   render() {
@@ -123,7 +123,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signUp: creds => dispatch(signUp(creds))
+    customerSignUp: creds => dispatch(customerSignUp(creds))
   };
 };
 export default connect(

@@ -1,4 +1,8 @@
-const initState = {};
+const initState = {
+  bids: [
+    {id: '1', numberOfBids: '10'}
+  ]
+};
 
 const SubmitBidReducer = (state = initState, action) => {
   switch (action.type) {

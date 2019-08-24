@@ -1,13 +1,14 @@
 import NoImage from "../img/no-image.png";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import LinesEllipsis from 'react-lines-ellipsis' //cap maxLine of characters
 export default class ProjectSummary extends Component {
   render() {
-    const { jobs, handleBidNow, bidNow, handleChange } = this.props;
+    const { jobs, handleBidNow, bidNow, handleChange} = this.props;
     return (
       <article className="itemlist mt-4">
         <div className="row row-sm">
-          <aside className="col-sm-3">
+          <aside className="col-12 col-sm-3">
             <div className="img-wrap">
               <img
                 src={NoImage}
@@ -16,7 +17,7 @@ export default class ProjectSummary extends Component {
               />
             </div>
           </aside>
-          <Link className="col-sm-6" to={"/jobs/" + jobs.id}>
+          <Link className="col-12 col-sm-6" to={"/jobs/" + jobs.id}>
             <div className="text-wrap">
               <h4 className="title"> {jobs.service} </h4>
               <p className="text-secondary">
@@ -25,10 +26,14 @@ export default class ProjectSummary extends Component {
                 </small>
               </p>
               <p>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem
-                ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim
-                ad minim veniam{" "}
+                <LinesEllipsis
+                  text={jobs.specialInstructions}
+                  maxLine='2'
+                  ellipsis='...'
+                  trimRight
+                  basedOn='letters'
+                />
+               
               </p>
               <p className="rating-wrap my-0 text-muted">
                 <span className="label-rating">
@@ -49,7 +54,7 @@ export default class ProjectSummary extends Component {
                     type="text"
                     value={bidNow}
                     defaultValue={bidNow}
-                    onChange={handleChange("bidNow")}
+                    onChange={handleChange()}
                     // placeholder="Enter Lower Price"
                   />
                 </div>
@@ -63,7 +68,7 @@ export default class ProjectSummary extends Component {
                   {" "}
                   Bid now{" "}
                 </button>
-                <a href="#" className="btn btn-light">
+                <a href={"/jobs/" + jobs.id} className="btn btn-light">
                   {" "}
                   Details{" "}
                 </a>{" "}

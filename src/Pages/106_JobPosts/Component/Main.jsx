@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
-import "date-fns";
+import moment from "moment";
 import "../js/stepform";
 import { CreateProject } from "../../Redux/Store/actions/JobPostActions";
 import "../Css/PostJob.scss";
@@ -30,8 +30,8 @@ class MainForm extends Component {
       state: "State",
       zipCode: "",
       largeItems: "",
-      selectedDate: "",
-      selectedTime: "",
+      selectedDate: moment().format("MMM Do YYYY"),
+      selectedTime: moment().format('h:mm:ss a'),
       flightOfStairs: "",
       truckLoads: "",
       typeOfTruck: "",
@@ -105,11 +105,13 @@ class MainForm extends Component {
   //   );
   // };
   handleChangeDatePicker = date => {
-    this.setState({ selectedDate: date });
+    this.setState({ selectedDate: moment(date).format("MMM Do YYYY") });
+      console.log(date);
   };
 
   handleChangeTimePicker = time => {
-    //   this.setState({ selectedTime: time });
+    this.setState({ selectedTime: moment(time).format('h:mm:ss a')});
+    console.log(time);
   };
 
   handleSubmit = e => {
@@ -206,6 +208,8 @@ class MainForm extends Component {
             city={city}
             zipCode={zipCode}
             largeItems={largeItems}
+            selectedDate={selectedDate}
+            selectedTime={selectedTime}
             handleChangeDatePicker={this.handleChangeDatePicker}
             handleChangeTimePicker={this.handleChangeTimePicker}
           />

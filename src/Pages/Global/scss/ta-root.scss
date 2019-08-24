@@ -1,1 +1,216 @@
 @import "../scss/NoImage.scss";
+//breakpoints
+$breakpoints: xs,sm,md,lg,xl;
+$bp1: nth($breakpoints, 1);
+$bp2: nth($breakpoints, 2);
+$bp3: nth($breakpoints, 3);
+$bp4: nth($breakpoints, 4);
+$bp5: nth($breakpoints, 5);
+$grid-breakpoint-xs: 0;
+$grid-breakpoint-sm: 576;
+$grid-breakpoint-md: 768px;
+$grid-breakpoint-lg: 992px;
+$grid-breakpoint-xl: 1200px;
+
+//colors
+$ta-blue: #003366;
+$ta-red: #dc3545;
+$ta-white: #ffffff;
+
+.-ta_,
+.-ta_ {
+  &position--fixed {
+    position: fixed;
+  }
+
+  $loop-end: 25;
+
+  @function add-unit-to-value($value, $unit) {
+    @return if(value != 0, $value + $unit, 0);
+  }
+
+  @function increment-by-5($i, $unit) {
+    @return add-unit-to-value(0 + ($i * 5), $unit);
+  }
+
+  @for $i from 0 to $loop-end {
+    &pb-#{$i * 5} {
+      padding-bottom: increment-by-5($i, px) !important;
+    }
+    &pt-#{$i * 5} {
+      padding-top: increment-by-5($i, px) !important;
+    }
+    &pl-#{$i * 5} {
+      padding-left: increment-by-5($i, px) !important;
+    }
+    &pr-#{$i * 5} {
+      padding-right: increment-by-5($i, px) !important;
+    }
+    &mb-#{$i * 5} {
+      margin-bottom: increment-by-5($i, px) !important;
+    }
+    &mt-#{$i * 5} {
+      margin-top: increment-by-5($i, px) !important;
+    }
+    &mr-#{$i * 5} {
+      margin-right: increment-by-5($i, px) !important;
+    }
+    &ml-#{$i * 5} {
+      margin-left: increment-by-5($i, px) !important;
+    }
+    &mx-#{$i * 5} {
+      margin-right: increment-by-5($i, px) !important;
+      margin-left: increment-by-5($i, px) !important;
+    }
+    &px-#{$i * 5} {
+      padding-right: increment-by-5($i, px) !important;
+      padding-left: increment-by-5($i, px) !important;
+    }
+  }
+  @media (min-width: $grid-breakpoint-sm) {
+    @for $i from 0 to $loop-end {
+      &pb-#{$bp2}-#{$i * 5} {
+        padding-bottom: increment-by-5($i, px) !important;
+      }
+      &pt-#{$bp2}-#{$i * 5} {
+        padding-top: increment-by-5($i, px) !important;
+      }
+      &pl-#{$bp2}-#{$i * 5} {
+        padding-left: increment-by-5($i, px) !important;
+      }
+      &pr-#{$bp2}-#{$i * 5} {
+        padding-right: increment-by-5($i, px) !important;
+      }
+      &mb-#{$bp2}-#{$i * 5} {
+        margin-bottom: increment-by-5($i, px) !important;
+      }
+      &mt-#{$bp2}-#{$i * 5} {
+        margin-top: increment-by-5($i, px) !important;
+      }
+      &mr-#{$bp2}-#{$i * 5} {
+        margin-right: increment-by-5($i, px) !important;
+      }
+      &ml-#{$bp2}-#{$i * 5} {
+        margin-left: increment-by-5($i, px) !important;
+      }
+      &mx-#{$bp2}-#{$i * 5} {
+        margin-right: increment-by-5($i, px) !important;
+        margin-left: increment-by-5($i, px) !important;
+      }
+      &px-#{$bp2}-#{$i * 5} {
+        padding-right: increment-by-5($i, px) !important;
+        padding-left: increment-by-5($i, px) !important;
+      }
+    }
+  }
+
+  @media (min-width: $grid-breakpoint-md) {
+    @for $i from 0 to $loop-end {
+      &pb-#{$bp3}-#{$i * 5} {
+        padding-bottom: increment-by-5($i, px) !important;
+      }
+      &pt-#{$bp3}-#{$i * 5} {
+        padding-top: increment-by-5($i, px) !important;
+      }
+      &pl-#{$bp3}-#{$i * 5} {
+        padding-left: increment-by-5($i, px) !important;
+      }
+      &pr-#{$bp3}-#{$i * 5} {
+        padding-right: increment-by-5($i, px) !important;
+      }
+      &mb-#{$bp3}-#{$i * 5} {
+        margin-bottom: increment-by-5($i, px) !important;
+      }
+      &mt-#{$bp3}-#{$i * 5} {
+        margin-top: increment-by-5($i, px) !important;
+      }
+      &mr-#{$bp3}-#{$i * 5} {
+        margin-right: increment-by-5($i, px) !important;
+      }
+      &ml-#{$bp3}-#{$i * 5} {
+        margin-left: increment-by-5($i, px) !important;
+      }
+      &mx-#{$bp3}-#{$i * 5} {
+        margin-right: increment-by-5($i, px) !important;
+        margin-left: increment-by-5($i, px) !important;
+      }
+      &px-#{$bp3}-#{$i * 5} {
+        padding-right: increment-by-5($i, px) !important;
+        padding-left: increment-by-5($i, px) !important;
+      }
+    }
+  }
+  @media (min-width: $grid-breakpoint-lg) {
+    @for $i from 0 to $loop-end {
+      &pb-#{$bp4}-#{$i * 5} {
+        padding-bottom: increment-by-5($i, px) !important;
+      }
+      &pt-#{$bp4}-#{$i * 5} {
+        padding-top: increment-by-5($i, px) !important;
+      }
+      &pl-#{$bp4}-#{$i * 5} {
+        padding-left: increment-by-5($i, px) !important;
+      }
+      &pr-#{$bp4}-#{$i * 5} {
+        padding-right: increment-by-5($i, px) !important;
+      }
+      &mb-#{$bp4}-#{$i * 5} {
+        margin-bottom: increment-by-5($i, px) !important;
+      }
+      &mt-#{$bp4}-#{$i * 5} {
+        margin-top: increment-by-5($i, px) !important;
+      }
+      &mr-#{$bp4}-#{$i * 5} {
+        margin-right: increment-by-5($i, px) !important;
+      }
+      &ml-#{$bp4}-#{$i * 5} {
+        margin-left: increment-by-5($i, px) !important;
+      }
+      &mx-#{$bp4}-#{$i * 5} {
+        margin-right: increment-by-5($i, px) !important;
+        margin-left: increment-by-5($i, px) !important;
+      }
+      &px-#{$bp4}-#{$i * 5} {
+        padding-right: increment-by-5($i, px) !important;
+        padding-left: increment-by-5($i, px) !important;
+      }
+    }
+  }
+
+  @media (min-width: $grid-breakpoint-xl) {
+    @for $i from 0 to $loop-end {
+      &pb-#{$bp5}-#{$i * 5} {
+        padding-bottom: increment-by-5($i, px) !important;
+      }
+      &pt-#{$bp5}-#{$i * 5} {
+        padding-top: increment-by-5($i, px) !important;
+      }
+      &pl-#{$bp5}-#{$i * 5} {
+        padding-left: increment-by-5($i, px) !important;
+      }
+      &pr-#{$bp5}-#{$i * 5} {
+        padding-right: increment-by-5($i, px) !important;
+      }
+      &mb-#{$bp5}-#{$i * 5} {
+        margin-bottom: increment-by-5($i, px) !important;
+      }
+      &mt-#{$bp5}-#{$i * 5} {
+        margin-top: increment-by-5($i, px) !important;
+      }
+      &mr-#{$bp5}-#{$i * 5} {
+        margin-right: increment-by-5($i, px) !important;
+      }
+      &ml-#{$bp5}-#{$i * 5} {
+        margin-left: increment-by-5($i, px) !important;
+      }
+      &mx-#{$bp5}-#{$i * 5} {
+        margin-right: increment-by-5($i, px) !important;
+        margin-left: increment-by-5($i, px) !important;
+      }
+      &px-#{$bp5}-#{$i * 5} {
+        padding-right: increment-by-5($i, px) !important;
+        padding-left: increment-by-5($i, px) !important;
+      }
+    }
+  }
+}

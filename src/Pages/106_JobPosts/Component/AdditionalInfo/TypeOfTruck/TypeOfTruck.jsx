@@ -11,7 +11,7 @@ export default class TypeOfTruck extends Component {
                     <div className="col-md-3 col-lg-3 col-sm-3">
 
                         <label>
-                            <input type="radio" defaultvalue={values.typeOfTruck} id={typeOfTruck} checked={typeOfTruck === 'RegularTruck'} value="RegularTruck" onChange={handleChange()} className="card-input-element" />
+                            <input type="radio" defaultvalue={values.typeOfTruck} id={typeOfTruck} checked={typeOfTruck === 'RegularTruck'} value="RegularTruck" onChange={handleChange("typeOfTruck")} className="card-input-element" />
                             <div className="card ">
                                 <img className="card-img-top" src="https://i.imgur.com/DulN0qt.jpg" alt="Card image cap"></img>
                                 <div className="card-body">

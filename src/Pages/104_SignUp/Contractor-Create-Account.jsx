@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { signUp } from "../Redux/Store/actions/authActions";
+import { contractorSignUp } from "../Redux/Store/actions/authActions";
 import "./Css/contractor-signup.scss";
 
 class ContractorCreateAccount extends Component {
@@ -20,7 +20,7 @@ class ContractorCreateAccount extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.signUp(this.state);
+    this.props.contractorSignUp(this.state);
   };
 
   render() {
@@ -123,7 +123,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signUp: creds => dispatch(signUp(creds))
+    contractorSignUp: creds => dispatch(contractorSignUp(creds))
   };
 };
 export default connect(

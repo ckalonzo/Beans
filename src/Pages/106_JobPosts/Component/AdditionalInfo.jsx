@@ -129,8 +129,8 @@ class AdditionalInfo extends Component {
                 <Slot
                   handleChange={this.props.handleChange}
                   values={values}
-                  selectedDate={selectedDate}
-                  selectedTime={selectedTime}
+                  selectedDate={this.props.selectedDate}
+                  selectedTime={this.props.selectedTime}
                   handleChangeDatePicker={this.props.handleChangeDatePicker}
                   handleChangeTimePicker={this.props.handleChangeTimePicker}
                 />
@@ -257,7 +257,7 @@ class AdditionalInfo extends Component {
           <div className="mx-auto">
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-primary backbutton"
               onClick={this.back}
             >
               Back

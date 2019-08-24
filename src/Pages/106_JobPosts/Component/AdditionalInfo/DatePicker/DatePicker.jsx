@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 class CustDatePicker extends Component {
+
   render() {
     const { handleChangeDatePicker, selectedDate } = this.props;
     return (

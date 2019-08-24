@@ -46,7 +46,7 @@ class TypeOfJob extends Component {
             <div className="mx-auto">
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-primary -ta_mr-10 backbutton"
                 onClick={this.back}
               >
                 Back

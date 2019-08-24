@@ -3,35 +3,17 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
-
+import NoImage from "../img/no-image.png";
+import CountdownTimer from "../Component/countdownTimer"
 const ProjectDetails = props => {
   const { project, auth, handleBidNow, bidNow } = props;
-  //getting project id
-  // const projectImage = projects.length ? (
-  //   projects.map(project => {
-  //     return (
-  //       <div>
-  //         {" "}
-  //         <a href={project.image} data-fancybox="">
-  //           <img src={project.image} />
-  //         </a>
-  //       </div>
-  //     );
-  //   })
-  // ) : (
-  //   <div>
-  //     {" "}
-  //     <a href="https://imgur.com/EmHdidw" data-fancybox="">
-  //       <img src="https://imgur.com/EmHdidw" />
-  //     </a>
-  //   </div>
-  // );
-
   if (!auth.uid) return <Redirect to="/101_CustomerLogin/CustomerLogin" />;
   if (project) {
     return (
+    
       <React.Fragment>
-        <div className="card">
+        {/* <CountdownTimer timeTillDate={(project.selectedDate),(project.selectedTime}) timeFormat="MM DD YYYY, h:mm a" /> */}
+        <div className="card"> 
           <div className="row no-gutters">
             <aside className="col-sm-5 border-right">
               <article className="gallery-wrap">
@@ -39,19 +21,35 @@ const ProjectDetails = props => {
                 <div className="img-small-wrap">
                   <div className="item-gallery">
                     {" "}
-                    <img src="https://imgur.com/EmHdidw" />
+                    <img
+                src={NoImage}
+                alt="product with no image avaliable"
+                className="img-md"
+              />
                   </div>
                   <div className="item-gallery">
                     {" "}
-                    <img src="https://imgur.com/EmHdidw" />
+                    <img
+                src={NoImage}
+                alt="product with no image avaliable"
+                className="img-md"
+              />
                   </div>
                   <div className="item-gallery">
                     {" "}
-                    <img src="https://imgur.com/EmHdidw" />
+                    <img
+                src={NoImage}
+                alt="product with no image avaliable"
+                className="img-md"
+              />
                   </div>
                   <div className="item-gallery">
                     {" "}
-                    <img src="https://imgur.com/EmHdidw" />
+                    <img
+                      src={NoImage}
+                      alt="product with no image avaliable"
+                      className="img-md"
+                    />
                   </div>
                 </div>
               </article>
@@ -72,30 +70,30 @@ const ProjectDetails = props => {
                   </dd>
                 </dl>
                 <dl className="row">
-                  <dt className="col-sm-3">Zipcode</dt>
-                  <dd className="col-sm-9">{project.zipCode}</dd>
+                  <dt className="col-sm-3 -ta_pb-10">Zipcode</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.zipCode}</dd>
 
-                  <dt className="col-sm-3">AnyLarge Items Involved?</dt>
-                  <dd className="col-sm-9">{project.largeItems}</dd>
+                  <dt className="col-sm-3 -ta_pb-10">AnyLarge Items Involved?</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.largeItems}</dd>
 
-                  <dt className="col-sm-3">Date</dt>
-                  <dd className="col-sm-9">{project.date} </dd>
+                  <dt className="col-sm-3 -ta_pb-10">Date</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.date} </dd>
 
-                  <dt className="col-sm-3">Flights Of Stairs</dt>
-                  <dd className="col-sm-9">{project.flightOfStairs}</dd>
+                  <dt className="col-sm-3 -ta_pb-10">Flights Of Stairs</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.flightOfStairs}</dd>
 
-                  <dt className="col-sm-3">Truck Loads</dt>
-                  <dd className="col-sm-9">{project.truckLoads} </dd>
+                  <dt className="col-sm-3 -ta_pb-10">Truck Loads</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.truckLoads} </dd>
 
-                  <dt className="col-sm-3">
+                  <dt className="col-sm-3 -ta_pb-10">
                     type of truck will best sute the Job
                   </dt>
-                  <dd className="col-sm-9">{project.typeOfTruck} </dd>
+                  <dd className="col-sm-9 -ta_pb-10">{project.typeOfTruck} </dd>
 
-                  <dt className="col-sm-3">Time</dt>
-                  <dd className="col-sm-9">{project.time}</dd>
+                  <dt className="col-sm-3 -ta_pb-10">Time</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.selectedTime}</dd>
                 </dl>
-                <div className="rating-wrap">
+                <div className="rating-wrap -ta_pb-30">
                   <div className="label-rating">132 reviews</div>
                   <div className="label-rating">154 orders </div>
                 </div>
@@ -103,15 +101,12 @@ const ProjectDetails = props => {
                   <button
                     className="btn btn-warning"
                     value={bidNow}
-                    onClick={handleBidNow("bidNow")}
+                    onClick={handleBidNow}
                   >
                     {" "}
                     Bid now{" "}
                   </button>
-                  <a href="#" className="btn btn-light">
-                    {" "}
-                    Details{" "}
-                  </a>{" "}
+                 
                 </div>
               </article>
             </aside>
