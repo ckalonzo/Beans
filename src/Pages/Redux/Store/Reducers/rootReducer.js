@@ -18,7 +18,8 @@ const rootReducer = combineReducers({
   counter: CounterReducer,
   items: cartReducer,
   cart: cartReducer,
-  subscription: monthlySubscriptionReducer
+  subscription: monthlySubscriptionReducer,
+  contractorProfile: ProfileReducer 
 });
 
 export default rootReducer;

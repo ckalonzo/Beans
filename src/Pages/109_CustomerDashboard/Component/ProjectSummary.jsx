@@ -1,11 +1,13 @@
 import React from "react";
 import MultiItemcarousel from "./Multi-Item-carousel";
 import NoImage from "../../Global/Component/NoImage";
+import { Link } from "react-router-dom";
+import LinesEllipsis from 'react-lines-ellipsis' //cap maxLine of characters
 const ProjectSummary = ({ jobs, deleteProject }) => {
   return (
     <article className="itemlist mt-4">
-      <div className="row row-sm">
-        <aside className="col-sm-3">
+      <div className="row row-sm -ta_pb-20">
+        <aside className="col-12 col-sm-3">
           <div className="img-wrap">
             <img
               src={NoImage}
@@ -14,19 +16,23 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
             />
           </div>
         </aside>
-        <div className="col-sm-6">
+        <Link className="col-12 col-sm-6" to={"/jobs/" + jobs.id}>
           <div className="text-wrap">
             <h4 className="title"> {jobs.service} </h4>
             <p className="text-secondary">
               <small className="text-muted">
-                posted By: {jobs.customerFirstName} {jobs.customerLastName}
+                posted By: {jobs.firstName} {jobs.lastName}
               </small>
             </p>
             <p>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem
-              ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim
-              ad minim veniam{" "}
+              <LinesEllipsis
+                text={jobs.specialInstructions}
+                maxLine='2'
+                ellipsis='...'
+                trimRight
+                basedOn='letters'
+              />
+
             </p>
             <p className="rating-wrap my-0 text-muted">
               <span className="label-rating">
@@ -35,21 +41,23 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
               {/* <span className="label-rating">154 orders </span> */}
             </p>
           </div>
-        </div>
+        </Link>
         <aside className="col-sm-3">
           <div className="border-left pl-3">
             <div className="price-wrap">
               <span className="h3 price"> ${jobs.budget} </span>
             </div>
+         
             <p>
               <button
+                className=""
                 onClick={() => {
                   deleteProject(jobs.id);
                 }}
               >
-                Delete
+                Delete Job
               </button>
-              <a href="#" className="btn btn-light">
+              <a href={"/jobs/" + jobs.id} className="btn  btn-warning">
                 {" "}
                 Details{" "}
               </a>{" "}
@@ -59,6 +67,7 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
       </div>
       <MultiItemcarousel />
     </article>
+   
   );
 };
 

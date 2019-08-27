@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Picture from "../../Profile/component/picture";
-
+import "../Css/carousel.scss"
 export default class MultiItemcarousel extends Component {
   render() {
     return (
-      <div>
+      <div className="ta-carousel">
         <div
           id="carouselExampleFade"
           className="carousel slide "
@@ -13,7 +13,7 @@ export default class MultiItemcarousel extends Component {
         >
           <div className="carousel-inner d-flex justify-content-between">
             <div className="carousel-item active">
-              <div className="card-deck">
+            <div className="card-deck">
                 <div className="card disableClick ">
                   <div className="row">
                     <div className="col-5">

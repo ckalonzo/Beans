@@ -7,7 +7,7 @@ import MainChat from "../../Chat/mainChat";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-
+import {deleteJob} from "../../Redux/Store/actions/deleteJob"
 class Activities extends Component {
   state = {
     activeItemClassicTabs1: "1",
@@ -25,7 +25,8 @@ class Activities extends Component {
     this.setState({ value });
   };
   deleteProject = id => {
-    let projects = this.state.firestore.data.projects.filter(jobs => {
+    this.props.deleteJob(this.props.projects.id)
+    let projects = this.props.projects.filter(jobs => {
       console.log("hi");
       return jobs.id !== id;
     });
@@ -42,8 +43,8 @@ class Activities extends Component {
   };
 
   render() {
-    // console.log(this, "======>");
-    // console.log(`activity${this.props}`);
+     console.log(this, "======>");
+     console.log(`activity${this.props}`);
     const { notifications } = this.props;
     const { projects, customerId } = this.props;
     return (
@@ -154,8 +155,13 @@ const mapStateToProps = state => {
     notifications: state.firestore.ordered.notifications
   };
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteJob: (id) => {dispatch ({type: 'DELETE_JOB', id:id})}
+  }
+}
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     { collection: "projects", orderBy: ["createdAt"] },
     { collection: "notifications", limit: 3 }

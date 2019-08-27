@@ -61,14 +61,14 @@ export default class ProjectSummary extends Component {
               </div>
               <p>
                 <button
-                  className="btn btn-warning"
+                  className="btn btn-success"
                   value={bidNow}
                   onClick={handleBidNow}
                 >
                   {" "}
                   Bid now{" "}
                 </button>
-                <a href={"/jobs/" + jobs.id} className="btn btn-light">
+                <a href={"/jobs/" + jobs.id} className="btn  btn-warning">
                   {" "}
                   Details{" "}
                 </a>{" "}

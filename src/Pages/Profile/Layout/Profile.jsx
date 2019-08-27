@@ -7,14 +7,18 @@ import Picture from "../component/picture";
 import ProfileLocation from "../component/ProfileLocation";
 import AvgRating from "../component/Rating";
 import TypeOfJobs from "../component/typeOfJobs";
-
 import ProfileHero from "../component/ProfileHero";
 import OutlinedTextFields from "../component/multiline-Input";
 import Skills from "../component/Skills";
 import History from "../component/History";
 import Reviews from "../component/Reviews";
-export default class Profile extends Component {
-  render() {
+import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
+ class Profile extends Component {
+   render() {
+     console.log(this.props);
+     const {contractorProfile } = this.props;
     return (
       <React.Fragment>
         <section className="profile">
@@ -83,3 +87,15 @@ export default class Profile extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    contractorProfile: state.firestore,
+  };
+};
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: "contractorProfile"}
+  ])
+)(Profile);
