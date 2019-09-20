@@ -34,17 +34,13 @@ class UploadImages extends Component {
           </div>
         </div>
         <div style={style}>
-          <progress value={this.props.progress} max="100" />
+        
           <br />
-          <input type="file" onChange={this.props.handleChange} />
-          <button onClick={this.handleUpload}>Upload</button>
+          <input style={{ display: 'none' }} type="file" onChange={this.props.handleChangeAttachments} ref={fileInput => this.fileInput = fileInput}/>
+          <button onClick={() => this.fileInput.click()}>Choose File</button>
+         <button onClick={this.handleUpload}>Upload</button>
           <br />
-          <img
-            src={this.props.url || "http://via.placeholder.com/400x300"}
-            alt="Uploaded images"
-            height="300"
-            width="400"
-          />
+          
         </div>
 
         <div className="row">

@@ -2,7 +2,7 @@ const initState = {
 
 }
 
-const JobPostReducer = (state = initState, action) => {
+const deleteJobReducer = (state = initState, action) => {
     switch (action.type) {
         case 'CREATE_PROJECT':
             console.log("post created", action.project);

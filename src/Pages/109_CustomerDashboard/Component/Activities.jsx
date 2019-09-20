@@ -7,7 +7,7 @@ import MainChat from "../../Chat/mainChat";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-import {deleteJob} from "../../Redux/Store/actions/deleteJob"
+import {deleteJob} from "../../Redux/Store/actions/deleteJobAction"
 class Activities extends Component {
   state = {
     activeItemClassicTabs1: "1",
@@ -18,21 +18,21 @@ class Activities extends Component {
     activeJobs: 1,
     show: true,
     value: 0,
-    projects: []
+    updatedProjects: []
   };
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
   deleteProject = id => {
-    this.props.deleteJob(this.props.projects.id)
-    let projects = this.props.projects.filter(jobs => {
-      console.log("hi");
-      return jobs.id !== id;
-    });
-    this.setState({
-      projects: projects
-    });
+    this.props.deleteJob(this.state)
+    // let updatedProjects = this.props.projects.filter(jobs => {
+    //   console.log("hi");
+    //   return jobs.id !== id;
+    // });
+    // this.setState({
+    //   updatedProjects: updatedProjects
+    // });
   };
   toggleClassicTabs1 = tab => () => {
     if (this.state.activeItemClassicTabs1 !== tab) {
@@ -157,7 +157,7 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteJob: (id) => {dispatch ({type: 'DELETE_JOB', id:id})}
+    deleteJob: (updatedProjects) => {dispatch ({type: 'DELETE_JOB', updatedProjects:updatedProjects})}
   }
 }
 export default compose(
