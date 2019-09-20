@@ -6,9 +6,9 @@ export default class Testimonial extends Component {
     return (
       <section>
         <div className="container">
-          <div class="row mt-5">
-            <div class="col-10 offset-1 col-md-4  offset-md-0 bubble">
-              <div class="mt-5 text-center">
+          <div className="row mt-5">
+            <div className="col-10 offset-1 col-md-4  offset-md-0 bubble">
+              <div className="mt-5 text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                 ut eros maximus nisi porta tempor in et justo. Integer feugiat
                 sodales dui vitae euismod. Duis fringilla tincidunt orci. In
@@ -20,8 +20,8 @@ export default class Testimonial extends Component {
                 </p>
               </div>
             </div>
-            <div class="col-10 col-md-4 offset-1  offset-md-0 bubble text-center justify-content">
-              <div class="mt-5">
+            <div className="col-10 col-md-4 offset-1  offset-md-0 bubble text-center justify-content">
+              <div className="mt-5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                 ut eros maximus nisi porta tempor in et justo. Integer feugiat
                 sodales dui vitae euismod. Duis fringilla tincidunt orci. In
@@ -33,8 +33,8 @@ export default class Testimonial extends Component {
                 </p>
               </div>
             </div>
-            <div class="col-10 col-md-4 offset-1 offset-md-0 bubble text-center justify-content">
-              <div class="mt-5">
+            <div className="col-10 col-md-4 offset-1 offset-md-0 bubble text-center justify-content">
+              <div className="mt-5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                 ut eros maximus nisi porta tempor in et justo. Integer feugiat
                 sodales dui vitae euismod. Duis fringilla tincidunt orci. In

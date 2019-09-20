@@ -1,37 +1,49 @@
-.img-join{
-    background-image: url("../../../100_Home/img/wsy-join.jpg");
-    height: 403px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+.img-join {
+  background-image: url("../../../100_Home/img/wsy-join.jpg");
+  height: 403px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-.join-title{
-    text-transform: uppercase;
+.join-title {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #ffffff;
+  @media (min-width: 1200px) {
     font-size: 36px;
-    font-family: 'Source Sans Pro', sans-serif;
-    color:  #ffffff;
-   
+  }
 }
-.join-title-outter{
-    width: 75%;
+.join-title-outter {
+  width: 75%;
 }
-.join-panel{
-    background-color: #EF0000;
+.join-panel {
+  background-color: #ef0000;
 }
 
-.join-copy{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 16px;
-    color:  #ffffff;
-    width: 75%;
+.join-copy {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  width: 75%;
 }
-.start-posting-today-button{
-    width: 30%;
-
+.start-posting-today-button {
+  @media (min-width: 320px) {
+    width: 56%;
+  }
+  @media (min-width: 576px) {
+    width: 42%;
+  }
+  @media (min-width: 768px) {
+    width: 63%;
+  }
+  @media (min-width: 1200px) {
+    width: 43%;
+  }
 }
-.spt-btn{
-    width: 230px;
-    background-color:  #003366;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 21px;
+.spt-btn {
+  width: 230px;
+  background-color: #003366;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 21px;
 }

@@ -6,8 +6,8 @@ class TypeOfJobs extends Component {
       <React.Fragment>
         <div className="row">
           <div className="col">
-            <span class="badge badge-pill badge-info">Junk Removal</span>
-            <span class="badge badge-pill badge-info">Lawn Service</span>
+            <span className="badge badge-pill badge-info">Junk Removal</span>
+            <span className="badge badge-pill badge-info">Lawn Service</span>
           </div>
         </div>
       </React.Fragment>

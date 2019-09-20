@@ -1,38 +1,38 @@
 import React, { Component } from "react";
 import Picture from "../../Profile/component/picture";
-
+import "../Css/carousel.scss"
 export default class MultiItemcarousel extends Component {
   render() {
     return (
-      <div>
+      <div className="ta-carousel">
         <div
           id="carouselExampleFade"
-          class="carousel slide "
+          className="carousel slide "
           data-ride="carousel"
           data-interval="false"
         >
-          <div class="carousel-inner d-flex justify-content-between">
-            <div class="carousel-item active">
-              <div class="card-deck">
-                <div class="card disableClick ">
+          <div className="carousel-inner d-flex justify-content-between">
+            <div className="carousel-item active">
+            <div className="card-deck">
+                <div className="card disableClick ">
                   <div className="row">
                     <div className="col-5">
-                      <div class="avatar white pt-4 pl-2">
+                      <div className="avatar white pt-4 pl-2">
                         <img
                           src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
                           alt="avatar mx-auto white"
-                          class="rounded-circle img-fluid disableClick "
+                          className="rounded-circle img-fluid disableClick "
                         />
                       </div>
                     </div>
                     <div className="col-7 pl-4 adj-button">
-                      <button type="button" class="btn btn-secondary">
+                      <button type="button" className="btn btn-secondary">
                         View Profile
                       </button>
                     </div>
                   </div>
-                  <div class="card-body">
-                    <h6 class="card-title mt-2 disableClick ">
+                  <div className="card-body">
+                    <h6 className="card-title mt-2 disableClick ">
                       Highly recommended LLC
                     </h6>
                     <div className="row">
@@ -58,35 +58,35 @@ export default class MultiItemcarousel extends Component {
                         </div>
                       </div>
                     </div>
-                    <div class="button-container" role="group" aria-label="...">
-                      <button type="button" class="btn btn-primary mr-3">
+                    <div className="button-container" role="group" aria-label="...">
+                      <button type="button" className="btn btn-primary mr-3">
                         Accept
                       </button>
-                      <button type="button" class="btn btn-danger">
+                      <button type="button" className="btn btn-danger">
                         Deny
                       </button>
                     </div>
                   </div>
                 </div>
-                <div class="card">
+                <div className="card">
                   <div className="row">
                     <div className="col-5">
-                      <div class="avatar white pt-4 pl-2">
+                      <div className="avatar white pt-4 pl-2">
                         <img
                           src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
                           alt="avatar mx-auto white"
-                          class="rounded-circle img-fluid"
+                          className="rounded-circle img-fluid"
                         />
                       </div>
                     </div>
                     <div className="col-7 pl-4 adj-button">
-                      <button type="button" class="btn btn-secondary">
+                      <button type="button" className="btn btn-secondary">
                         View Profile
                       </button>
                     </div>
                   </div>
-                  <div class="card-body">
-                    <h6 class="card-title mt-2 ">Highly recommended LLC</h6>
+                  <div className="card-body">
+                    <h6 className="card-title mt-2 ">Highly recommended LLC</h6>
                     <div className="row">
                       <div className="col-12">
                         <div className="row">
@@ -110,35 +110,35 @@ export default class MultiItemcarousel extends Component {
                         </div>
                       </div>
                     </div>
-                    <div class="button-container" role="group" aria-label="...">
-                      <button type="button" class="btn btn-primary mr-3">
+                    <div className="button-container" role="group" aria-label="...">
+                      <button type="button" className="btn btn-primary mr-3">
                         Accept
                       </button>
-                      <button type="button" class="btn btn-danger">
+                      <button type="button" className="btn btn-danger">
                         Deny
                       </button>
                     </div>
                   </div>
                 </div>
-                <div class="card">
+                <div className="card">
                   <div className="row">
                     <div className="col-5">
-                      <div class="avatar white pt-4 pl-2">
+                      <div className="avatar white pt-4 pl-2">
                         <img
                           src="https://mdbootstrap.com/img/Others/documentation/img%20(20)-mini.jpg"
                           alt="avatar mx-auto white"
-                          class="rounded-circle img-fluid"
+                          className="rounded-circle img-fluid"
                         />
                       </div>
                     </div>
                     <div className="col-7 pl-4 adj-button">
-                      <button type="button" class="btn btn-secondary">
+                      <button type="button" className="btn btn-secondary">
                         View Profile
                       </button>
                     </div>
                   </div>
-                  <div class="card-body">
-                    <h6 class="card-title mt-2 ">Highly recommended LLC</h6>
+                  <div className="card-body">
+                    <h6 className="card-title mt-2 ">Highly recommended LLC</h6>
                     <div className="row">
                       <div className="col-12">
                         <div className="row">
@@ -162,11 +162,11 @@ export default class MultiItemcarousel extends Component {
                         </div>
                       </div>
                     </div>
-                    <div class="button-container" role="group" aria-label="...">
-                      <button type="button" class="btn btn-primary mr-3">
+                    <div className="button-container" role="group" aria-label="...">
+                      <button type="button" className="btn btn-primary mr-3">
                         Accept
                       </button>
-                      <button type="button" class="btn btn-danger">
+                      <button type="button" className="btn btn-danger">
                         Deny
                       </button>
                     </div>
@@ -174,113 +174,113 @@ export default class MultiItemcarousel extends Component {
                 </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="card-group">
-                <div class="card">
+            <div className="carousel-item">
+              <div className="card-group">
+                <div className="card">
                   <img
                     src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                    class="card-img-top"
+                    className="card-img-top"
                     alt="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
                   />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This</p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">This</p>
+                    <p className="card-text">
+                      <small className="text-muted">Last updated 3 mins ago</small>
                     </p>
                   </div>
                 </div>
-                <div class="card">
+                <div className="card">
                   <img
                     src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                    class="card-img-top"
+                    className="card-img-top"
                     alt="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
                   />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">
                       This card has supporting text below as a natural lead-in
                       to additional content.
                     </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                    <p className="card-text">
+                      <small className="text-muted">Last updated 3 mins ago</small>
                     </p>
                   </div>
                 </div>
-                <div class="card">
+                <div className="card">
                   <img
                     src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                    class="card-img-top"
+                    className="card-img-top"
                     alt="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
                   />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">
                       This is a wider card with supporting text below as a
                       natural lead-in to additional content. This card has even
                       longer content than the first to show that equal height
                       action.
                     </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                    <p className="card-text">
+                      <small className="text-muted">Last updated 3 mins ago</small>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="card-group">
-                <div class="card">
+            <div className="carousel-item">
+              <div className="card-group">
+                <div className="card">
                   <img
                     src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                    class="card-img-top"
+                    className="card-img-top"
                     alt="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
                   />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">
                       This is a wider card with supporting text below as a
                       natural lead-in to additional content. This content is a
                       little bit longer.
                     </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                    <p className="card-text">
+                      <small className="text-muted">Last updated 3 mins ago</small>
                     </p>
                   </div>
                 </div>
-                <div class="card">
+                <div className="card">
                   <img
                     src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                    class="card-img-top"
+                    className="card-img-top"
                     alt="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
                   />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">
                       This card has supporting text below as a natural lead-in
                       to additional content.
                     </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                    <p className="card-text">
+                      <small className="text-muted">Last updated 3 mins ago</small>
                     </p>
                   </div>
                 </div>
-                <div class="card">
+                <div className="card">
                   <img
                     src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                    class="card-img-top"
+                    className="card-img-top"
                     alt="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
                   />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">
                       This is a wider card with supporting text below as a
                       natural lead-in to additional content. This card has even
                       longer content than the first to show that equal height
                       action.
                     </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                    <p className="card-text">
+                      <small className="text-muted">Last updated 3 mins ago</small>
                     </p>
                   </div>
                 </div>
@@ -288,29 +288,29 @@ export default class MultiItemcarousel extends Component {
             </div>
           </div>
           {/* <a
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             href="#carouselExampleFade"
             role="button"
             data-slide="prev"
           >
-            <span class="fas fa-chevron-left" aria-hidden="true" />
-            <span class="sr-only">Previous</span>
+            <span className="fas fa-chevron-left" aria-hidden="true" />
+            <span className="sr-only">Previous</span>
                       </a> */}
           <div className="row mt-4">
-            <div class="mx-auto">
+            <div className="mx-auto">
               <a
-                class="btn btn-primary mr-5"
+                className="btn btn-primary mr-5"
                 href="#carouselExampleFade"
                 data-slide="prev"
               >
-                <i class="fas fa-chevron-left" />
+                <i className="fas fa-chevron-left" />
               </a>
               <a
-                class="btn btn-primary"
+                className="btn btn-primary"
                 href="#carouselExampleFade"
                 data-slide="next"
               >
-                <i class="fas fa-chevron-right" />
+                <i className="fas fa-chevron-right" />
               </a>
             </div>
           </div>

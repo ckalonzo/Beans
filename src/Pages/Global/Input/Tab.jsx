@@ -5,10 +5,10 @@ export default class Tab extends Component {
     const {} = this.props;
     return (
       <Fragment>
-        <ul class="nav nav-tabs md-tabs" id="myTabMD" role="tablist">
-          <li class="nav-item">
+        <ul className="nav nav-tabs md-tabs" id="myTabMD" role="tablist">
+          <li className="nav-item">
             <a
-              class="nav-link active"
+              className="nav-link active"
               id="home-tab-md"
               data-toggle="tab"
               href="#home-md"
@@ -19,9 +19,9 @@ export default class Tab extends Component {
               Home
             </a>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <a
-              class="nav-link"
+              className="nav-link"
               id="profile-tab-md"
               data-toggle="tab"
               href="#profile-md"
@@ -32,9 +32,9 @@ export default class Tab extends Component {
               Profile
             </a>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <a
-              class="nav-link"
+              className="nav-link"
               id="contact-tab-md"
               data-toggle="tab"
               href="#contact-md"
@@ -46,9 +46,9 @@ export default class Tab extends Component {
             </a>
           </li>
         </ul>
-        <div class="tab-content card pt-5" id="myTabContentMD">
+        <div className="tab-content card pt-5" id="myTabContentMD">
           <div
-            class="tab-pane fade show active"
+            className="tab-pane fade show active"
             id="home-md"
             role="tabpanel"
             aria-labelledby="home-tab-md"
@@ -64,7 +64,7 @@ export default class Tab extends Component {
             </p>
           </div>
           <div
-            class="tab-pane fade"
+            className="tab-pane fade"
             id="profile-md"
             role="tabpanel"
             aria-labelledby="profile-tab-md"
@@ -84,7 +84,7 @@ export default class Tab extends Component {
             </p>
           </div>
           <div
-            class="tab-pane fade"
+            className="tab-pane fade"
             id="contact-md"
             role="tabpanel"
             aria-labelledby="contact-tab-md"

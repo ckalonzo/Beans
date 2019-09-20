@@ -3,66 +3,64 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
-
+import NoImage from "../img/no-image.png";
+import CountdownTimer from "../Component/countdownTimer"
 const ProjectDetails = props => {
-  const { project, auth } = props;
-  //getting project id
-  // const projectImage = projects.length ? (
-  //   projects.map(project => {
-  //     return (
-  //       <div>
-  //         {" "}
-  //         <a href={project.image} data-fancybox="">
-  //           <img src={project.image} />
-  //         </a>
-  //       </div>
-  //     );
-  //   })
-  // ) : (
-  //   <div>
-  //     {" "}
-  //     <a href="https://imgur.com/EmHdidw" data-fancybox="">
-  //       <img src="https://imgur.com/EmHdidw" />
-  //     </a>
-  //   </div>
-  // );
-
+  const { project, auth, handleBidNow, bidNow } = props;
   if (!auth.uid) return <Redirect to="/101_CustomerLogin/CustomerLogin" />;
   if (project) {
     return (
+    
       <React.Fragment>
-        <div class="card">
-          <div class="row no-gutters">
-            <aside class="col-sm-5 border-right">
-              <article class="gallery-wrap">
+        {/* <CountdownTimer timeTillDate={(project.selectedDate),(project.selectedTime}) timeFormat="MM DD YYYY, h:mm a" /> */}
+        <div className="card"> 
+          <div className="row no-gutters">
+            <aside className="col-sm-5 border-right">
+              <article className="gallery-wrap">
                 {/* {projectImage} */}
-                <div class="img-small-wrap">
-                  <div class="item-gallery">
+                <div className="img-small-wrap">
+                  <div className="item-gallery">
                     {" "}
-                    <img src="https://imgur.com/EmHdidw" />
+                    <img
+                src={NoImage}
+                alt="product with no image avaliable"
+                className="img-md"
+              />
                   </div>
-                  <div class="item-gallery">
+                  <div className="item-gallery">
                     {" "}
-                    <img src="https://imgur.com/EmHdidw" />
+                    <img
+                src={NoImage}
+                alt="product with no image avaliable"
+                className="img-md"
+              />
                   </div>
-                  <div class="item-gallery">
+                  <div className="item-gallery">
                     {" "}
-                    <img src="https://imgur.com/EmHdidw" />
+                    <img
+                src={NoImage}
+                alt="product with no image avaliable"
+                className="img-md"
+              />
                   </div>
-                  <div class="item-gallery">
+                  <div className="item-gallery">
                     {" "}
-                    <img src="https://imgur.com/EmHdidw" />
+                    <img
+                      src={NoImage}
+                      alt="product with no image avaliable"
+                      className="img-md"
+                    />
                   </div>
                 </div>
               </article>
             </aside>
-            <aside class="col-sm-7">
-              <article class="p-5">
-                <h3 class="title mb-3">{project.service}</h3>
-                <div class="mb-3">
-                  <var class="price h3 text-warning">
-                    <span class="currency">US $</span>
-                    <span class="num">{project.budget}</span>
+            <aside className="col-sm-7">
+              <article className="p-5">
+                <h3 className="title mb-3">{project.service}</h3>
+                <div className="mb-3">
+                  <var className="price h3 text-warning">
+                    <span className="currency">US $</span>
+                    <span className="num">{project.budget}</span>
                   </var>
                 </div>
                 <dl>
@@ -71,42 +69,45 @@ const ProjectDetails = props => {
                     <p>{project.specialInstructions} </p>
                   </dd>
                 </dl>
-                <dl class="row">
-                  <dt class="col-sm-3">Zipcode</dt>
-                  <dd class="col-sm-9">{project.zipCode}</dd>
+                <dl className="row">
+                  <dt className="col-sm-3 -ta_pb-10">Zipcode</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.zipCode}</dd>
 
-                  <dt class="col-sm-3">AnyLarge Items Involved?</dt>
-                  <dd class="col-sm-9">{project.largeItems}</dd>
+                  <dt className="col-sm-3 -ta_pb-10">AnyLarge Items Involved?</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.largeItems}</dd>
 
-                  <dt class="col-sm-3">Date</dt>
-                  <dd class="col-sm-9">{project.date} </dd>
+                  <dt className="col-sm-3 -ta_pb-10">Date</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.date} </dd>
 
-                  <dt class="col-sm-3">Flights Of Stairs</dt>
-                  <dd class="col-sm-9">{project.flightOfStairs}</dd>
+                  <dt className="col-sm-3 -ta_pb-10">Flights Of Stairs</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.flightOfStairs}</dd>
 
-                  <dt class="col-sm-3">Truck Loads</dt>
-                  <dd class="col-sm-9">{project.truckLoads} </dd>
+                  <dt className="col-sm-3 -ta_pb-10">Truck Loads</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.truckLoads} </dd>
 
-                  <dt class="col-sm-3">type of truck will best sute the Job</dt>
-                  <dd class="col-sm-9">{project.typeOfTruck} </dd>
+                  <dt className="col-sm-3 -ta_pb-10">
+                    type of truck will best sute the Job
+                  </dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.typeOfTruck} </dd>
 
-                  <dt class="col-sm-3">Time</dt>
-                  <dd class="col-sm-9">{project.time}</dd>
+                  <dt className="col-sm-3 -ta_pb-10">Time</dt>
+                  <dd className="col-sm-9 -ta_pb-10">{project.selectedTime}</dd>
                 </dl>
-                <div class="rating-wrap">
-                  <div class="label-rating">132 reviews</div>
-                  <div class="label-rating">154 orders </div>
+                <div className="rating-wrap -ta_pb-30">
+                  <div className="label-rating">132 reviews</div>
+                  <div className="label-rating">154 orders </div>
                 </div>
-                {/*<hr>
-                  <a href="#" class="btn  btn-primary">
+                <div>
+                  <button
+                    className="btn btn-warning"
+                    value={bidNow}
+                    onClick={handleBidNow}
+                  >
                     {" "}
-                    Buy now{" "}
-                  </a>
-                  <a href="#" class="btn  btn-outline-primary">
-                    {" "}
-                    <i class="" /> Add to cart{" "}
-                  </a>
-                </hr>*/}
+                    Bid now{" "}
+                  </button>
+                 
+                </div>
               </article>
             </aside>
           </div>
@@ -145,10 +146,10 @@ const ProjectDetails = props => {
                   {project.customerLastName}
                 </small>
               </p>
-              <a href="#" class="btn btn-secondary float-left">
+              <a href="#" className="btn btn-secondary float-left">
                 More Details
               </a>
-              <a href="#" class="btn btn-success float-right">
+              <a href="#" className="btn btn-success float-right">
                 Bid Now
               </a>
             </div>
@@ -160,8 +161,8 @@ const ProjectDetails = props => {
   } else {
     return (
       <div className="container text-center">
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
         </div>
       </div>
     );

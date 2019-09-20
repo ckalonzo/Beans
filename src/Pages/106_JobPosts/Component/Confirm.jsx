@@ -23,8 +23,8 @@ class Confirm extends Component {
         state,
         zipCode,
         largeItems,
-        date,
-        time,
+        selectedDate,
+        selectedTime,
         flightOfStairs,
         truckLoads,
         typeOfTruck,
@@ -105,7 +105,7 @@ class Confirm extends Component {
                     <span className="col-sm-12">Date</span>
                   </dt>
                   <dd>
-                    <span className="col-sm-12">{date}</span>
+                    <span className="col-sm-12">{selectedDate}</span>
                   </dd>
                 </dl>
                 <dl>
@@ -113,7 +113,7 @@ class Confirm extends Component {
                     <span className="col-sm-6">Time</span>
                   </dt>
                   <dd>
-                    <span className="col-sm-12">{time}</span>
+                    <span className="col-sm-12">{selectedTime}</span>
                   </dd>
                 </dl>
                 <dl>
@@ -168,12 +168,16 @@ class Confirm extends Component {
         </section>
         <div className="row">
           <div className="mx-auto">
-            <button type="button" class="btn btn-primary" onClick={this.back}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={this.back}
+            >
               Back
             </button>
             <button
               type="button"
-              class="btn btn-primary"
+              className="btn btn-primary"
               onClick={this.continue}
             >
               Confirm

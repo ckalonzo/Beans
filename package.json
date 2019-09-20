@@ -30,8 +30,10 @@
     "gulp": "^4.0.0",
     "gulp-sass": "^4.0.2",
     "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
     "mdbreact": "^4.14.0",
     "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
     "node-env-run": "^3.0.2",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
@@ -44,6 +46,8 @@
     "react-dom": "^16.6.3",
     "react-dropzone": "^10.1.5",
     "react-final-form": "^4.1.0",
+    "react-icons": "^3.7.0",
+    "react-lines-ellipsis": "^0.14.1",
     "react-loading": "^2.0.3",
     "react-notifications-component": "^1.0.1",
     "react-rating": "^1.6.2",
@@ -64,7 +68,8 @@
     "styled-components": "^4.2.0",
     "twilio": "^3.30.0",
     "twilio-chat": "^3.3.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "uws": "^10.148.1"
   },
   "scripts": {
     "start": "node index.js",

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
-import "date-fns";
+import moment from "moment";
 import "../js/stepform";
 import { CreateProject } from "../../Redux/Store/actions/JobPostActions";
 import "../Css/PostJob.scss";
@@ -13,6 +13,7 @@ import TypeOfJob from "../Component/TypeOfJob";
 import UploadImages from "../Component/UploadImages";
 import Confirm from "./Confirm";
 import Success from "./Success";
+import axios from "axios"
 
 class MainForm extends Component {
   constructor(props) {
@@ -30,8 +31,8 @@ class MainForm extends Component {
       state: "State",
       zipCode: "",
       largeItems: "",
-      selectedDate: "",
-      selectedTime: "",
+      selectedDate: moment().format("MMM Do YYYY"),
+      selectedTime: moment().format('h:mm:ss a'),
       flightOfStairs: "",
       truckLoads: "",
       typeOfTruck: "",
@@ -45,7 +46,7 @@ class MainForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeTimePicker = this.handleChangeTimePicker.bind(this);
     this.handleChangeDatePicker = this.handleChangeDatePicker.bind(this);
-    // this.handleUpload = this.handleUpload.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   // Proceed to next step
@@ -68,48 +69,35 @@ class MainForm extends Component {
       [input]: e.target.value
     });
   };
-  handleChangeAttachments = e => {
-    if (e.target.files[0]) {
-      const image = e.target.files[0];
+  handleChangeAttachments = event => {
+    if (event.target.files[0]) {
+      const image = event.target.files[0];
       this.setState(() => ({ image }));
-    }
+   }
   };
 
-  // handleUpload = () => {
-  //   const { image } = this.state;
-  //   const uploadTask = storage.ref(`images/${image.name}`).put(image);
-  //   uploadTask.on(
-  //     "state_changed",
-  //     snapshot => {
-  //       // progrss function ....
-  //       const progress = Math.round(
-  //         (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-  //       );
-  //       this.setState({ progress });
-  //     },
-  //     error => {
-  //       // error function ....
-  //       console.log(error);
-  //     },
-  //     () => {
-  //       // complete function ....
-  //       storage
-  //         .ref("images")
-  //         .child(image.name)
-  //         .getDownloadURL()
-  //         .then(url => {
-  //           console.log(url);
-  //           this.setState({ url });
-  //         });
-  //     }
-  //   );
-  // };
+  handleUpload = () => {
+    const fd = new FormData();
+    fd.append('image', this.state.image, this.state.image.name);
+    axios.post('', fd, {
+      onUploadProgress: ProgressEvent => {
+        console.log('Upload Progress: ' + Math.round (ProgressEvent.loaded / ProgressEvent.total * 100) + '%' )
+      }
+    })
+      .then(res => {
+      console.log(res);
+    });
+   
+  };
+
   handleChangeDatePicker = date => {
-    this.setState({ selectedDate: date });
+    this.setState({ selectedDate: moment(date).format("MMM Do YYYY") });
+      console.log(date);
   };
 
   handleChangeTimePicker = time => {
-    //   this.setState({ selectedTime: time });
+    this.setState({ selectedTime: moment(time).format('h:mm:ss a')});
+    console.log(time);
   };
 
   handleSubmit = e => {
@@ -166,12 +154,12 @@ class MainForm extends Component {
     //           <img
     //             src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
     //             alt="Avatar"
-    //             class="avatar"
+    //             className="avatar"
     //           />
     //         </div>
     //       </div>
-    //       <div class="row">
-    //         <div class="col-md-6 col-md-offset-3 mx-auto">
+    //       <div className="row">
+    //         <div className="col-md-6 col-md-offset-3 mx-auto">
     //       );
     switch (step) {
       case 1:
@@ -206,6 +194,8 @@ class MainForm extends Component {
             city={city}
             zipCode={zipCode}
             largeItems={largeItems}
+            selectedDate={selectedDate}
+            selectedTime={selectedTime}
             handleChangeDatePicker={this.handleChangeDatePicker}
             handleChangeTimePicker={this.handleChangeTimePicker}
           />

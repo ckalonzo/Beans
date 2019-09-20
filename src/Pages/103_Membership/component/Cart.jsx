@@ -30,17 +30,17 @@ class Cart extends Component {
         return (
           <tr key={item.id}>
             <td>
-              <figure class="media">
-                <div class="img-wrap">
+              <figure className="media">
+                <div className="img-wrap">
                   <img
                     src={item.img}
                     alt={item.img}
                     className="img-thumbnail img-sm"
                   />
                 </div>
-                <figcaption class="media-body">
-                  <h6 class="title text-truncate">{item.title} </h6>
-                  <dl class="dlist-inline small">
+                <figcaption className="media-body">
+                  <h6 className="title text-truncate">{item.title} </h6>
+                  <dl className="dlist-inline small">
                     <dt>Description: </dt>
                     <dd>{item.desc}</dd>
                   </dl>
@@ -75,18 +75,18 @@ class Cart extends Component {
               </div>
             </td>
             <td>
-              <div class="price-wrap">
-                <var class="price">${item.price}</var>
-                <small class="text-muted">(${item.price} each)</small>
+              <div className="price-wrap">
+                <var className="price">${item.price}</var>
+                <small className="text-muted">(${item.price} each)</small>
               </div>
             </td>
-            <td class="text-right">
+            <td className="text-right">
               <a
                 href=""
                 onClick={() => {
                   this.handleRemove(item.id);
                 }}
-                class="btn btn-outline-danger btn-round"
+                className="btn btn-outline-danger btn-round"
               >
                 {" "}
                 × Remove
@@ -110,9 +110,9 @@ class Cart extends Component {
           </header>
           <h5>You have ordered:</h5>
 
-          <div class="card">
-            <table class="table table-hover shopping-cart-wrap">
-              <thead class="text-muted">
+          <div className="card">
+            <table className="table table-hover shopping-cart-wrap">
+              <thead className="text-muted">
                 <tr>
                   <th scope="col">Product</th>
                   <th scope="col" width="120">
@@ -121,7 +121,7 @@ class Cart extends Component {
                   <th scope="col" width="120">
                     Price
                   </th>
-                  <th scope="col" width="200" class="text-right">
+                  <th scope="col" width="200" className="text-right">
                     Action
                   </th>
                 </tr>

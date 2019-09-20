@@ -23,7 +23,7 @@ class ForgotPassword extends Component {
                                 </div>
                             </div>
                             <form onSubmit={this.handleSubmit}>
-                                <div class="form-group mt-4">
+                                <div className="form-group mt-4">
                                     <label className="rp-email" htmlFor="Email">Email address</label>
                                     <input
                                         type="email"

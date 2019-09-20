@@ -10,6 +10,12 @@ const JobPostReducer = (state = initState, action) => {
         case 'CREATE_PROJECT_ERROR':
             console.log("CREATE project Error", action.err);
             return state;
+        case 'REMOVE_PROJECT':
+            console.log('Removed Project')
+            return state
+        case 'REMOVE_PROJECT_ERROR':
+            console.log('Removed Project Error', action.err)
+            return state
         default:
             return state;
     }

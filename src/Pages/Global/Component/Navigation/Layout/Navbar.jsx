@@ -13,18 +13,18 @@ const Navbar = props => {
     <SignedOutLinks />
   );
   return (
-    <nav class="navbar navbar-light sticky-top navbar-expand-md bg-faded justify-content-center nav-section hover-underline-menu">
+    <nav className="navbar navbar-light sticky-top navbar-expand-md bg-faded justify-content-center nav-section hover-underline-menu">
       <div className="container">
-        <Link to="/" class="navbar-brand d-flex w-50 mr-auto" />
+        <Link to="/" className="navbar-brand d-flex w-50 mr-auto" />
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#collapsingNavbar3"
         >
-          <span class="navbar-toggler-icon" />
+          <span className="navbar-toggler-icon" />
         </button>
-        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+        <div className="navbar-collapse collapse w-100" id="collapsingNavbar3">
           {links}
         </div>
       </div>

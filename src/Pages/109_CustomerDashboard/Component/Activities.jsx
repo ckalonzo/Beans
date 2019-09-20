@@ -3,10 +3,11 @@ import "../Css/customer-dashboard.scss";
 import Notification from "./Notifications";
 import CurrentJobs from "../../109_CustomerDashboard/Component/CurrentJobs";
 import ChatModule from "../../Chat/Chat-module";
+import MainChat from "../../Chat/mainChat";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-
+import {deleteJob} from "../../Redux/Store/actions/deleteJobAction"
 class Activities extends Component {
   state = {
     activeItemClassicTabs1: "1",
@@ -17,20 +18,21 @@ class Activities extends Component {
     activeJobs: 1,
     show: true,
     value: 0,
-    projects: []
+    updatedProjects: []
   };
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
   deleteProject = id => {
-    let projects = this.state.firestore.data.projects.filter(jobs => {
-      console.log("hi");
-      return jobs.id !== id;
-    });
-    this.setState({
-      projects: projects
-    });
+    this.props.deleteJob(this.state)
+    // let updatedProjects = this.props.projects.filter(jobs => {
+    //   console.log("hi");
+    //   return jobs.id !== id;
+    // });
+    // this.setState({
+    //   updatedProjects: updatedProjects
+    // });
   };
   toggleClassicTabs1 = tab => () => {
     if (this.state.activeItemClassicTabs1 !== tab) {
@@ -41,17 +43,17 @@ class Activities extends Component {
   };
 
   render() {
-    // console.log(this, "======>");
-    // console.log(`activity${this.props}`);
+     console.log(this, "======>");
+     console.log(`activity${this.props}`);
     const { notifications } = this.props;
     const { projects, customerId } = this.props;
     return (
       <div className="col-12">
         <div className="container">
-          <ul class="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
-            <li class="nav-item">
+          <ul className="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
+            <li className="nav-item">
               <a
-                class="nav-link active"
+                className="nav-link active"
                 id="ta-JobPosts-tab-cust"
                 data-toggle="tab"
                 href="#ta-JobPosts-cust"
@@ -62,9 +64,9 @@ class Activities extends Component {
                 Current Jobs
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 id="ta-conversation-tab-cust"
                 data-toggle="tab"
                 href="#ta-conversation-cust"
@@ -75,9 +77,9 @@ class Activities extends Component {
                 Conversation
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 id="ta-Notification-tab-cust"
                 data-toggle="tab"
                 href="#ta-Notification-cust"
@@ -88,9 +90,9 @@ class Activities extends Component {
                 Notification
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 id="ta-ActiveJobs-tab-cust"
                 data-toggle="tab"
                 href="#ta-ActiveJobs-cust"
@@ -102,9 +104,9 @@ class Activities extends Component {
               </a>
             </li>
           </ul>
-          <div class="tab-content card pt-5" id="myTabContentMD">
+          <div className="tab-content card pt-5" id="myTabContentMD">
             <div
-              class="tab-pane fade show active"
+              className="tab-pane fade show active"
               id="ta-JobPosts-cust"
               role="tabpanel"
               aria-labelledby="ta-JobPosts-tab-cust"
@@ -116,15 +118,15 @@ class Activities extends Component {
               />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="ta-conversation-cust"
               role="tabpanel"
               aria-labelledby="ta-conversation-tab-cust"
             >
-              <ChatModule />
+              <MainChat />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="ta-Notification-cust"
               role="tabpanel"
               aria-labelledby="ta-Notification-tab-cust"
@@ -132,12 +134,12 @@ class Activities extends Component {
               <Notification notifications={notifications} />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="ta-ActiveJobs-cust"
               role="tabpanel"
               aria-labelledby="contact-tab-md"
             >
-              <p class="content content-tab4">Active Jobs</p>
+              <p className="content content-tab4">Active Jobs</p>
             </div>
           </div>
         </div>
@@ -153,8 +155,13 @@ const mapStateToProps = state => {
     notifications: state.firestore.ordered.notifications
   };
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteJob: (updatedProjects) => {dispatch ({type: 'DELETE_JOB', updatedProjects:updatedProjects})}
+  }
+}
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     { collection: "projects", orderBy: ["createdAt"] },
     { collection: "notifications", limit: 3 }

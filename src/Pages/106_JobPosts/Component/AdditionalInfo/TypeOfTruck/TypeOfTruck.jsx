@@ -11,7 +11,7 @@ export default class TypeOfTruck extends Component {
                     <div className="col-md-3 col-lg-3 col-sm-3">
 
                         <label>
-                            <input type="radio" defaultvalue={values.typeOfTruck} id={typeOfTruck} checked={typeOfTruck === 'RegularTruck'} value="RegularTruck" onChange={handleChange()} className="card-input-element" />
+                            <input type="radio" defaultvalue={values.typeOfTruck} id={typeOfTruck} checked={typeOfTruck === 'RegularTruck'} value="RegularTruck" onChange={handleChange("typeOfTruck")} className="card-input-element" />
                             <div className="card ">
                                 <img className="card-img-top" src="https://i.imgur.com/DulN0qt.jpg" alt="Card image cap"></img>
                                 <div className="card-body">
@@ -100,19 +100,19 @@ export default class TypeOfTruck extends Component {
 
                     <div className="col-sm">
                         <input id="pickuptruck" type="radio" name="truck" value="pickuptruck" />
-                        <label class="drinkcard-cc pickuptruck" for="pickuptruck"></label>
+                        <label className="drinkcard-cc pickuptruck" for="pickuptruck"></label>
                     </div>
                     <div className="col-sm">
                         <input id="smallTruck" type="radio" name="truck" value="smallTruck" />
-                        <label class="drinkcard-cc smallTruck" for="smallTruck"></label>
+                        <label className="drinkcard-cc smallTruck" for="smallTruck"></label>
                     </div>
                     <div className="col-sm">
                         <input id="midTruck" type="radio" name="truck" value="midTruck">
-                            <label class="drinkcard-cc midTruck" for="midTruck"></label>
+                            <label className="drinkcard-cc midTruck" for="midTruck"></label>
                     </div>
                         <div className="col-sm">
                             <input id="largeTruck" type="radio" name="truck" value="largeTruck" />
-                            <label class="drinkcard-cc largeTruck" for="largeTruck"></label>
+                            <label className="drinkcard-cc largeTruck" for="largeTruck"></label>
                         </div>
 
                     </div> */}
