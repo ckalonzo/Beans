@@ -12,7 +12,7 @@ const ProviderSignedInLinks = props => {
         <li className="nav-item">
           <NavLink
             className="nav-link chg-text moveline"
-            to="../../../../108_Browse/ProjectDashboard"
+            to="../../../../Browse/ProjectDashboard"
           >
             Browse
           </NavLink>
@@ -20,7 +20,7 @@ const ProviderSignedInLinks = props => {
         <li className="nav-item">
           <NavLink
             className="nav-link chg-text moveline"
-            to="/105_Dashboard/Dashboard"
+            to="/Dashboard/Dashboard"
           >
             Dashboard
           </NavLink>
@@ -28,7 +28,7 @@ const ProviderSignedInLinks = props => {
         {/* <li className="nav-item">
           <NavLink
             className="nav-link chg-text moveline"
-            to="/103_Membership/Membership"
+            to="/Membership/Membership"
           >
             Notifications
           </NavLink>
@@ -36,7 +36,7 @@ const ProviderSignedInLinks = props => {
         <li className="nav-item">
           <NavLink
             className="nav-link chg-text moveline"
-            to="/103_Membership/Membership"
+            to="/Membership/Membership"
           >
             Membership
           </NavLink>
@@ -44,7 +44,7 @@ const ProviderSignedInLinks = props => {
       </ul>
       <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
         <li>
-          <NavLink to="/103_Membership/component/cart">
+          <NavLink to="/Membership/component/cart">
             <ul className="navbar-right">
               <li className="ovr-chartContainer">
                 <a href="#" className="ta-shoppingChart" id="cart">

@@ -24,13 +24,13 @@ const Navbar = props => {
           >
             <a
               className="dropdown-item chg-text moveline"
-              href="/104_SignUp/SignUp"
+              href="/SignUp/SignUp"
             >
               Sign Up
             </a>
             <a
               className="dropdown-item chg-text moveline"
-              href="/101_CustomerLogin/CustomerLogin"
+              href="/CustomerLogin/CustomerLogin"
             >
               LogIn
             </a>
@@ -39,7 +39,7 @@ const Navbar = props => {
         <li className="nav-item">
           <a
             className="nav-link chg-text moveline"
-            href="/103_Membership/Membership"
+            href="/Membership/Membership"
           >
             Membership
           </a>
@@ -61,20 +61,20 @@ const Navbar = props => {
           >
             <a
               className="dropdown-item chg-text moveline"
-              href="/104_SignUp/Contractor-Create-Account"
+              href="/SignUp/Contractor-Create-Account"
             >
               Sign Up
             </a>
             <a
               className="dropdown-item chg-text moveline"
-              href="/102_ContractorLogin/ContractorLogin"
+              href="/ContractorLogin/ContractorLogin"
             >
               LogIn
             </a>
           </div>
         </li>
         <li>
-          <Link to="/103_Membership/component/cart">
+          <Link to="/Membership/component/cart">
             <ul className="navbar-right ta-list">
               <li>
                 <a href="#" className="ta-shoppingChart" id="cart">

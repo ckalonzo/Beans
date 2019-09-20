@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import NoImagePic from "../../108_Browse/img/no-image.png";
+import NoImagePic from "../../Browse/img/no-image.png";
 import "../scss/NoImage.scss";
 const NoImage = props => {
   return (
