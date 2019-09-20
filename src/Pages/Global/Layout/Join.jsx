@@ -29,7 +29,7 @@ export default class Join extends Component {
                 <p>
                   <a
                     className="btn btn-primary btn-lg spt-btn"
-                    href="/106_JobPosts/PostJob"
+                    href="/JobPosts/PostJob"
                     role="button"
                   >
                     Start Posting Today!

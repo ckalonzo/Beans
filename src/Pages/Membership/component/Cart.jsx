@@ -52,7 +52,7 @@ class Cart extends Component {
                 <b>Quantity: {item.quantity}</b>
               </p>
               <div className="add-remove">
-                <Link to="/103_Membership/component/cart">
+                <Link to="/Membership/component/cart">
                   <i
                     className="material-icons"
                     onClick={() => {
@@ -62,7 +62,7 @@ class Cart extends Component {
                     arrow_drop_up
                   </i>
                 </Link>
-                <Link to="/103_Membership/component/cart">
+                <Link to="/Membership/component/cart">
                   <i
                     className="material-icons"
                     onClick={() => {
@@ -103,7 +103,7 @@ class Cart extends Component {
         <div className="cart">
           <header className="header">
             <div className="header-contents">
-              <Link to="/103_Membership/Membership" className="back-button">
+              <Link to="/Membership/Membership" className="back-button">
                 &lt; Back to shop
               </Link>
             </div>

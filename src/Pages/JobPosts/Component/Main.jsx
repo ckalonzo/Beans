@@ -109,7 +109,7 @@ class MainForm extends Component {
     console.log(this.props);
     const { step } = this.state;
     const { auth } = this.props;
-    if (!auth.uid) return <Redirect to="/101_CustomerLogin/CustomerLogin" />;
+    if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
     const {
       service,
       email,

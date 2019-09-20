@@ -80,7 +80,7 @@ class CustomerForm extends Component {
                                 Remember Me
                               </label>
                               <a
-                                href="/101_CustomerLogin/Component/ForgotPassword"
+                                href="/CustomerLogin/Component/ForgotPassword"
                                 className="pt-3 pb-3 float-right"
                               >
                                 Forgot Password?

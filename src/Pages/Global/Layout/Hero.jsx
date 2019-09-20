@@ -14,7 +14,7 @@ export default class Hero extends Component {
                                     <h1 className="font-weight-bold hero-title">Trucked Away</h1>
                                     <div className=" font-weight-bold hero-copy">Your # 1 site for Home Tasks.</div>
                                     <div className=" font-weight-bold hero-copy mb-5">Post your job with your Budget Today.</div>
-                                    <p><a className="btn btn-primary btn-lg pj-btn" href="/106_JobPosts/PostJob" role="button">Post A Job!</a></p>
+                                    <p><a className="btn btn-primary btn-lg pj-btn" href="/JobPosts/PostJob" role="button">Post A Job!</a></p>
                                 </div>
                             </div>
 

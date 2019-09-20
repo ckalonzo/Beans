@@ -16,19 +16,19 @@ export default class CustomerSignedInLinks extends Component {
                                 <li className="nav-item dropdown">
                                     <a className="nav-link moveline dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Customer</a>
                                     <div className="dropdown-menu" aria-labelledby="dropdown08">
-                                        <NavLink className="dropdown-item moveline" to="/104_SignUp/SignUp">Sign Up</NavLink>
-                                        <NavLink className="dropdown-item moveline" to="/101_CustomerLogin/CustomerLogin">LogIn</NavLink>
+                                        <NavLink className="dropdown-item moveline" to="/SignUp/SignUp">Sign Up</NavLink>
+                                        <NavLink className="dropdown-item moveline" to="/CustomerLogin/CustomerLogin">LogIn</NavLink>
 
                                     </div>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link moveline" to="/103_Membership/Membership">Membership</NavLink >
+                                    <NavLink className="nav-link moveline" to="/Membership/Membership">Membership</NavLink >
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link moveline dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contractor</a>
                                     <div className="dropdown-menu" aria-labelledby="dropdown08">
                                         <NavLink className="dropdown-item moveline" href="/ContractorSignUp">Sign Up</NavLink >
-                                        <NavLink className="dropdown-item moveline" href="/102_ContractorLogin/ContractorLogin">LogIn</NavLink >
+                                        <NavLink className="dropdown-item moveline" href="/ContractorLogin/ContractorLogin">LogIn</NavLink >
                                     </div>
                                 </li>
                             </ul>
