@@ -26,6 +26,10 @@ import Profile from "./Pages/Profile/Layout/Profile";
 import Thankyou from "./Pages/SignUp/component/Thankyou";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+  }
   render() {
     return (
       <Router>

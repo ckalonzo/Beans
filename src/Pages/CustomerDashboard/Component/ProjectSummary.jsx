@@ -18,6 +18,7 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
         </aside>
         <Link className="col-12 col-sm-6" to={"/jobs/" + jobs.id}>
           <div className="text-wrap">
+            <h4 className="title"> {jobs.id} </h4>
             <h4 className="title"> {jobs.service} </h4>
             <p className="text-secondary">
               <small className="text-muted">
@@ -51,8 +52,8 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
             <p>
               <button
                 className=""
-                onClick={() => {
-                  deleteProject(jobs.id);
+                onClick={(event) => {
+                  deleteProject(event);
                 }}
               >
                 Delete Job

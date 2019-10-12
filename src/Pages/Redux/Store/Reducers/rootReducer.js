@@ -4,6 +4,7 @@ import cartReducer from "./cartReducer";
 import CounterReducer from "./counterReducer";
 import ProfileReducer from "./profileReducer"
 import SubmitBidReducer from "./SubmitBidReducer";
+import deleteJobReducer from "./deleteJobReducer";
 import monthlySubscriptionReducer from "./monthlyMembershipReducer";
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   items: cartReducer,
   cart: cartReducer,
   subscription: monthlySubscriptionReducer,
-  contractorProfile: ProfileReducer 
+  contractorProfile: ProfileReducer,
+  deleteJob: deleteJobReducer
 });
 
 export default rootReducer;

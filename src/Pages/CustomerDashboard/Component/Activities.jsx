@@ -18,21 +18,16 @@ class Activities extends Component {
     activeJobs: 1,
     show: true,
     value: 0,
-    updatedProjects: []
+    deleteProject: []
   };
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
   deleteProject = id => {
-    this.props.deleteJob(this.state)
-    // let updatedProjects = this.props.projects.filter(jobs => {
-    //   console.log("hi");
-    //   return jobs.id !== id;
-    // });
-    // this.setState({
-    //   updatedProjects: updatedProjects
-    // });
+
+    this.props.deleteJob(id);
+    console.log(id)
   };
   toggleClassicTabs1 = tab => () => {
     if (this.state.activeItemClassicTabs1 !== tab) {
@@ -112,6 +107,7 @@ class Activities extends Component {
               aria-labelledby="ta-JobPosts-tab-cust"
             >
               <CurrentJobs
+               
                 customerId={customerId}
                 deleteProject={this.deleteProject}
                 projects={projects}
@@ -157,7 +153,7 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteJob: (updatedProjects) => {dispatch ({type: 'DELETE_JOB', updatedProjects:updatedProjects})}
+    deleteJob: deleteProjects => dispatch(deleteJob(deleteProjects)) 
   }
 }
 export default compose(

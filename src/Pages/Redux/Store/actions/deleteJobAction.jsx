@@ -1,10 +1,10 @@
-export const deleteJob = (updatedProjects) => {
+export const deleteJob = (deleteProjects) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firestore = getFirestore();
-        firestore.data.collection('projects').delete({
-            ...updatedProjects
-        }).then(() => {
-            dispatch({ type: 'DELETE_JOB', updatedProjects: updatedProjects });
+        firestore.collection('projects').doc("id").delete()
+            
+            .then(() => {
+            dispatch({ type: 'DELETE_JOB', deleteProjects: deleteProjects });
         }).catch((err) => {
             dispatch({ type: 'DELETE_JOB_ERROR', err });
         })

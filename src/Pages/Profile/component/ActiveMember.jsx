@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class ActiveMember1 extends Component {
+export default class ActiveMember extends Component {
   render() {
     return (
       <React.Fragment>
@@ -9,7 +9,7 @@ export default class ActiveMember1 extends Component {
             <h6 className="font-weight-bold">Years</h6>
           </div>
           <div className="col-6">
-            <h6 className="font-weight-bold">2</h6>
+            {/* <h6 className="font-weight-bold">{contractorProfile.years}</h6> */}
           </div>
         </div>
       </React.Fragment>

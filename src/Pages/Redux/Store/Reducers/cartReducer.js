@@ -2,7 +2,8 @@ import {
   ADD_TO_CART,
   REMOVE_ITEM,
   SUB_QUANTITY,
-  ADD_QUANTITY
+  ADD_QUANTITY,
+  CARTTOTALITEMS
 } from "../actions/actionTypes/cart-actionTypes";
 
 const initState = {
@@ -16,7 +17,8 @@ const initState = {
     { id: 6, title: "20 Bids", desc: "20 Bids from TruckAway", price: 17.99 }
   ],
   addedItems: [],
-  total: 0
+  total: 0,
+  counter: 2
 };
 const cartReducer = (state = initState, action) => {
   //INSIDE Single-bid-table COMPONENT
@@ -27,19 +29,23 @@ const cartReducer = (state = initState, action) => {
 
     if (existed_item) {
       addedItem.quantity += 1;
+      let newCounter = state.counter + 1;
       return {
         ...state,
-        total: state.total + addedItem.price
+        total: state.total + addedItem.price,
+        counter: newCounter + 1
       };
     } else {
       addedItem.quantity = 1;
+      let newCounter = state.counter + 1;
       //calculating the total
       let newTotal = state.total + addedItem.price;
 
       return {
         ...state,
         addedItems: [...state.addedItems, addedItem],
-        total: newTotal
+        total: newTotal,
+        counter: newCounter
       };
     }
   }
@@ -56,6 +62,7 @@ const cartReducer = (state = initState, action) => {
       total: newTotal
     };
   }
+
   //INSIDE CART COMPONENT
   if (action.type === ADD_QUANTITY) {
     let addedItem = state.items.find(item => item.id === action.id);

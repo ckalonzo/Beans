@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import IntroSignUp from "./component/IntroSignUp";
+import { contractorSignUp } from "../Redux/Store/actions/authActions";
+import { Redirect } from "react-router-dom";
 import SignUpbasicinfo from "./component/signUp-basicinfo";
 import SocialNumberAknowledgement from "./component/SocialNumberAknowledgement";
-export default class contractorSignUp extends Component {
+ class ContractorSignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -165,8 +167,8 @@ export default class contractorSignUp extends Component {
   render() {
     console.log(this.props);
     const { step } = this.state;
-    // const { auth } = this.props;
-    //if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+     const { auth } = this.props;
+    if (auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
     const {
       service,
       email,
@@ -300,3 +302,19 @@ export default class contractorSignUp extends Component {
   //     CreateProject: project => dispatch(CreateProject(project))
   //   };
 }
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth,
+    authError: state.auth.authError
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    contractorSignUp: creds => dispatch(contractorSignUp(creds))
+  };
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(contractorSignUp);

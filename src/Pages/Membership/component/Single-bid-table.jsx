@@ -4,9 +4,10 @@ import { addToCart } from "../../Redux/Store/actions/cartActions";
 import "../Css/single-pricing-cards.scss";
 
 class SingleBid extends Component {
-  handleClick = id => {
-    this.props.addToCart(id);
+  handleClick = (id, counter) => {
+    this.props.addToCart(id, counter);
     console.log(id);
+    console.log("counter" + counter);
   };
 
   render() {
@@ -17,7 +18,7 @@ class SingleBid extends Component {
             <a
               href="#"
               onClick={() => {
-                this.handleClick(item.id);
+                this.handleClick(item.id, this.props.counter);
               }}
             >
               <div className="card-body text-center">
@@ -53,13 +54,14 @@ class SingleBid extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    items: state.items
+    items: state.items,
+    counter: state.counter.counter
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    addToCart: id => {
-      dispatch(addToCart(id));
+    addToCart: (id, counter) => {
+      dispatch(addToCart(id, counter));
     }
   };
 };

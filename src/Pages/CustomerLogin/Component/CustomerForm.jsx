@@ -115,7 +115,7 @@ class CustomerForm extends Component {
                   </div>
                   <div className="mt-xl-5 mt-3 dontHaveAnAccount">
                     Dont have an Account?{" "}
-                    <a className="signUpLink" onClick={this.signup}>
+                    <a className="signUpLink" onClick={this.signup} href={"/SignUp/SignUp"}>
                       Sign Up Here
                     </a>
                   </div>

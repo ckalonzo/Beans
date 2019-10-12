@@ -48,7 +48,10 @@ const ProviderSignedInLinks = props => {
             <ul className="navbar-right">
               <li className="ovr-chartContainer">
                 <a href="#" className="ta-shoppingChart" id="cart">
-                  <span className="fa-stack fa-1x has-badge" data-count="5">
+                  <span
+                    className="fa-stack fa-1x has-badge"
+                    data-count={props.counter}
+                  >
                     {/* <i className="fa fa-circle fa-stack-2x" /> */}
                     <i className="fas fa-shopping-cart fa-stack-2x " />
                   </span>
@@ -68,8 +71,14 @@ const ProviderSignedInLinks = props => {
           >
             {props.profile.initials}
           </NavLink>
-          <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a className="dropdown-item nav-link" href="/Profile/Layout/Profile">
+          <div
+            className="dropdown-menu"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <a
+              className="dropdown-item nav-link"
+              href="/Profile/Layout/Profile"
+            >
               Profile
             </a>
             <a
@@ -89,16 +98,23 @@ const ProviderSignedInLinks = props => {
   );
 };
 
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    counter: state.cart.counter
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     signOut: () => dispatch(signOut()),
-    addToCart: id => {
-      dispatch(addToCart(id));
+    addToCart: (id, counter) => {
+      dispatch(addToCart(id, counter));
     }
   };
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(ProviderSignedInLinks);
