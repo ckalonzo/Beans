@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from "./node_modules/react";
 import "../Css/customer-dashboard.scss";
 import Notification from "./Notifications";
 import CurrentJobs from "./CurrentJobs";
+import { Link } from "./node_modules/react-router-dom";
 import ChatModule from "../../Chat/Chat-module";
 import MainChat from "../../Chat/mainChat";
-import { connect } from "react-redux";
-import { firestoreConnect } from "react-redux-firebase";
-import { compose } from "redux";
-import {deleteJob} from "../../Redux/Store/actions/deleteJobAction"
+import { connect } from "./node_modules/react-redux";
+import { firestoreConnect } from "./node_modules/react-redux-firebase";
+import { compose } from "./node_modules/redux";
+import { deleteJob } from "../../Redux/Store/actions/deleteJobAction";
 class Activities extends Component {
   state = {
     activeItemClassicTabs1: "1",
@@ -25,9 +26,8 @@ class Activities extends Component {
     this.setState({ value });
   };
   deleteProject = id => {
-
     this.props.deleteJob(id);
-    console.log(id)
+    console.log(id);
   };
   toggleClassicTabs1 = tab => () => {
     if (this.state.activeItemClassicTabs1 !== tab) {
@@ -38,8 +38,8 @@ class Activities extends Component {
   };
 
   render() {
-     console.log(this, "======>");
-     console.log(`activity${this.props}`);
+    console.log(this, "======>");
+    console.log(`activity${this.props}`);
     const { notifications } = this.props;
     const { projects, customerId } = this.props;
     return (
@@ -47,56 +47,56 @@ class Activities extends Component {
         <div className="container">
           <ul className="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link active"
                 id="ta-JobPosts-tab-cust"
                 data-toggle="tab"
-                href="#ta-JobPosts-cust"
+                to="#ta-JobPosts-cust"
                 role="tab"
                 aria-controls="home-md"
                 aria-selected="true"
               >
                 Current Jobs
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
                 id="ta-conversation-tab-cust"
                 data-toggle="tab"
-                href="#ta-conversation-cust"
+                to="#ta-conversation-cust"
                 role="tab"
                 aria-controls="ta-conversation-cust"
                 aria-selected="false"
               >
                 Conversation
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
                 id="ta-Notification-tab-cust"
                 data-toggle="tab"
-                href="#ta-Notification-cust"
+                to="#ta-Notification-cust"
                 role="tab"
                 aria-controls="ta-Notification-tab-cust"
                 aria-selected="false"
               >
                 Notification
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
                 id="ta-ActiveJobs-tab-cust"
                 data-toggle="tab"
-                href="#ta-ActiveJobs-cust"
+                to="#ta-ActiveJobs-cust"
                 role="tab"
                 aria-controls="ta-ActiveJobs-cust"
                 aria-selected="false"
               >
                 Past Jobs
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="tab-content card pt-5" id="myTabContentMD">
@@ -107,7 +107,6 @@ class Activities extends Component {
               aria-labelledby="ta-JobPosts-tab-cust"
             >
               <CurrentJobs
-               
                 customerId={customerId}
                 deleteProject={this.deleteProject}
                 projects={projects}
@@ -151,13 +150,16 @@ const mapStateToProps = state => {
     notifications: state.firestore.ordered.notifications
   };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    deleteJob: deleteProjects => dispatch(deleteJob(deleteProjects)) 
-  }
-}
+    deleteJob: deleteProjects => dispatch(deleteJob(deleteProjects))
+  };
+};
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ),
   firestoreConnect([
     { collection: "projects", orderBy: ["createdAt"] },
     { collection: "notifications", limit: 3 }

@@ -1,6 +1,6 @@
-import React from "react";
+import React from "./node_modules/react";
 import ProjectSummary from "./ProjectSummary";
-import { Link } from "react-router-dom";
+import { Link } from "./node_modules/react-router-dom";
 import Divider from "../../Global/Layout/divider";
 import "../Css/Project.scss";
 
@@ -12,7 +12,7 @@ const ProjectList = ({ projects, deleteProject }) => {
         projects.map(jobs => {
           return (
             <React.Fragment>
-               <ProjectSummary
+              <ProjectSummary
                 deleteProject={deleteProject}
                 jobs={jobs}
                 key={jobs.id}
@@ -20,8 +20,6 @@ const ProjectList = ({ projects, deleteProject }) => {
 
               <Divider className={"col-8 pt-4"} />
             </React.Fragment>
-             
-        
           );
         })}
     </div>

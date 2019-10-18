@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from "./node_modules/react";
+import { Link } from "./node_modules/react-router-dom";
 import Picture from "../../Profile/component/picture";
-import "../Css/carousel.scss"
+import "../Css/carousel.scss";
 export default class MultiItemcarousel extends Component {
   render() {
     return (
@@ -13,7 +14,7 @@ export default class MultiItemcarousel extends Component {
         >
           <div className="carousel-inner d-flex justify-content-between">
             <div className="carousel-item active">
-            <div className="card-deck">
+              <div className="card-deck">
                 <div className="card disableClick ">
                   <div className="row">
                     <div className="col-5">
@@ -58,7 +59,11 @@ export default class MultiItemcarousel extends Component {
                         </div>
                       </div>
                     </div>
-                    <div className="button-container" role="group" aria-label="...">
+                    <div
+                      className="button-container"
+                      role="group"
+                      aria-label="..."
+                    >
                       <button type="button" className="btn btn-primary mr-3">
                         Accept
                       </button>
@@ -110,7 +115,11 @@ export default class MultiItemcarousel extends Component {
                         </div>
                       </div>
                     </div>
-                    <div className="button-container" role="group" aria-label="...">
+                    <div
+                      className="button-container"
+                      role="group"
+                      aria-label="..."
+                    >
                       <button type="button" className="btn btn-primary mr-3">
                         Accept
                       </button>
@@ -162,7 +171,11 @@ export default class MultiItemcarousel extends Component {
                         </div>
                       </div>
                     </div>
-                    <div className="button-container" role="group" aria-label="...">
+                    <div
+                      className="button-container"
+                      role="group"
+                      aria-label="..."
+                    >
                       <button type="button" className="btn btn-primary mr-3">
                         Accept
                       </button>
@@ -186,7 +199,9 @@ export default class MultiItemcarousel extends Component {
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">This</p>
                     <p className="card-text">
-                      <small className="text-muted">Last updated 3 mins ago</small>
+                      <small className="text-muted">
+                        Last updated 3 mins ago
+                      </small>
                     </p>
                   </div>
                 </div>
@@ -203,7 +218,9 @@ export default class MultiItemcarousel extends Component {
                       to additional content.
                     </p>
                     <p className="card-text">
-                      <small className="text-muted">Last updated 3 mins ago</small>
+                      <small className="text-muted">
+                        Last updated 3 mins ago
+                      </small>
                     </p>
                   </div>
                 </div>
@@ -222,7 +239,9 @@ export default class MultiItemcarousel extends Component {
                       action.
                     </p>
                     <p className="card-text">
-                      <small className="text-muted">Last updated 3 mins ago</small>
+                      <small className="text-muted">
+                        Last updated 3 mins ago
+                      </small>
                     </p>
                   </div>
                 </div>
@@ -244,7 +263,9 @@ export default class MultiItemcarousel extends Component {
                       little bit longer.
                     </p>
                     <p className="card-text">
-                      <small className="text-muted">Last updated 3 mins ago</small>
+                      <small className="text-muted">
+                        Last updated 3 mins ago
+                      </small>
                     </p>
                   </div>
                 </div>
@@ -261,7 +282,9 @@ export default class MultiItemcarousel extends Component {
                       to additional content.
                     </p>
                     <p className="card-text">
-                      <small className="text-muted">Last updated 3 mins ago</small>
+                      <small className="text-muted">
+                        Last updated 3 mins ago
+                      </small>
                     </p>
                   </div>
                 </div>
@@ -280,38 +303,40 @@ export default class MultiItemcarousel extends Component {
                       action.
                     </p>
                     <p className="card-text">
-                      <small className="text-muted">Last updated 3 mins ago</small>
+                      <small className="text-muted">
+                        Last updated 3 mins ago
+                      </small>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {/* <a
+          {/* <Link
             className="carousel-control-prev"
-            href="#carouselExampleFade"
+            to="#carouselExampleFade"
             role="button"
             data-slide="prev"
           >
             <span className="fas fa-chevron-left" aria-hidden="true" />
             <span className="sr-only">Previous</span>
-                      </a> */}
+                      </Link> */}
           <div className="row mt-4">
             <div className="mx-auto">
-              <a
+              <Link
                 className="btn btn-primary mr-5"
-                href="#carouselExampleFade"
+                to="#carouselExampleFade"
                 data-slide="prev"
               >
                 <i className="fas fa-chevron-left" />
-              </a>
-              <a
+              </Link>
+              <Link
                 className="btn btn-primary"
-                href="#carouselExampleFade"
+                to="#carouselExampleFade"
                 data-slide="next"
               >
                 <i className="fas fa-chevron-right" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ProjectList from "../../CustomerDashboard/Component/ProjectList";
+import React, { Component } from "./node_modules/react";
+import ProjectList from "./ProjectList";
 
 export default class CurrentJobs extends Component {
   render() {
