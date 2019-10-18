@@ -6,6 +6,7 @@ import Currentbids from "../../Dashboard/Component/currentbids";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import { Link } from "react-router-dom";
 
 class Activities extends Component {
   state = {
@@ -43,56 +44,56 @@ class Activities extends Component {
         <div className="container">
           <ul className="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link active"
                 id="ta-CurrentBids-tab-cust"
                 data-toggle="tab"
-                href="#ta-CurrentBids-cust"
+                to="#ta-CurrentBids-cust"
                 role="tab"
                 aria-controls="home-md"
                 aria-selected="true"
               >
                 Current Bids
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
                 id="ta-conversation-tab-cust"
                 data-toggle="tab"
-                href="#ta-conversation-cust"
+                to="#ta-conversation-cust"
                 role="tab"
                 aria-controls="ta-conversation-cust"
                 aria-selected="false"
               >
                 Conversation
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
                 id="ta-Notification-tab-cust"
                 data-toggle="tab"
-                href="#ta-Notification-cust"
+                to="#ta-Notification-cust"
                 role="tab"
                 aria-controls="ta-Notification-tab-cust"
                 aria-selected="false"
               >
                 Notification
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
                 id="ta-ActiveJobs-tab-cust"
                 data-toggle="tab"
-                href="#ta-ActiveJobs-cust"
+                to="#ta-ActiveJobs-cust"
                 role="tab"
                 aria-controls="ta-ActiveJobs-cust"
                 aria-selected="false"
               >
                 Active Jobs
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="tab-content card pt-5" id="myTabContentMD">

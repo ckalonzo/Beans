@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "../Css/customer-dashboard.scss";
+import { Link } from "react-router-dom";
 
 class Tab extends Component {
   handleChange = (event, value) => {
@@ -24,56 +25,56 @@ class Tab extends Component {
         <div className="container">
           <ul className="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link active"
                 id="ta-JobPosts-tab-cust"
                 data-toggle="tab"
-                href="#ta-JobPosts-cust"
+                to="#ta-JobPosts-cust"
                 role="tab"
                 aria-controls="home-md"
                 aria-selected="true"
               >
                 My Jobs
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
                 id="ta-conversation-tab-cust"
                 data-toggle="tab"
-                href="#ta-conversation-cust"
+                to="#ta-conversation-cust"
                 role="tab"
                 aria-controls="ta-conversation-cust"
                 aria-selected="false"
               >
                 Conversation
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
                 id="ta-Notification-tab-cust"
                 data-toggle="tab"
-                href="#ta-Notification-cust"
+                to="#ta-Notification-cust"
                 role="tab"
                 aria-controls="ta-Notification-tab-cust"
                 aria-selected="false"
               >
                 Notification
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
                 id="ta-ActiveJobs-tab-cust"
                 data-toggle="tab"
-                href="#ta-ActiveJobs-cust"
+                to="#ta-ActiveJobs-cust"
                 role="tab"
                 aria-controls="ta-ActiveJobs-cust"
                 aria-selected="false"
               >
                 Past Jobs
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="tab-content card pt-5" id="myTabContentMD">

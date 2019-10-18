@@ -1,10 +1,10 @@
 import NoImage from "../img/no-image.png";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import LinesEllipsis from 'react-lines-ellipsis' //cap maxLine of characters
+import LinesEllipsis from "react-lines-ellipsis"; //cap maxLine of characters
 export default class ProjectSummary extends Component {
   render() {
-    const { jobs, handleBidNow, bidNow, handleChange} = this.props;
+    const { jobs, handleBidNow, bidNow, handleChange } = this.props;
     return (
       <article className="itemlist mt-4">
         <div className="row row-sm">
@@ -28,12 +28,11 @@ export default class ProjectSummary extends Component {
               <p>
                 <LinesEllipsis
                   text={jobs.specialInstructions}
-                  maxLine='2'
-                  ellipsis='...'
+                  maxLine="2"
+                  ellipsis="..."
                   trimRight
-                  basedOn='letters'
+                  basedOn="letters"
                 />
-               
               </p>
               <p className="rating-wrap my-0 text-muted">
                 <span className="label-rating">
@@ -68,10 +67,10 @@ export default class ProjectSummary extends Component {
                   {" "}
                   Bid now{" "}
                 </button>
-                <a href={"/jobs/" + jobs.id} className="btn  btn-warning">
+                <Link to={"/jobs/" + jobs.id} className="btn  btn-warning">
                   {" "}
                   Details{" "}
-                </a>{" "}
+                </Link>{" "}
               </p>
             </div>
           </aside>

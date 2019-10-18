@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../css/Footer.css";
+import { Link } from "react-router-dom";
 
 export default class Footer extends Component {
   render() {
@@ -10,37 +11,37 @@ export default class Footer extends Component {
             <div className="row text-center d-flex justify-content-center pt-5 mb-3">
               <div className="col-md-2 mb-3">
                 <h6 className="text-uppercase font-weight-bold">
-                  <a className="ov-color" href="/Membership">
+                  <Link className="ov-color" to="/Membership">
                     Membership
-                  </a>
+                  </Link>
                 </h6>
               </div>
               <div className="col-md-2 mb-3">
                 <h6 className="text-uppercase font-weight-bold">
-                  <a className="ov-color" href="/aboutus">
+                  <Link className="ov-color" to="/aboutus">
                     About Us
-                  </a>
+                  </Link>
                 </h6>
               </div>
               <div className="col-md-2 mb-3">
                 <h6 className="text-uppercase font-weight-bold">
-                  <a className="ov-color" href="/term-of-use">
+                  <Link className="ov-color" to="/term-of-use">
                     Terms of Use
-                  </a>
+                  </Link>
                 </h6>
               </div>
               <div className="col-md-2 mb-3">
                 <h6 className="text-uppercase font-weight-bold">
-                  <a className="ov-color" href="/Contractor">
+                  <Link className="ov-color" to="/Contractor">
                     Become a Contractor
-                  </a>
+                  </Link>
                 </h6>
               </div>
               <div className="col-md-2 mb-3">
                 <h6 className="text-uppercase font-weight-bold">
-                  <a className="ov-color" href="/Contact">
+                  <Link className="ov-color" to="/Contact">
                     Contact
-                  </a>
+                  </Link>
                 </h6>
               </div>
             </div>

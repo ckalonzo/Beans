@@ -8,84 +8,70 @@ class Navbar extends Component {
       <Fragment>
         <ul className="navbar-nav w-100 justify-content-center nav-section">
           <li className="nav-item dropdown">
-            <a
+            <Link
               className="nav-link chg-text moveline dropdown-toggle"
-              href="#"
               id="dropdown08"
+              to="#"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
               Customer
-            </a>
+            </Link>
             <div
               className="dropdown-menu rmv-border"
               aria-labelledby="dropdown08"
             >
-              <a
+              <Link
                 className="dropdown-item chg-text moveline"
-                href="/SignUp/SignUp"
+                to="/SignUp/SignUp"
               >
                 Sign Up
-              </a>
-              <a
+              </Link>
+              <Link
                 className="dropdown-item chg-text moveline"
-                href="/CustomerLogin/CustomerLogin"
+                to="/CustomerLogin/CustomerLogin"
               >
                 LogIn
-              </a>
+              </Link>
             </div>
           </li>
           <li className="nav-item">
-            <a
+            <Link
               className="nav-link chg-text moveline"
-              href="/Membership/Membership"
+              to="/Membership/Membership"
             >
               Membership
-            </a>
+            </Link>
           </li>
           <li className="nav-item dropdown">
-            <a
+            <Link
               className="nav-link  chg-text moveline dropdown-toggle"
-              href="#"
+              to="#"
               id="dropdown09"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
               Contractor
-            </a>
+            </Link>
             <div
               className="dropdown-menu rmv-border"
               aria-labelledby="dropdown09"
             >
-              <a
+              <Link
                 className="dropdown-item chg-text moveline"
-                href="/SignUp/Contractor-Create-Account"
+                to="/SignUp/Contractor-Create-Account"
               >
                 Sign Up
-              </a>
-              <a
+              </Link>
+              <Link
                 className="dropdown-item chg-text moveline"
-                href="/ContractorLogin/ContractorLogin"
+                to="/ContractorLogin/ContractorLogin"
               >
                 LogIn
-              </a>
+              </Link>
             </div>
-          </li>
-          <li>
-            <Link to="/Membership/component/cart">
-              <ul className="navbar-right ta-list">
-                <li>
-                  <a href="#" className="ta-shoppingChart" id="cart">
-                    <span className="fa-stack fa-1x has-badge" data-count="5">
-                      {/* <i className="fa fa-circle fa-stack-2x" /> */}
-                      <i className="fas fa-shopping-cart fa-stack-2x " />
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </Link>
           </li>
         </ul>
       </Fragment>

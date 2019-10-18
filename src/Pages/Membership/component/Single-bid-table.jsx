@@ -2,12 +2,17 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../../Redux/Store/actions/cartActions";
 import "../Css/single-pricing-cards.scss";
+import { Link } from "react-router-dom";
 
 class SingleBid extends Component {
-  handleClick = (id, counter) => {
-    this.props.addToCart(id, counter);
-    console.log(id);
-    console.log("counter" + counter);
+  handleClick = (id, counter, isAuth) => {
+    if (isAuth) {
+      return {};
+    } else {
+      this.props.addToCart(id, counter);
+      console.log(id);
+      console.log("counter" + counter);
+    }
   };
 
   render() {
@@ -15,8 +20,8 @@ class SingleBid extends Component {
       return (
         <div className="col-md-4 mb-3 " key={item.id}>
           <div className="card-width colorch-btn" id="hover4">
-            <a
-              href="#"
+            <Link
+              to="#"
               onClick={() => {
                 this.handleClick(item.id, this.props.counter);
               }}
@@ -31,7 +36,7 @@ class SingleBid extends Component {
                   Buy Now
                 </button>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       );

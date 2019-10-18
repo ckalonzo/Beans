@@ -13,12 +13,7 @@ export const addToCart = (id, counter) => {
     counter
   };
 };
-// updateCartItem
-const updateCartItem = (id, counter) => ({
-  type: "UPDATE_CART_ITEM",
-  id,
-  counter
-});
+
 //remove item action
 export const removeItem = (id, counter) => {
   return {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Success extends Component {
   continue = e => {
@@ -21,11 +22,11 @@ class Success extends Component {
 
           <div className="row">
             <div className="mx-auto">
-              <a href="/">
+              <Link to="/">
                 <button type="button" className="btn btn-primary">
                   Dashboard
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

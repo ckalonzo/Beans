@@ -12,6 +12,7 @@ import OutlinedTextFields from "../component/multiline-Input";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase"
 import { createProfile } from '../../Redux/Store/actions/profileAuctions'
+import { Link } from "react-router-dom";
 import {compose} from redux;
 class UpdateProfile extends Component {
     handleChange = (e) => {
@@ -67,7 +68,7 @@ class UpdateProfile extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <a role="button" className="primary-btn" onSubmit={this.handleSubmit}></a>
+                                        <Link role="button" className="primary-btn" onSubmit={this.handleSubmit}></Link>
                                     </div>
                                 </div>
                                 </form>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../Css/customerform.scss";
 import { connect } from "react-redux";
 import { signIn } from "../../Redux/Store/actions/authActions";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class CustomerForm extends Component {
   state = {
@@ -22,8 +22,7 @@ class CustomerForm extends Component {
 
   render() {
     const { authError, auth } = this.props;
-    if (auth.uid)
-      return <Redirect to="/CustomerDashboard/CustomerDashboard" />;
+    if (auth.uid) return <Redirect to="/CustomerDashboard/CustomerDashboard" />;
     return (
       <section className="customer-img login-form">
         <div className="container">
@@ -79,12 +78,12 @@ class CustomerForm extends Component {
                               >
                                 Remember Me
                               </label>
-                              <a
-                                href="/CustomerLogin/Component/ForgotPassword"
+                              <Link
+                                to="/CustomerLogin/Component/ForgotPassword"
                                 className="pt-3 pb-3 float-right"
                               >
                                 Forgot Password?
-                              </a>
+                              </Link>
                             </div>
                             <button
                               type="submit"
@@ -115,9 +114,13 @@ class CustomerForm extends Component {
                   </div>
                   <div className="mt-xl-5 mt-3 dontHaveAnAccount">
                     Dont have an Account?{" "}
-                    <a className="signUpLink" onClick={this.signup} href={"/SignUp/SignUp"}>
+                    <Link
+                      className="signUpLink"
+                      onClick={this.signup}
+                      to={"/SignUp/SignUp"}
+                    >
                       Sign Up Here
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

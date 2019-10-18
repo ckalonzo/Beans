@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./css/Join.scss";
+import { Link } from "react-router-dom";
 
 export default class Join extends Component {
   render() {
@@ -27,13 +28,13 @@ export default class Join extends Component {
               </div>
               <div className="mx-auto start-posting-today-button">
                 <p>
-                  <a
+                  <Link
                     className="btn btn-primary btn-lg spt-btn"
-                    href="/JobPosts/PostJob"
+                    to="/JobPosts/PostJob"
                     role="button"
                   >
                     Start Posting Today!
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>

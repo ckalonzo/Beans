@@ -7,7 +7,6 @@ import {
 } from "../actions/actionTypes/cart-actionTypes";
 
 const initState = {
-  cart: [],
   items: [
     { id: 1, title: "1 Bids", desc: "1 Bid from TruckAway", price: 0.99 },
     { id: 2, title: "3 Bids", desc: "3 Bids from TruckAway", price: 2.99 },
@@ -18,7 +17,7 @@ const initState = {
   ],
   addedItems: [],
   total: 0,
-  counter: 2
+  counter: 0
 };
 const cartReducer = (state = initState, action) => {
   //INSIDE Single-bid-table COMPONENT
@@ -33,7 +32,7 @@ const cartReducer = (state = initState, action) => {
       return {
         ...state,
         total: state.total + addedItem.price,
-        counter: newCounter + 1
+        counter: newCounter
       };
     } else {
       addedItem.quantity = 1;
@@ -52,14 +51,15 @@ const cartReducer = (state = initState, action) => {
   if (action.type === REMOVE_ITEM) {
     let itemToRemove = state.addedItems.find(item => action.id === item.id);
     let new_items = state.addedItems.filter(item => action.id !== item.id);
-
+    let newCounter = state.counter - 1;
     //calculating the total
     let newTotal = state.total - itemToRemove.price * itemToRemove.quantity;
     console.log(itemToRemove);
     return {
       ...state,
       addedItems: new_items,
-      total: newTotal
+      total: newTotal,
+      counter: newCounter
     };
   }
 
@@ -68,9 +68,11 @@ const cartReducer = (state = initState, action) => {
     let addedItem = state.items.find(item => item.id === action.id);
     addedItem.quantity += 1;
     let newTotal = state.total + addedItem.price;
+    let newCounter = state.counter + 1;
     return {
       ...state,
-      total: newTotal
+      total: newTotal,
+      counter: newCounter
     };
   }
   if (action.type === SUB_QUANTITY) {
@@ -79,44 +81,25 @@ const cartReducer = (state = initState, action) => {
     if (addedItem.quantity === 1) {
       let new_items = state.addedItems.filter(item => item.id !== action.id);
       let newTotal = state.total - addedItem.price;
+      let newCounter = state.counter - 1;
       return {
         ...state,
         addedItems: new_items,
-        total: newTotal
+        total: newTotal,
+        counter: newCounter
       };
     } else {
       addedItem.quantity -= 1;
       let newTotal = state.total - addedItem.price;
+      let newCounter = state.counter - 1;
       return {
         ...state,
-        total: newTotal
+        total: newTotal,
+        counter: newCounter
       };
     }
   }
   return state;
-};
-
-// cartItem
-const cartItem = (state = initState, action) => {
-  switch (action.type) {
-    case "ADD_TO_CART":
-      return {
-        id: action.id,
-        count: action.count
-      };
-    case "REMOVE_FROM_CART":
-      return state.id !== action.id;
-    case "UPDATE_CART_ITEM":
-      if (state.id !== action.id) {
-        return state;
-      }
-
-      return Object.assign({}, state, {
-        count: action.count
-      });
-    default:
-      return state;
-  }
 };
 
 export default cartReducer;

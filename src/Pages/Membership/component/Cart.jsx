@@ -81,8 +81,8 @@ class Cart extends Component {
               </div>
             </td>
             <td className="text-right">
-              <a
-                href=""
+              <Link
+                to=""
                 onClick={() => {
                   this.handleRemove(item.id);
                 }}
@@ -90,7 +90,7 @@ class Cart extends Component {
               >
                 {" "}
                 × Remove
-              </a>
+              </Link>
             </td>
           </tr>
         );
