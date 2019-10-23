@@ -1,8 +1,8 @@
-import React from "./node_modules/react";
+import React from "react";
 import MultiItemcarousel from "./Multi-Item-carousel";
 import NoImage from "../../Global/Component/NoImage";
-import { Link } from "./node_modules/react-router-dom";
-import LinesEllipsis from "./node_modules/react-lines-ellipsis"; //cap maxLine of characters
+import { Link } from "react-router-dom";
+import LinesEllipsis from "react-lines-ellipsis"; //cap maxLine of characters
 const ProjectSummary = ({ jobs, deleteProject }) => {
   return (
     <article className="itemlist mt-4">

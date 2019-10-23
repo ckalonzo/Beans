@@ -4,7 +4,7 @@ import {
   SUB_QUANTITY,
   ADD_QUANTITY,
   CARTTOTALITEMS
-} from "../actions/actionTypes/cart-actionTypes";
+} from "../actions/actionTypes/ta-actionTypes";
 
 const initState = {
   items: [

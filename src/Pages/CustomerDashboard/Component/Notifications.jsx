@@ -1,5 +1,5 @@
-import React from "./node_modules/react";
-import ReactNotification from "./node_modules/react-notifications-component";
+import React from "react";
+import ReactNotification from "react-notifications-component";
 
 const Notifications = props => {
   const { notifications } = props;

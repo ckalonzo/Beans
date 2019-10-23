@@ -9,7 +9,7 @@ import ContractorLogin from "./Pages/ContractorLogin/ContractorLogin";
 import Membership from "./Pages/Membership/Membership";
 import firebase from "./Config/Firebase";
 import SignUp from "./Pages/SignUp/SignUp";
-import ContractorSignUp from "./Pages/SignUp/contractorSignUp";
+import ContractorSignUpForm from "./Pages/SignUp/contractorSignUp";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import ProjectDashboard from "./Pages/Browse/ProjectDashboard";
 import ProjectDetails from "./Pages/Browse/Component/ProjectDetail";
@@ -53,7 +53,7 @@ class App extends Component {
             <Route path="/Dashboard/Dashboard" component={Dashboard} />
             <Route
               path="/SignUp/contractorSignUp"
-              component={ContractorSignUp}
+              component={ContractorSignUpForm}
             />
             <Route path="/SignUp/SignUp" component={SignUp} />
             <Route
@@ -77,7 +77,7 @@ class App extends Component {
             />
             <Route exact path="/" component={Home} />
           </Switch>
-        <Footer/>
+          <Footer />
         </div>
       </Router>
     );

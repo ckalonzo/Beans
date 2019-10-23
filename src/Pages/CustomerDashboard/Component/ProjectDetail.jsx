@@ -1,8 +1,8 @@
-import React from "./node_modules/react";
-import { connect } from "./node_modules/react-redux";
-import { firestoreConnect } from "./node_modules/react-redux-firebase";
-import { compose } from "./node_modules/redux";
-import { Redirect } from "./node_modules/react-router-dom";
+import React from "react";
+import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
+import { Redirect } from "react-router-dom";
 
 const ProjectDetails = props => {
   //getting project id

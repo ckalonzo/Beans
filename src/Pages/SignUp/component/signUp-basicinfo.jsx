@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { TextInput } from "../../Global/Input/TextInput";
 
 class SignUpbasicinfo extends Component {
   continue = e => {
@@ -11,7 +12,8 @@ class SignUpbasicinfo extends Component {
   };
 
   render() {
-    const { handleChange, values } = this.props;
+    const { handleChange, firstName, lastName } = this.props;
+    console.log(this.props);
     return (
       <div>
         <div className="container mt-5">
@@ -20,35 +22,40 @@ class SignUpbasicinfo extends Component {
           </div>
           <form onSubmit={this.handleSubmit}>
             <div className="form-group mt-4">
-              <label htmlFor="firstName">First Name</label>
-              <input
+              <label id="firstName" htmlFor="firstName">
+                First Name
+              </label>
+              <TextInput
                 type="text"
                 className="form-control"
                 id="firstName"
-                onChange={this.handleChange}
+                onChange={handleChange("firstName")}
+                name="firstName"
+                value={firstName}
               />
             </div>
             <div className="form-group mt-4">
               <label htmlFor="lastName">Last Name</label>
-              <input
+              <TextInput
                 type="text"
                 className="form-control"
                 id="lastName"
-                onChange={this.handleChange}
+                onChange={handleChange("lastName")}
+                value={lastName}
               />
             </div>
             <div className="form-group">
               <label htmlFor="Password">Password</label>
-              <input
+              <TextInput
                 type="password"
                 className="form-control"
                 id="password"
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
             </div>
             <div className="form-group mt-4">
               <label htmlFor="Email">Email address</label>
-              <input
+              <TextInput
                 type="email"
                 className="form-control"
                 id="email"
@@ -58,7 +65,7 @@ class SignUpbasicinfo extends Component {
             </div>
             <div className="form-group mt-4">
               <label htmlFor="zipcode">Zip Code</label>
-              <input
+              <TextInput
                 type="text"
                 className="form-control"
                 id="zipcode"
@@ -70,10 +77,10 @@ class SignUpbasicinfo extends Component {
                 What type of vehicle you will be driving
               </label>
               <select
-                defaultvalue={values.service}
+                //defaultvalue={values.service}
                 id="typeofcar"
                 style={{ width: 300 }}
-                onChange={handleChange("service")}
+                onChange={handleChange}
               >
                 <option value="Personal">Personal</option>
                 <option value="Company">company</option>

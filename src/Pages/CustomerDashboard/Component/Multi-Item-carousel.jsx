@@ -1,5 +1,5 @@
-import React, { Component } from "./node_modules/react";
-import { Link } from "./node_modules/react-router-dom";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Picture from "../../Profile/component/picture";
 import "../Css/carousel.scss";
 export default class MultiItemcarousel extends Component {

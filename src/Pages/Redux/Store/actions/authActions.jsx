@@ -54,6 +54,7 @@ export const customerSignUp = newCustomer => {
       });
   };
 };
+
 export const contractorSignUp = newUser => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();

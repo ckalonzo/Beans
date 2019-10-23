@@ -1,4 +1,4 @@
-import React, { Component } from "./node_modules/react";
+import React, { Component } from "react";
 import ProjectList from "./ProjectList";
 
 export default class CurrentJobs extends Component {

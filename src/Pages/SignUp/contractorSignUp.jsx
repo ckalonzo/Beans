@@ -5,7 +5,7 @@ import { contractorSignUp } from "../Redux/Store/actions/authActions";
 import { Redirect } from "react-router-dom";
 import SignUpbasicinfo from "./component/signUp-basicinfo";
 import SocialNumberAknowledgement from "./component/SocialNumberAknowledgement";
- class ContractorSignUp extends Component {
+class ContractorSignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -167,7 +167,7 @@ import SocialNumberAknowledgement from "./component/SocialNumberAknowledgement";
   render() {
     console.log(this.props);
     const { step } = this.state;
-     const { auth } = this.props;
+    const { auth } = this.props;
     if (auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
     const {
       service,

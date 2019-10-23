@@ -1,13 +1,13 @@
-import React, { Component } from "./node_modules/react";
+import React, { Component } from "react";
 import "../Css/customer-dashboard.scss";
 import Notification from "./Notifications";
 import CurrentJobs from "./CurrentJobs";
-import { Link } from "./node_modules/react-router-dom";
+import { Link } from "react-router-dom";
 import ChatModule from "../../Chat/Chat-module";
 import MainChat from "../../Chat/mainChat";
-import { connect } from "./node_modules/react-redux";
-import { firestoreConnect } from "./node_modules/react-redux-firebase";
-import { compose } from "./node_modules/redux";
+import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 import { deleteJob } from "../../Redux/Store/actions/deleteJobAction";
 class Activities extends Component {
   state = {

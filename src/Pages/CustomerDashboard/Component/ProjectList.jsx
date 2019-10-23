@@ -1,6 +1,6 @@
-import React from "./node_modules/react";
+import React from "react";
 import ProjectSummary from "./ProjectSummary";
-import { Link } from "./node_modules/react-router-dom";
+import { Link } from "react-router-dom";
 import Divider from "../../Global/Layout/divider";
 import "../Css/Project.scss";
 
