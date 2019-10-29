@@ -3,8 +3,8 @@ import "./css/divider.scss";
 
 const divider = props => {
   return (
-    <div className={this.props.colspan}>
-      <div className={"greydivider " + this.props.className} />
+    <div className={props.colspan}>
+      <div className={"greydivider " + props.className} />
     </div>
   );
 };

@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import Activities from "../CustomerDashboard/Component/Activities";
-import DashboardHero from "./Component/dashboardHero";
+import ContractorActivities from "./Component/ContractorActivities";
+import DashboardHero from "./Component/ContractordashboardHero";
 import "./Css/dashboard.scss";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 
-class Dashboard extends Component {
+class ContractorDashboard extends Component {
   render() {
     const { projects, auth } = this.props;
-    if (!auth.uid)
-      return <Redirect to="/ContractorLogin/ContractorLogin" />;
+    if (!auth.uid) return <Redirect to="/ContractorLogin/ContractorLogin" />;
 
     return (
       <section className="customer-dashboard">
@@ -20,7 +19,7 @@ class Dashboard extends Component {
             <DashboardHero />
           </div>
           <div className="row">
-            <Activities projects={projects} />
+            <ContractorActivities projects={projects} />
           </div>
         </div>
       </section>
@@ -34,4 +33,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(ContractorDashboard);

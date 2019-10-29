@@ -47,56 +47,56 @@ class Activities extends Component {
         <div className="container">
           <ul className="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link active"
                 id="ta-JobPosts-tab-cust"
                 data-toggle="tab"
-                to="#ta-JobPosts-cust"
+                href="#ta-JobPosts-cust"
                 role="tab"
                 aria-controls="home-md"
                 aria-selected="true"
               >
                 Current Jobs
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link"
                 id="ta-conversation-tab-cust"
                 data-toggle="tab"
-                to="#ta-conversation-cust"
+                href="#ta-conversation-cust"
                 role="tab"
                 aria-controls="ta-conversation-cust"
                 aria-selected="false"
               >
                 Conversation
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link"
                 id="ta-Notification-tab-cust"
                 data-toggle="tab"
-                to="#ta-Notification-cust"
+                href="#ta-Notification-cust"
                 role="tab"
                 aria-controls="ta-Notification-tab-cust"
                 aria-selected="false"
               >
                 Notification
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link"
                 id="ta-ActiveJobs-tab-cust"
                 data-toggle="tab"
-                to="#ta-ActiveJobs-cust"
+                href="#ta-ActiveJobs-cust"
                 role="tab"
                 aria-controls="ta-ActiveJobs-cust"
                 aria-selected="false"
               >
                 Past Jobs
-              </Link>
+              </a>
             </li>
           </ul>
           <div className="tab-content card pt-5" id="myTabContentMD">

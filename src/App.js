@@ -10,7 +10,7 @@ import Membership from "./Pages/Membership/Membership";
 import firebase from "./Config/Firebase";
 import SignUp from "./Pages/SignUp/SignUp";
 import ContractorSignUpForm from "./Pages/SignUp/contractorSignUp";
-import Dashboard from "./Pages/Dashboard/Dashboard";
+import ContractorDashboard from "./Pages/Dashboard/ContractorDashboard";
 import ProjectDashboard from "./Pages/Browse/ProjectDashboard";
 import ProjectDetails from "./Pages/Browse/Component/ProjectDetail";
 import WizardForm from "./Pages/JobPosts/PostJob";
@@ -50,7 +50,10 @@ class App extends Component {
               path="/CustomerDashboard/CustomerDashboard"
               component={CustomerDashboard}
             />
-            <Route path="/Dashboard/Dashboard" component={Dashboard} />
+            <Route
+              path="/Dashboard/ContractorDashboard"
+              component={ContractorDashboard}
+            />
             <Route
               path="/SignUp/contractorSignUp"
               component={ContractorSignUpForm}

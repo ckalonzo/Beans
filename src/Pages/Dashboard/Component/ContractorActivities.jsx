@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "../Css/dashboard.scss";
-import mainChat from "../../Chat/mainChat";
-import Notification from "./Notifications";
-import Currentbids from "../../Dashboard/Component/currentbids";
+import MainChat from "../../Chat/mainChat";
+import Notification from "./ContractorNotifications";
+import Currentbids from "./ContractorCurrentbids";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Link } from "react-router-dom";
 
-class Activities extends Component {
+class ContractorActivities extends Component {
   state = {
     activeItemClassicTabs1: "1",
     pastBidsCounter: 5,
@@ -44,56 +44,56 @@ class Activities extends Component {
         <div className="container">
           <ul className="nav nav-tabs ta-tabs" id="myTabMD" role="tablist">
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link active"
                 id="ta-CurrentBids-tab-cust"
                 data-toggle="tab"
-                to="#ta-CurrentBids-cust"
+                href="#ta-CurrentBids-cust"
                 role="tab"
                 aria-controls="home-md"
                 aria-selected="true"
               >
                 Current Bids
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link"
                 id="ta-conversation-tab-cust"
                 data-toggle="tab"
-                to="#ta-conversation-cust"
+                href="#ta-conversation-cust"
                 role="tab"
                 aria-controls="ta-conversation-cust"
                 aria-selected="false"
               >
                 Conversation
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link"
                 id="ta-Notification-tab-cust"
                 data-toggle="tab"
-                to="#ta-Notification-cust"
+                href="#ta-Notification-cust"
                 role="tab"
                 aria-controls="ta-Notification-tab-cust"
                 aria-selected="false"
               >
                 Notification
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link"
                 id="ta-ActiveJobs-tab-cust"
                 data-toggle="tab"
-                to="#ta-ActiveJobs-cust"
+                href="#ta-ActiveJobs-cust"
                 role="tab"
                 aria-controls="ta-ActiveJobs-cust"
                 aria-selected="false"
               >
                 Active Jobs
-              </Link>
+              </a>
             </li>
           </ul>
           <div className="tab-content card pt-5" id="myTabContentMD">
@@ -111,7 +111,7 @@ class Activities extends Component {
               role="tabpanel"
               aria-labelledby="ta-conversation-tab-cust"
             >
-              <mainChat />
+              <MainChat />
             </div>
             <div
               className="tab-pane fade"
@@ -149,4 +149,4 @@ export default compose(
     { collection: "projects", orderBy: ["createdAt"] },
     { collection: "notifications", limit: 3 }
   ])
-)(Activities);
+)(ContractorActivities);

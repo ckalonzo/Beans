@@ -53,7 +53,7 @@ export default class ProjectSummary extends Component {
                     type="text"
                     value={bidNow}
                     defaultValue={bidNow}
-                    onChange={handleChange()}
+                    //onChange={handleChange()}
                     // placeholder="Enter Lower Price"
                   />
                 </div>
