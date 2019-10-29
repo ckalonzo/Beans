@@ -22,7 +22,7 @@ class CustomerForm extends Component {
 
   render() {
     const { authError, auth } = this.props;
-    if (auth.uid) return <Redirect to="/CustomerDashboard/CustomerDashboard" />;
+    //if (auth.uid) return <Redirect to="/CustomerDashboard/CustomerDashboard" />;
     return (
       <section className="customer-img login-form">
         <div className="container">

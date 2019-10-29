@@ -37,9 +37,9 @@ class SignUpbasicinfo extends Component {
             <div className="form-group mt-4">
               <label htmlFor="lastName">Last Name</label>
               <TextInput
-                type="text"
-                className="form-control"
-                id="lastName"
+                type={"text"}
+                className={"form-control"}
+                id={"lastName"}
                 onChange={handleChange("lastName")}
                 value={lastName}
               />

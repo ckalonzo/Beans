@@ -23,7 +23,8 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   subscription: monthlySubscriptionReducer,
   contractorProfile: ProfileReducer,
-  deleteJob: deleteJobReducer
+  deleteJob: deleteJobReducer,
+  registration: RegistrationReducer
 });
 
 export default rootReducer;
