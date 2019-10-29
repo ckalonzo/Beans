@@ -1,17 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
-class TypeOfJobs extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <div className="row">
-          <div className="col">
-            <span className="badge badge-pill badge-info">Junk Removal</span>
-            <span className="badge badge-pill badge-info">Lawn Service</span>
-          </div>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+const TypeOfJobs = () => {
+  return (
+    <div className="row">
+      <div className="col">
+        <span className="badge badge-pill badge-info">Junk Removal</span>
+        <span className="badge badge-pill badge-info">Lawn Service</span>
+      </div>
+    </div>
+  );
+};
+
 export default TypeOfJobs;

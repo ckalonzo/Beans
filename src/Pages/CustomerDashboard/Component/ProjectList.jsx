@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import Divider from "../../Global/Layout/divider";
 import "../Css/Project.scss";
 
-const ProjectList = ({ projects, deleteProject }) => {
+const ProjectList = props => {
+  const { projects, deleteProject } = props;
   console.log(projects);
   return (
     <div className="col-12 ">

@@ -1,15 +1,9 @@
-import React, { Component } from 'react'
 import "../sass/profile.scss";
 
+import React from "react";
 
-export default class ProfileHero extends Component {
-  render() {
-    return (
-          <div className="cust-pro-hero col-12">
+const ProfileHero = () => {
+  return <div className="cust-pro-hero col-12"></div>;
+};
 
-          </div>
-      
-    )
-  }
-}
-
+export default ProfileHero;

@@ -1,49 +1,49 @@
-import React, { Component } from "react";
+import React from "react";
 import "./css/Join.scss";
 import { Link } from "react-router-dom";
 
-export default class Join extends Component {
-  render() {
-    return (
-      <section>
-        <div className="fluid-container">
-          <div className="row no-gutters ">
-            <div className="col-md-6 col-sm-12 panel join-panel">
-              <div className="mt-5">
-                <div className="col-12 mx-auto join-title-outter">
-                  <h2 className="join-title">Reasons Why You Should Join</h2>
-                </div>
-                <div className="mx-auto join-copy">
-                  <p>
-                    Morbi pulvinar massa vitae sem cursus ferlentu. Cura bitur
-                    maximus sem nibh, at sollicitudin sem pretiu vitae. Sed do
-                    eiusmod tempor incidi ut labore et dolore mag aliqua ip.
-                  </p>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignis ducimus qui
-                    blanditiis praesentium volupta deleniti quas molestias
-                    excepturi sint occaecati cupiditate non est laborum.
-                  </p>
-                </div>
+const Join = () => {
+  return (
+    <section>
+      <div className="fluid-container">
+        <div className="row no-gutters ">
+          <div className="col-md-6 col-sm-12 panel join-panel">
+            <div className="mt-5">
+              <div className="col-12 mx-auto join-title-outter">
+                <h2 className="join-title">Reasons Why You Should Join</h2>
               </div>
-              <div className="mx-auto start-posting-today-button">
+              <div className="mx-auto join-copy">
                 <p>
-                  <Link
-                    className="btn btn-primary btn-lg spt-btn"
-                    to="/JobPosts/PostJob"
-                    role="button"
-                  >
-                    Start Posting Today!
-                  </Link>
+                  Morbi pulvinar massa vitae sem cursus ferlentu. Cura bitur
+                  maximus sem nibh, at sollicitudin sem pretiu vitae. Sed do
+                  eiusmod tempor incidi ut labore et dolore mag aliqua ip.
+                </p>
+                <p>
+                  At vero eos et accusamus et iusto odio dignis ducimus qui
+                  blanditiis praesentium volupta deleniti quas molestias
+                  excepturi sint occaecati cupiditate non est laborum.
                 </p>
               </div>
             </div>
-            <div className="col-md-6 col-sm-12">
-              <div className="img-join" />
+            <div className="mx-auto start-posting-today-button">
+              <p>
+                <Link
+                  className="btn btn-primary btn-lg spt-btn"
+                  to="/JobPosts/PostJob"
+                  role="button"
+                >
+                  Start Posting Today!
+                </Link>
+              </p>
             </div>
           </div>
+          <div className="col-md-6 col-sm-12">
+            <div className="img-join" />
+          </div>
         </div>
-      </section>
-    );
-  }
-}
+      </div>
+    </section>
+  );
+};
+
+export default Join;
