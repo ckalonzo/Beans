@@ -2,11 +2,17 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../../Redux/Store/actions/cartActions";
 import "../Css/single-pricing-cards.scss";
+import { Link } from "react-router-dom";
 
 class SingleBid extends Component {
-  handleClick = id => {
-    this.props.addToCart(id);
-    console.log(id);
+  handleClick = (id, counter, isAuth) => {
+    if (isAuth) {
+      return {};
+    } else {
+      this.props.addToCart(id, counter);
+      console.log(id);
+      console.log("counter" + counter);
+    }
   };
 
   render() {
@@ -14,10 +20,10 @@ class SingleBid extends Component {
       return (
         <div className="col-md-4 mb-3 " key={item.id}>
           <div className="card-width colorch-btn" id="hover4">
-            <a
-              href="#"
+            <Link
+              to="#"
               onClick={() => {
-                this.handleClick(item.id);
+                this.handleClick(item.id, this.props.counter);
               }}
             >
               <div className="card-body text-center">
@@ -30,7 +36,7 @@ class SingleBid extends Component {
                   Buy Now
                 </button>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       );
@@ -53,13 +59,14 @@ class SingleBid extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    items: state.items
+    items: state.items,
+    counter: state.counter.counter
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    addToCart: id => {
-      dispatch(addToCart(id));
+    addToCart: (id, counter) => {
+      dispatch(addToCart(id, counter));
     }
   };
 };

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Activities from "./Component/Activities";
 import DashboardHero from "./Component/dashboardHero";
 import "./Css/customer-dashboard.scss";
@@ -7,25 +7,22 @@ import { Redirect } from "react-router-dom";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 
-class CustomerDashboard extends Component {
-  render() {
-    const { projects, auth, customerId } = this.props;
-    if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
-
-    return (
-      <section className="customer-dashboard">
-        <div className="projectList container">
-          <div className="row mb-5">
-            <DashboardHero />
-          </div>
-          <div className="row">
-            <Activities customerId={customerId} projects={projects} />
-          </div>
+const CustomerDashboard = props => {
+  const { projects, auth, customerId } = props;
+  if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+  return (
+    <section className="customer-dashboard">
+      <div className="projectList container">
+        <div className="row mb-5">
+          <DashboardHero />
         </div>
-      </section>
-    );
-  }
-}
+        <div className="row">
+          <Activities customerId={customerId} projects={projects} />
+        </div>
+      </div>
+    </section>
+  );
+};
 const mapStateToProps = state => {
   console.log(`custdash${state}`);
   return {

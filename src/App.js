@@ -9,8 +9,8 @@ import ContractorLogin from "./Pages/ContractorLogin/ContractorLogin";
 import Membership from "./Pages/Membership/Membership";
 import firebase from "./Config/Firebase";
 import SignUp from "./Pages/SignUp/SignUp";
-import ContractorSignUp from "./Pages/SignUp/contractorSignUp";
-import Dashboard from "./Pages/Dashboard/Dashboard";
+import ContractorSignUpForm from "./Pages/SignUp/contractorSignUp";
+import ContractorDashboard from "./Pages/Dashboard/ContractorDashboard";
 import ProjectDashboard from "./Pages/Browse/ProjectDashboard";
 import ProjectDetails from "./Pages/Browse/Component/ProjectDetail";
 import WizardForm from "./Pages/JobPosts/PostJob";
@@ -26,6 +26,10 @@ import Profile from "./Pages/Profile/Layout/Profile";
 import Thankyou from "./Pages/SignUp/component/Thankyou";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+  }
   render() {
     return (
       <Router>
@@ -46,10 +50,13 @@ class App extends Component {
               path="/CustomerDashboard/CustomerDashboard"
               component={CustomerDashboard}
             />
-            <Route path="/Dashboard/Dashboard" component={Dashboard} />
+            <Route
+              path="/Dashboard/ContractorDashboard"
+              component={ContractorDashboard}
+            />
             <Route
               path="/SignUp/contractorSignUp"
-              component={ContractorSignUp}
+              component={ContractorSignUpForm}
             />
             <Route path="/SignUp/SignUp" component={SignUp} />
             <Route
@@ -73,7 +80,7 @@ class App extends Component {
             />
             <Route exact path="/" component={Home} />
           </Switch>
-        <Footer/>
+          <Footer />
         </div>
       </Router>
     );

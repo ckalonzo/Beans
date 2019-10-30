@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../Css/ProviderLogin.scss";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 class ProviderLogin extends Component {
@@ -73,9 +73,9 @@ class ProviderLogin extends Component {
                               >
                                 Remember Me
                               </label>
-                              <a href="#" className="pt-3 pb-3 float-right">
+                              <Link to="#" className="pt-3 pb-3 float-right">
                                 Forgot Password?
-                              </a>
+                              </Link>
                             </div>
                             <button
                               className="btn btn-primary btn-block mt-3"
@@ -88,14 +88,17 @@ class ProviderLogin extends Component {
                               <span>OR</span>
                             </div>
                             <div className="text-center social-btn mb-5">
-                              <a href="#" className="btn btn-primary btn-block">
+                              <Link
+                                to="#"
+                                className="btn btn-primary btn-block"
+                              >
                                 <i className="fab fa-facebook-f" /> Sign in with{" "}
                                 <b>Facebook</b>
-                              </a>
-                              <a href="#" className="btn btn-danger btn-block">
+                              </Link>
+                              <Link to="#" className="btn btn-danger btn-block">
                                 <i className="fab fa-google" /> Sign in with{" "}
                                 <b>Google</b>
-                              </a>
+                              </Link>
                             </div>
                           </form>
                         </div>
@@ -104,9 +107,9 @@ class ProviderLogin extends Component {
                   </div>
                   <div className="mt-xl-5 mt-3 dontHaveAnAccount">
                     Dont have an Account?{" "}
-                    <a href="#" className="signUpLink">
+                    <Link to="#" className="signUpLink">
                       Sign Up Here
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

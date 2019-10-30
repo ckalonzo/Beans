@@ -1,18 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class ActiveMember1 extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <div className="row">
-          <div className="col-6">
-            <h6 className="font-weight-bold">Years</h6>
-          </div>
-          <div className="col-6">
-            <h6 className="font-weight-bold">2</h6>
-          </div>
+const ActiveMember = props => {
+  return (
+    <React.Fragment>
+      <div className="row">
+        <div className="col-6">
+          <h6 className="font-weight-bold">Years</h6>
         </div>
-      </React.Fragment>
-    );
-  }
-}
+        <div className="col-6">
+          {/* <h6 className="font-weight-bold">{contractorProfile.years}</h6> */}
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};
+export default ActiveMember;

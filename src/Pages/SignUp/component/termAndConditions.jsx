@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../Css/termsandconditions.scss";
+import { Link } from "react-router-dom";
+
 export default class TermAndConditions extends Component {
   render() {
     return (
@@ -64,11 +66,11 @@ export default class TermAndConditions extends Component {
 
         <div className="row">
           <div className="mx-auto">
-            <a href="/SignUp/component/Thankyou">
+            <Link to="/SignUp/component/Thankyou">
               <button type="button" className="btn btn-primary">
                 Submit
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

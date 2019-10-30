@@ -1,7 +1,5 @@
-import React, { Component } from "react";
-import ProjectList from "../../Browse/ProjectList";
-
 import React from "react";
+import ProjectList from "../../Browse/ProjectList";
 
 const currentbids = props => {
   const { projects } = props;

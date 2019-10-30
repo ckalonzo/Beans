@@ -105,10 +105,10 @@ ul {
 
 .fa-stack[data-count]:after {
   position: absolute;
-  left: 86%;
-  bottom: 58%;
+  left: 33%;
+  bottom: 0;
   content: attr(data-count);
-  font-size: 40%;
+  font-size: 37%;
   padding: 0.6em;
   border-radius: 999px;
   line-height: 0.75em;
@@ -119,6 +119,7 @@ ul {
   font-weight: bold;
   background: white;
   border-style: solid;
+  z-index: 500;
 }
 .fa-circle {
   color: #124676;

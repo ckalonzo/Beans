@@ -1,27 +1,30 @@
-import React from 'react';
+import React from "react";
 import ReactNotification from "react-notifications-component";
 
-const Notifications = (props) => {
-    const { notifications } = props;
-    return (
-        <div className="section">
-            <div className="card z-depth-0">
-                <div className="card-content">
-                    <span className="card-title">Notifications</span>
-                    <ul className="online-users">
-                        {notifications && notifications.map(item => {
-                            return <li key={item.id}>
-                                <span className="pink-text">{item.user} </span>
-                                <span>{item.content}</span>
-                                {/* <div className="note-date grey-text">{moment(item.time.toDate()).fromNow()}</div> */}
-                            </li>
-                        })}
-                    </ul>
-                </div>
-            </div>
+const Notifications = props => {
+  const { notifications } = props;
+  return (
+    <div className="section">
+      <div className="card z-depth-0">
+        <div className="card-content">
+          <span className="card-title">Notifications</span>
+          <ul className="online-users">
+            {notifications &&
+              notifications.map(item => {
+                return (
+                  <li key={item.id}>
+                    <span className="pink-text">{item.user} </span>
+                    <span>{item.content}</span>
+                    {/* <div className="note-date grey-text">{moment(item.time.toDate()).fromNow()}</div> */}
+                  </li>
+                );
+              })}
+          </ul>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 //     <section>
 //         <div className="app-content container">
 //             <div className="row">
@@ -40,5 +43,4 @@ const Notifications = (props) => {
 //         </div>
 //     </section >
 
-
-export default Notifications
+export default Notifications;

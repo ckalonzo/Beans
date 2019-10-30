@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Thankyou extends Component {
   render() {
@@ -13,11 +14,11 @@ export default class Thankyou extends Component {
           </div>
           <div className="row">
             <div className="mx-auto">
-              <a href="/">
+              <Link to="/">
                 <button type="button" className="btn btn-primary">
                   Return to Homepage
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

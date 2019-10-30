@@ -2,7 +2,7 @@ import React from "react";
 import MultiItemcarousel from "./Multi-Item-carousel";
 import NoImage from "../../Global/Component/NoImage";
 import { Link } from "react-router-dom";
-import LinesEllipsis from 'react-lines-ellipsis' //cap maxLine of characters
+import LinesEllipsis from "react-lines-ellipsis"; //cap maxLine of characters
 const ProjectSummary = ({ jobs, deleteProject }) => {
   return (
     <article className="itemlist mt-4">
@@ -18,6 +18,7 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
         </aside>
         <Link className="col-12 col-sm-6" to={"/jobs/" + jobs.id}>
           <div className="text-wrap">
+            <h4 className="title"> {jobs.id} </h4>
             <h4 className="title"> {jobs.service} </h4>
             <p className="text-secondary">
               <small className="text-muted">
@@ -27,12 +28,11 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
             <p>
               <LinesEllipsis
                 text={jobs.specialInstructions}
-                maxLine='2'
-                ellipsis='...'
+                maxLine="2"
+                ellipsis="..."
                 trimRight
-                basedOn='letters'
+                basedOn="letters"
               />
-
             </p>
             <p className="rating-wrap my-0 text-muted">
               <span className="label-rating">
@@ -47,27 +47,26 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
             <div className="price-wrap">
               <span className="h3 price"> ${jobs.budget} </span>
             </div>
-         
+
             <p>
               <button
                 className=""
-                onClick={() => {
-                  deleteProject(jobs.id);
+                onClick={event => {
+                  deleteProject(event);
                 }}
               >
                 Delete Job
               </button>
-              <a href={"/jobs/" + jobs.id} className="btn  btn-warning">
+              <Link to={"/jobs/" + jobs.id} className="btn  btn-warning">
                 {" "}
                 Details{" "}
-              </a>{" "}
+              </Link>{" "}
             </p>
           </div>
         </aside>
       </div>
       <MultiItemcarousel />
     </article>
-   
   );
 };
 

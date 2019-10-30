@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import Divider from "../../Global/Layout/divider";
 import "../Css/Project.scss";
 
-const ProjectList = ({ projects, deleteProject }) => {
+const ProjectList = props => {
+  const { projects, deleteProject } = props;
   console.log(projects);
   return (
     <div className="col-12 ">
@@ -12,7 +13,7 @@ const ProjectList = ({ projects, deleteProject }) => {
         projects.map(jobs => {
           return (
             <React.Fragment>
-               <ProjectSummary
+              <ProjectSummary
                 deleteProject={deleteProject}
                 jobs={jobs}
                 key={jobs.id}
@@ -20,8 +21,6 @@ const ProjectList = ({ projects, deleteProject }) => {
 
               <Divider className={"col-8 pt-4"} />
             </React.Fragment>
-             
-        
           );
         })}
     </div>

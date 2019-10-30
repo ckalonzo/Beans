@@ -1,14 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "./css/divider.scss";
-export default class divider extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className={this.props.colspan}>
-        <div className={"greydivider " + this.props.className} />
-      </div>
-    );
-  }
-}
+
+const divider = props => {
+  return (
+    <div className={props.colspan}>
+      <div className={"greydivider " + props.className} />
+    </div>
+  );
+};
+
+export default divider;

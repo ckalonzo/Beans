@@ -2,8 +2,10 @@ import authReducer from "./authReducer";
 import JobPostReducer from "./JobPostReducer";
 import cartReducer from "./cartReducer";
 import CounterReducer from "./counterReducer";
-import ProfileReducer from "./profileReducer"
+import ProfileReducer from "./profileReducer";
 import SubmitBidReducer from "./SubmitBidReducer";
+import deleteJobReducer from "./deleteJobReducer";
+import RegistrationReducer from "./registrationReducer";
 import monthlySubscriptionReducer from "./monthlyMembershipReducer";
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
@@ -11,6 +13,7 @@ import { firebaseReducer } from "react-redux-firebase";
 const rootReducer = combineReducers({
   auth: authReducer,
   project: JobPostReducer,
+  signUpRegistration: RegistrationReducer,
   submitBid: SubmitBidReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer,
@@ -19,7 +22,9 @@ const rootReducer = combineReducers({
   items: cartReducer,
   cart: cartReducer,
   subscription: monthlySubscriptionReducer,
-  contractorProfile: ProfileReducer 
+  contractorProfile: ProfileReducer,
+  deleteJob: deleteJobReducer,
+  registration: RegistrationReducer
 });
 
 export default rootReducer;

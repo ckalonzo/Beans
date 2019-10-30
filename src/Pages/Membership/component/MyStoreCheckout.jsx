@@ -1,16 +1,16 @@
-import React from 'react';
-import { Elements } from 'react-stripe-elements';
+import React from "react";
+import { Elements } from "react-stripe-elements";
 
-import InjectedCheckoutForm from './CheckoutForm';
+import InjectedCheckoutForm from "./CheckoutForm";
 
-class MyStoreCheckout extends React.Component {
-    render() {
-        return (
-            <Elements>
-                <InjectedCheckoutForm handleResult={this.props.handleResult} />
-            </Elements>
-        );
-    }
-}
+import React from "react";
+
+const MyStoreCheckout = props => {
+  return (
+    <Elements>
+      <InjectedCheckoutForm handleResult={this.props.handleResult} />
+    </Elements>
+  );
+};
 
 export default MyStoreCheckout;

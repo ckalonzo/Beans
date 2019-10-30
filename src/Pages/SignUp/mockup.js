@@ -1,40 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import IntroSignUp from "./component/IntroSignUp";
-import SignUpbasicinfo from "./component/signUp-basicinfo";
-import SocialNumberAknowledgement from "./component/SocialNumberAknowledgement";
 import { contractorSignUp } from "../Redux/Store/actions/authActions";
 import * as actionTypes from "../Redux/Store/actions/actionTypes/ta-actionTypes";
+import { Redirect } from "react-router-dom";
+import SignUpbasicinfo from "./component/signUp-basicinfo";
+import SocialNumberAknowledgement from "./component/SocialNumberAknowledgement";
+//import { actionTypes } from "react-redux-firebase";
 
 class ContractorSignUpForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      step: 1
-      //   actualSsn: "",
-      //   maskedSsn: "",
-      //   ssnLocked: false,
-      //   service: "Junk Removal",
-      //   email: "",
-      //   image: null,
-      //   url: "",
-      //   progress: 0,
-      //   name: "",
-      //   address: "",
-      //   city: "",
-      //   state: "State",
-      //   zipCode: "",
-      //   largeItems: "",
-      //   selectedDate: "",
-      //   selectedTime: "",
-      //   flightOfStairs: "",
-      //   truckLoads: "",
-      //   typeOfTruck: "",
-      //   specialInstructions: "",
-      //   budget: ""
-    };
-    // this.nextStep = this.nextStep.bind(this);
-    // this.prevStep = this.prevStep.bind(this);
+
+    // this.props.steps = this.props.steps.bind(this);
+    // this.props.steps = this.props.steps.bind(this);
     // this.handleChange = this.handleChange.bind(this);
     // this.handleChangeAttachments = this.handleChangeAttachments.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,16 +25,10 @@ class ContractorSignUpForm extends Component {
 
   // Proceed to next step
   nextStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step + 1
-    });
+    this.props.onhandleNextStep(this.props.stepNav.step);
   };
   prevStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step - 1
-    });
+    this.props.onhandlePreviousStep(this.props.stepNav.step);
   };
 
   // Handle fields change
@@ -167,48 +140,10 @@ class ContractorSignUpForm extends Component {
 
   render() {
     console.log(this.props);
-    const { step } = this.state;
-    // const { auth } = this.props;
-    //if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
-    const {
-      service,
-      email,
-      budget,
-      files,
-      name,
-      address,
-      city,
-      state,
-      zipCode,
-      largeItems,
-      selectedDate,
-      selectedTime,
-      flightOfStairs,
-      truckLoads,
-      typeOfTruck,
-      actualSsn,
-      maskedSsn,
-      ssnLocked,
-      specialInstructions
-    } = this.state;
-    const values = {
-      service,
-      budget,
-      email,
-      files,
-      name,
-      address,
-      city,
-      state,
-      zipCode,
-      largeItems,
-      selectedDate,
-      selectedTime,
-      flightOfStairs,
-      truckLoads,
-      typeOfTruck,
-      specialInstructions
-    };
+
+    const { auth } = this.props;
+    //if (auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+
     // return (
     //   <div className="pj-sec">
     //     <div className="container">
@@ -224,38 +159,37 @@ class ContractorSignUpForm extends Component {
     //       <div className="row">
     //         <div className="col-md-6 col-md-offset-3 mx-auto">
     //       );
-    switch (step) {
+    switch (this.props.stepNav.step) {
       case 1:
-        return <IntroSignUp nextStep={this.nextStep} />;
+        return <IntroSignUp nextStep={this.props.steps} />;
       case 2:
         return (
           <SignUpbasicinfo
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
+            nextStep={this.props.steps}
+            prevStep={this.props.steps}
             handleChange={this.handleChange}
-            values={values}
           />
         );
       case 3:
         return (
           <SocialNumberAknowledgement
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
+            nextStep={this.props.steps}
+            prevStep={this.props.steps}
             handleChangeSSN={this.handleChangeSSN}
             handleBlurSSN={this.handleBlurSSN}
-            ssnLocked={this.ssnLocked}
-            clearSsn={this.clearSsn}
-            actualSsn={actualSsn}
-            ssnLocked={ssnLocked}
-            maskedSsn={maskedSsn}
-            starredMask={this.starredMask}
+            ssnLocked={this.props.bkgchk}
+            clearSsn={this.props.bkgchk}
+            actualSsn={this.props.bkgchk}
+            ssnLocked={this.props.bkgchk}
+            maskedSsn={this.props.bkgchk}
+            starredMask={this.props.bkgchk}
           />
         );
       //   case 4:
       //     return (
       //       <AdditionalInfo
-      //         nextStep={this.nextStep}
-      //         prevStep={this.prevStep}
+      //         nextStep={this.props.steps}
+      //         prevStep={this.props.steps}
       //         handleChange={this.handleChange}
       //         values={values}
       //         address={address}
@@ -269,8 +203,8 @@ class ContractorSignUpForm extends Component {
       //   case 5:
       //     return (
       //       <Budget
-      //         nextStep={this.nextStep}
-      //         prevStep={this.prevStep}
+      //         nextStep={this.props.steps}
+      //         prevStep={this.props.steps}
       //         handleChange={this.handleChange}
       //         budget={budget}
       //         values={values}
@@ -279,8 +213,8 @@ class ContractorSignUpForm extends Component {
       //   case 6:
       //     return (
       //       <Confirm
-      //         nextStep={this.nextStep}
-      //         prevStep={this.prevStep}
+      //         nextStep={this.props.steps}
+      //         prevStep={this.props.steps}
       //         values={values}
       //         handleSubmit={this.handleSubmit}
       //       />

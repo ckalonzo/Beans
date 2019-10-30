@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "../Css/dashboard.scss";
-import mainChat from "../../Chat/mainChat";
-import Notification from "./Notifications";
-import Currentbids from "../../Dashboard/Component/currentbids";
+import MainChat from "../../Chat/mainChat";
+import Notification from "./ContractorNotifications";
+import Currentbids from "./ContractorCurrentbids";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import { Link } from "react-router-dom";
 
-class Activities extends Component {
+class ContractorActivities extends Component {
   state = {
     activeItemClassicTabs1: "1",
     pastBidsCounter: 5,
@@ -110,7 +111,7 @@ class Activities extends Component {
               role="tabpanel"
               aria-labelledby="ta-conversation-tab-cust"
             >
-              <mainChat />
+              <MainChat />
             </div>
             <div
               className="tab-pane fade"
@@ -148,4 +149,4 @@ export default compose(
     { collection: "projects", orderBy: ["createdAt"] },
     { collection: "notifications", limit: 3 }
   ])
-)(Activities);
+)(ContractorActivities);

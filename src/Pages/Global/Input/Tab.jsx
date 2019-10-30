@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 
 export default class Tab extends Component {
   render() {
@@ -7,43 +8,43 @@ export default class Tab extends Component {
       <Fragment>
         <ul className="nav nav-tabs md-tabs" id="myTabMD" role="tablist">
           <li className="nav-item">
-            <a
+            <Link
               className="nav-link active"
               id="home-tab-md"
               data-toggle="tab"
-              href="#home-md"
+              to="#home-md"
               role="tab"
               aria-controls="home-md"
               aria-selected="true"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
+            <Link
               className="nav-link"
               id="profile-tab-md"
               data-toggle="tab"
-              href="#profile-md"
+              to="#profile-md"
               role="tab"
               aria-controls="profile-md"
               aria-selected="false"
             >
               Profile
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
+            <Link
               className="nav-link"
               id="contact-tab-md"
               data-toggle="tab"
-              href="#contact-md"
+              to="#contact-md"
               role="tab"
               aria-controls="contact-md"
               aria-selected="false"
             >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="tab-content card pt-5" id="myTabContentMD">
