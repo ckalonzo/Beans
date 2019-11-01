@@ -127,6 +127,12 @@ ul {
 .ta-shoppingChart {
   color: #124676;
 }
+
+a {
+  .ta-shoppingChart {
+    color: #124676 !important;
+  }
+}
 .red-cart {
   color: #124676;
   background: white;

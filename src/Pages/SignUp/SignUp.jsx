@@ -25,7 +25,7 @@ class SignUp extends Component {
 
   render() {
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to="SignUp/contractorSignUp" />;
+    if (auth.uid) return <Redirect to="/CustomerDashboard/CustomerDashboard" />;
     return (
       <section className="customer-signup ">
         <div className="container ">

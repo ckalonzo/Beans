@@ -2,6 +2,7 @@ import NoImage from "../img/no-image.png";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis"; //cap maxLine of characters
+import Countdown from "./countdownTimer";
 export default class ProjectSummary extends Component {
   render() {
     const { jobs, handleBidNow, bidNow, handleChange } = this.props;
@@ -58,6 +59,11 @@ export default class ProjectSummary extends Component {
                   />
                 </div>
               </div>
+              {/* <div className="row">
+                <div className="col-12">
+                  <Countdown />
+                </div>
+              </div> */}
               <p>
                 <button
                   className="btn btn-success"

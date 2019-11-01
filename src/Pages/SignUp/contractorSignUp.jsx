@@ -5,7 +5,7 @@ import SignUpbasicinfo from "./component/signUp-basicinfo";
 import SocialNumberAknowledgement from "./component/SocialNumberAknowledgement";
 import { contractorSignUp } from "../Redux/Store/actions/authActions";
 import * as actionTypes from "../Redux/Store/actions/actionTypes/ta-actionTypes";
-
+import { Redirect, Link } from "react-router-dom";
 class ContractorSignUpForm extends Component {
   constructor(props) {
     super(props);
@@ -168,8 +168,8 @@ class ContractorSignUpForm extends Component {
   render() {
     console.log(this.props);
     const { step } = this.state;
-    // const { auth } = this.props;
-    //if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
     const {
       service,
       email,

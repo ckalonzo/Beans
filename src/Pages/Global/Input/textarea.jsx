@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-export default class TextInput extends Component {
+export default class TextArea extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -9,7 +9,9 @@ export default class TextInput extends Component {
 
   render() {
     return (
-      <input
+      <textarea
+        cols="30"
+        rows="10"
         {...this.props}
         id={this.props.id}
         type={this.props.type ? this.props.type : "true"}
@@ -24,7 +26,7 @@ export default class TextInput extends Component {
     );
   }
 }
-TextInput.propTypes = {
+TextArea.propTypes = {
   id: PropTypes.string.isRequired,
   value: PropTypes.string
 };
