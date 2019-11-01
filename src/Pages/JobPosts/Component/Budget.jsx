@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MoneyValue from "./MoneyValue";
+import Button from "../../Global/Input/Button/Button";
 class Budget extends Component {
   continue = e => {
     e.preventDefault();
@@ -17,7 +18,7 @@ class Budget extends Component {
           <div className="card mt-3">
             <div className="card-header" id="taheadingBudget">
               <h5 className="mb-0">
-                <button
+                <Button
                   className="btn btn-link"
                   data-toggle="collapse"
                   data-target="#collapseTABudget"
@@ -25,7 +26,7 @@ class Budget extends Component {
                   aria-controls="collapseTABudget"
                 >
                   How much you willing to spend to get the job done?
-                </button>
+                </Button>
               </h5>
             </div>
 
@@ -42,20 +43,20 @@ class Budget extends Component {
           </div>
           <div className="row">
             <div className="mx-auto">
-              <button
+              <Button
                 type="button"
                 className="btn btn-primary"
                 onClick={this.back}
               >
                 Back
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
                 className="btn btn-primary"
                 onClick={this.continue}
               >
                 Continue
-              </button>
+              </Button>
             </div>
           </div>
         </div>

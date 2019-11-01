@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextInput } from "../../Global/Input/TextInput";
+import TextInput from "../../Global/Input/TextInput";
 
 class SignUpbasicinfo extends Component {
   continue = e => {
