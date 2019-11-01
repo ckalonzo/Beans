@@ -1,82 +1,120 @@
-import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "../css/Navbar.css";
 
 import React from "react";
-
-const CustomerSignedInLinks = () => {
+import { connect } from "react-redux";
+import { signOut } from "../../../../Redux/Store/actions/authActions";
+import { addToCart } from "../../../../Redux/Store/actions/cartActions";
+const CustomerSignedInLinks = props => {
   return (
-    <div>
-      <div className="container">
-        <nav className="navbar navbar-expand-md navbar-dark bg-light hover-underline-menu">
-          <div className="navbar-collapse collapse" id="collapsingNavbar">
-            <ul className="navbar-nav mx-auto">
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link moveline dropdown-toggle"
-                  to="#"
-                  id="dropdown08"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Customer
-                </Link>
-                <div className="dropdown-menu" aria-labelledby="dropdown08">
-                  <NavLink
-                    className="dropdown-item moveline"
-                    to="/SignUp/SignUp"
+    <React.Fragment>
+      <ul className="navbar-nav w-100 justify-content-center nav-section">
+        <li className="nav-item">
+          <NavLink
+            className="nav-link chg-text moveline"
+            to="../../../../Browse/ProjectDashboard"
+          >
+            Browse
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            className="nav-link chg-text moveline"
+            to="/Dashboard/CustomerDashboard"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+        {/* <li className="nav-item">
+          <NavLink
+            className="nav-link chg-text moveline"
+            to="/Membership/Membership"
+          >
+            Notifications
+          </NavLink>
+        </li> */}
+        <li className="nav-item">
+          <NavLink
+            className="nav-link chg-text moveline"
+            to="/Membership/Membership"
+          >
+            Membership
+          </NavLink>
+        </li>
+      </ul>
+      <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
+        <li>
+          <NavLink to="/Membership/component/cart">
+            <ul className="navbar-right">
+              <li className="ovr-chartContainer">
+                <a to="#" className="ta-shoppingChart" id="cart">
+                  <span
+                    className="fa-stack fa-2x has-badge"
+                    data-count={props.counter}
                   >
-                    Sign Up
-                  </NavLink>
-                  <NavLink
-                    className="dropdown-item moveline"
-                    to="/CustomerLogin/CustomerLogin"
-                  >
-                    LogIn
-                  </NavLink>
-                </div>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link moveline"
-                  to="/Membership/Membership"
-                >
-                  Membership
-                </NavLink>
-              </li>
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link moveline dropdown-toggle"
-                  to="#"
-                  id="dropdown08"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Contractor
-                </Link>
-                <div className="dropdown-menu" aria-labelledby="dropdown08">
-                  <NavLink
-                    className="dropdown-item moveline"
-                    to="/ContractorSignUp"
-                  >
-                    Sign Up
-                  </NavLink>
-                  <NavLink
-                    className="dropdown-item moveline"
-                    to="/ContractorLogin/ContractorLogin"
-                  >
-                    LogIn
-                  </NavLink>
-                </div>
+                    <i class="fas fa-shopping-basket"></i>
+                    {/* <i className="fa fa-circle fa-stack-2x" /> */}
+                  </span>
+                </a>
               </li>
             </ul>
+          </NavLink>
+        </li>
+        <li className="nav-item dropdown">
+          <NavLink
+            to="#"
+            className="nav-link avatarlink dropdown-toggle nav-avatar"
+            id="navbarDropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="false"
+            aria-expanded="false"
+          >
+            {props.profile.initials}
+          </NavLink>
+          <div
+            className="dropdown-menu"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <Link
+              className="dropdown-item nav-link"
+              to="/Profile/Layout/Profile"
+            >
+              Profile
+            </Link>
+            <Link
+              className="dropdown-item nav-link chg-text"
+              to="#"
+              onClick={props.signOut}
+            >
+              Log Out
+            </Link>
+            <Link className="dropdown-item nav-link" to="#">
+              Something else here
+            </Link>
           </div>
-        </nav>
-      </div>
-    </div>
+        </li>
+      </ul>
+    </React.Fragment>
   );
 };
 
-export default CustomerSignedInLinks;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    counter: state.cart.counter
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    signOut: () => dispatch(signOut()),
+    addToCart: (id, counter) => {
+      dispatch(addToCart(id, counter));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CustomerSignedInLinks);

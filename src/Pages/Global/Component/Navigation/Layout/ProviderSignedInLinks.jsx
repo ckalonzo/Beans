@@ -20,7 +20,7 @@ const ProviderSignedInLinks = props => {
         <li className="nav-item">
           <NavLink
             className="nav-link chg-text moveline"
-            to="/Dashboard/Dashboard"
+            to="/Dashboard/ContractorDashboard"
           >
             Dashboard
           </NavLink>
@@ -47,7 +47,7 @@ const ProviderSignedInLinks = props => {
           <NavLink to="/Membership/component/cart">
             <ul className="navbar-right">
               <li className="ovr-chartContainer">
-                <Link to="#" className="ta-shoppingChart" id="cart">
+                <a to="#" className="ta-shoppingChart" id="cart">
                   <span
                     className="fa-stack fa-2x has-badge"
                     data-count={props.counter}
@@ -55,7 +55,7 @@ const ProviderSignedInLinks = props => {
                     <i class="fas fa-shopping-basket"></i>
                     {/* <i className="fa fa-circle fa-stack-2x" /> */}
                   </span>
-                </Link>
+                </a>
               </li>
             </ul>
           </NavLink>
