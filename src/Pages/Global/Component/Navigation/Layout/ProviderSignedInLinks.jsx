@@ -47,7 +47,7 @@ const ProviderSignedInLinks = props => {
           <NavLink to="/Membership/component/cart">
             <ul className="navbar-right">
               <li className="ovr-chartContainer">
-                <a to="#" className="ta-shoppingChart" id="cart">
+                <a href="/#" className="ta-shoppingChart" id="cart">
                   <span
                     className="fa-stack fa-2x has-badge"
                     data-count={props.counter}

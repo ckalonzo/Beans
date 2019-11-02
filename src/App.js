@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import Navbar from "./Pages/Global/Component/Navigation/Layout/Navbar";
 import Footer from "./Pages/Global/Component/Navigation/Layout/Footer";
 import Home from "./Pages/Home/Home.jsx";
 import CustomerLogin from "./Pages/CustomerLogin/CustomerLogin";
 import ContractorLogin from "./Pages/ContractorLogin/ContractorLogin";
 import Membership from "./Pages/Membership/Membership";
-import firebase from "./Config/Firebase";
 import SignUp from "./Pages/SignUp/SignUp";
 import ContractorSignUpForm from "./Pages/SignUp/contractorSignUp";
 import ContractorDashboard from "./Pages/Dashboard/ContractorDashboard";

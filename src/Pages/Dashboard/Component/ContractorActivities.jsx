@@ -6,7 +6,7 @@ import Currentbids from "./ContractorCurrentbids";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 class ContractorActivities extends Component {
   state = {
@@ -37,8 +37,6 @@ class ContractorActivities extends Component {
     // console.log(`activity${this.props}`);
     const { notifications } = this.props;
     const { projects } = this.props;
-    const { classes } = this.props;
-    const { value } = this.state;
     return (
       <div className="col-12">
         <div className="container">

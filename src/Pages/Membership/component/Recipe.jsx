@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 //import { addShipping } from './actions/cartActions'
 import "../Css/cart.css";

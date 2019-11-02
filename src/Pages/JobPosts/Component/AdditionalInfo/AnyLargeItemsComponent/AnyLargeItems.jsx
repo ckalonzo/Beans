@@ -4,7 +4,7 @@ import "../../../Css/PostJob.scss";
 
 class AnyLargeItems extends Component {
   render() {
-    const { handleChange, largeItems, values, classes } = this.props;
+    const { handleChange, largeItems, values } = this.props;
     return (
       <div className="container">
         <div className="row">

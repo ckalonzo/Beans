@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
-import { USER_CONNECTED, LOGOUT } from "../Events/Events";
+import { USER_CONNECTED } from "../Events/Events";
 import LoginForm from "./LoginForm";
 import ChatContainer from "./chats/ChatContainer";
 import { connect } from "react-redux";
@@ -42,13 +42,13 @@ class Layout extends Component {
 
   //Sets the user property in state to null.
   logout = () => {
-    const { socket } = this.state;
+    //   const { socket } = this.state;
     //  socket.emit(LOGOUT);
     this.setState({ user: null });
   };
 
   render() {
-    const { authError, auth } = this.props;
+    //const { authError, auth } = this.props;
     const { socket, user } = this.state;
     return (
       <div className="container">

@@ -11,7 +11,6 @@ class IntroSignUp extends Component {
   };
 
   render() {
-    const { classes } = this.props;
     return (
       <div>
         <div className="container">

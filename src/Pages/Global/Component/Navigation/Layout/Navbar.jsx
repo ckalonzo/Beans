@@ -5,7 +5,7 @@ import SignedOutLinks from "./SignedOutLinks";
 import { connect } from "react-redux";
 
 const Navbar = props => {
-  const { auth, profile, ctr } = props;
+  const { auth, profile } = props;
   // display links if user is signed in or out
   const links = auth.uid ? (
     <ProviderSignedInLinks profile={profile} />

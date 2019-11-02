@@ -4,7 +4,7 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import NoImage from "../img/no-image.png";
-import CountdownTimer from "../Component/countdownTimer";
+//import CountdownTimer from "../Component/countdownTimer";
 const ProjectDetails = props => {
   const { project, auth, handleBidNow, bidNow } = props;
   if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;

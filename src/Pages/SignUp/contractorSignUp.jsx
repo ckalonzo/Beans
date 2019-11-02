@@ -5,7 +5,7 @@ import SignUpbasicinfo from "./component/signUp-basicinfo";
 import SocialNumberAknowledgement from "./component/SocialNumberAknowledgement";
 import { contractorSignUp } from "../Redux/Store/actions/authActions";
 import * as actionTypes from "../Redux/Store/actions/actionTypes/ta-actionTypes";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 class ContractorSignUpForm extends Component {
   constructor(props) {
     super(props);
@@ -102,7 +102,7 @@ class ContractorSignUpForm extends Component {
   }
 
   handleBlurSSN() {
-    let ssnLocked = true;
+    // let ssnLocked = true;
 
     if (this.state.actualSsn.length < 9) {
       this.setState({
@@ -246,7 +246,6 @@ class ContractorSignUpForm extends Component {
             ssnLocked={this.ssnLocked}
             clearSsn={this.clearSsn}
             actualSsn={actualSsn}
-            ssnLocked={ssnLocked}
             maskedSsn={maskedSsn}
             starredMask={this.starredMask}
           />

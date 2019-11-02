@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import Divider from "../../Global/Layout/divider";
 
 const Reviews = props => {
-  const { classes } = props;
   return (
     <Fragment>
       <div className="col-12 p-0">

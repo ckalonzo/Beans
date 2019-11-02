@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "../Css/customer-dashboard.scss";
 import Notification from "./Notifications";
 import CurrentJobs from "./CurrentJobs";
-import { Link } from "react-router-dom";
-import ChatModule from "../../Chat/Chat-module";
+
+//import ChatModule from "../../Chat/Chat-module";
 import MainChat from "../../Chat/mainChat";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
