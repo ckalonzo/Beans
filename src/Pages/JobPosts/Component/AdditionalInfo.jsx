@@ -27,11 +27,7 @@ class AdditionalInfo extends Component {
       state,
       zipCode,
       largeItems,
-      selectedDate,
-      selectedTime,
       flightOfStairs,
-      truckLoads,
-      typeOfTruck,
       specialInstructions
     } = this.props;
 

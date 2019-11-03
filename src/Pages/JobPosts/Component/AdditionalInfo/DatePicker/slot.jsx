@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
-import AvaliableTime from "./AvaliableTime";
-import moment from "moment";
+// import AvaliableTime from "./AvaliableTime";
+//import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 
 class AvaliableTimeDate extends Component {
@@ -15,34 +15,35 @@ class AvaliableTimeDate extends Component {
     this.timeChange = this.timeChange.bind(this);
   }
   dateChange(date) {
-    this.setState({
-      date: date,
-     
-    },
+    this.setState(
+      {
+        date: date
+      },
       () => {
         console.log(this.state.date);
-      });
+      }
+    );
   }
 
   timeChange(time) {
     this.props.handleChangeTimePicker(time);
-    this.setState({
-     time: time,
-
-    },
+    this.setState(
+      {
+        time: time
+      },
       () => {
         console.log(this.state.time);
-      });
+      }
+    );
   }
-
 
   render() {
     const {
       selectedDate,
-      handleChangeDatePicker,
-      handleChangeTimePicker,
-      selectedTime,
-      values
+      handleChangeDatePicker
+      // handleChangeTimePicker,
+      // selectedTime,
+      // values
     } = this.props;
     return (
       <div>
@@ -53,31 +54,28 @@ class AvaliableTimeDate extends Component {
               <div className="row">
                 <div className="col-6">
                   <DatePicker
-                value={selectedDate}
-                selected={this.state.date}
-                onSelect={handleChangeDatePicker}
-                onChange={this.dateChange}
-                dateFormat="MMMM d, yyyy"
-                name="selectedDate"
-              />
+                    value={selectedDate}
+                    selected={this.state.date}
+                    onSelect={handleChangeDatePicker}
+                    onChange={this.dateChange}
+                    dateFormat="MMMM d, yyyy"
+                    name="selectedDate"
+                  />
                 </div>
                 <div className="col-6">
-                <DatePicker
-                  value={this.props.selectedTime}
-                  selected={this.state.time}
-                 // onSelect={handleChangeTimePicker}
-                  onChange={this.timeChange}
-                showTimeSelect
-                showTimeSelectOnly
-                  timeIntervals={15}
-                  dateFormat="h:mm aa"
-                  timeCaption="Time"
-                />
+                  <DatePicker
+                    value={this.props.selectedTime}
+                    selected={this.state.time}
+                    // onSelect={handleChangeTimePicker}
+                    onChange={this.timeChange}
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={15}
+                    dateFormat="h:mm aa"
+                    timeCaption="Time"
+                  />
+                </div>
               </div>
-              </div>
-              
-
-              
             </div>
           </div>
         </div>

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "../Css/customer-dashboard.scss";
 import Notification from "./Notifications";
 import CurrentJobs from "./CurrentJobs";
-import { Link } from "react-router-dom";
-import ChatModule from "../../Chat/Chat-module";
+
+//import ChatModule from "../../Chat/Chat-module";
 import MainChat from "../../Chat/mainChat";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
@@ -19,7 +19,8 @@ class Activities extends Component {
     activeJobs: 1,
     show: true,
     value: 0,
-    deleteProject: []
+    deleteProject: [],
+    data: null
   };
 
   handleChange = (event, value) => {
@@ -36,6 +37,12 @@ class Activities extends Component {
       });
     }
   };
+
+  componentDidMount() {
+    fetch("https://api.github.com/search/repositories?q=stars:%3E100000")
+      .then(response => response.json())
+      .then(data => this.setState({ data }));
+  }
 
   render() {
     console.log(this, "======>");

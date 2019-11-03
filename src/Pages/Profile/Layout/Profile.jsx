@@ -37,7 +37,7 @@ class Profile extends Component {
                   <div className="col-3">
                     <Picture />
                     <div className="mt-3">
-                      <TypeOfJobs />
+                      <TypeOfJobs contractorProfile={contractorProfile} />
                     </div>
                     <div className="mt-3">
                       <ProfileLocation />

@@ -3,14 +3,15 @@ import "../Css/Price-Table.scss";
 import { connect } from "react-redux";
 class MembershipTable extends Component {
   render() {
-    const { subscription } = this.props;
     return (
       <section className="sectioncolor mt-5">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-                <h1 className="col-12 adj-font">Monthly Subscription Packages</h1>
+                <h1 className="col-12 adj-font">
+                  Monthly Subscription Packages
+                </h1>
                 <p className="lead">
                   Quickly build an effective pricing table for your potential
                   customers with this Bootstrap example. It's built with default

@@ -13,7 +13,6 @@ class City extends Component {
             className="form-control"
             id={city}
             defaultvalue={values.city}
-            defaultvalue={values.address}
             onChange={handleChange("city")}
           />
         </div>

@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import ProjectSummary from "./Component/ProjectSummary";
-import { Link } from "react-router-dom";
 import Divider from "../Global/Layout/divider";
 import "./Css/Project.scss";
 

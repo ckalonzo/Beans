@@ -22,7 +22,6 @@ const rootReducer = combineReducers({
   items: cartReducer,
   cart: cartReducer,
   subscription: monthlySubscriptionReducer,
-  contractorProfile: ProfileReducer,
   deleteJob: deleteJobReducer,
   registration: RegistrationReducer
 });

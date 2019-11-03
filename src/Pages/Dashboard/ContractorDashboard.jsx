@@ -4,8 +4,8 @@ import DashboardHero from "./Component/ContractordashboardHero";
 import "./Css/dashboard.scss";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { firestoreConnect } from "react-redux-firebase";
-import { compose } from "redux";
+// import { firestoreConnect } from "react-redux-firebase";
+// import { compose } from "redux";
 
 class ContractorDashboard extends Component {
   render() {
