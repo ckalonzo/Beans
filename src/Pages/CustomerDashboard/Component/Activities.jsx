@@ -19,7 +19,8 @@ class Activities extends Component {
     activeJobs: 1,
     show: true,
     value: 0,
-    deleteProject: []
+    deleteProject: [],
+    data: null
   };
 
   handleChange = (event, value) => {
@@ -36,6 +37,12 @@ class Activities extends Component {
       });
     }
   };
+
+  componentDidMount() {
+    fetch("https://api.github.com/search/repositories?q=stars:%3E100000")
+      .then(response => response.json())
+      .then(data => this.setState({ data }));
+  }
 
   render() {
     console.log(this, "======>");

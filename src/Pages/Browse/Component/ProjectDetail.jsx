@@ -1,4 +1,4 @@
-import React from "react";
+import { React, Fragment } from "react";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
@@ -10,7 +10,7 @@ const ProjectDetails = props => {
   if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
   if (project) {
     return (
-      <React.Fragment>
+      <Fragment>
         {/* <CountdownTimer timeTillDate={(project.selectedDate),(project.selectedTime}) timeFormat="MM DD YYYY, h:mm a" /> */}
         <div className="card">
           <div className="row no-gutters">
@@ -114,7 +114,7 @@ const ProjectDetails = props => {
             </aside>
           </div>
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   } else {
     return (

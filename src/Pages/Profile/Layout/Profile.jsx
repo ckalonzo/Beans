@@ -15,10 +15,10 @@ import Reviews from "../component/Reviews";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
- class Profile extends Component {
-   render() {
-     console.log(this.props);
-     const {contractorProfile } = this.props;
+class Profile extends Component {
+  render() {
+    console.log(this.props);
+    const { contractorProfile } = this.props;
     return (
       <React.Fragment>
         <section className="profile">
@@ -30,7 +30,7 @@ import { compose } from "redux";
                   <div className="col-3">
                     <Picture />
                     <div className="mt-3">
-                      <TypeOfJobs />
+                      <TypeOfJobs contractorProfile={contractorProfile} />
                     </div>
                     <div className="mt-3">
                       <ProfileLocation />
@@ -90,12 +90,10 @@ import { compose } from "redux";
 const mapStateToProps = state => {
   console.log(state);
   return {
-    contractorProfile: state.firestore,
+    contractorProfile: state.firestore
   };
 };
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([
-    { collection: "contractorProfile"}
-  ])
+  firestoreConnect([{ collection: "contractorProfile" }])
 )(Profile);
