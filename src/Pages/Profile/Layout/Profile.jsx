@@ -15,10 +15,17 @@ import Reviews from "../component/Reviews";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
- class Profile extends Component {
-   render() {
-     console.log(this.props);
-     const {contractorProfile } = this.props;
+import Button from "../../Global/Input/Button/Button";
+import UpdateProfile from "./updateProfile";
+class Profile extends Component {
+  updateProfile = e => {
+    e.preventDefault();
+    return <UpdateProfile />;
+  };
+
+  render() {
+    console.log(this.props);
+    const { contractorProfile } = this.props;
     return (
       <React.Fragment>
         <section className="profile">
@@ -77,6 +84,7 @@ import { compose } from "redux";
                         <History />
                       </div>
                     </div>
+                    <Button onClick={updateProfile()}>Update Profile</Button>
                   </div>
                 </div>
               </div>
@@ -90,12 +98,10 @@ import { compose } from "redux";
 const mapStateToProps = state => {
   console.log(state);
   return {
-    contractorProfile: state.firestore,
+    contractorProfile: state.firestore
   };
 };
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([
-    { collection: "contractorProfile"}
-  ])
+  firestoreConnect([{ collection: "contractorProfile" }])
 )(Profile);
