@@ -17,7 +17,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import Button from "../../Global/Input/Button/Button";
-import UpdateProfile from "./updateProfile";
+import UpdateProfile from "../updateProfile/updateProfile";
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +35,9 @@ class Profile extends Component {
   render() {
     const { contractorProfile } = this.props;
     if (this.state.update === true)
-      return <Redirect to="/Profile/Layout/updateProfile" update={false} />;
+      return (
+        <Redirect to="/Profile/updateProfile/updateProfile" update={false} />
+      );
 
     return (
       <React.Fragment>
@@ -52,12 +54,6 @@ class Profile extends Component {
                     </div>
                     <div className="mt-3">
                       <ProfileLocation contractorProfile={contractorProfile} />
-                    </div>
-                    <div className="mt-3">
-                      <NumberofJobs contractorProfile={contractorProfile} />
-                    </div>
-                    <div className="mt-3">
-                      <ActiveMember contractorProfile={contractorProfile} />
                     </div>
                   </div>
                   <div className="col-6">
@@ -97,7 +93,12 @@ class Profile extends Component {
                         <History contractorProfile={contractorProfile} />
                       </div>
                     </div>
-                    <Button onClick={this.updateProfile}>Update Profile</Button>
+                    <Button
+                      className="primary-btn"
+                      onClick={this.updateProfile}
+                    >
+                      Update Profile
+                    </Button>
                   </div>
                 </div>
               </div>
