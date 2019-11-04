@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import ActiveMember from "../component/ActiveMember";
 import CompanyName from "../component/companyName";
 import NumberofJobs from "../component/NumberofJobs";
@@ -18,19 +19,24 @@ import { compose } from "redux";
 import Button from "../../Global/Input/Button/Button";
 import UpdateProfile from "./updateProfile";
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      update: false
+    };
+  }
   updateProfile = e => {
     e.preventDefault();
-    if (this.props.contractorProfile.update) {
-      return <UpdateProfile />;
-    } else {
-      return null;
-    }
+    const { update } = this.state;
+    this.setState({
+      update: !this.state.update
+    });
   };
   render() {
     const { contractorProfile } = this.props;
-    {
-      contractorProfile.update ? <UpdateProfile update={false} /> : "";
-    }
+    if (this.state.update === true)
+      return <Redirect to="/Profile/Layout/updateProfile" update={false} />;
+
     return (
       <React.Fragment>
         <section className="profile">
@@ -91,7 +97,7 @@ class Profile extends Component {
                         <History contractorProfile={contractorProfile} />
                       </div>
                     </div>
-                    <Button onClick={updateProfile()}>Update Profile</Button>
+                    <Button onClick={this.updateProfile}>Update Profile</Button>
                   </div>
                 </div>
               </div>

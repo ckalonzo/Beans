@@ -21,6 +21,7 @@ import ChatModule from "./Pages/Chat/Chat-module";
 // import Main from './Pages/Chat/Component/Main/Main'
 import ContractorCreateAccount from "./Pages/SignUp/Contractor-Create-Account";
 import Profile from "./Pages/Profile/Layout/Profile";
+import UpdateProfile from "./Pages/Profile/Layout/updateProfile";
 import Thankyou from "./Pages/SignUp/component/Thankyou";
 
 class App extends Component {
@@ -34,6 +35,10 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
+            <Route
+              path="/Profile/Layout/updateProfile"
+              component={UpdateProfile}
+            />
             <Route path="/Profile/Layout/Profile" component={Profile} />
             <Route path="/JobPosts/PostJob" component={WizardForm} />
             <Route path="/Chat/Chat-module" component={ChatModule} />
