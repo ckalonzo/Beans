@@ -20,12 +20,17 @@ import UpdateProfile from "./updateProfile";
 class Profile extends Component {
   updateProfile = e => {
     e.preventDefault();
-    return <UpdateProfile />;
+    if (this.props.contractorProfile.update) {
+      return <UpdateProfile />;
+    } else {
+      return null;
+    }
   };
-
   render() {
-    console.log(this.props);
     const { contractorProfile } = this.props;
+    {
+      contractorProfile.update ? <UpdateProfile update={false} /> : "";
+    }
     return (
       <React.Fragment>
         <section className="profile">
@@ -40,31 +45,33 @@ class Profile extends Component {
                       <TypeOfJobs contractorProfile={contractorProfile} />
                     </div>
                     <div className="mt-3">
-                      <ProfileLocation />
+                      <ProfileLocation contractorProfile={contractorProfile} />
                     </div>
                     <div className="mt-3">
-                      <NumberofJobs />
+                      <NumberofJobs contractorProfile={contractorProfile} />
                     </div>
                     <div className="mt-3">
-                      <ActiveMember />
+                      <ActiveMember contractorProfile={contractorProfile} />
                     </div>
                   </div>
                   <div className="col-6">
                     <div className="row">
                       <div className="col-12">
                         <div className="mt-3">
-                          <PersonName />
+                          <PersonName contractorProfile={contractorProfile} />
                         </div>
                         <div className="mt-3">
                           <h6>Company Name:</h6>
-                          <CompanyName />
+                          <CompanyName contractorProfile={contractorProfile} />
                         </div>
                         <div className="mt-3">
-                          <AvgRating />
+                          <AvgRating contractorProfile={contractorProfile} />
                         </div>
                         <div className="mt-3">
                           <h3>Bio</h3>
-                          <OutlinedTextFields />
+                          <OutlinedTextFields
+                            contractorProfile={contractorProfile}
+                          />
                         </div>
                       </div>
                     </div>
@@ -75,13 +82,13 @@ class Profile extends Component {
                   <div className="col-8 offset-3">
                     <div className="row">
                       <div className="shadow mt-3">
-                        <Reviews />
+                        <Reviews contractorProfile={contractorProfile} />
                       </div>
                     </div>
 
                     <div className="row mt-4">
                       <div className="shadow">
-                        <History />
+                        <History contractorProfile={contractorProfile} />
                       </div>
                     </div>
                     <Button onClick={updateProfile()}>Update Profile</Button>
@@ -96,9 +103,8 @@ class Profile extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state);
   return {
-    contractorProfile: state.firestore
+    contractorProfile: state.userData
   };
 };
 export default compose(

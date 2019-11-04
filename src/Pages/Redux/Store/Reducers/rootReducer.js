@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   submitBid: SubmitBidReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer,
-  contractorProfile: ProfileReducer,
+  userData: ProfileReducer,
   counter: CounterReducer,
   items: cartReducer,
   cart: cartReducer,

@@ -13,6 +13,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { createProfile } from "../../Redux/Store/actions/profileAuctions";
 import { Link } from "react-router-dom";
+import { compose } from "redux";
 
 class UpdateProfile extends Component {
   handleChange = e => {};
@@ -84,7 +85,7 @@ class UpdateProfile extends Component {
 }
 const mapStateToProps = state => {
   return {
-    contractorProfile: state.firestore.contractorProfile
+    contractorProfile: state.userData
   };
 };
 const mapDispatchToProps = dispatch => {

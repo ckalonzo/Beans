@@ -5,7 +5,7 @@ const AvgRating = props => {
   return (
     <div className="col-12">
       <h6>Ratings</h6>
-      <Rating initialRating={2.5} readonly />
+      <Rating initialRating={props.contractorProfile.rating} readonly />
     </div>
   );
 };
