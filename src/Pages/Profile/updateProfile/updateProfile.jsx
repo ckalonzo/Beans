@@ -3,7 +3,7 @@ import ActiveMember from "../component/ActiveMember";
 import CompanyName from "../component/companyName";
 import NumberofJobs from "../component/NumberofJobs";
 import PersonName from "../component/personName";
-import Picture from "../component/picture";
+import Picture from "./components/picture";
 import ProfileLocation from "../component/ProfileLocation";
 import AvgRating from "../component/Rating";
 import TypeOfJobs from "../component/typeOfJobs";
@@ -16,26 +16,41 @@ import Button from "../../Global/Input/Button/Button";
 import { createProfile } from "../../Redux/Store/actions/profileAuctions";
 import { Link } from "react-router-dom";
 import TextInput from "../../Global/Input/TextInput";
+import "../sass/updateProfile.scss";
+const phoneRGX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
 
 class UpdateProfile extends Component {
-  handleChange = e => {};
   handleSubmit = e => {
     e.preventDefault();
     this.props.createProfile(this.state);
+  };
+
+  componentWillMount = () => {
+    window.scrollTo(0, 0);
+    document.title = "truckedAway.com | Update Profile";
+  };
+
+  updateStore = (name, value) => {
+    const { addUser } = this.props;
+    console.log("sending=====>", name, value);
+    addUser(name, value);
   };
   render() {
     const { contractorProfile } = this.props;
     console.log(contractorProfile);
     return (
       <div>
-        <Masthead />
-
         <section className="register">
           <div className="container">
             <div className="row">
               <div className="col-md-6 offset-md-3">
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-row">
+                    <div className="col">
+                      <Picture />
+                    </div>
+                  </div>
+                  <div className="form-row -ta_mt-30">
                     <div className="col">
                       <TextInput
                         type={"hidden"}
@@ -70,7 +85,7 @@ class UpdateProfile extends Component {
                       />
                     </div>
                   </div>
-                  <div className="form-row">
+                  <div className="form-row -ta_mt-10">
                     <div className="col">
                       <TextInput
                         type={"email"}
@@ -98,7 +113,7 @@ class UpdateProfile extends Component {
                       />
                     </div>
                   </div>
-                  <div className="form-row">
+                  <div className="form-row -ta_mt-10">
                     <div className="col">
                       <TextInput
                         type={"password"}
@@ -132,7 +147,7 @@ class UpdateProfile extends Component {
                         type={"text"}
                         name={"address1"}
                         id={"address1"}
-                        className={"form-control input-lg"}
+                        className={"form-control input-lg -ta_mt-10"}
                         placeholder={"Address1"}
                         tabIndex={"7"}
                         onBlur={this.onBlur}
@@ -147,7 +162,7 @@ class UpdateProfile extends Component {
                         type={"text"}
                         name={"address2"}
                         id={"address2"}
-                        className={"form-control input-lg"}
+                        className={"form-control input-lg -ta_mt-10"}
                         placeholder={"Address2"}
                         tabIndex={"8"}
                         onBlur={this.onBlur}
@@ -156,7 +171,7 @@ class UpdateProfile extends Component {
                       />
                     </div>
                   </div>
-                  <div className="form-row">
+                  <div className="form-row -ta_mt-10">
                     <div className="col">
                       <TextInput
                         type={"text"}
@@ -234,7 +249,7 @@ class UpdateProfile extends Component {
                       </select>
                     </div>
                   </div>
-                  <div className="form-row">
+                  <div className="form-row -ta_mt-10">
                     <div className="col">
                       <TextInput
                         type={"text"}
@@ -542,7 +557,7 @@ class UpdateProfile extends Component {
                       </select>
                     </div>
                   </div>
-                  <div className="form-row">
+                  <div className="form-row -ta_mt-30">
                     <div className="col text-center">
                       <button
                         className="btn btn-primary"
