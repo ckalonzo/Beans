@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import ActiveMember from "../component/ActiveMember";
-import CompanyName from "../component/companyName";
-import NumberofJobs from "../component/NumberofJobs";
-import PersonName from "../component/personName";
 import Picture from "./components/picture";
-import ProfileLocation from "../component/ProfileLocation";
-import AvgRating from "../component/Rating";
-import TypeOfJobs from "../component/typeOfJobs";
-import ProfileHero from "../component/ProfileHero";
 import OutlinedTextFields from "../component/multiline-Input";
 import { connect } from "react-redux";
 import { compose } from "redux";
@@ -564,7 +556,7 @@ class UpdateProfile extends Component {
                         tabIndex={"13"}
                         onClick={this.handleSubmit}
                       >
-                        Next
+                        Save Profile
                       </button>
                     </div>
                   </div>
