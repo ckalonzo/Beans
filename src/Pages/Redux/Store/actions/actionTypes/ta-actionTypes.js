@@ -38,3 +38,11 @@ export const ADD_BID_ERR = "ADD_BID_ERR";
 //Bid Job
 
 export const UPDATE_CONTRACTOR = "UPDATE_CONTRACTOR";
+
+export const FORM_FIELD_TYPES = {
+  TEXTINPUT: "textinput",
+  TEXTAREA: "textarea",
+  SELECT: "select",
+  RADIO_GROUP: "radioGroup",
+  CHECKBOX: "datePicker"
+};

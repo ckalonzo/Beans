@@ -1,6 +1,7 @@
 import authReducer from "./authReducer";
 import JobPostReducer from "./JobPostReducer";
 import cartReducer from "./cartReducer";
+import StatesListReducer from "./statesListReducer";
 import CounterReducer from "./counterReducer";
 import ProfileReducer from "./profileReducer";
 import SubmitBidReducer from "./SubmitBidReducer";
@@ -23,7 +24,8 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   subscription: monthlySubscriptionReducer,
   deleteJob: deleteJobReducer,
-  registration: RegistrationReducer
+  registration: RegistrationReducer,
+  statesList: StatesListReducer
 });
 
 export default rootReducer;

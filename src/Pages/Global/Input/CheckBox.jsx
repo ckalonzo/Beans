@@ -1,7 +1,18 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
-export default class TextInput extends Component {
+export default class CheckBox extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange = event => {
+    event.stopPropagation();
+    if (event.target) {
+      this.props.onClick(event.target.id, event.target.checked);
+    }
+  };
+
   renderError() {
     if (this.props.error) {
       return (
@@ -24,15 +35,15 @@ export default class TextInput extends Component {
   render() {
     return (
       <div className="container">
-        <label htmlFor={this.props.id}>{this.rennderLabel()}</label>
         <input
           id={this.props.id}
-          value={this.props.value ? this.props.value : ""}
-          type="text"
-          onChange={this.props.onChange}
-          className="form-control"
-          onBlur={this.handleBlur}
+          type="checkbox"
+          className="form-check-input"
+          checked={this.props.value}
+          onChange={() => {}}
+          onClick={this.handleChange}
         />
+        <label htmlFor={this.props.id}>{this.rennderLabel()}</label>
         {this.renderError()}
       </div>
     );
