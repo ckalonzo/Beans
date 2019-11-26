@@ -1,4 +1,4 @@
-import { UPDATE_PROFILE_SUCCESS } from "./actionTypes/ta-actionTypes";
+import { PROFILE_GROUP } from "./actionTypes/ta-actionTypes";
 
 export const createProfile = (uid, userdata) => {
   // console.log(uid, userData);
@@ -63,7 +63,7 @@ export const updateProfile = (uid, userData) => {
 };
 export const userDataCollection = userDataCollection => {
   return {
-    type: UPDATE_PROFILE_SUCCESS,
+    type: PROFILE_GROUP.UPDATE_PROFILE_SUCCESS,
     payload: userDataCollection
   };
 };

@@ -24,7 +24,7 @@ export default class TextInput extends Component {
   render() {
     return (
       <div className="container">
-        <label htmlFor={this.props.id}>{this.rennderLabel()}</label>
+        <label htmlFor={this.props.id}>{this.renderLabel()}</label>
         <input
           id={this.props.id}
           value={this.props.value ? this.props.value : ""}

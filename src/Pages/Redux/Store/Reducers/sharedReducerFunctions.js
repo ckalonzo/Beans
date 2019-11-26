@@ -60,7 +60,7 @@ export const genericFieldValidation = formItem => {
 export const startEndDateValidation = (
   locationState,
   startDateId,
-  enDateId
+  endDateId
 ) => {
   //copy the pieces of locationstate for validating:
   let start = { ...locationState[startDateId] };
@@ -69,7 +69,7 @@ export const startEndDateValidation = (
   let startDate = moment(start.value, "MM/DD/YYYY"); //.toDate();
   let endDate = moment(end.value, "MM/DD/YYYY"); //.toDate();
 
-  if (enDateId.isBefore(startDate)) {
+  if (endDateId.isBefore(startDate)) {
     start.error = "Start date must be before the end date.";
     end.error = "End date must be after start date.";
   } else if (endDate.isAfter(moment(start).add(1, "year"))) {
