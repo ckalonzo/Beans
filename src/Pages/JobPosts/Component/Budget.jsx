@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MoneyValue from "./MoneyValue";
-import Button from "../../Global/Input/Button/Button";
+import Button from "../../Global/Input/Button";
 class Budget extends Component {
   continue = e => {
     e.preventDefault();

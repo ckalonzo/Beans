@@ -16,7 +16,7 @@ import Reviews from "../component/Reviews";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-import Button from "../../Global/Input/Button/Button";
+import Button from "../../Global/Input/Button";
 import UpdateProfile from "../updateProfile/updateProfile";
 class Profile extends Component {
   constructor(props) {

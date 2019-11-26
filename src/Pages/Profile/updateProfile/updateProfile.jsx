@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Picture from "./components/picture";
 import OutlinedTextFields from "../component/multiline-Input";
 import { connect } from "react-redux";
-import Select from "react-select";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
-import Button from "../../Global/Input/Button/Button";
+import Button from "../../Global/Input/Button";
 import { userDataCollection } from "../../Redux/Store/actions/profileAuctions";
 import * as actionTypes from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
 import { Link } from "react-router-dom";
@@ -564,7 +563,7 @@ class UpdateProfile extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <Select
+                <select
                   className="form-control basic-multi-select"
                   isMulti
                   id="service"
@@ -576,7 +575,7 @@ class UpdateProfile extends Component {
                   tabIndex={"11"}
                   onChange= onChange={this.handleChange}
                   value={this.state.typeOfJobs}>
-                </Select>
+                </select>
               </div>
 
               <div className="form-group row">
