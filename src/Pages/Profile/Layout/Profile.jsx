@@ -93,8 +93,9 @@ class Profile extends Component {
                         <History contractorProfile={contractorProfile} />
                       </div>
                     </div>
+
                     <Button
-                      className="primary-btn"
+                      labelName={"Update Profile"}
                       onClick={this.updateProfile}
                     >
                       Update Profile

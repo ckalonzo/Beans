@@ -1,17 +1,11 @@
 import React from "react";
 
-const TypeOfJobs = props => {
-  console.log(props.contractorProfile);
+const TypeOfJobs = () => {
   return (
     <div className="row">
       <div className="col">
-        {props.contractorProfile.typeOfJobs.map(service => {
-          return (
-            <span className="badge badge-pill badge-info">
-              <div key={service.toString()}>{service}</div>
-            </span>
-          );
-        })}
+        <span className="badge badge-pill badge-info">Junk Removal</span>
+        <span className="badge badge-pill badge-info">Lawn Service</span>
       </div>
     </div>
   );
