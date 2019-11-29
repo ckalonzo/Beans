@@ -37,7 +37,7 @@ export const customerSignUp = newCustomer => {
       .createUserWithEmailAndPassword(newCustomer.email, newCustomer.password)
       .then(resp => {
         return firestore
-          .collection("customerProfile")
+          .collection("CustomerProfile")
           .doc(resp.user.uid)
           .set({
             firstName: newCustomer.firstName,

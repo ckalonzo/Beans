@@ -269,21 +269,13 @@ const ProviderSignedInLinks = props => {
           {/* <!--start .author-author__info--> */}
           <div class="author-author__info has_dropdown">
             <div class="author__avatar online">
-              <img
-                src="img/user-avater.png"
-                alt="user avatar"
-                class="rounded-circle"
-              />
+              <span class="rounded-circle">{props.profile.initials}</span>
             </div>
 
             <div class="dropdown dropdown--author">
               <div class="author-credits d-flex">
                 <div class="author__avatar">
-                  <img
-                    src="img/user-avater.png"
-                    alt="user avatar"
-                    class="rounded-circle"
-                  />
+                  <span class="rounded-circle">{props.profile.initials}</span>
                 </div>
                 <div class="autor__info">
                   <p class="name">Chris Bent</p>
