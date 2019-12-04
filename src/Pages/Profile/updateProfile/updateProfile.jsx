@@ -10,7 +10,8 @@ import TextArea from "../../Global/Input/textarea";
 //import * as actionTypes from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
 import {
   updateProfile,
-  beginValidatingProfileValue
+  beginValidatingProfileValue,
+  submitProfile
 } from "../../Redux/Store/actions/index";
 import { Link } from "react-router-dom";
 import TextInput from "../../Global/Input/TextInput";
@@ -19,7 +20,7 @@ import "../sass/updateProfile.scss";
 class UpdateProfile extends Component {
   render() {
     const contractorProfile = this.props.contractorProfile;
-    console.log(this.props.contractorProfile.firstName);
+    // console.log(this.props.contractorProfile.firstName);
     console.log(contractorProfile);
     return (
       <div>
@@ -183,7 +184,7 @@ class UpdateProfile extends Component {
                     labelName={contractorProfile.businessState.label}
                     required={contractorProfile.businessState.required}
                     options={this.props.statesList}
-                    id="State"
+                    id="businessState"
                     onChange={event =>
                       this.props.actions.updateProfile(
                         event.target.id,
@@ -227,7 +228,7 @@ class UpdateProfile extends Component {
                   labelName={contractorProfile.typeOfJobs.label}
                   required={contractorProfile.typeOfJobs.required}
                   options={this.props.serviceList}
-                  id="businessState"
+                  id="typeOfJobs"
                   onChange={event =>
                     this.props.actions.updateProfile(
                       event.target.id,
@@ -247,6 +248,7 @@ class UpdateProfile extends Component {
               <div className="form-group row">
                 <div className="col-12 -ta_mt-25">
                   <TextArea
+                    id="bio"
                     labelName={contractorProfile.bio.label}
                     required={contractorProfile.bio.required}
                     onChange={event =>
@@ -267,13 +269,15 @@ class UpdateProfile extends Component {
               </div>
               <div className="form-row -ta_mt-30">
                 <div className="col text-center">
-                  <button
+                  <Button
+                    type="submit"
                     className="btn btn-primary"
+                    labelName="Update Profile"
                     tabIndex={"13"}
-                    onClick={this.handleSubmit}
+                    onClick={this.props.actions.submitProfile}
                   >
                     Save Profile
-                  </button>
+                  </Button>
                 </div>
               </div>
             </form>
@@ -288,7 +292,7 @@ const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
     profile: state.firebase.profile,
-    contractorProfile: state.userData.userData,
+    contractorProfile: state.userData,
     statesList: state.statesList,
     serviceList: state.serviceList
   };
@@ -299,7 +303,8 @@ function mapDispatchToProps(dispatch) {
     actions: bindActionCreators(
       {
         updateProfile: updateProfile,
-        beginValidatingProfileValue: beginValidatingProfileValue
+        beginValidatingProfileValue: beginValidatingProfileValue,
+        submitProfile: submitProfile
       },
       dispatch
     )

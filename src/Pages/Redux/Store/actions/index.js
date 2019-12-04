@@ -11,6 +11,13 @@ export const updateProfile = (id, value) => {
   };
 };
 
+export const submitProfile = () => {
+  console.log("submitting profile ");
+  return {
+    type: PROFILE_GROUP.SUBMIT_PROFILE
+  };
+};
+
 export const beginValidatingProfileValue = id => {
   return {
     type: PROFILE_GROUP.BEGIN_VALIDATING_PROFILE_VALUE,

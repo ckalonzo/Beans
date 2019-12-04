@@ -1,53 +1,40 @@
 import React, { Component } from "react";
 import Logo from "../Component/logo";
-import ProviderSignedInLinks from "./ProviderSignedInLinks";
-import SignedOutLinks from "./SignedOutLinks";
+import ProviderSignedInLinkstest from "./ProviderSignedInLinkstest";
+import SignedOutLinkstest from "./SignedOutLinkstest";
 import { connect } from "react-redux";
+import "../css/Navbar.scss";
+
 class Layout2 extends Component {
   render() {
     const { auth, profile } = this.props;
     // display links if user is signed in or out
     const links = auth.uid ? (
-      <ProviderSignedInLinks profile={profile} />
+      <ProviderSignedInLinkstest profile={profile} />
     ) : (
-      <SignedOutLinks />
+      <SignedOutLinkstest />
     );
     return (
-      <div class="menu-area">
+      <div class="menu-area nav-section">
         <div class="top-menu-area">
           <div class="container-fluid">
             <div class="row">
               <div class="col-lg-12">
                 <div class="menu-fullwidth">
-                  {/* logo component */}
-                  <Logo />
-                  <div class="menu-container">
-                    <div class="d_menu">
-                      <nav class="navbar navbar-expand-lg mainmenu__menu">
-                        <button
-                          class="navbar-toggler"
-                          type="button"
-                          data-toggle="collapse"
-                          data-target="#bs-example-navbar-collapse-1"
-                          aria-controls="bs-example-navbar-collapse-1"
-                          aria-expanded="false"
-                          aria-label="Toggle navigation"
-                        >
-                          <span class="navbar-toggler-icon icon-menu"></span>
-                        </button>
-                        {/* <!-- Collect the nav links, forms, and other content for toggling --> */}
-                        <div
-                          class="collapse navbar-collapse"
-                          id="bs-example-navbar-collapse-1"
-                        >
-                          {/*  */}
-                          {links}
-                        </div>
-                        {/* <!-- /.navbar-collapse --> */}
-                      </nav>
+                  <div class="logo-wrapper">
+                    <Logo />
+                    <div class="logo logo-top">
+                      <a href="index.html">
+                        <img
+                          src="img/logo.png"
+                          alt="logo image"
+                          class="img-fluid"
+                        />
+                      </a>
                     </div>
                   </div>
-                  {/* <!-- end of nav  --> */}
+                  {links}
+                  {/* NAV COMPONENT */}
                 </div>
               </div>
             </div>

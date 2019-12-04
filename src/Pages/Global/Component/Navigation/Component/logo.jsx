@@ -5,8 +5,8 @@ export default class Logo extends Component {
   render() {
     return (
       <div class="logo-wrapper">
-        <div class="logo logo-top">
-          <Link to="/" className="navbar-brand"></Link>
+        <div class="ta-brand img-fluid">
+          <Link to="/" className="navbar-brand "></Link>
         </div>
       </div>
     );

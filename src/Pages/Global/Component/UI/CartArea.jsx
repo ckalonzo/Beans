@@ -47,8 +47,8 @@ export default class CartArea extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td colspan="1">
+                      <tr key={item.id}>
+                        <td>
                           <div class="product__description">
                             <div class="p_image">
                               <img src="img/pur1.jpg" alt="Purchase image" />

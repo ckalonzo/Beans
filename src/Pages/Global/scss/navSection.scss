@@ -1,109 +1,6 @@
-$shopping-cart-red: #124676;
-
-nav {
-  background-color: #ffffff;
-}
-ul {
-  .navbar-right {
-    list-style-type: none;
-  }
-}
-.ovr-chartContainer {
-  padding-right: 37px;
-}
-.nav-section {
-  .navbar-brand {
-    background-image: url("../Images/truckedaway-logo-large-transparent.png");
-    height: 70px;
-    background-size: 50% 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    @media (min-width: 320px) {
-      background-size: 100% 100%;
-    }
-    @media (min-width: 576px) {
-      background-size: 80% 100%;
-    }
-  }
-  .dropdown-item:hover > .dropdown-menu {
-    display: block;
-  }
-
-  .chg-text {
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .navbar-nav .nav-link {
-    display: inline-block;
-  }
-
-  .moveline {
-    position: relative;
-    color: #124676;
-    text-decoration: none;
-
-    height: 64px;
-  }
-  .rmv-border {
-    border: 0;
-  }
-  .moveline:hover {
-    color: #124676;
-  }
-
-  .moveline::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #124676;
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-  }
-  .moveline:hover::before {
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-  }
-  .nav-link:hover {
-    color: #124676 !important;
-  }
-  .nav-link {
-    color: #124676 !important;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .avatarlink:hover {
-    color: #ffffff !important;
-  }
-  .avatarlink {
-    color: #ffffff !important;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .navbar-toggler {
-    background-color: #124676 !important;
-  }
-
-  .nav-avatar {
-    width: 50px;
-    height: 50px;
-    background-color: #124676;
-    text-align: center;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    font-weight: 600;
-    color: #ffffff;
-  }
-
-     .ta-brand {
-    background-image: url("../Images/truckedaway-logo-large-transparent.png");
+.exNav{
+    .ta-brand {
+    background-image: url("../Component/Navigation/Images/truckedaway-logo-large-transparent.png");
     height: 70px;
     background-size: 50% 100%;
     background-repeat: no-repeat;
@@ -1280,45 +1177,45 @@ ul {
 }
 
 .about_mission .content_area h1 span,.about_mission .content_block2 .content_area2 h1 span,.affliate_rule_module .affiliate_title span.lnr-checkmark-circle,.affliate_rule_module .card--category ul li a:hover,.affliate_rule_module .card--forum_categories ul li a:hover,.affliate_rule_module .card--top_discussion .card-content li a,.affliate_rule_module .card--top_discussion .card-content li a:hover,.affliate_rule_module .collapsible-content ul li a:hover,.affliate_rule_module .faq--card .card-content li a,.affliate_rule_module .faq--card .card-content li a:hover,.affliate_rule_module .faq--sidebar .faq--card .card-content li a,.affliate_rule_module .sidebar--blog .faq--card .card-content li a,.affliate_rule_module .support--sidebar .faq--card .card-content li a,.alert.alert-default,.alert.alert-default .close,.author-profile .author-stats ul .t_items span,.author__access_area ul li a:hover,.author_info .author__info ul a:hover,.blog--card .blog__meta .date_time span,.blog--card .blog__title h4:hover,.btn--light,.btn--light:hover,.btn-light,.btn-light:hover,.btn.btn--white,.btn.btn--white:hover,.card-pricing.item-preview .price h1,.card_style1 .card_style1__info .date_place li span,.card_style1 .card_style1__info figcaption a:hover h3,.card_style1 .card_style1__info figcaption a:hover h4,.card_style2 .card_style2__location_type p span,.card_style2 .save_job span,.card_style2 a,.cart_area tbody .item_action .remove_from_cart span,.chat_area .chat_area--conversation .body .attachments .attachment_head a,.chat_area .chat_area--title .message_toolbar a:hover span,.chat_area .chat_area--title h3 span,.chat_area .message_composer .attached p,.chat_area .message_composer .attached-files li a,.chat_area .message_composer .btns .form-group p.label,.chat_area .message_composer .btns .form-group p.label span,.chat_area .message_composer .btns label,.chat_area .message_composer .btns label span,.color-primary,.contact_tile .tiles__icon,.content_block1 .content_area .content_area--title .highlight,.content_block2 .about_mission .content_area2 h1 span,.content_block2 .content_area .content_area--title .highlight,.content_block2 .content_area2 .content_area--title .highlight,.content_block2 .content_area2 .content_area2--title .highlight,.content_block5 .content_block5_content h1 span,.country_statistics table tbody tr td:last-child,.custom_dropdown li a:hover,.cv_upload .up_icon,.dashboard-edit .product .prod_option .options ul li a:hover,.dashboard_module .loading a:hover,.dropdown li a:hover,.dropdown.dropdown--cart .cart_area .cart_product .product__action p,.dropdown.dropdown--cart .cart_area .cart_product .product__action span,.dropdown.dropdown--menu ul li a:hover,.dropdown.messaging--dropdown .message .message_data .name_time .name span,.dropdown.messaging--dropdown .message.recent .time,.dropdown.messaging_dropdown li a:hover,.dwqa-container .dwqa-questions-archive .dwqa-question-filter a.active,.dwqa-container .dwqa-questions-archive .dwqa-question-filter a:hover,.dwqa-container .dwqa-questions-archive .dwqa-questions-list .dwqa-question-meta span.dwqa-status.dwqa-status-answered:before,.dwqa-container .dwqa-questions-archive .dwqa-questions-list .dwqa-question-title a:hover,.event_details_intro .social-share ul li a:hover,.event_details_intro h1 .highlight,.event_module .list_item li:before,.faq--sidebar .affliate_rule_module .faq--card .card-content li a,.faq--sidebar .card--category ul li a:hover,.faq--sidebar .card--forum_categories ul li a:hover,.faq--sidebar .card--top_discussion .card-content li a,.faq--sidebar .card--top_discussion .card-content li a:hover,.faq--sidebar .faq--card .card-content li a,.faq--sidebar .faq--card .card-content li a:hover,.faq--sidebar .sidebar--blog .faq--card .card-content li a,.faq-area .faq-box .faq-content ul li a:hover,.faq-area .faq-box .faq-head h4,.filter-bar .filter--text a:hover,.filter__menu .filter__menu_icon .filter_dropdown li a:hover,.footer-big .footer-menu ul li a:hover,.footer-menu ul li a:hover,.form-group .chat_area .message_composer .btns p.label,.form-group .chat_area .message_composer .btns p.label span,.google_map .location_address .addres_module p span,.gradient_overlay .hero__content__title h1 span,.hero-area4 .hero-content .hero__content__title h1 span,.item-preview--activity .activity-single p span,.job_detail_module .job__content .social-share ul li a:hover,.job_detail_module.information .job__title,.job_hero_area h1 .highlight,.latest-single .product-excerpt h5 a:hover,.mainmenu__menu .navbar-nav>li:hover>a,.megamnu_module .menu_items .menu_column li a:hover,.menu--style1 .searc-wrap .search-wrap__btn,.messaging_sidebar .messaging__contents .messages .message_data .name span,.messaging_sidebar .messaging__contents .messages .message_data .time,.messaging_sidebar .messaging__header .messaging_action a,.messaging_sidebar .messaging__header .messaging_menu .dropdown a:hover,.mini-footer p a,.more_product_area .section-title h2 span,.notifications_module .notification .notification__icons .noti_icon.loved,.notifications_module .notification .notification__info .info p a,.order_summary ul li.item a,.popular_sells .single_sell .ammount p:last-child,.price-ranges span,.primary,.product .prod_btn a:hover,.product--sidebar .card--category ul li a:hover,.product-desc .product_title:hover h4,.product-desc ul.titlebtm>li a:hover,.product-excerpt .product-facts li.price,.product-excerpt h3 a:hover,.product-excerpt ul.titlebtm li a:hover,.product-purchase .price_love>span,.product-purchase .sell p span,.product-single .product-thumb figure .prod_option .options ul li a:hover,.product-single .product-thumb figure figcaption ul li a,.product-sorting ul li a:hover,.product-sorting ul li span,.product-sorting ul li.active a,.product_archive.added_to__cart .short_desc a:hover h4,.rating_modal .modal-header P a,.recent_buyers .single_buyer .price,.recent_sells .single_sell .ammount p:last-child,.searc-wrap .search-wrap__btn:hover,.section-title h1 span,.service-single span,.sidebar--blog .affliate_rule_module .faq--card .card-content li a,.sidebar--blog .card--category ul li a:hover,.sidebar--blog .card--forum_categories ul li a:hover,.sidebar--blog .card--tags .tags li a:hover,.sidebar--blog .card--top_discussion .card-content li a,.sidebar--blog .card--top_discussion .card-content li a:hover,.sidebar--blog .faq--sidebar .faq--card .card-content li a,.sidebar--blog .sidebar--post .card-title ul li a.active,.sidebar-card.card-pricing .price h1,.single_blog .blog__title:hover h3,.single_blog_content .share_tags .share .social_share ul li a:hover,.single_blog_content .share_tags .tags ul li a,.single_feature .feature__icon span,.single_product .license p,.single_product .product__description .short_desc h5 a:hover,.single_product .product__price_download .item_action .remove_from_cart span,.social-share-card ul li a:hover,.step-single .step-count span:first-child,.support .support__form .usr-msg p a,.support--sidebar .affliate_rule_module .faq--card .card-content li a,.support--sidebar .card--category ul li a:hover,.support--sidebar .card--forum_categories ul li a:hover,.support--sidebar .card--top_discussion .card-content li a,.support--sidebar .card--top_discussion .card-content li a:hover,.tab-pane .author_featured_items h2 span,.tab-pane h3 span,.table tbody>tr>td.detail a,.table tbody>tr>td.earning,.team-single figure figcaption ul.team-social li a:hover,.thread .thread-list .single-thread .media-body a.reply-link,.timeline .happening:hover .happening--period p,.user-single .card-footer .stats p span,.widget-about .contact-details li a,.withdraw_module .modules__content .subtitle a,.withdraw_module .option-single .op_action .ac_btn .dropdown-menu .dropdown-item:hover,div#ui-datepicker-div tbody tr td a:hover,ul.nav-tabs li a a,ul.nav-tabs li a a:active,ul.nav-tabs li a a:focus,ul.nav-tabs li a a:hover,ul.nav-tabs li a.active {
-    color: #124676
+    color: #6e4ff6
 }
 
 .accordion .accordion__single .single_acco_title a.active,.accordion .card .single_acco_title a.active,.affliate_rule_module .login_promot,.author-area__seller-btn,.author__notification_area ul li .notification_count.purch,.bg-primary,.breadcrumb-area,.card--pricing2.item-preview .price,.content_block3 .area_content a:hover,.content_block4 .area_content a:hover,.credit_modules .modules__content .amounts ul li p.selected,.custom-checkbox2 .form-group p.label span.square:before,.custom-checkbox2 label span.square:before,.custom-radio .form-group p.label span.circle:before,.custom-radio .form-group p.label span.square:before,.custom-radio label span.circle:before,.custom-radio label span.square:before,.custom_checkbox .form-group p.label .shadow_checkbox:before,.custom_checkbox label .shadow_checkbox:before,.dashboard-edit .product .prod_option .setting-icon,.dashboard_contents .dashboard_title_area .date_area .btn:hover,.dropdown.dropdown--author ul li a:hover,.faq--sidebar .login_promot,.form-group .custom-checkbox2 p.label span.square:before,.form-group .custom-radio p.label span.circle:before,.form-group .custom-radio p.label span.square:before,.form-group .custom_checkbox p.label .shadow_checkbox:before,.go_top,.has_dropdown .btn:focus,.intro-area,.item-preview .prev-nav span:hover,.menu--style1 .mainmenu,.menu--style1 .mainmenu__menu,.messaging_sidebar .messaging__contents .messages .message.active:before,.messaging_sidebar .messaging__header,.nav__product-list li a.active,.nav__product-list li a:hover,.notifications_module .notification .line,.notifications_module .notification .line:after,.notifications_module .notification .line:before,.package-single.featured-plan .featured-badge,.primarybg,.product-single .product-thumb figure .prod_option .setting-icon,.product-slide-area .owl-nav .owl-next:hover,.product-slide-area .owl-nav .owl-prev:hover,.product-title-area .date_area .btn:hover,.range-slider.ui-slider .ui-slider-range,.select2-container--default .select2-selection--multiple .select2-selection__choice,.shortcode_modules .modules__content .amounts ul li p.selected,.sidebar--blog .login_promot,.sidebar-card.card--pricing2 .price,.single_speaker .speaker_social ul li a:hover span,.support--sidebar .login_promot,.table tbody>tr>td.action a:hover,.table.withdraw__table .pending>span,.team-single figure:hover figcaption span.member-title,.testimonial-area .owl-controls .owl-next:hover,.testimonial-area .owl-controls .owl-prev:hover,.thread .thread-list .single-thread .media-body .comment-tag.author,.timeline .happening:hover .happening--period:before,.timeline:after,.upload_modules .modules__content .amounts ul li p.selected,.withdraw_module .modules__content .amounts ul li p.selected,.withdraw_module .option-single .op_action .ac_btn .dropdown-toggle:focus,.withdraw_module .option-single .op_action .ac_btn .dropdown-toggle:hover,div#ui-datepicker-div .ui-datepicker-header,ul.nav-tabs li a:before {
-    background: #124676
+    background: #6e4ff6
 }
 
 .iborder-primary {
-    color: #124676
+    color: #6e4ff6
 }
 
 .outline-primary {
-    border: 1px solid #124676;
-    color: #124676
+    border: 1px solid #6e4ff6;
+    color: #6e4ff6
 }
 
 .active-color-primary .form-group p.label input:checked+span,.active-color-primary label input:checked+span,.form-group .active-color-primary p.label input:checked+span {
-    background: #124676;
-    border-color: #124676
+    background: #6e4ff6;
+    border-color: #6e4ff6
 }
 
 .circle-primary {
-    color: #124676;
+    color: #6e4ff6;
     background: rgba(110,79,246,.1)
 }
 
 .border-primary {
-    border: 1px solid #124676
+    border: 1px solid #6e4ff6
 }
 
 .b-primary,select:focus {
-    border-color: #124676!important
+    border-color: #6e4ff6!important
 }
 
 .b-bottom-10-primary {
-    border-bottom: 10px solid #124676
+    border-bottom: 10px solid #6e4ff6
 }
 
-.about_hero .about_hero_contents h1 span,.affiliate_area .generated .link,.author-profile .author-stats ul .t_sells span,.breadcrumb ul li a:hover,.breadcrumb ul li.active a:hover,.card_style2 .save_job:hover span,.color-secondary,.country_statistics table tbody tr td:nth-child(2),.credit_modules .modules__content .amounts .or,.dashboard_module .loading a,.dropdown.dropdown--author .author-credits .autor__info .amount,.dropdown.dropdown--cart .cart_area .cart_product .product__info .info .cat a,.dropdown.dropdown--cart .cart_area .cart_product .product__info .info .title:hover,.dwqa-container .dwqa-questions-archive .dwqa-questions-list .dwqa-question-meta span.dwqa-status.dwqa-status-resolved:before,.event_area .date_place span,.featured_event .countdown li,.featured_event .date_place li span,.featured_event h2 a:hover,.invoice .invoice__meta .date_info p.status,.job_detail_module .job__content .informations li .info_title span,.login .login_assist p a,.menu--light .mainmenu__menu .navbar-nav>li:hover>a,.mini-footer p a:hover,.notifications_module .notification .notification__icons .noti_icon.commented,.notifications_module .notification .notification__icons .noti_icon.reviewed,.notifications_module .notification .notification__icons span.fa-times-circle:hover,.notifications_module .notification__unread .info p.time,.package-single .package-body ul li.yes:before,.package-single .package-header .amount span,.product-desc ul li.product_cat a,.product-meta .love-comments p span.lnr,.product-purchase .price_love p span,.recover_pass .login_assist p a,.secondary,.shortcode_modules .modules__content .amounts .or,.signup_form .login_assist p a,.single_item_visitor .dashboard__content .item_info .info h2,.single_product .product__additional_info ul li a:hover,.single_product .product__price_download .item_action .not--rated:hover .rate_it,.step-single .step-last span:last-child,.table tbody>tr>td.earning.subtract,.thread .thread-list .single-thread .media-body a.reply-link:hover,.thread.thread_review .thread-list .single-thread .media-body .media-heading .rev_item,.upload_modules .modules__content .amounts .or,.user-single .card-footer .stats p:last-child span,.widget-about .contact-details li a:hover,.withdraw_module .modules__content .amounts .or {
+.about_hero .about_hero_contents h1 span,.affiliate_area .generated .link,.author-profile .author-stats ul .t_sells span,.breadcrumb ul li a:hover,.breadcrumb ul li.active a:hover,.card_style2 .save_job:hover span,.color-secondary,.country_statistics table tbody tr td:nth-child(2),.credit_modules .modules__content .amounts .or,.dashboard_module .loading a,.dropdown.dropdown--author .author-credits .autor__info .amount,.dropdown.dropdown--cart .cart_area .cart_product .product__info .info .cat a,.dropdown.dropdown--cart .cart_area .cart_product .product__info .info .title:hover,.dwqa-container .dwqa-questions-archive .dwqa-questions-list .dwqa-question-meta span.dwqa-status.dwqa-status-resolved:before,.event_area .date_place span,.featured_event .countdown li,.featured_event .date_place li span,.featured_event h2 a:hover,.invoice .invoice__meta .date_info p.status,.job_detail_module .job__content .informations li .info_title span,.login .login_assist p a,.menu--light .mainmenu__menu .navbar-nav>li:hover>a,.mini-footer p a:hover,.notifications_module .notification .notification__icons .noti_icon.commented,.notifications_module .notification .notification__icons .noti_icon.reviewed,.notifications_module .notification .notification__icons span.icon-close:hover,.notifications_module .notification__unread .info p.time,.package-single .package-body ul li.yes:before,.package-single .package-header .amount span,.product-desc ul li.product_cat a,.product-meta .love-comments p span.lnr,.product-purchase .price_love p span,.recover_pass .login_assist p a,.secondary,.shortcode_modules .modules__content .amounts .or,.signup_form .login_assist p a,.single_item_visitor .dashboard__content .item_info .info h2,.single_product .product__additional_info ul li a:hover,.single_product .product__price_download .item_action .not--rated:hover .rate_it,.step-single .step-last span:last-child,.table tbody>tr>td.earning.subtract,.thread .thread-list .single-thread .media-body a.reply-link:hover,.thread.thread_review .thread-list .single-thread .media-body .media-heading .rev_item,.upload_modules .modules__content .amounts .or,.user-single .card-footer .stats p:last-child span,.widget-about .contact-details li a:hover,.withdraw_module .modules__content .amounts .or {
     color: #1dc9b7
 }
 
@@ -1628,7 +1525,7 @@ ul {
 }
 
 .b-top-0-primary {
-    border-top: 0 solid #124676
+    border-top: 0 solid #6e4ff6
 }
 
 .b-top-0-secondary {
@@ -1660,7 +1557,7 @@ ul {
 }
 
 .b-top-1-primary,.custom_dropdown {
-    border-top: 1px solid #124676
+    border-top: 1px solid #6e4ff6
 }
 
 .b-top-1-secondary {
@@ -1692,7 +1589,7 @@ ul {
 }
 
 .b-top-2-primary {
-    border-top: 2px solid #124676
+    border-top: 2px solid #6e4ff6
 }
 
 .b-top-2-secondary {
@@ -1724,7 +1621,7 @@ ul {
 }
 
 .b-top-3-primary {
-    border-top: 3px solid #124676
+    border-top: 3px solid #6e4ff6
 }
 
 .b-top-3-secondary {
@@ -1756,7 +1653,7 @@ ul {
 }
 
 .b-top-4-primary {
-    border-top: 4px solid #124676
+    border-top: 4px solid #6e4ff6
 }
 
 .b-top-4-secondary {
@@ -1788,7 +1685,7 @@ ul {
 }
 
 .b-top-5-primary {
-    border-top: 5px solid #124676
+    border-top: 5px solid #6e4ff6
 }
 
 .b-top-5-secondary {
@@ -1820,7 +1717,7 @@ ul {
 }
 
 .b-right-0-primary {
-    border-right: 0 solid #124676
+    border-right: 0 solid #6e4ff6
 }
 
 .b-right-0-secondary {
@@ -1852,7 +1749,7 @@ ul {
 }
 
 .b-right-1-primary {
-    border-right: 1px solid #124676
+    border-right: 1px solid #6e4ff6
 }
 
 .b-right-1-secondary {
@@ -1884,7 +1781,7 @@ ul {
 }
 
 .b-right-2-primary {
-    border-right: 2px solid #124676
+    border-right: 2px solid #6e4ff6
 }
 
 .b-right-2-secondary {
@@ -1916,7 +1813,7 @@ ul {
 }
 
 .b-right-3-primary {
-    border-right: 3px solid #124676
+    border-right: 3px solid #6e4ff6
 }
 
 .b-right-3-secondary {
@@ -1948,7 +1845,7 @@ ul {
 }
 
 .b-right-4-primary {
-    border-right: 4px solid #124676
+    border-right: 4px solid #6e4ff6
 }
 
 .b-right-4-secondary {
@@ -1980,7 +1877,7 @@ ul {
 }
 
 .b-right-5-primary {
-    border-right: 5px solid #124676
+    border-right: 5px solid #6e4ff6
 }
 
 .b-right-5-secondary {
@@ -2012,7 +1909,7 @@ ul {
 }
 
 .b-bottom-0-primary {
-    border-bottom: 0 solid #124676
+    border-bottom: 0 solid #6e4ff6
 }
 
 .b-bottom-0-secondary {
@@ -2044,7 +1941,7 @@ ul {
 }
 
 .b-bottom-1-primary {
-    border-bottom: 1px solid #124676
+    border-bottom: 1px solid #6e4ff6
 }
 
 .b-bottom-1-secondary {
@@ -2076,7 +1973,7 @@ ul {
 }
 
 .b-bottom-2-primary,.dashboard_purchase .dashboard_menu li.active a {
-    border-bottom: 2px solid #124676
+    border-bottom: 2px solid #6e4ff6
 }
 
 .b-bottom-2-secondary {
@@ -2108,7 +2005,7 @@ ul {
 }
 
 .b-bottom-3-primary {
-    border-bottom: 3px solid #124676
+    border-bottom: 3px solid #6e4ff6
 }
 
 .b-bottom-3-secondary {
@@ -2140,7 +2037,7 @@ ul {
 }
 
 .b-bottom-4-primary {
-    border-bottom: 4px solid #124676
+    border-bottom: 4px solid #6e4ff6
 }
 
 .b-bottom-4-secondary {
@@ -2172,7 +2069,7 @@ ul {
 }
 
 .b-bottom-5-primary {
-    border-bottom: 5px solid #124676
+    border-bottom: 5px solid #6e4ff6
 }
 
 .b-bottom-5-secondary {
@@ -2204,7 +2101,7 @@ ul {
 }
 
 .b-left-0-primary {
-    border-left: 0 solid #124676
+    border-left: 0 solid #6e4ff6
 }
 
 .b-left-0-secondary {
@@ -2236,7 +2133,7 @@ ul {
 }
 
 .b-left-1-primary {
-    border-left: 1px solid #124676
+    border-left: 1px solid #6e4ff6
 }
 
 .b-left-1-secondary {
@@ -2268,7 +2165,7 @@ ul {
 }
 
 .b-left-2-primary {
-    border-left: 2px solid #124676
+    border-left: 2px solid #6e4ff6
 }
 
 .b-left-2-secondary {
@@ -2300,7 +2197,7 @@ ul {
 }
 
 .b-left-3-primary,.blockquote,blockquote {
-    border-left: 3px solid #124676
+    border-left: 3px solid #6e4ff6
 }
 
 .b-left-3-secondary {
@@ -2332,7 +2229,7 @@ ul {
 }
 
 .b-left-4-primary {
-    border-left: 4px solid #124676
+    border-left: 4px solid #6e4ff6
 }
 
 .b-left-4-secondary {
@@ -2364,7 +2261,7 @@ ul {
 }
 
 .b-left-5-primary {
-    border-left: 5px solid #124676
+    border-left: 5px solid #6e4ff6
 }
 
 .b-left-5-secondary {
@@ -2396,7 +2293,7 @@ ul {
 }
 
 .b-0-primary {
-    border: 0 solid #124676!important
+    border: 0 solid #6e4ff6!important
 }
 
 .b-0-secondary {
@@ -2428,7 +2325,7 @@ ul {
 }
 
 .b-1-primary,.form-control:active,.form-control:focus,.table tbody>tr>td.action a,input.form-control:active,input.form-control:focus,input:active,input:focus,select.form-control:active,select.form-control:focus,select:active,select:focus,textarea:active,textarea:focus {
-    border: 1px solid #124676!important
+    border: 1px solid #6e4ff6!important
 }
 
 .b-1-secondary,.single_product .product__price_download .item_action .rating--btn {
@@ -2460,7 +2357,7 @@ ul {
 }
 
 .b-2-primary {
-    border: 2px solid #124676!important
+    border: 2px solid #6e4ff6!important
 }
 
 .b-2-secondary {
@@ -2492,7 +2389,7 @@ ul {
 }
 
 .b-3-primary {
-    border: 3px solid #124676!important
+    border: 3px solid #6e4ff6!important
 }
 
 .b-3-secondary {
@@ -2524,7 +2421,7 @@ ul {
 }
 
 .b-4-primary {
-    border: 4px solid #124676!important
+    border: 4px solid #6e4ff6!important
 }
 
 .b-4-secondary {
@@ -2556,7 +2453,7 @@ ul {
 }
 
 .b-5-primary {
-    border: 5px solid #124676!important
+    border: 5px solid #6e4ff6!important
 }
 
 .b-5-secondary {
@@ -2628,9 +2525,9 @@ ul {
 }
 
 .outline-lg-primary {
-    border: 2px solid #124676;
+    border: 2px solid #6e4ff6;
     background: 0 0;
-    color: #124676
+    color: #6e4ff6
 }
 
 .outline-lg-secondary {
@@ -2676,12 +2573,12 @@ ul {
 }
 
 .checkbox-primary .custom-control-label::before {
-    background: #124676
+    background: #6e4ff6
 }
 
 .checkbox-primary .custom-control-input:checked~.custom-control-label::before {
-    background: #124676;
-    border: 1px solid #124676
+    background: #6e4ff6;
+    border: 1px solid #6e4ff6
 }
 
 .checkbox-primary .custom-control-input:checked~.custom-control-label::after {
@@ -2784,8 +2681,8 @@ ul {
 }
 
 .checkbox-outline-primary .custom-control-input:checked~.custom-control-label::before {
-    border: 1px solid #124676;
-    background: #124676
+    border: 1px solid #6e4ff6;
+    background: #6e4ff6
 }
 
 .checkbox-outline-primary .custom-control-input:checked~.custom-control-label::after {
@@ -3632,7 +3529,7 @@ span.slick-next {
 }
 
 .testimonial-area .owl-controls .owl-next:hover,.testimonial-area .owl-controls .owl-prev:hover {
-    border-color: #124676;
+    border-color: #6e4ff6;
     color: #fff
 }
 
@@ -3880,7 +3777,7 @@ span.slick-next {
 }
 
 .dwqa-container .dwqa-questions-archive .dwqa-questions-list .dwqa-question-meta span.dwqa-status.dwqa-status-answered {
-    border-color: #124676
+    border-color: #6e4ff6
 }
 
 .dwqa-container .dwqa-questions-archive .dwqa-questions-list .dwqa-question-meta span.dwqa-status.dwqa-status-answered:before {
@@ -4724,7 +4621,7 @@ span.slick-next {
     vertical-align: middle
 }
 
-.author__notification_area ul li .fa-envelope-open {
+.author__notification_area ul li .icon_wrap {
     position: relative
 }
 
@@ -4785,7 +4682,7 @@ span.slick-next {
     position: initial
 }
 
-.has_dropdown .fa-envelope-open {
+.has_dropdown .icon_wrap {
     cursor: pointer
 }
 
@@ -4941,7 +4838,7 @@ span.slick-next {
     cursor: pointer
 }
 
-.mobile_content span.fa-times-circle {
+.mobile_content span.icon-close {
     float: none;
     position: absolute;
     left: 15px;
@@ -5092,10 +4989,10 @@ span.slick-next {
     border-radius: 4px 4px 0 0;
     width: 100%;
     top: 0;
-    background: -webkit-gradient(linear,right top,left top,from(#1dc9b7),to(#124676));
-    background: -webkit-linear-gradient(right,#1dc9b7,#124676);
-    background: -o-linear-gradient(right,#1dc9b7,#124676);
-    background: linear-gradient(to left,#1dc9b7,#124676);
+    background: -webkit-gradient(linear,right top,left top,from(#1dc9b7),to(#6e4ff6));
+    background: -webkit-linear-gradient(right,#1dc9b7,#6e4ff6);
+    background: -o-linear-gradient(right,#1dc9b7,#6e4ff6);
+    background: linear-gradient(to left,#1dc9b7,#6e4ff6);
     left: 0
 }
 
@@ -6114,10 +6011,10 @@ span.slick-next {
 
 .banner:before {
     content: '';
-    background: -webkit-gradient(linear,right top,left top,from(#1dc9b7),to(#124676));
-    background: -webkit-linear-gradient(right,#1dc9b7,#124676);
-    background: -o-linear-gradient(right,#1dc9b7,#124676);
-    background: linear-gradient(to left,#1dc9b7,#124676);
+    background: -webkit-gradient(linear,right top,left top,from(#1dc9b7),to(#6e4ff6));
+    background: -webkit-linear-gradient(right,#1dc9b7,#6e4ff6);
+    background: -o-linear-gradient(right,#1dc9b7,#6e4ff6);
+    background: linear-gradient(to left,#1dc9b7,#6e4ff6);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -6429,7 +6326,7 @@ ul.nav-tabs.nav--tabs2 li a:before {
 }
 
 .team-single figure figcaption ul.team-social li a:hover {
-    stroke: #124676
+    stroke: #6e4ff6
 }
 
 .timeline:before {
@@ -7899,7 +7796,7 @@ textarea,textarea.form-control,textarea.text_field {
 }
 
 .toggle-switch input:checked+.slider {
-    background-color: #124676
+    background-color: #6e4ff6
 }
 
 .toggle-switch input:checked+.slider:before {
@@ -13569,7 +13466,7 @@ span.counter {
     background: rgba(29,201,183,.1)
 }
 
-.notifications_module .notification .notification__icons span.fa-times-circle {
+.notifications_module .notification .notification__icons span.icon-close {
     color: #c1c7d2;
     font-size: 16px;
     cursor: pointer
@@ -17473,7 +17370,7 @@ span.counter {
         margin-top: 30px
     }
 
-    .notifications_module .notification .notification__icons .fa-times-circle {
+    .notifications_module .notification .notification__icons .icon-close {
         position: absolute;
         right: 30px;
         top: 30px
@@ -18168,42 +18065,6 @@ span.counter {
     }
 }
 
-}
+ 
 
-.fa-stack[data-count]:after {
-  position: absolute;
-  left: 33%;
-  bottom: 0;
-  content: attr(data-count);
-  font-size: 37%;
-  padding: 0.6em;
-  border-radius: 999px;
-  line-height: 0.75em;
-  color: white;
-  color: $shopping-cart-red;
-  text-align: center;
-  min-width: 2em;
-  font-weight: bold;
-  background: white;
-  border-style: solid;
-  z-index: 500;
-}
-.fa-circle {
-  color: #124676;
-}
-.ta-shoppingChart {
-  color: #124676;
-}
-
-a {
-  .ta-shoppingChart {
-    color: #124676 !important;
-  }
-}
-.red-cart {
-  color: #124676;
-  background: white;
-}
-.ta-list {
-  list-style: none;
 }

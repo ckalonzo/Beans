@@ -2,32 +2,32 @@ import React from "react";
 import "../css/Navbar.scss";
 import { Link } from "react-router-dom";
 // TODO: ADD NOTIFICATIONS, checkout, etc to nav bar and css
-const SignedOutLinks = () => {
+const SignedOutLinkstest = () => {
   return (
     <ul class="navbar-nav">
       <li class="has_dropdown">
-        <NavLink
+        <Link
           className="nav-link chg-text moveline"
           to="../../../../Browse/ProjectDashboard"
         >
           Browse
-        </NavLink>
+        </Link>
       </li>
       <li>
-        <NavLink
+        <Link
           className="nav-link chg-text moveline"
           to="/Dashboard/ContractorDashboard"
         >
           Dashboard
-        </NavLink>
+        </Link>
       </li>
       <li>
-        <NavLink
+        <Link
           className="nav-link chg-text moveline"
           to="/Membership/Membership"
         >
           Membership
-        </NavLink>
+        </Link>
       </li>
       <li class="has_megamenu">
         <a href="#">Elements</a>
@@ -322,4 +322,4 @@ const SignedOutLinks = () => {
   );
 };
 
-export default SignedOutLinks;
+export default SignedOutLinkstest;

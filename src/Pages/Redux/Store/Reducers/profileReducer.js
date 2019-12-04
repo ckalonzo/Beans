@@ -8,114 +8,113 @@ import {
 } from "./sharedReducerFunctions";
 import { formatPhoneNumberWithDashes } from "../../../utils/stringUtils";
 import { validatePhone } from "../../../utils/validationUtils";
-
+import cloneDeep from "lodash";
 const initState = {
-  userData: {
-    firstName: {
-      label: "First Name",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null,
-      maxLength: 45
-    },
-    lastName: {
-      label: "Last Name",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null,
-      maxLength: 120
-    },
-
-    email: {
-      label: "Email",
-      value: "",
-      required: false,
-      shouldValidate: false,
-      error: null,
-      maxLength: 255
-    },
-    phone: {
-      label: "Phone (XXX-XXX-XXXX)",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null,
-      maxLength: 12,
-      regex: digitsAndDashesOnlyRegex
-    },
-    address1: {
-      label: "Street Address",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null,
-      maxLength: 100
-    },
-    address2: {
-      label: "Street Address 2",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null,
-      maxLength: 100
-    },
-    city: {
-      label: "City",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null,
-      maxLength: 50
-    },
-    businessState: {
-      type: "select",
-      label: "Select State",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null
-    },
-    zip: {
-      label: "Zip Code (12345)",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null,
-      maxLength: 5,
-      regex: digitsAndDashesOnlyRegex
-    },
-    rating: "4.5",
-    reviews: [{ title: "Testing 123", text: "Brandon Was great!!!" }],
-    skills: [],
-    activeMember: "",
-    bio: {
-      type: "textarea",
-      label: "Bio",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null,
-      maxLength: 1500
-    },
-    numberOfJobs: "3000",
-    typeOfJobs: {
-      type: "select",
-      label: "Select Service",
-      value: "",
-      required: true,
-      shouldValidate: false,
-      error: null
-    },
-    years: "10",
-    bkcheck: false,
-    basicinfochk: false,
-    companyName: "Lucy Goosie",
-    history: "",
-    bids: "",
-    update: false
+  firstName: {
+    label: "First Name",
+    value: "",
+    required: true,
+    shouldValidate: false,
+    error: null,
+    maxLength: 45
   },
+  lastName: {
+    label: "Last Name",
+    value: "",
+    required: true,
+    shouldValidate: false,
+    error: null,
+    maxLength: 120
+  },
+
+  email: {
+    label: "Email",
+    value: "",
+    required: false,
+    shouldValidate: false,
+    error: null,
+    maxLength: 255
+  },
+  phone: {
+    label: "Phone (XXX-XXX-XXXX)",
+    value: "",
+    required: true,
+    shouldValidate: false,
+    error: null,
+    maxLength: 12,
+    regex: digitsAndDashesOnlyRegex
+  },
+  address1: {
+    label: "Street Address",
+    value: "",
+    required: true,
+    shouldValidate: false,
+    error: null,
+    maxLength: 100
+  },
+  address2: {
+    label: "Street Address 2",
+    value: "",
+    required: false,
+    shouldValidate: false,
+    error: null,
+    maxLength: 100
+  },
+  city: {
+    label: "City",
+    value: "",
+    required: true,
+    shouldValidate: false,
+    error: null,
+    maxLength: 50
+  },
+  businessState: {
+    type: "select",
+    label: "Select State",
+    value: "",
+    required: true,
+    shouldValidate: false,
+    error: null
+  },
+  zip: {
+    label: "Zip Code (12345)",
+    value: "",
+    required: true,
+    shouldValidate: false,
+    error: null,
+    maxLength: 5,
+    regex: digitsAndDashesOnlyRegex
+  },
+  rating: "4.5",
+  reviews: [{ title: "Testing 123", text: "Brandon Was great!!!" }],
+  skills: [],
+  activeMember: "",
+  bio: {
+    type: "textarea",
+    label: "Bio",
+    value: "",
+    required: true,
+    shouldValidate: false,
+    error: null,
+    maxLength: 1500
+  },
+  numberOfJobs: "3000",
+  typeOfJobs: {
+    type: "select",
+    label: "Select Service",
+    value: "",
+    required: true,
+    shouldValidate: false,
+    error: null
+  },
+  years: "10",
+  bkcheck: false,
+  basicinfochk: false,
+  companyName: "Lucy Goosie",
+  history: "",
+  bids: "",
+  update: false,
+
   profile: "",
   validForm: false,
   errors: [],

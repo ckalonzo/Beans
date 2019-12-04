@@ -3,7 +3,7 @@ export const fetchCustomerProfile = () => {
     const firestore = getFirestore();
 
     return firestore
-      .collection("users")
+      .collection("contractorProfile")
       .get()
       .then(snapshot => {
         snapshot.docs.forEach(doc => {
