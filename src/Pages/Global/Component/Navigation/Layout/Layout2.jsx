@@ -4,7 +4,10 @@ import ProviderSignedInLinkstest from "./ProviderSignedInLinkstest";
 import SignedOutLinkstest from "./SignedOutLinkstest";
 import { connect } from "react-redux";
 import "../css/Navbar.scss";
-
+import { firestoreConnect } from "react-redux-firebase";
+import { reactReduxFirebase } from "react-redux-firebase";
+import { compose } from "redux";
+import firebase from "../../../../../Config/Firebase";
 class Layout2 extends Component {
   render() {
     const { auth, profile } = this.props;
@@ -48,10 +51,14 @@ class Layout2 extends Component {
   }
 }
 const mapStateToProps = state => {
+  console.log(state);
   return {
     auth: state.firebase.auth,
     profile: state.firebase.profile,
     ctr: state.counter
   };
 };
-export default connect(mapStateToProps)(Layout2);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: "contractorProfile" }])
+)(Layout2);

@@ -154,7 +154,9 @@ const mapStateToProps = state => {
   console.log(state);
   return {
     projects: state.firestore.ordered.projects,
-    notifications: state.firestore.ordered.notifications
+    notifications: state.firestore.ordered.notifications,
+    // customerId: state.firestore.data.projects.customerId
+    auth: state.firebase.auth
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -163,10 +165,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 export default compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     { collection: "projects", orderBy: ["createdAt"] },
     { collection: "notifications", limit: 3 }

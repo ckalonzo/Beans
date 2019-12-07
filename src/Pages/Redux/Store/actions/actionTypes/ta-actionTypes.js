@@ -33,6 +33,7 @@ export const PROFILE_GROUP = {
 };
 
 //Bids
+
 export const UPDATE_BID_START = "UPDATE_BID_START";
 export const UPDATE_BID_SUCCESS = "UPDATE_BID_SUCCESS";
 export const UPDATE_BID_ERR = "UPDATE_BID_ERR";
@@ -53,3 +54,13 @@ export const FORM_FIELD_TYPES = {
   RADIO_GROUP: "radioGroup",
   CHECKBOX: "datePicker"
 };
+
+//fetch
+export const ACTION = {
+  FETCH_USER_SUCCESS: "FETCH_USER_SUCCESS",
+  FETCH_BIDS: "FETCH_BIDS"
+};
+
+export const DELETE_PROJECT_START = "DELETE_PROJECT_START";
+export const DELETE_PROJECT_SUCCESS = "DELETE_PROJECT_SUCCESS";
+export const DELETE_PROJECT_FAIL = "DELETE_PROJECT_FAIL";

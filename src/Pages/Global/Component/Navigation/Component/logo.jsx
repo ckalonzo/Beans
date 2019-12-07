@@ -3,12 +3,6 @@ import { Link } from "react-router-dom";
 
 export default class Logo extends Component {
   render() {
-    return (
-      <div class="logo-wrapper">
-        <div class="ta-brand img-fluid">
-          <Link to="/" className="navbar-brand "></Link>
-        </div>
-      </div>
-    );
+    return <Link to="/" className="ta-brand  d-flex  "></Link>;
   }
 }

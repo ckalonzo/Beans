@@ -4,6 +4,8 @@ import cartReducer from "./cartReducer";
 import StatesListReducer from "./stateReducer";
 import ServiceListReducer from "./serviceReducer";
 import CounterReducer from "./counterReducer";
+import BidsReducer from "./bidsReducer";
+
 import ProfileReducer from "./profileReducer";
 import SubmitBidReducer from "./SubmitBidReducer";
 import deleteJobReducer from "./deleteJobReducer";
@@ -21,6 +23,7 @@ const rootReducer = combineReducers({
   firebase: firebaseReducer,
   userData: ProfileReducer,
   counter: CounterReducer,
+  bids: BidsReducer,
   items: cartReducer,
   cart: cartReducer,
   subscription: monthlySubscriptionReducer,

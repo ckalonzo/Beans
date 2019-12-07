@@ -10,7 +10,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Layout2 />
+        {/* <Layout2 /> */}
         <Hero />
         <HowItWorks />
         <ContentPanelImg />
