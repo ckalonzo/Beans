@@ -4696,21 +4696,21 @@ span.slick-next {
     top: 100%
 }
 
-.has_dropdown>a,.has_megamenu>a {
-    position: relative
-}
+// .has_dropdown>a,.has_megamenu>a {
+//     position: relative
+// }
 
-.has_dropdown>a:before,.has_megamenu>a:before {
-    position: absolute;
-    content: "\f107";
-    font-family: FontAwesome;
-    font-size: 13px;
-    right: -13px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%)
-}
+// .has_dropdown>a:before,.has_megamenu>a:before {
+//     position: absolute;
+//     // content: "\f107";
+//     font-family: FontAwesome;
+//     font-size: 13px;
+//     right: -13px;
+//     top: 50%;
+//     -webkit-transform: translateY(-50%);
+//     -ms-transform: translateY(-50%);
+//     transform: translateY(-50%)
+// }
 
 .mainmenu {
     background: #f1f2f7

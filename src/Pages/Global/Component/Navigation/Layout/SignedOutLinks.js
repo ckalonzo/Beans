@@ -4,65 +4,96 @@ import { Link } from "react-router-dom";
 
 const SignedOutLinks = () => {
   return (
-    <ul className="navbar-nav w-100 justify-content-center nav-section">
-      <li className="nav-item dropdown">
-        <Link
-          className="nav-link chg-text moveline dropdown-toggle"
-          id="dropdown08"
-          to="#"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Customer
-        </Link>
-        <div className="dropdown-menu rmv-border" aria-labelledby="dropdown08">
-          <Link className="dropdown-item chg-text moveline" to="/SignUp/SignUp">
-            Sign Up
-          </Link>
-          <Link
-            className="dropdown-item chg-text moveline"
-            to="/CustomerLogin/CustomerLogin"
+    <div class="menu-container">
+      <div class="d_menu">
+        <nav class="navbar navbar-expand-lg mainmenu__menu">
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-controls="bs-example-navbar-collapse-1"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            LogIn
-          </Link>
-        </div>
-      </li>
-      <li className="nav-item">
-        <Link
-          className="nav-link chg-text moveline"
-          to="/Membership/Membership"
-        >
-          Membership
-        </Link>
-      </li>
-      <li className="nav-item dropdown">
-        <Link
-          className="nav-link  chg-text moveline dropdown-toggle"
-          to="#"
-          id="dropdown09"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Contractor
-        </Link>
-        <div className="dropdown-menu rmv-border" aria-labelledby="dropdown09">
-          <Link
-            className="dropdown-item chg-text moveline"
-            to="/SignUp/Contractor-Create-Account"
+            <span class="navbar-toggler-icon icon-menu"></span>
+          </button>
+
+          <div
+            class="navbar-collapse collapse"
+            id="bs-example-navbar-collapse-1"
           >
-            Sign Up
-          </Link>
-          <Link
-            className="dropdown-item chg-text moveline"
-            to="/ContractorLogin/ContractorLogin"
-          >
-            LogIn
-          </Link>
-        </div>
-      </li>
-    </ul>
+            <ul className="navbar-nav w-75 justify-content-center nav-section">
+              <li class="has_dropdown">
+                <Link
+                  className=" nav-link chg-text"
+                  id="dropdown08"
+                  to="#"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Customer
+                </Link>
+                <i class="fas fa-chevron-down"></i>
+                <div class="dropdown dropdown--menu">
+                  <ul>
+                    <li>
+                      <Link className="nav-link chg-text" to="/SignUp/SignUp">
+                        Sign Up
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="nav-link chg-text"
+                        to="/CustomerLogin/CustomerLogin"
+                      >
+                        LogIn
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link chg-text" to="/">
+                  Blog
+                </Link>
+              </li>
+              <li class="has_dropdown">
+                <Link
+                  className="nav-link  chg-text moveline"
+                  to="#"
+                  id="dropdown09"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Contractor
+                </Link>
+                <i class="fas fa-chevron-down"></i>
+                <div
+                  className="dropdown-menu rmv-border"
+                  aria-labelledby="dropdown09"
+                >
+                  <Link
+                    className="dropdown-item chg-text moveline"
+                    to="/SignUp/Contractor-Create-Account"
+                  >
+                    Sign Up
+                  </Link>
+                  <Link
+                    className="dropdown-item chg-text moveline"
+                    to="/ContractorLogin/ContractorLogin"
+                  >
+                    LogIn
+                  </Link>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
   );
 };
 

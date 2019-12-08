@@ -127,14 +127,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  // return {
-  //   addToCart: (id, counter) => {
-  //     dispatch(addToCart(id, counter));
-  //   }
-  // };
+  return {
+    signOut: () => dispatch(signOut())
+  };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SideMenuDesktop);
+export default connect(mapStateToProps, mapDispatchToProps)(SideMenuDesktop);

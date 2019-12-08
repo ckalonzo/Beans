@@ -4805,21 +4805,21 @@ span.slick-next {
     top: 100%
 }
 
-.has_dropdown>a,.has_megamenu>a {
-    position: relative
-}
+// .has_dropdown>a {
+//     position: relative
+// }
 
-.has_dropdown>a:before,.has_megamenu>a:before {
-    position: absolute;
-    content: "\f107";
-    font-family: FontAwesome;
-    font-size: 13px;
-    right: -13px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%)
-}
+// .has_dropdown>a:before {
+//     position: absolute;
+//     content: "\f107";
+//     font-family: FontAwesome;
+//     font-size: 13px;
+//     right: -13px;
+//     top: 50%;
+//     -webkit-transform: translateY(-50%);
+//     -ms-transform: translateY(-50%);
+//     transform: translateY(-50%)
+// }
 
 .mainmenu {
     background: #f1f2f7
@@ -4854,85 +4854,7 @@ span.slick-next {
     text-transform: capitalize
 }
 
-.mainmenu__search {
-    float: right;
-    padding: 28px 0
-}
 
-.searc-wrap {
-    position: relative
-}
-
-.searc-wrap input {
-    line-height: 45px;
-    height: 45px;
-    border: 1px solid transparent;
-    width: 360px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    padding: 0 25px;
-    background: #f1f2f7
-}
-
-.searc-wrap input::-webkit-input-placeholder {
-    color: #b8bece
-}
-
-.searc-wrap input::-ms-input-placeholder {
-    color: #b8bece
-}
-
-.searc-wrap input::placeholder {
-    color: #b8bece
-}
-
-.searc-wrap .search-wrap__btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    border: 0;
-    width: 45px;
-    height: 100%;
-    text-align: center;
-    background: 0 0;
-    color: #b8bece;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    cursor: pointer;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-transition: .3s ease;
-    -o-transition: .3s ease;
-    transition: .3s ease
-}
-
-.mainmenu__help {
-    padding: 40px 0;
-    text-align: center
-}
-
-.mainmenu__help a {
-    color: #8991a5;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex
-}
-
-.mainmenu__help a span {
-    font-size: 20px;
-    padding-right: 5px
-}
 
 .mobile_content {
     position: relative
