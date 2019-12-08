@@ -35,17 +35,20 @@ const SignedOutLinks = () => {
                 >
                   Customer
                 </Link>
-                <i class="fas fa-chevron-down"></i>
+                <i class="-ta_pl-5 fas fa-chevron-down"></i>
                 <div class="dropdown dropdown--menu">
                   <ul>
                     <li>
-                      <Link className="nav-link chg-text" to="/SignUp/SignUp">
+                      <Link
+                        className="dropdown-item nav-link chg-text"
+                        to="/SignUp/SignUp"
+                      >
                         Sign Up
                       </Link>
                     </li>
                     <li>
                       <Link
-                        className="nav-link chg-text"
+                        className="dropdown-item nav-link chg-text"
                         to="/CustomerLogin/CustomerLogin"
                       >
                         LogIn
@@ -61,7 +64,7 @@ const SignedOutLinks = () => {
               </li>
               <li class="has_dropdown">
                 <Link
-                  className="nav-link  chg-text moveline"
+                  className="nav-link  chg-text"
                   to="#"
                   id="dropdown09"
                   data-toggle="dropdown"
@@ -70,23 +73,26 @@ const SignedOutLinks = () => {
                 >
                   Contractor
                 </Link>
-                <i class="fas fa-chevron-down"></i>
-                <div
-                  className="dropdown-menu rmv-border"
-                  aria-labelledby="dropdown09"
-                >
-                  <Link
-                    className="dropdown-item chg-text moveline"
-                    to="/SignUp/Contractor-Create-Account"
-                  >
-                    Sign Up
-                  </Link>
-                  <Link
-                    className="dropdown-item chg-text moveline"
-                    to="/ContractorLogin/ContractorLogin"
-                  >
-                    LogIn
-                  </Link>
+                <i class="-ta_pl-5 fas fa-chevron-down"></i>
+                <div class="dropdown dropdown--menu">
+                  <ul>
+                    <li>
+                      <Link
+                        className="dropdown-item nav-link chg-text"
+                        to="/SignUp/Contractor-Create-Account"
+                      >
+                        Sign Up
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="dropdown-item nav-link chg-text"
+                        to="/ContractorLogin/ContractorLogin"
+                      >
+                        LogIn
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </li>
             </ul>

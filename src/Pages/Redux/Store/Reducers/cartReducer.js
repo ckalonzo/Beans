@@ -6,14 +6,56 @@ import {
   CARTTOTALITEMS
 } from "../actions/actionTypes/ta-actionTypes";
 
+import OneBid from "../../../Membership/Img/oneBid.png";
+import FiveBids from "../../../Membership/Img/fiveBids.png";
+import ThreeBids from "../../../Membership/Img/threeBids.png";
+import TenBids from "../../../Membership/Img/tenBids.png";
+import FifteenBids from "../../../Membership/Img/fifteenBids.png";
+import TwentyBids from "../../../Membership/Img/twentyBids.png";
 const initState = {
   items: [
-    { id: 1, title: "1 Bids", desc: "1 Bid from TruckAway", price: 0.99 },
-    { id: 2, title: "3 Bids", desc: "3 Bids from TruckAway", price: 2.99 },
-    { id: 3, title: "5 Bids", desc: "5 Bids from TruckAway", price: 4.99 },
-    { id: 4, title: "10 Bids", desc: "10 Bids from TruckAway", price: 8.99 },
-    { id: 5, title: "15 Bids", desc: "15 Bids from TruckAway", price: 13.99 },
-    { id: 6, title: "20 Bids", desc: "20 Bids from TruckAway", price: 17.99 }
+    {
+      id: 1,
+      title: "1 Bids",
+      desc: "1 Bid from TruckAway",
+      price: 0.99,
+      img: OneBid
+    },
+    {
+      id: 2,
+      title: "3 Bids",
+      desc: "3 Bids from TruckAway",
+      price: 2.99,
+      img: ThreeBids
+    },
+    {
+      id: 3,
+      title: "5 Bids",
+      desc: "5 Bids from TruckAway",
+      price: 4.99,
+      img: FiveBids
+    },
+    {
+      id: 4,
+      title: "10 Bids",
+      desc: "10 Bids from TruckAway",
+      price: 8.99,
+      img: TenBids
+    },
+    {
+      id: 5,
+      title: "15 Bids",
+      desc: "15 Bids from TruckAway",
+      price: 13.99,
+      img: FifteenBids
+    },
+    {
+      id: 6,
+      title: "20 Bids",
+      desc: "20 Bids from TruckAway",
+      price: 17.99,
+      img: TwentyBids
+    }
   ],
   addedItems: [],
   total: 0,
