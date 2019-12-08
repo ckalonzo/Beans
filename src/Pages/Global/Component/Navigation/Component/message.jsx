@@ -2,14 +2,14 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 //import { fetchBids } from "../../../../Redux/Store/actions/bidsAction";
 import firebase from "../../../../../Config/Firebase";
-export default class Message extends Component {
+class Message extends Component {
   render() {
     return (
       <Fragment>
         <li class="has_dropdown">
           <div class="icon_wrap">
             <span class="far fa-envelope-open"></span>
-            <span class="notification_status msg"></span>
+            <span class="notification_count msg">{this.props.message}</span>
           </div>
 
           <div class="dropdown messaging--dropdown">
@@ -142,3 +142,24 @@ export default class Message extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    message: state.message.message,
+    auth: state.firebase.auth,
+    authError: state.auth
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  // return {
+  //   addToCart: (id, notification) => {
+  //     dispatch(addToCart(id, notification));
+  //   }
+  // };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Message);

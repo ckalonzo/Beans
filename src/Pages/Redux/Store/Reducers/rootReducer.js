@@ -5,7 +5,8 @@ import StatesListReducer from "./stateReducer";
 import ServiceListReducer from "./serviceReducer";
 import CounterReducer from "./counterReducer";
 import BidsReducer from "./bidsReducer";
-
+import NotificationReducer from "./notification";
+import MessageReducer from "./messageReducer";
 import ProfileReducer from "./profileReducer";
 import SubmitBidReducer from "./SubmitBidReducer";
 import deleteJobReducer from "./deleteJobReducer";
@@ -24,6 +25,8 @@ const rootReducer = combineReducers({
   userData: ProfileReducer,
   counter: CounterReducer,
   bids: BidsReducer,
+  notifications: NotificationReducer,
+  message: MessageReducer,
   items: cartReducer,
   cart: cartReducer,
   subscription: monthlySubscriptionReducer,

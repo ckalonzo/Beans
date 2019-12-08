@@ -1,5 +1,7 @@
 import React, { Fragment, Component } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { signOut } from "../../../../Redux/Store/actions/authActions";
+import { connect } from "react-redux";
 export default class SideMenuMobile extends Component {
   render() {
     const props = this.props;

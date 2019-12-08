@@ -2,14 +2,16 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 //import { fetchBids } from "../../../../Redux/Store/actions/bidsAction";
 import firebase from "../../../../../Config/Firebase";
-export default class NotificationHeader extends Component {
+class NotificationHeader extends Component {
   render() {
     return (
       <Fragment>
         <li class="has_dropdown">
           <div class="icon_wrap">
             <span class="far fa-bell"></span>
-            <span class="notification_status noti"></span>
+            <span class="notification_count noti">
+              {this.props.notification}
+            </span>
           </div>
 
           <div class="dropdown notification--dropdown">
@@ -108,3 +110,24 @@ export default class NotificationHeader extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    notification: state.notifications.notification,
+    auth: state.firebase.auth,
+    authError: state.auth
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  // return {
+  //   addToCart: (id, notification) => {
+  //     dispatch(addToCart(id, notification));
+  //   }
+  // };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NotificationHeader);

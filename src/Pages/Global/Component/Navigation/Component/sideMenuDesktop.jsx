@@ -45,8 +45,8 @@ class SideMenuDesktop extends Component {
     const props = this.props;
     return (
       <Fragment>
-        <div class="author-author__info has_dropdown">
-          <div class="author__avatar online">
+        <div className="author-author__info has_dropdown">
+          <div className="author__avatar online">
             <NavLink
               to="#"
               className="nav-link avatarlink  nav-avatar"
@@ -59,9 +59,9 @@ class SideMenuDesktop extends Component {
             </NavLink>
           </div>
 
-          <div class="dropdown dropdown--author">
-            <div class="author-credits d-flex">
-              <div class="author__avatar">
+          <div className="dropdown dropdown--author">
+            <div className="author-credits d-flex">
+              <div className="author__avatar">
                 <NavLink
                   to="#"
                   className="nav-link avatarlink  nav-avatar"
@@ -73,41 +73,41 @@ class SideMenuDesktop extends Component {
                   {this.state.initials}
                 </NavLink>
               </div>
-              <div class="autor__info">
-                <p class="name">
+              <div className="autor__info">
+                <p className="name">
                   {this.state.firstName} {this.state.lastName}
                 </p>
-                <p class="amount">{props.contractorProfile.bid}</p>
-                <p class="name">Bids</p>
+                {/* <p class="amount">{props.contractorProfile.bid}</p> */}
+                <p className="name">Bids</p>
               </div>
             </div>
             <ul>
               <li>
-                <a href="author.html">
-                  <span class="fas fa-user"></span>Profile
-                </a>
+                <Link to="/Profile/Layout/Profile">
+                  <span className="fas fa-user"></span>Profile
+                </Link>
               </li>
               <li>
-                <a href="dashboard.html">
-                  <span class="fas fa-home"></span> Dashboard
-                </a>
+                <Link to="/Dashboard/ContractorDashboard">
+                  <span className="fas fa-home"></span> Dashboard
+                </Link>
               </li>
-              <li>
-                <a href="dashboard-setting.html">
-                  <span class="fas fa-sliders-h"></span> Setting
-                </a>
-              </li>
+              {/* <li>
+                <Link to="/Profile/Layout/Profile">
+                  <span className="fas fa-sliders-h"></span> Setting
+                </Link>
+              </li> */}
 
               <li>
-                <a href="dashboard-add-credit.html">
+                <a href="/Membership/Membership">
                   <span class="fas fa-coins"></span>Add Bids
                 </a>
               </li>
 
               <li>
-                <a href="#">
-                  <span class="fas fa-sign-out-alt"></span>Logout
-                </a>
+                <Link to="#" onClick={props.signOut}>
+                  <span className="fas fa-sign-out-alt"></span>Logout
+                </Link>
               </li>
             </ul>
           </div>
@@ -127,11 +127,14 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    addToCart: (id, counter) => {
-      dispatch(addToCart(id, counter));
-    }
-  };
+  // return {
+  //   addToCart: (id, counter) => {
+  //     dispatch(addToCart(id, counter));
+  //   }
+  // };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SideMenuDesktop);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SideMenuDesktop);

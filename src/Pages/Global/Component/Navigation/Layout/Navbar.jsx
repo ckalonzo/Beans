@@ -20,7 +20,7 @@ const Navbar = props => {
   );
   return (
     <div class="menu-area nav-section">
-      <div class="top-menu-area">
+      <div class="top-menu-area sticky-top ">
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-12">
