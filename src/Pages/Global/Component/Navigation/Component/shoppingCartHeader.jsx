@@ -72,15 +72,15 @@ class shoppingCartHeader extends Component {
                 </p>
               </div>
               <div className="cart_action">
-                <a
+                <Link
                   className="btn btn-primary"
-                  href="/Membership/component/cart"
+                  to="/Membership/component/cart"
                 >
                   View Cart
-                </a>
-                <a className="btn btn-secondary" href="checkout.html">
+                </Link>
+                <Link className="btn btn-secondary" to="checkout.html">
                   Checkout
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -117,7 +117,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(shoppingCartHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(shoppingCartHeader);

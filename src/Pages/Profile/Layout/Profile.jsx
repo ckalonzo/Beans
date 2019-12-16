@@ -5,7 +5,7 @@ import CompanyName from "../component/companyName";
 import NumberofJobs from "../component/NumberofJobs";
 import PersonName from "../component/personName";
 import Picture from "../component/picture";
-import ProfileLocation from "../component/ProfileLocation";
+// import ProfileLocation from "../component/ProfileLocation";
 import AvgRating from "../component/Rating";
 import TypeOfJobs from "../component/typeOfJobs";
 import ProfileHero from "../component/ProfileHero";
@@ -18,6 +18,7 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import Button from "../../Global/Input/Button";
 import UpdateProfile from "../updateProfile/updateProfile";
+import { fetchContractorProfileAction } from "../../Redux/Store/actions/contractorProfileActions";
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -32,6 +33,9 @@ class Profile extends Component {
       update: !this.state.update
     });
   };
+  componentDidMount() {
+    this.props.fetchContractorProfileAction();
+  }
   render() {
     const { contractorProfile } = this.props;
     if (this.state.update === true)
@@ -53,7 +57,7 @@ class Profile extends Component {
                       <TypeOfJobs contractorProfile={contractorProfile} />
                     </div>
                     <div className="mt-3">
-                      <ProfileLocation contractorProfile={contractorProfile} />
+                      {/* <ProfileLocation contractorProfile={contractorProfile} /> */}
                     </div>
                   </div>
                   <div className="col-6">
@@ -111,11 +115,20 @@ class Profile extends Component {
   }
 }
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    contractorProfile: state.userData
+    contractorProfile: state.firestore.data
   };
 };
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchContractorProfileAction: () =>
+      dispatch({ type: "ACTION.FETCH_CONTRACTOR_PROFILE" })
+  };
+};
+
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([{ collection: "contractorProfile" }])
 )(Profile);

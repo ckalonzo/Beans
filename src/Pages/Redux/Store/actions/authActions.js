@@ -31,7 +31,6 @@ export const customerSignUp = newCustomer => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
-
     firebase
       .auth()
       .createUserWithEmailAndPassword(newCustomer.email, newCustomer.password)
@@ -59,7 +58,6 @@ export const contractorSignUp = newUser => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
-
     firebase
       .auth()
       .createUserWithEmailAndPassword(newUser.email, newUser.password)
@@ -71,7 +69,18 @@ export const contractorSignUp = newUser => {
             firstName: newUser.firstName,
             lastName: newUser.lastName,
             zipCode: newUser.zipCode,
-            initials: newUser.firstName[0] + newUser.lastName[0]
+            initials: newUser.firstName[0] + newUser.lastName[0],
+            Rating: "0",
+            Reviews: [],
+            Skills: [],
+            activeMember: true,
+            bio: "",
+            city: "",
+            companyName: "",
+            numberOfJobs: "",
+            state: "",
+            typeOfJobs: [],
+            years: ""
           });
       })
       .then(() => {
@@ -79,27 +88,6 @@ export const contractorSignUp = newUser => {
       })
       .catch(err => {
         dispatch({ type: "SIGNUP_ERROR", err });
-      });
-  };
-};
-
-export const fetchProjects = () => {
-  return (dispatch, getState, { getFirestore }) => {
-    const firestore = getFirestore();
-
-    return firestore
-      .collection("projects")
-      .get()
-      .then(snapshot => {
-        snapshot.docs.forEach(doc => {
-          let items = doc.data();
-
-          /* Make data suitable for rendering */
-          items = JSON.stringify(items);
-          dispatch({ type: "FETCH_PROJECTS_SUCCESS", payload: items });
-          /* Update the components state with query result */
-          // this.setState({ items : items })
-        });
       });
   };
 };

@@ -47,7 +47,7 @@ const CustomerSignedInLinks = props => {
           <NavLink to="/Membership/component/cart">
             <ul className="navbar-right">
               <li className="ovr-chartContainer">
-                <a to="#" className="ta-shoppingChart" id="cart">
+                <Link to="#" className="ta-shoppingChart" id="cart">
                   <span
                     className="fa-stack fa-2x has-badge"
                     data-count={props.counter}
@@ -55,7 +55,7 @@ const CustomerSignedInLinks = props => {
                     <i class="fas fa-shopping-basket"></i>
                     {/* <i className="fa fa-circle fa-stack-2x" /> */}
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </NavLink>

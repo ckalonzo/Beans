@@ -8,13 +8,15 @@ import BidsReducer from "./bidsReducer";
 import NotificationReducer from "./notification";
 import MessageReducer from "./messageReducer";
 import ProfileReducer from "./profileReducer";
+import contractorProfileReducer from "./contractorProfileReducer";
 import SubmitBidReducer from "./SubmitBidReducer";
 import deleteJobReducer from "./deleteJobReducer";
 import RegistrationReducer from "./registrationReducer";
-import monthlySubscriptionReducer from "./monthlyMembershipReducer";
+import SubscriptionReducer from "./subscriptionReducer";
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
 import { firebaseReducer } from "react-redux-firebase";
+
 const rootReducer = combineReducers({
   auth: authReducer,
   project: JobPostReducer,
@@ -29,8 +31,9 @@ const rootReducer = combineReducers({
   message: MessageReducer,
   items: cartReducer,
   cart: cartReducer,
-  subscription: monthlySubscriptionReducer,
+  subscriptions: SubscriptionReducer,
   deleteJob: deleteJobReducer,
+  contractorProfile: contractorProfileReducer,
   registration: RegistrationReducer,
   statesList: StatesListReducer,
   serviceList: ServiceListReducer

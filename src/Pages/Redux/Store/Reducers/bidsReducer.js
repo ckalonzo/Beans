@@ -1,7 +1,7 @@
 import { ACTION } from "./../actions/actionTypes/ta-actionTypes";
 
 const initialState = {
-  bids: 23
+  bids: 231
 };
 
 const BidsReducer = (state = initialState, action) => {
