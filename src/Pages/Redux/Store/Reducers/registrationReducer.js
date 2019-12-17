@@ -1,4 +1,4 @@
-import * as actionTypes from "../actions/actionTypes/ta-actionTypes";
+import { ACTIONS } from "../actions/actionTypes/ta-actionTypes";
 
 const initialState = {
   stepNav: {
@@ -35,7 +35,7 @@ const initialState = {
 
 const registrationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ADD_BASIC_INFO:
+    case ACTIONS.CONTRACTOR_GROUP.ADD_BASIC_INFO:
       return {
         ...state,
         registrationFields: {
@@ -44,7 +44,7 @@ const registrationReducer = (state = initialState, action) => {
             state.registrationFields[action.registrationName]
         }
       };
-    case actionTypes.ADD_SSN:
+    case ACTIONS.CONTRACTOR_GROUP.ADD_SSN:
       return {
         ...state,
         numberFields: {
@@ -52,7 +52,7 @@ const registrationReducer = (state = initialState, action) => {
           [action.bkcheckInfo]: state.numberFields[action.bkcheckInfo]
         }
       };
-    case actionTypes.NEXT_STEP:
+    case ACTIONS.STEPS.NEXT_STEP:
       return {
         ...state,
         stepNav: {
@@ -60,7 +60,7 @@ const registrationReducer = (state = initialState, action) => {
           [action.stepCounter]: state.stepNav[action.stepCounter] + 1
         }
       };
-    case actionTypes.PREVIOUS_STEP:
+    case ACTIONS.STEPS.PREVIOUS_STEP:
       return {
         ...state,
         registrationField: {

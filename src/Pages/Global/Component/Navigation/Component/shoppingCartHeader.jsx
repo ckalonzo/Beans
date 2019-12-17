@@ -93,11 +93,11 @@ class shoppingCartHeader extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    counter: state.cart.counter,
+    counter: state.cartReducer.counter,
     auth: state.firebase.auth,
     authError: state.auth,
-    items: state.items,
-    total: state.items.total
+    items: state.cartReducer,
+    total: state.cartReducer.total
   };
 };
 const mapDispatchToProps = dispatch => {

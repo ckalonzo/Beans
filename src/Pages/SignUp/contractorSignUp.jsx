@@ -4,6 +4,7 @@ import IntroSignUp from "./component/IntroSignUp";
 import SignUpbasicinfo from "./component/signUp-basicinfo";
 import SocialNumberAknowledgement from "./component/SocialNumberAknowledgement";
 import { contractorSignUp } from "../Redux/Store/actions/authActions";
+import { ACTIONS } from "../Redux/Store/actions/actionTypes/ta-actionTypes";
 import * as actionTypes from "../Redux/Store/actions/actionTypes/ta-actionTypes";
 import { Redirect } from "react-router-dom";
 class ContractorSignUpForm extends Component {
@@ -316,13 +317,25 @@ const mapDispatchToProps = dispatch => {
   return {
     contractorSignUp: creds => dispatch(contractorSignUp(creds)),
     onhandleNextStep: StepCounter =>
-      dispatch({ type: actionTypes.NEXT_STEP, stepCounter: StepCounter }),
+      dispatch({
+        type: actionTypes.ACTIONS.STEPS.NEXT_STEP,
+        stepCounter: StepCounter
+      }),
     onhandlePreviousStep: StepCounter =>
-      dispatch({ type: actionTypes.PREVIOUS_STEP, stepCounter: StepCounter }),
+      dispatch({
+        type: actionTypes.ACTIONS.STEPS.PREVIOUS_STEP,
+        stepCounter: StepCounter
+      }),
     onhandlebkCheck: bkcheck =>
-      dispatch({ type: actionTypes.ADD_SSN, bkcheckInfo: bkcheck }),
+      dispatch({
+        type: actionTypes.ACTIONS.CONTRACTOR_GROUP.ADD_SSN,
+        bkcheckInfo: bkcheck
+      }),
     onhandleBasicInfo: regInfo =>
-      dispatch({ type: actionTypes.ADD_BASIC_INFO, registrationName: regInfo })
+      dispatch({
+        type: actionTypes.ACTIONS.CONTRACTOR_GROUP.ADD_BASIC_INFO,
+        registrationName: regInfo
+      })
   };
 };
 export default connect(

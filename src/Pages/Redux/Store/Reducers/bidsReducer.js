@@ -1,12 +1,10 @@
-import { ACTION } from "./../actions/actionTypes/ta-actionTypes";
+import { ACTIONS } from "./../actions/actionTypes/ta-actionTypes";
 
-const initialState = {
-  bids: 231
-};
+const initialState = {};
 
 const BidsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ACTION.FETCH_BIDS:
+    case ACTIONS.BIDS_GROUP.FETCH_BIDS:
       return {
         ...state
       };

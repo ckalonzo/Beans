@@ -1,4 +1,5 @@
-import { ACTION } from "./actionTypes/ta-actionTypes";
+import { ACTIONS } from "./actionTypes/ta-actionTypes";
+
 export const fetchCustomerProfileAPI = () => {
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
@@ -13,7 +14,10 @@ export const fetchCustomerProfileAPI = () => {
 
           //   /* Make data suitable for rendering */
           items = JSON.stringify(items);
-          dispatch({ type: ACTION.FETCH_CUSTOMER_PROFILE, payload: items });
+          dispatch({
+            type: ACTIONS.PROFILE_GROUP.FETCH_CUSTOMER_PROFILE,
+            payload: items
+          });
           /* Update the components state with query result */
         });
       });
@@ -34,7 +38,10 @@ export const fetchContractorProfileAPI = () => {
 
           //   /* Make data suitable for rendering */
           items = JSON.stringify(items);
-          dispatch({ type: ACTION.FETCH_CONTRACTOR_PROFILE, payload: items });
+          dispatch({
+            type: ACTIONS.CONTRACTOR_GROUP.FETCH_CONTRACTOR_PROFILE,
+            payload: items
+          });
           /* Update the components state with query result */
         });
       });
@@ -55,7 +62,7 @@ export const fetchBidsAPI = () => {
 
           //   /* Make data suitable for rendering */
           items = JSON.stringify(items);
-          dispatch({ type: ACTION.FETCH_BIDS, payload: items });
+          dispatch({ type: ACTIONS.BIDS_GROUP.FETCH_BIDS, payload: items });
           /* Update the components state with query result */
         });
       });
@@ -76,7 +83,10 @@ export const fetchNotificationAPI = () => {
 
           //   /* Make data suitable for rendering */
           items = JSON.stringify(items);
-          dispatch({ type: ACTION.FETCH_NOTIFICATIONS, payload: items });
+          dispatch({
+            type: ACTIONS.NOTIFICATIONS.FETCH_NOTIFICATIONS,
+            payload: items
+          });
           /* Update the components state with query result */
         });
       });
@@ -96,7 +106,10 @@ export const fetchAllJobsAPI = () => {
 
           //   /* Make data suitable for rendering */
           items = JSON.stringify(items);
-          dispatch({ type: ACTION.FETCH_PROJECTS, payload: items });
+          dispatch({
+            type: ACTIONS.PROJECTS_GROUP.FETCH_PROJECTS,
+            payload: items
+          });
           /* Update the components state with query result */
         });
       });
@@ -117,7 +130,10 @@ export const fetchMyJobsAPI = () => {
 
           //   /* Make data suitable for rendering */
           items = JSON.stringify(items);
-          dispatch({ type: ACTION.FETCH_MY_PROJECTS, payload: items });
+          dispatch({
+            type: ACTIONS.PROJECTS_GROUP.FETCH_MY_PROJECTS,
+            payload: items
+          });
           /* Update the components state with query result */
         });
       });
@@ -157,7 +173,9 @@ export const updateUser = (uid, userData) => {
       })
       .then(res => {
         console.log(res);
-        dispatch({ type: ACTION.UPDATE_FULL_PROFILE });
+        dispatch({
+          type: ACTIONS.CONTRACTOR_GROUP.UPDATE_FULL_CONTRACTOR_PROFILE
+        });
       })
       .catch(err => {
         dispatch({ type: "UPDATE_PROFILE_ERROR", err });

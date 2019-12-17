@@ -16,7 +16,7 @@ class ProviderSignedInLinkstest extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    counter: state.cart.counter,
+    counter: state.cartReducer.counter,
     auth: state.firebase.auth,
     authError: state.auth,
     bids: state.bids

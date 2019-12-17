@@ -145,7 +145,7 @@ class Message extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    message: state.message.message,
+    message: state.messageReducer.message,
     auth: state.firebase.auth,
     authError: state.auth
   };
@@ -159,7 +159,4 @@ const mapDispatchToProps = dispatch => {
   // };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Message);
+export default connect(mapStateToProps, mapDispatchToProps)(Message);
