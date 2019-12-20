@@ -94,7 +94,7 @@ const ProviderSignedInLinks = props => {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    counter: state.cart.counter
+    counter: state.cartReducer.counter
   };
 };
 

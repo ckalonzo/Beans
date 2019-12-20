@@ -8,30 +8,31 @@ import BidsReducer from "./bidsReducer";
 import NotificationReducer from "./notification";
 import MessageReducer from "./messageReducer";
 import ProfileReducer from "./profileReducer";
+import contractorProfileReducer from "./contractorProfileReducer";
 import SubmitBidReducer from "./SubmitBidReducer";
 import deleteJobReducer from "./deleteJobReducer";
 import RegistrationReducer from "./registrationReducer";
-import monthlySubscriptionReducer from "./monthlyMembershipReducer";
+import SubscriptionReducer from "./subscriptionReducer";
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
 import { firebaseReducer } from "react-redux-firebase";
+
 const rootReducer = combineReducers({
   auth: authReducer,
-  project: JobPostReducer,
-  signUpRegistration: RegistrationReducer,
-  submitBid: SubmitBidReducer,
+  projectReducer: JobPostReducer,
+  registrationReducer: RegistrationReducer,
+  submitBidReducer: SubmitBidReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer,
   userData: ProfileReducer,
-  counter: CounterReducer,
-  bids: BidsReducer,
-  notifications: NotificationReducer,
-  message: MessageReducer,
-  items: cartReducer,
-  cart: cartReducer,
-  subscription: monthlySubscriptionReducer,
+  counterReducer: CounterReducer,
+  bidsReducer: BidsReducer,
+  notificationsReducer: NotificationReducer,
+  messageReducer: MessageReducer,
+  cartReducer: cartReducer,
+  subscriptionsReducer: SubscriptionReducer,
   deleteJob: deleteJobReducer,
-  registration: RegistrationReducer,
+  contractorProfile: contractorProfileReducer,
   statesList: StatesListReducer,
   serviceList: ServiceListReducer
 });

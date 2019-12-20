@@ -18,6 +18,7 @@ class SideMenuDesktop extends Component {
     firebase
       .firestore()
       .collection("contractorProfile") //pointing to bids collection
+      .doc("uid")
       .get() // getting/fetching data
       .then(snapshot => {
         const firstName = []; //set array to get bids
@@ -47,16 +48,9 @@ class SideMenuDesktop extends Component {
       <Fragment>
         <div className="author-author__info has_dropdown">
           <div className="author__avatar online">
-            <NavLink
-              to="#"
-              className="nav-link avatarlink  nav-avatar"
-              id="navbarDropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="false"
-              aria-expanded="false"
-            >
+            <div className="nav-link avatarlink  nav-avatar">
               {this.state.initials}
-            </NavLink>
+            </div>
           </div>
 
           <div className="dropdown dropdown--author">
@@ -99,15 +93,15 @@ class SideMenuDesktop extends Component {
               </li> */}
 
               <li>
-                <a href="/Membership/Membership">
+                <Link to="/Membership/Membership">
                   <span class="fas fa-coins"></span>Add Bids
-                </a>
+                </Link>
               </li>
 
               <li>
-                <Link to="#" onClick={props.signOut}>
+                <a href="/" onClick={props.signOut}>
                   <span className="fas fa-sign-out-alt"></span>Logout
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -119,7 +113,7 @@ class SideMenuDesktop extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    counter: state.cart.counter,
+    counter: state.cartReducer.counter,
     auth: state.firebase.auth,
     authError: state.auth,
     bids: state.bids

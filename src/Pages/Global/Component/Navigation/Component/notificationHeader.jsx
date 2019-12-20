@@ -113,7 +113,7 @@ class NotificationHeader extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    notification: state.notifications.notification,
+    notification: state.notificationsReducer.notification,
     auth: state.firebase.auth,
     authError: state.auth
   };
@@ -127,7 +127,4 @@ const mapDispatchToProps = dispatch => {
   // };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NotificationHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(NotificationHeader);

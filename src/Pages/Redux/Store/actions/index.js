@@ -1,26 +1,8 @@
-import { PROFILE_GROUP } from "./actionTypes/ta-actionTypes";
-
-export const updateProfile = (id, value) => {
-  console.log("updating profile value");
-  return {
-    type: PROFILE_GROUP.UPDATE_PROFILE_VALUE,
-    payload: {
-      id: id,
-      value: value
-    }
-  };
-};
-
-export const submitProfile = () => {
-  console.log("submitting profile ");
-  return {
-    type: PROFILE_GROUP.SUBMIT_PROFILE
-  };
-};
+import { ACTIONS } from "./actionTypes/ta-actionTypes";
 
 export const beginValidatingProfileValue = id => {
   return {
-    type: PROFILE_GROUP.BEGIN_VALIDATING_PROFILE_VALUE,
+    type: ACTIONS.PROFILE_GROUP.BEGIN_VALIDATING_PROFILE_VALUE,
     payload: {
       id: id
     }

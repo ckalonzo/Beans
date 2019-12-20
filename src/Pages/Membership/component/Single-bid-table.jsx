@@ -71,7 +71,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SingleBid);
+export default connect(mapStateToProps, mapDispatchToProps)(SingleBid);

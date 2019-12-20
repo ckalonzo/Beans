@@ -72,15 +72,15 @@ class shoppingCartHeader extends Component {
                 </p>
               </div>
               <div className="cart_action">
-                <a
+                <Link
                   className="btn btn-primary"
-                  href="/Membership/component/cart"
+                  to="/Membership/component/cart"
                 >
                   View Cart
-                </a>
-                <a className="btn btn-secondary" href="checkout.html">
+                </Link>
+                <Link className="btn btn-secondary" to="checkout.html">
                   Checkout
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -93,11 +93,11 @@ class shoppingCartHeader extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    counter: state.cart.counter,
+    counter: state.cartReducer.counter,
     auth: state.firebase.auth,
     authError: state.auth,
-    items: state.items,
-    total: state.items.total
+    items: state.cartReducer,
+    total: state.cartReducer.total
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -117,7 +117,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(shoppingCartHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(shoppingCartHeader);

@@ -54,9 +54,9 @@ const ProjectSummary = ({ jobs, deleteProject, props }) => {
             </div>
 
             <p>
-              <button className="" onClick={props.deleteProject}>
+              {/* <button className="" onClick={props.deleteProject}>
                 Delete Job
-              </button>
+              </button> */}
               <Link to={"/jobs/" + jobs.id} className="btn  btn-warning">
                 {" "}
                 Edit Job{" "}

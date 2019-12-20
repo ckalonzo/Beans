@@ -1,20 +1,19 @@
-export const fetchCustomerProfile = () => {
-  return (dispatch, getState, { getFirestore }) => {
-    const firestore = getFirestore();
+import { ACTION } from "./actionTypes/ta-actionTypes";
 
-    return firestore
-      .collection("contractorProfile")
-      .get()
-      .then(snapshot => {
-        snapshot.docs.forEach(doc => {
-          let items = doc.data();
-
-          /* Make data suitable for rendering */
-          items = JSON.stringify(items);
-          dispatch({ type: ACTION.FETCH_USER_SUCCESS, payload: items });
-          /* Update the components state with query result */
-          // this.setState({ items : items })
-        });
-      });
+export function fetchCustomerProfile() {
+  return {
+    type: ACTION.FETCH_CUSTOMER_PROFILE
   };
-};
+}
+
+export function fetchCustomerProfileSuccess() {
+  return {
+    type: ACTION.FETCH_CUSTOMER_PROFILE_SUCCESS
+  };
+}
+export function fetchCustomerProfileFail() {
+  return {
+    type: ACTION.FETCH_CUSTOMER_PROFILE_FAIL,
+    error: error
+  };
+}

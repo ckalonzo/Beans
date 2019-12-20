@@ -1,4 +1,4 @@
-import { PROFILE_GROUP } from "../actions/actionTypes/ta-actionTypes";
+import { ACTIONS } from "../actions/actionTypes/ta-actionTypes";
 import { digitsAndDashesOnlyRegex } from "../../../utils/regex";
 import {
   cleanInput,
@@ -122,7 +122,7 @@ const initState = {
 };
 
 const ProfileReducer = (profile = initState, action) => {
-  if (action.type === PROFILE_GROUP.SUBMIT_PROFILE) {
+  if (action.type === ACTIONS.PROFILE_GROUP.SUBMIT_PROFILE) {
     //make a copy of the form state:
     let formStateCopy = { ...profile };
 
@@ -164,7 +164,7 @@ const ProfileReducer = (profile = initState, action) => {
       console.log("form validated: submit profile to firebase");
     }
     return formStateCopy;
-  } else if (action.type === PROFILE_GROUP.UPDATE_PROFILE_VALUE) {
+  } else if (action.type === ACTIONS.PROFILE_GROUP.UPDATE_PROFILE_VALUE) {
     //copy the piece of locationstate for updating:
     let formStateCopy = { ...profile };
     let oldFormItem = formStateCopy[action.payload.id]; //keep previous value for formatting and validation
@@ -196,7 +196,9 @@ const ProfileReducer = (profile = initState, action) => {
 
     //return state
     return formStateCopy;
-  } else if (action.type === PROFILE_GROUP.BEGIN_VALIDATING_PROFILE_VALUE) {
+  } else if (
+    action.type === ACTIONS.PROFILE_GROUP.BEGIN_VALIDATING_PROFILE_VALUE
+  ) {
     let formStateCopy = { ...profile };
     let oldFormItem = formStateCopy[action.payload.id]; //keep previous value for formatting and validation
     let formItem = { ...formStateCopy[action.payload.id] };

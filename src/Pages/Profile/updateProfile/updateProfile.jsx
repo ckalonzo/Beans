@@ -7,12 +7,12 @@ import { compose, bindActionCreators } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import Button from "../../Global/Input/Button";
 import TextArea from "../../Global/Input/textarea";
-//import * as actionTypes from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
+import { ACTIONS } from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
+import { beginValidatingProfileValue } from "../../Redux/Store/actions/index";
 import {
   updateProfile,
-  beginValidatingProfileValue,
   submitProfile
-} from "../../Redux/Store/actions/index";
+} from "../../Redux/Store/actions/contractorProfileActions";
 import { Link } from "react-router-dom";
 import TextInput from "../../Global/Input/TextInput";
 import "../sass/updateProfile.scss";
