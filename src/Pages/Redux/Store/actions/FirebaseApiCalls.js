@@ -1,5 +1,15 @@
 import { ACTIONS } from "./actionTypes/ta-actionTypes";
 
+export const addCustomerProfileAPI = () => {};
+
+export const addContractorProfileAPI = () => {};
+
+export const addBidsAPI = () => {};
+
+export const addNotificationAPI = () => {};
+
+export const addAllJobsAPI = () => {};
+
 export const fetchCustomerProfileAPI = () => {
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
@@ -139,16 +149,6 @@ export const fetchMyJobsAPI = () => {
   };
 };
 
-export const addCustomerProfileAPI = () => {};
-
-export const addContractorProfileAPI = () => {};
-
-export const addBidsAPI = () => {};
-
-export const addNotificationAPI = () => {};
-
-export const addAllJobsAPI = () => {};
-
 export const updateUser = (uid, userData) => {
   console.log(uid, userData);
   return (dispatch, getState, { getFirebase, getFirestore }) => {
@@ -182,7 +182,7 @@ export const updateUser = (uid, userData) => {
   };
 };
 
-export const customerSignUp = newCustomer => {
+export const customerSignUpAPI = newCustomer => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
@@ -198,18 +198,24 @@ export const customerSignUp = newCustomer => {
             lastName: newCustomer.lastName,
             zipCode: newCustomer.zipCode,
             initials: newCustomer.firstName[0] + newCustomer.lastName[0]
+          })
+          .then(() => {
+            dispatch({ type: ACTIONS.PROFILE_GROUP.CUSTOMER_SIGNUP_START });
+          })
+          .then(() => {
+            dispatch({ type: ACTIONS.PROFILE_GROUP.CUSTOMER_SIGNUP_SUCCESS });
+          })
+          .catch(err => {
+            dispatch({
+              type: "ACTIONS.PROFILE_GROUP.CUSTOMER_SIGNUP_FAIL",
+              err
+            });
           });
-      })
-      .then(() => {
-        dispatch({ type: "SIGNUP_SUCCESS" });
-      })
-      .catch(err => {
-        dispatch({ type: "SIGNUP_ERROR", err });
       });
   };
 };
 
-export const contractorSignUp = newUser => {
+export const contractorSignUpAPI = newUser => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
@@ -239,28 +245,18 @@ export const contractorSignUp = newUser => {
           });
       })
       .then(() => {
-        dispatch({ type: "SIGNUP_SUCCESS" });
+        dispatch({ type: ACTIONS.CONTRACTOR_GROUP.CONTRACTOR_SIGNUP_SUCCESS });
       })
       .catch(err => {
-        dispatch({ type: "SIGNUP_ERROR", err });
+        dispatch({
+          type: "ACTIONS.CONTRACTOR_GROUP.CONTRACTOR_SIGNUP_FAIL",
+          err
+        });
       });
   };
 };
 
-export const signOut = () => {
-  return (dispatch, getState, { getFirebase }) => {
-    const firebase = getFirebase();
-
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        dispatch({ type: "SIGNOUT_SUCCESS" });
-      });
-  };
-};
-
-export const signIn = credentials => {
+export const Contractor_LoginAPI = credentials => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
 
@@ -275,28 +271,15 @@ export const signIn = credentials => {
       });
   };
 };
-
-export const forgotPassword = email => {
-  return (dispatch, getState, { getFirebase, getFirestore }) => {
+export const signOutAPI = () => {
+  return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
-    let actionCodeSettings = {};
 
     firebase
       .auth()
-      .sendPasswordResetEmail(email, actionCodeSettings)
-      .then(function(data) {
-        dispatch({
-          type: ACTION.EMAIL.RESET_EMAIL_LINK_SENT,
-          authError: "Email link has been sent",
-          resetPassword: true
-        });
-      })
-      .catch(function(data) {
-        dispatch({
-          type: ACTION.EMAIL.RESET_EMAIL_LINK_SENT_FAIL,
-          authError: data.message,
-          resetPassword: false
-        });
+      .signOut()
+      .then(() => {
+        dispatch({ type: "SIGNOUT_SUCCESS" });
       });
   };
 };

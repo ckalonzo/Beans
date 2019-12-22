@@ -27,67 +27,58 @@ export const signOut = () => {
   };
 };
 
-// export const customerSignUp = newCustomer => {
-//   return (dispatch, getState, { getFirebase, getFirestore }) => {
-//     const firebase = getFirebase();
-//     const firestore = getFirestore();
-//     firebase
-//       .auth()
-//       .createUserWithEmailAndPassword(newCustomer.email, newCustomer.password)
-//       .then(resp => {
-//         return firestore
-//           .collection("CustomerProfile")
-//           .doc(resp.user.uid)
-//           .set({
-//             firstName: newCustomer.firstName,
-//             lastName: newCustomer.lastName,
-//             zipCode: newCustomer.zipCode,
-//             initials: newCustomer.firstName[0] + newCustomer.lastName[0]
-//           });
-//       })
-//       .then(() => {
-//         dispatch({ type: "SIGNUP_SUCCESS" });
-//       })
-//       .catch(err => {
-//         dispatch({ type: "SIGNUP_ERROR", err });
-//       });
-//   };
-// };
+export const customerSignUp = newCustomer => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firebase = getFirebase();
+    const firestore = getFirestore();
 
-// export const contractorSignUp = newUser => {
-//   return (dispatch, getState, { getFirebase, getFirestore }) => {
-//     const firebase = getFirebase();
-//     const firestore = getFirestore();
-//     firebase
-//       .auth()
-//       .createUserWithEmailAndPassword(newUser.email, newUser.password)
-//       .then(resp => {
-//         return firestore
-//           .collection("contractorProfile")
-//           .doc(resp.user.uid)
-//           .set({
-//             firstName: newUser.firstName,
-//             lastName: newUser.lastName,
-//             zipCode: newUser.zipCode,
-//             initials: newUser.firstName[0] + newUser.lastName[0],
-//             Rating: "0",
-//             Reviews: [],
-//             Skills: [],
-//             activeMember: true,
-//             bio: "",
-//             city: "",
-//             companyName: "",
-//             numberOfJobs: "",
-//             state: "",
-//             typeOfJobs: [],
-//             years: ""
-//           });
-//       })
-//       .then(() => {
-//         dispatch({ type: "SIGNUP_SUCCESS" });
-//       })
-//       .catch(err => {
-//         dispatch({ type: "SIGNUP_ERROR", err });
-//       });
-//   };
-// };
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(newCustomer.email, newCustomer.password)
+      .then(resp => {
+        return firestore
+          .collection("Customer")
+          .doc(resp.user.uid)
+          .set({
+            firstName: newCustomer.firstName,
+            lastName: newCustomer.lastName,
+            zipCode: newCustomer.zipCode,
+            initials: newCustomer.firstName[0] + newCustomer.lastName[0]
+          });
+      })
+      .then(() => {
+        dispatch({ type: "SIGNUP_SUCCESS" });
+      })
+      .catch(err => {
+        dispatch({ type: "SIGNUP_ERROR", err });
+      });
+  };
+};
+
+export const contractorSignUp = newUser => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firebase = getFirebase();
+    const firestore = getFirestore();
+
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(newUser.email, newUser.password)
+      .then(resp => {
+        return firestore
+          .collection("contractor")
+          .doc(resp.user.uid)
+          .set({
+            firstName: newUser.firstName,
+            lastName: newUser.lastName,
+            zipCode: newUser.zipCode,
+            initials: newUser.firstName[0] + newUser.lastName[0]
+          });
+      })
+      .then(() => {
+        dispatch({ type: "SIGNUP_SUCCESS" });
+      })
+      .catch(err => {
+        dispatch({ type: "SIGNUP_ERROR", err });
+      });
+  };
+};

@@ -56,8 +56,8 @@ class SideMenuDesktop extends Component {
           <div className="dropdown dropdown--author">
             <div className="author-credits d-flex">
               <div className="author__avatar">
-                <NavLink
-                  to="#"
+                <a
+                  href="#"
                   className="nav-link avatarlink  nav-avatar"
                   id="navbarDropdownMenuLink"
                   data-toggle="dropdown"
@@ -65,7 +65,7 @@ class SideMenuDesktop extends Component {
                   aria-expanded="false"
                 >
                   {this.state.initials}
-                </NavLink>
+                </a>
               </div>
               <div className="autor__info">
                 <p className="name">
