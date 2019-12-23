@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "../Css/customerform.scss";
 import { connect } from "react-redux";
-import { signIn } from "../../Redux/Store/actions/authActions";
+import { signIn } from "../../../Redux/Store/actions/authActions";
 import { Redirect, Link } from "react-router-dom";
+import CarouselLogin from "./carousel-login";
 
 class CustomerForm extends Component {
   state = {
@@ -27,19 +28,21 @@ class CustomerForm extends Component {
       <section className="customer-img login-form">
         <div className="container">
           <div className="row">
-            <div className="col-md-6 col-lg-5">
-              <div className="login-copy">
-                <p>Pro Tips:Research Pricing Schemes For Fair </p>
-              </div>
+            <div className="col-md-6 col-lg-5 -ta_pl-md-0 order-1">
+              <CarouselLogin
+                slide1=" Pro Tips: Set Reasonable budget for more contractors"
+                slide2="Pro Tips: Research Pricing Schemes For Fair"
+                slide3="Pro Tips:Research Pricing Schemes For Fair"
+              />
             </div>
-            <div className="col-md-6 p-md-0">
-              <div className="container p-0">
-                <div className="login-panel col-12 mt-5">
+            <div className="col-md-6 -ta_mt-0 -ta_mt-md-0 order-2">
+              <div className="fluid-container mt-0">
+                <div className="login-panel col-12 offset-0 col-md-11 offset-md-2 col-lg-10 offset-lg-3 mt-5">
                   <div className="row">
                     <div className="col-12">
-                      <h1 className="mx-auto mt-2 login-title">
-                        Sign In Your Trucked Away Dashboard
-                      </h1>
+                      <h3 className="mx-auto -ta_pt-10 login-title">
+                        Welcome Back
+                      </h3>
                     </div>
 
                     <div className="container mt-3 login-outline p-0">
@@ -87,25 +90,12 @@ class CustomerForm extends Component {
                             </div>
                             <button
                               type="submit"
-                              className="btn btn-primary btn-block mt-3"
+                              className="btn btn-primary btn-block mt-3 mb-3"
                             >
                               Log In
                             </button>
                             <div className="center red-text">
                               {authError ? <p>{authError}</p> : null}
-                            </div>
-                            <div className="or-seperator  mt-5">
-                              <span>OR</span>
-                            </div>
-                            <div className="text-center social-btn mb-5">
-                              <button className="btn btn-primary btn-block">
-                                <i className="fab fa-facebook-f" /> Sign in with{" "}
-                                <b>Facebook</b>
-                              </button>
-                              <button className="btn btn-danger btn-block">
-                                <i className="fab fa-google" /> Sign in with{" "}
-                                <b>Google</b>
-                              </button>
                             </div>
                           </form>
                         </div>
@@ -145,7 +135,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CustomerForm);
+export default connect(mapStateToProps, mapDispatchToProps)(CustomerForm);

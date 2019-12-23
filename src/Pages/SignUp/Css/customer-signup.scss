@@ -6,6 +6,12 @@
   background-size: cover;
   .signup-panel {
     margin-top: 40px;
+    @media (min-width: 1200px) {
+      margin-top: 0px;
+    }
+  }
+  .red-text {
+    color: red;
   }
   .title {
     color: #124676;
@@ -19,6 +25,24 @@
   }
   .signUp-btn {
     background-color: #124676;
+  }
+  .container {
+    max-width: 277px;
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    padding: 16px;
+    background-color: white;
+    @media (min-width: 375px) {
+      max-width: 320px;
+    }
+    @media (min-width: 768px) {
+      max-width: 364px;
+    }
+    @media (min-width: 1200px) {
+      max-width: 394px;
+      right: 175px;
+    }
   }
 }
 .num {

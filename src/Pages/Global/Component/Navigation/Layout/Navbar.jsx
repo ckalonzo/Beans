@@ -23,10 +23,10 @@ const Navbar = props => {
       <div class="top-menu-area sticky-top ">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 -ta_px-0">
               <div class=" menu-fullwidth">
                 <div class="logo-wrapper ">
-                  <div class="logo logo-top">
+                  <div class="logo">
                     <Logo />
                   </div>
                 </div>

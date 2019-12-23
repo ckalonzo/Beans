@@ -34,7 +34,7 @@ class ProviderLogin extends Component {
             </div>
             <div className="col-md-6 p-md-0">
               <div className="container p-0">
-                <div className="login-panel col-12mt-5">
+                <div className="login-panel col-12 offset-0 col-md-11 offset-md-2 col-lg-10 offset-lg-3 mt-5">
                   <div className="row">
                     <h5 className="mx-auto mt-2 login-title">
                       Sign In Your Trucked Away Dashboard
@@ -73,7 +73,10 @@ class ProviderLogin extends Component {
                               >
                                 Remember Me
                               </label>
-                              <Link to="#" className="pt-3 pb-3 float-right">
+                              <Link
+                                to="/CustomerLogin/Component/ForgotPassword"
+                                className="pt-3 pb-3 float-right"
+                              >
                                 Forgot Password?
                               </Link>
                             </div>

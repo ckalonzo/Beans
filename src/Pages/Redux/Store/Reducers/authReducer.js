@@ -1,3 +1,5 @@
+import { ACTIONS } from "./../actions/actionTypes/ta-actionTypes";
+
 const initState = {
   authError: null,
   resetPassword: false,
@@ -6,24 +8,24 @@ const initState = {
 
 const authReducer = (state = initState, action) => {
   switch (action.type) {
-    case "RESET_EMAIL_LINK_SENT":
+    case ACTIONS.EMAIL.RESET_EMAIL_LINK_SENT:
       return {
         ...state,
         authError: action.authError,
         resetPassword: true
       };
-    case "RESET_EMAIL_LINK_SENT_FAIL":
+    case ACTIONS.EMAIL.RESET_EMAIL_LINK_SENT_FAIL:
       return {
         ...state,
         authError: action.authError
       };
-    case "LOGIN_ERROR":
+    case ACTIONS.PROFILE_GROUP.LOGIN_ERROR:
       console.log("login error");
       return {
         ...state,
         authError: "Login failed"
       };
-    case "LOGIN_SUCCESS":
+    case ACTIONS.PROFILE_GROUP.LOGIN_SUCCESS:
       console.log("login success");
       return {
         authError: null

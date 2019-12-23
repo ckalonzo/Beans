@@ -13,33 +13,35 @@ export default class ContentPanelImg extends Component {
             <div className="col-lg-6 col-md-12 col-sm-12">
               <div className="col-12  mt-5">
                 <div className="col-md-12 col-sm-12">
-                  <h2 className="img-content-title">What we offer</h2>
+                  <h2 className="img-content-title text-center -ta_mb-25">
+                    What we offer
+                  </h2>
                 </div>
-                <div className="col-12 mb-3 img-content-sub-title">
+                <div className="col-12 col-md-8 offset-md-2 col-lg-12 offset-lg-0 col-xl-10 offset-xl-1 mb-3 img-content-sub-title">
                   <h5>
                     We offer the best and simple solution to have your service
                     done when you want it{" "}
                   </h5>
                 </div>
-                <div className="img-content-copy">
-                  <ul className="p-0 no--bullets">
+                <div className="img-content-copy col-12 -ta_pl-xl-5">
+                  <ul className="text-left -ta_pl-30">
                     <li>
-                      <p>Morbi pulvinar massa vitae sem cursus ferlentu</p>
+                      <p>Trucked Away allows the customer to set Budget.</p>
                     </li>
                     <li>
-                      <p>Morbi pulvinar massa vitae sem cursus ferlentu</p>
+                      <p>Anyone can join as contractor if you have a skill. </p>
                     </li>
                     <li>
-                      <p>Morbi pulvinar massa vitae sem cursus ferlentu</p>
+                      <p>All you need is a pickup truck or larger. </p>
                     </li>
                     <li>
-                      <p>Morbi pulvinar massa vitae sem cursus ferlentu</p>
+                      <p>Paid on spot by customer. </p>
                     </li>
                     <li>
-                      <p>Morbi pulvinar massa vitae sem cursus ferlentu</p>
-                    </li>
-                    <li>
-                      <p>Morbi pulvinar massa vitae sem cursus ferlentu</p>
+                      <p>
+                        Truck Away allows customer to choose their contractor by
+                        viewing profile.
+                      </p>
                     </li>
                   </ul>
                 </div>

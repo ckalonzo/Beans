@@ -1,3 +1,5 @@
+import { ACTIONS } from "./actionTypes/ta-actionTypes";
+
 export const signIn = credentials => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
@@ -6,10 +8,10 @@ export const signIn = credentials => {
       .auth()
       .signInWithEmailAndPassword(credentials.email, credentials.password)
       .then(() => {
-        dispatch({ type: "LOGIN_SUCCESS" });
+        dispatch({ type: ACTIONS.PROFILE_GROUP.LOGIN_SUCCESS });
       })
       .catch(err => {
-        dispatch({ type: "LOGIN_ERROR", err });
+        dispatch({ type: ACTIONS.PROFILE_GROUP.LOGIN_ERROR, err });
       });
   };
 };
@@ -79,6 +81,31 @@ export const contractorSignUp = newUser => {
       })
       .catch(err => {
         dispatch({ type: "SIGNUP_ERROR", err });
+      });
+  };
+};
+
+export const forgotPassword = email => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firebase = getFirebase();
+    let actionCodeSettings = {};
+
+    firebase
+      .auth()
+      .sendPasswordResetEmail(email, actionCodeSettings)
+      .then(function(data) {
+        dispatch({
+          type: ACTIONS.EMAIL.RESET_EMAIL_LINK_SENT,
+          authError: "Email link has been sent",
+          resetPassword: true
+        });
+      })
+      .catch(function(data) {
+        dispatch({
+          type: ACTIONS.EMAIL.RESET_EMAIL_LINK_SENT_FAIL,
+          authError: data.message,
+          resetPassword: false
+        });
       });
   };
 };
