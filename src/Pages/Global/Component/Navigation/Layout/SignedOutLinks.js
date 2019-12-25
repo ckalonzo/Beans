@@ -41,7 +41,7 @@ const SignedOutLinks = () => {
                     <li>
                       <a
                         className="dropdown-item nav-link chg-text"
-                        href="/SignUp/SignUp"
+                        href="/SignUp/customerSignUp"
                       >
                         Sign Up
                       </a>
@@ -49,7 +49,7 @@ const SignedOutLinks = () => {
                     <li>
                       <Link
                         className="dropdown-item nav-link chg-text"
-                        to="/CustomerLogin/CustomerLogin"
+                        to="/Login/CustomerLogin/CustomerLogin"
                       >
                         LogIn
                       </Link>
@@ -87,7 +87,7 @@ const SignedOutLinks = () => {
                     <li>
                       <Link
                         className="dropdown-item nav-link chg-text"
-                        to="/ContractorLogin/ContractorLogin"
+                        to="/Login/ContractorLogin/ContractorLogin"
                       >
                         LogIn
                       </Link>

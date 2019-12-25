@@ -6,10 +6,26 @@ const initialState = {};
 
 export default function contractorProfileReducer(state = initialState, action) {
   switch (action.type) {
+    case ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE_PROFILE: {
+      return {
+        ...state
+      };
+    }
+    case ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE_PROFILE_SUCCESS: {
+      return {
+        ...state
+      };
+    }
+    case ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE_PROFILE_FAIL: {
+      return {
+        ...state
+      };
+    }
+
     case ACTIONS.CONTRACTOR_GROUP.FETCH_CONTRACTOR_PROFILE: {
-      fetchContractorProfileAPI()
-        .then(json => action.asyncDispatch(fetchContractorProfileAction(json)))
-        .catch();
+      return {
+        ...state
+      };
     }
     case ACTIONS.CONTRACTOR_GROUP.FETCH_CONTRACTOR_PROFILE_SUCCESS: {
       return {

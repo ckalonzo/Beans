@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { signOut } from "../../../../Redux/Store/actions/authActions";
+import { signOutAction } from "../../../../Redux/Store/actions/authActions";
 import firebase from "../../../../../Config/Firebase";
 
 class SideMenuDesktop extends Component {
@@ -99,7 +99,7 @@ class SideMenuDesktop extends Component {
               </li>
 
               <li>
-                <a href="/" onClick={props.signOut}>
+                <a href="/" onClick={props.signOutAction}>
                   <span className="fas fa-sign-out-alt"></span>Logout
                 </a>
               </li>
@@ -122,7 +122,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signOut: () => dispatch(signOut())
+    signOutAction: () => dispatch(signOutAction())
   };
 };
 

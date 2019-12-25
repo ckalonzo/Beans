@@ -1,6 +1,6 @@
 import { ACTIONS } from "./actionTypes/ta-actionTypes";
 
-export const signIn = credentials => {
+export const signInAction = credentials => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
 
@@ -16,7 +16,7 @@ export const signIn = credentials => {
   };
 };
 
-export const signOut = () => {
+export const signOutAction = () => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
 
@@ -29,7 +29,7 @@ export const signOut = () => {
   };
 };
 
-export const customerSignUp = newCustomer => {
+export const customerSignUpAction = newCustomer => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
@@ -39,7 +39,7 @@ export const customerSignUp = newCustomer => {
       .createUserWithEmailAndPassword(newCustomer.email, newCustomer.password)
       .then(resp => {
         return firestore
-          .collection("Customer")
+          .collection("customerProfile")
           .doc(resp.user.uid)
           .set({
             firstName: newCustomer.firstName,
@@ -49,15 +49,16 @@ export const customerSignUp = newCustomer => {
           });
       })
       .then(() => {
-        dispatch({ type: "SIGNUP_SUCCESS" });
+        dispatch({ type: ACTIONS.PROFILE_GROUP.CUSTOMER_SIGNUP_SUCCESS });
       })
       .catch(err => {
-        dispatch({ type: "SIGNUP_ERROR", err });
+        dispatch({ type: ACTIONS.PROFILE_GROUP.CUSTOMER_SIGNUP_FAIL, err });
       });
   };
 };
 
-export const contractorSignUp = newUser => {
+export const contractorSignUpAction = newUser => {
+  console.log("sign up contractor");
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
@@ -77,15 +78,21 @@ export const contractorSignUp = newUser => {
           });
       })
       .then(() => {
-        dispatch({ type: "SIGNUP_SUCCESS" });
+        dispatch(
+          { type: ACTIONS.CONTRACTOR_GROUP.CONTRACTOR_SIGNUP_SUCCESS },
+          console.log("sign up contractor success")
+        );
       })
       .catch(err => {
-        dispatch({ type: "SIGNUP_ERROR", err });
+        dispatch({
+          type: ACTIONS.CONTRACTOR_GROUP.CONTRACTOR_SIGNUP_FAIL,
+          err
+        });
       });
   };
 };
 
-export const forgotPassword = email => {
+export const forgotPasswordAction = email => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     let actionCodeSettings = {};

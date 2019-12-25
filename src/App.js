@@ -3,17 +3,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Pages/Global/Component/Navigation/Layout/Navbar";
 import Footer from "./Pages/Global/Component/Navigation/Layout/Footer";
 import Home from "./Pages/Home/Home.jsx";
-import CustomerLogin from "./Pages/CustomerLogin/CustomerLogin";
-import ContractorLogin from "./Pages/ContractorLogin/ContractorLogin";
+import CustomerLogin from "./Pages/Login/CustomerLogin/CustomerLogin";
+import ContractorLogin from "./Pages/Login/ContractorLogin/ContractorLogin";
 import Membership from "./Pages/Membership/Membership";
-import SignUp from "./Pages/SignUp/SignUp";
-import ContractorSignUpForm from "./Pages/SignUp/contractorSignUp";
+import Enrollment from "./Pages/SignUp/ContractorEnrollment/Enrollment";
 import ContractorDashboard from "./Pages/Dashboard/ContractorDashboard";
 import ProjectDashboard from "./Pages/Browse/ProjectDashboard";
 import ProjectDetails from "./Pages/Browse/Component/ProjectDetail";
 import WizardForm from "./Pages/JobPosts/PostJob";
 import CustomerDashboard from "./Pages/CustomerDashboard/CustomerDashboard";
-import ForgotPassword from "./Pages/CustomerLogin/Component/ForgotPassword";
+import ForgotPassword from "./Pages/Login/ForgotPassword";
 import Recipe from "./Pages/Membership/component/Recipe";
 import Cart from "./Pages/Membership/component/Cart";
 import MainChat from "./Pages/Chat/mainChat";
@@ -57,11 +56,11 @@ class App extends Component {
               path="/Dashboard/ContractorDashboard"
               component={ContractorDashboard}
             />
+
             <Route
-              path="/SignUp/contractorSignUp"
-              component={ContractorSignUpForm}
+              path="/SignUp/ContractorEnrollment/Enrollment"
+              component={Enrollment}
             />
-            <Route path="/SignUp/SignUp" component={SignUp} />
             <Route
               path="/SignUp/Contractor-Create-Account"
               component={ContractorCreateAccount}
@@ -69,16 +68,13 @@ class App extends Component {
             <Route path="/Membership/component/Recipe" component={Recipe} />
             <Route path="/Membership/component/cart" component={Cart} />
             <Route path="/Membership/Membership" component={Membership} />
+            <Route path="/Login/ForgotPassword" component={ForgotPassword} />
             <Route
-              path="/CustomerLogin/Component/ForgotPassword"
-              component={ForgotPassword}
-            />
-            <Route
-              path="/ContractorLogin/ContractorLogin"
+              path="/Login/ContractorLogin/ContractorLogin"
               component={ContractorLogin}
             />
             <Route
-              path="/CustomerLogin/CustomerLogin"
+              path="/Login/CustomerLogin/CustomerLogin"
               component={CustomerLogin}
             />
             <Route exact path="/" component={Home} />

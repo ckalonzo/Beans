@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../Css/customerform.scss";
 import { connect } from "react-redux";
-import { signIn } from "../../../Redux/Store/actions/authActions";
+import { signInAction } from "../../../Redux/Store/actions/authActions";
 import { Redirect, Link } from "react-router-dom";
 import CarouselLogin from "./carousel-login";
 
@@ -18,7 +18,7 @@ class CustomerForm extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.signIn(this.state);
+    this.props.signInAction(this.state);
   };
 
   render() {
@@ -82,7 +82,7 @@ class CustomerForm extends Component {
                                 Remember Me
                               </label>
                               <Link
-                                to="/CustomerLogin/Component/ForgotPassword"
+                                to="/Login/ForgotPassword"
                                 className="pt-3 pb-3 float-right"
                               >
                                 Forgot Password?
@@ -107,7 +107,7 @@ class CustomerForm extends Component {
                     <Link
                       className="signUpLink"
                       onClick={this.signup}
-                      to={"/SignUp/SignUp"}
+                      to={"/SignUp/customerSignUp"}
                     >
                       Sign Up Here
                     </Link>
@@ -131,7 +131,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signIn: creds => dispatch(signIn(creds))
+    signInAction: creds => dispatch(signInAction(creds))
   };
 };
 

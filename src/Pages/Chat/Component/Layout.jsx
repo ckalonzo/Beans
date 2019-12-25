@@ -4,7 +4,7 @@ import { USER_CONNECTED } from "../Events/Events";
 import LoginForm from "./LoginForm";
 import ChatContainer from "./chats/ChatContainer";
 import { connect } from "react-redux";
-import { signIn } from "../../Redux/Store/actions/authActions";
+import { signInAction } from "../../Redux/Store/actions/authActions";
 
 const socketUrl = "http://localhost:3231";
 
@@ -71,11 +71,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signIn: creds => dispatch(signIn(creds))
+    signInAction: creds => dispatch(signInAction(creds))
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Layout);
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

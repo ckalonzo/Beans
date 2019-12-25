@@ -73,12 +73,12 @@ class ProviderLogin extends Component {
                               >
                                 Remember Me
                               </label>
-                              <Link
-                                to="/CustomerLogin/Component/ForgotPassword"
+                              <a
+                                href="/Login/ForgotPassword"
                                 className="pt-3 pb-3 float-right"
                               >
                                 Forgot Password?
-                              </Link>
+                              </a>
                             </div>
                             <button
                               className="btn btn-primary btn-block mt-3"
@@ -110,7 +110,10 @@ class ProviderLogin extends Component {
                   </div>
                   <div className="mt-xl-5 mt-3 dontHaveAnAccount">
                     Dont have an Account?{" "}
-                    <Link to="#" className="signUpLink">
+                    <Link
+                      to="/SignUp/Contractor-Create-Account"
+                      className="signUpLink"
+                    >
                       Sign Up Here
                     </Link>
                   </div>

@@ -142,7 +142,7 @@ class ContractorSignUpForm extends Component {
     console.log(this.props);
 
     const { auth } = this.props;
-    //if (auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+    //if (auth.uid) return <Redirect to="/Login/CustomerLogin/CustomerLogin" />;
 
     // return (
     //   <div className="pj-sec">

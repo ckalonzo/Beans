@@ -2,7 +2,7 @@ import React, { Fragment, Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../css/Navbar.scss";
 import { connect } from "react-redux";
-import { signOut } from "../../../../Redux/Store/actions/authActions";
+import { signOutAction } from "../../../../Redux/Store/actions/authActions";
 import { fetchBids } from "../../../../Redux/Store/actions/bidsAction";
 import { addToCart } from "../../../../Redux/Store/actions/cartActions";
 import firebase from "../../../../../Config/Firebase";
@@ -25,7 +25,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signOut: () => dispatch(signOut()),
+    signOutAction: () => dispatch(signOutAction()),
     addToCart: (id, counter) => {
       dispatch(addToCart(id, counter));
     },

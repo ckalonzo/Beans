@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import IntroSignUp from "./component/IntroSignUp";
-import SignUpbasicinfo from "./component/signUp-basicinfo";
-import SocialNumberAknowledgement from "./component/SocialNumberAknowledgement";
-import { contractorSignUp } from "../Redux/Store/actions/authActions";
-import { ACTIONS } from "../Redux/Store/actions/actionTypes/ta-actionTypes";
-import * as actionTypes from "../Redux/Store/actions/actionTypes/ta-actionTypes";
+import IntroSignUp from "../component/IntroSignUp";
+import SignUpbasicinfo from "../component/signUp-basicinfo";
+import SocialNumberAknowledgement from "../component/SocialNumberAknowledgement";
+import { contractorSignUpAction } from "../../Redux/Store/actions/authActions";
+import { ACTIONS } from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
+import * as actionTypes from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
 import { Redirect } from "react-router-dom";
-class ContractorSignUpForm extends Component {
+class Enrollment extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: 1
-      //   actualSsn: "",
-      //   maskedSsn: "",
-      //   ssnLocked: false,
+      step: 1,
+      actualSsn: "",
+      maskedSsn: "",
+      ssnLocked: false
       //   service: "Junk Removal",
       //   email: "",
       //   image: null,
@@ -39,8 +39,8 @@ class ContractorSignUpForm extends Component {
     // this.handleChange = this.handleChange.bind(this);
     // this.handleChangeAttachments = this.handleChangeAttachments.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleChangeSSN = this.handleChangeSSN.bind(this);
-    // this.handleBlurSSN = this.handleBlurSSN.bind(this);
+    this.handleChangeSSN = this.handleChangeSSN.bind(this);
+    this.handleBlurSSN = this.handleBlurSSN.bind(this);
 
     // this.handleUpload = this.handleUpload.bind(this);
   }
@@ -170,7 +170,7 @@ class ContractorSignUpForm extends Component {
     console.log(this.props);
     const { step } = this.state;
     const { auth } = this.props;
-    if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+    if (!auth.uid) return <Redirect to="/Login/CustomerLogin/CustomerLogin" />;
     const {
       service,
       email,
@@ -315,7 +315,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    contractorSignUp: creds => dispatch(contractorSignUp(creds)),
+    contractorSignUpAction: creds => dispatch(contractorSignUpAction(creds)),
     onhandleNextStep: StepCounter =>
       dispatch({
         type: actionTypes.ACTIONS.STEPS.NEXT_STEP,
@@ -338,7 +338,4 @@ const mapDispatchToProps = dispatch => {
       })
   };
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ContractorSignUpForm);
+export default connect(mapStateToProps, mapDispatchToProps)(Enrollment);

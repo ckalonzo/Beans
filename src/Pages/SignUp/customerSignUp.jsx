@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { customerSignUp } from "../Redux/Store/actions/authActions";
+import { customerSignUpAction } from "../Redux/Store/actions/authActions";
 import "./Css/customer-signup.scss";
 
-class SignUp extends Component {
+class CustomerSignUp extends Component {
   state = {
     firstName: "",
     lastName: "",
@@ -20,9 +20,12 @@ class SignUp extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.customerSignUp(this.state);
+    this.props.customerSignUpAction(this.state);
   };
 
+  componentWillMount = () => {
+    window.scrollTo(0, 0);
+  };
   render() {
     const { auth, authError } = this.props;
     if (auth.uid) return <Redirect to="/CustomerDashboard/CustomerDashboard" />;
@@ -119,7 +122,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    customerSignUp: creds => dispatch(customerSignUp(creds))
+    customerSignUpAction: creds => dispatch(customerSignUpAction(creds))
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(CustomerSignUp);

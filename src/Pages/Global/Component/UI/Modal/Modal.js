@@ -1,55 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import styled from 'styled-components';
+import React, { Component } from "react";
 
-import Backdrop from './Backdrop/Backdrop';
-
-const WrappedModal = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: ${({ opened }) =>
-    opened ? 'translate(-50%, -50%)' : 'translate(-50%, -150%)'};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 150;
-  justify-content: center;
-  opacity: ${({ opened }) => (opened ? '1' : '0')};
-  visibility: ${({ opened }) => (opened ? 'visible' : 'hidden')};
-  width: 100%;
-  max-width: 50rem;
-  box-shadow: 0 0.5rem 3.5em var(--shadow);
-  border-radius: 1rem;
-  background-color: var(--color-mainLighter);
-  transition: all 0.1s;
-`;
-
-const InsideWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 3rem;
-`;
-
-const Modal = React.memo(
-  ({ opened, close, children }) => {
-    return ReactDOM.createPortal(
-      <>
-        <Backdrop close={close} opened={opened} />
-        <WrappedModal opened={opened}>
-          <InsideWrapper>{children}</InsideWrapper>
-        </WrappedModal>
-      </>,
-      document.getElementById('root-modal')
+export default class Modal extends Component {
+  render() {
+    return (
+      <div
+        class="modal fade"
+        id="exampleModalCenter"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     );
-  },
-  (prevProps, nextProps) => {
-    return prevProps.opened === nextProps.opened;
   }
-);
-
-export default Modal;
+}

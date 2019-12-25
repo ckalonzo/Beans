@@ -1,4 +1,6 @@
 import { ACTIONS } from "./../actions/actionTypes/ta-actionTypes";
+import { addContractorProfileSuccessAction } from "../actions/contractorProfileActions";
+import { addContractorProfileAPI } from "../actions/FirebaseApiCalls";
 
 const initState = {
   authError: null,
@@ -34,20 +36,35 @@ const authReducer = (state = initState, action) => {
       console.log("signout success");
       return state;
 
-    case "SIGNUP_SUCCESS":
-      console.log("signup success");
-      return {
-        ...state,
-        authError: null
-      };
+    case ACTIONS.CONTRACTOR_GROUP.CONTRACTOR_SIGNUP_SUCCESS: {
+      console.log(ACTIONS.CONTRACTOR_GROUP.CONTRACTOR_SIGNUP_SUCCESS);
+      addContractorProfileAPI()
+        .then(json =>
+          action.asyncDispatch(addContractorProfileSuccessAction(json))
+        )
+        .catch();
+    }
 
-    case "SIGNUP_ERROR":
+    case ACTIONS.CONTRACTOR_GROUP.CONTRACTOR_SIGNUP_FAIL:
       console.log("signup error");
       return {
         ...state,
         authError: action.err.message
       };
 
+    case ACTIONS.PROFILE_GROUP.CUSTOMER_SIGNUP_SUCCESS:
+      console.log("signup success");
+      return {
+        ...state,
+        authError: null
+      };
+
+    case ACTIONS.PROFILE_GROUP.CUSTOMER_SIGNUP_FAIL:
+      console.log("signup error");
+      return {
+        ...state,
+        authError: action.err.message
+      };
     default:
       return state;
   }

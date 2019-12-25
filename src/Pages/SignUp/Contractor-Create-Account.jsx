@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { contractorSignUp } from "../Redux/Store/actions/authActions";
+import { contractorSignUpAction } from "../Redux/Store/actions/authActions";
 import "./Css/contractor-signup.scss";
-
+import Input from "../Global/Input/Input";
+import Email from "../Global/Input/Email";
+import Button from "../Global/Input/Button";
 class ContractorCreateAccount extends Component {
   state = {
     firstName: "",
@@ -20,12 +22,15 @@ class ContractorCreateAccount extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.contractorSignUp(this.state);
+    this.props.contractorSignUpAction(this.state);
   };
 
+  componentWillMount = () => {
+    window.scrollTo(0, 0);
+  };
   render() {
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to="SignUp/contractorSignUp" />;
+    if (auth.uid) return <Redirect to="/ContractorEnrollment/Enrollment" />;
 
     return (
       <section className="contractor-signup ">
@@ -120,7 +125,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    contractorSignUp: creds => dispatch(contractorSignUp(creds))
+    contractorSignUpAction: creds => dispatch(contractorSignUpAction(creds))
   };
 };
 export default connect(

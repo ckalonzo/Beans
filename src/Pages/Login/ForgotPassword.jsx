@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import "./sass/ResetPassword.scss";
 import { connect } from "react-redux";
-import { signIn, forgotPassword } from "../Redux/Store/actions/authActions";
+import {
+  signInAction,
+  forgotPasswordAction
+} from "../Redux/Store/actions/authActions";
 class ForgotPassword extends Component {
   constructor() {
     super();
@@ -54,7 +57,7 @@ class ForgotPassword extends Component {
     e.preventDefault();
     let email = document.getElementById("email").value;
     //if(this.state.email.length ){
-    this.props.forgotPassword(email);
+    this.props.forgotPasswordAction(email);
     //}
   };
   render() {
@@ -118,8 +121,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    signIn: creds => dispatch(signIn(creds)),
-    forgotPassword: email => dispatch(forgotPassword(email))
+    signInAction: creds => dispatch(signInAction(creds)),
+    forgotPasswordAction: email => dispatch(forgotPasswordAction(email))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ForgotPassword);

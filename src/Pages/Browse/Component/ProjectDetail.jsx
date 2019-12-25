@@ -7,7 +7,7 @@ import NoImage from "../img/no-image.png";
 //import CountdownTimer from "../Component/countdownTimer";
 const ProjectDetails = props => {
   const { project, auth, handleBidNow, bidNow } = props;
-  if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+  if (!auth.uid) return <Redirect to="/Login/CustomerLogin/CustomerLogin" />;
   if (project) {
     return (
       <Fragment>

@@ -1,5 +1,22 @@
 import { ACTIONS } from "./actionTypes/ta-actionTypes";
 
+export function addContractorProfileAction() {
+  return {
+    type: ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE
+  };
+}
+
+export function addContractorProfileSuccessAction() {
+  return {
+    type: ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE_SUCCESS
+  };
+}
+
+export function addContractorProfileFailAction() {
+  return {
+    type: ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE_FAIL
+  };
+}
 export function fetchContractorProfileAction() {
   return {
     type: ACTIONS.CONTRACTOR_GROUP.FETCH_CONTRACTOR_PROFILE

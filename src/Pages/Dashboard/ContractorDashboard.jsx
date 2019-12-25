@@ -10,7 +10,8 @@ import { Redirect } from "react-router-dom";
 class ContractorDashboard extends Component {
   render() {
     const { projects, auth } = this.props;
-    if (!auth.uid) return <Redirect to="/ContractorLogin/ContractorLogin" />;
+    if (!auth.uid)
+      return <Redirect to="/Login/ContractorLogin/ContractorLogin" />;
 
     return (
       <section className="customer-dashboard">

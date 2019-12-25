@@ -3,7 +3,15 @@ import "../js/ssnmask";
 import "../Css/customer-signup.scss";
 import SsnInput from "./SSNInput";
 import TermAndConditions from "./termAndConditions";
+import Modal from "../../Global/Component/UI/Modal/Modal";
 export default class SocialNumberAknowledgement extends Component {
+  componentDidMount() {
+    function loadModal() {
+      setTimeout(() => {
+        <Modal />;
+      }, 100);
+    }
+  }
   render() {
     const {
       maskedSsn,

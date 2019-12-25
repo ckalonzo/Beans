@@ -7,7 +7,7 @@ import { Redirect } from "react-router-dom";
 const ProjectDetails = props => {
   //getting project id
   const { project, auth } = props;
-  if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+  if (!auth.uid) return <Redirect to="/Login/CustomerLogin/CustomerLogin" />;
   if (project) {
     return (
       <div className="card">
