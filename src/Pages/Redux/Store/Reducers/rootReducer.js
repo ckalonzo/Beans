@@ -35,8 +35,8 @@ const rootReducer = combineReducers({
   serviceList: ServiceListReducer,
   statesList: StatesListReducer,
   submitBidReducer: SubmitBidReducer,
-  subscriptionsReducer: SubscriptionReducer,
-  userData: ProfileReducer
+  subscriptionsReducer: SubscriptionReducer
+  //userData: ProfileReducer
 });
 
 export default rootReducer;

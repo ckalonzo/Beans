@@ -30,7 +30,8 @@ class ContractorCreateAccount extends Component {
   };
   render() {
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to="/ContractorEnrollment/Enrollment" />;
+    if (auth.uid)
+      return <Redirect to="/SignUp/ContractorEnrollment/Enrollment" />;
 
     return (
       <section className="contractor-signup ">

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import IntroSignUp from "../component/IntroSignUp";
 import SignUpbasicinfo from "../component/signUp-basicinfo";
 import SocialNumberAknowledgement from "../component/SocialNumberAknowledgement";
+import CreateContractorProfile from "../component/createContractorProfile";
 import { contractorSignUpAction } from "../../Redux/Store/actions/authActions";
 import { ACTIONS } from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
 import * as actionTypes from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
@@ -15,6 +16,7 @@ class Enrollment extends Component {
       actualSsn: "",
       maskedSsn: "",
       ssnLocked: false
+      // isOpen: false
       //   service: "Junk Removal",
       //   email: "",
       //   image: null,
@@ -230,15 +232,6 @@ class Enrollment extends Component {
         return <IntroSignUp nextStep={this.nextStep} />;
       case 2:
         return (
-          <SignUpbasicinfo
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
-      case 3:
-        return (
           <SocialNumberAknowledgement
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -251,21 +244,21 @@ class Enrollment extends Component {
             starredMask={this.starredMask}
           />
         );
-      //   case 4:
-      //     return (
-      //       <AdditionalInfo
-      //         nextStep={this.nextStep}
-      //         prevStep={this.prevStep}
-      //         handleChange={this.handleChange}
-      //         values={values}
-      //         address={address}
-      //         city={city}
-      //         zipCode={zipCode}
-      //         largeItems={largeItems}
-      //         handleChangeDatePicker={this.handleChangeDatePicker}
-      //         handleChangeTimePicker={this.handleChangeTimePicker}
-      //       />
-      //     );
+      case 3:
+        return (
+          <CreateContractorProfile
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+            address={address}
+            city={city}
+            zipCode={zipCode}
+            largeItems={largeItems}
+            handleChangeDatePicker={this.handleChangeDatePicker}
+            handleChangeTimePicker={this.handleChangeTimePicker}
+          />
+        );
       //   case 5:
       //     return (
       //       <Budget

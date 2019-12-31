@@ -13,6 +13,10 @@ class SignUpbasicinfo extends Component {
     this.props.prevStep();
   };
 
+  componentWillMount = () => {
+    window.scrollTo(0, 0);
+  };
+
   render() {
     const { handleChange, firstName, lastName } = this.props;
     console.log(this.props);

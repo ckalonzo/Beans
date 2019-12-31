@@ -1,8 +1,51 @@
 import { ACTIONS } from "./actionTypes/ta-actionTypes";
 
-export function addContractorProfileAction() {
-  return {
-    type: ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE
+export function addContractorProfileAction(newUser) {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firebase = getFirebase();
+    const firestore = getFirestore();
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(newUser.email, newUser.password)
+      .then(resp => {
+        return firestore
+          .collection("contractorProfile")
+          .doc(resp.user.uid)
+          .set({
+            firstName: newUser.firstName,
+            lastName: newUser.lastName,
+            zipCode: newUser.zipCode,
+            initials: newUser.firstName[0] + newUser.lastName[0],
+            email: "",
+            phone: "",
+            address: "",
+            bids: "",
+            Rating: "0",
+            Reviews: [],
+            Skills: [],
+            activeMember: true,
+            bio: "",
+            city: "",
+            companyName: "",
+            numberOfJobs: "",
+            state: "",
+            typeOfJobs: [],
+            years: ""
+
+            // uid: firebase.auth.uid
+          });
+      })
+      .then(() => {
+        dispatch({
+          type: ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE_SUCCESS
+        });
+      })
+      .catch(err => {
+        dispatch({
+          type: ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE_FAIL,
+          err
+        });
+      });
   };
 }
 
