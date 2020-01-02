@@ -1,39 +1,34 @@
 import { ACTIONS } from "./actionTypes/ta-actionTypes";
 
-export function addContractorProfileAction(newUser) {
+export function addContractorProfileAction(payload) {
+  console.log("addContractorProfileAction");
+  console.log(payload);
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    const firebase = getFirebase();
     const firestore = getFirestore();
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(newUser.email, newUser.password)
-      .then(resp => {
-        return firestore
-          .collection("contractorProfile")
-          .doc(resp.user.uid)
-          .set({
-            firstName: newUser.firstName,
-            lastName: newUser.lastName,
-            zipCode: newUser.zipCode,
-            initials: newUser.firstName[0] + newUser.lastName[0],
-            email: "",
-            phone: "",
-            address: "",
-            bids: "",
-            Rating: "0",
-            Reviews: [],
-            Skills: [],
-            activeMember: true,
-            bio: "",
-            city: "",
-            companyName: "",
-            numberOfJobs: "",
-            state: "",
-            typeOfJobs: [],
-            years: ""
-
-            // uid: firebase.auth.uid
-          });
+    const authorId = getState().firebase.auth.uid;
+    firestore
+      .collection("contractorProfile")
+      .add({
+        firstName: payload.firstName,
+        lastName: payload.lastName,
+        zipCode: payload.zipCode,
+        email: payload.email,
+        phone: payload.phone,
+        address: payload.address,
+        bids: payload.bids,
+        Rating: payload.Rating,
+        Reviews: payload.Reviews,
+        Skills: payload.Skills,
+        activeMember: true,
+        bio: payload.bio,
+        city: payload.city,
+        companyName: payload.companyName,
+        numberOfJobs: payload.numberOfJobs,
+        state: payload.state,
+        typeOfJobs: payload.typeOfJobs,
+        years: payload.years,
+        contractorUID: authorId,
+        createdAt: new Date()
       })
       .then(() => {
         dispatch({
@@ -84,10 +79,10 @@ export const submitProfile = () => {
     type: ACTIONS.PROFILE_GROUP.SUBMIT_PROFILE
   };
 };
-export const updateProfile = (id, value) => {
+export const updateProfileValue = (id, value) => {
   console.log("updating profile value");
   return {
-    type: ACTIONS.CONTRACTOR_GROUP.UPDATE_FULL_CONTRACTOR_PROFILE,
+    type: ACTIONS.CONTRACTOR_GROUP.UPDATE_CONTRACTOR_PROFILE_VALUE,
     payload: {
       id: id,
       value: value

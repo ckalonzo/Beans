@@ -1,7 +1,15 @@
 import { ACTIONS } from "./../actions/actionTypes/ta-actionTypes";
 import { fetchContractorProfileAction } from "../actions/contractorProfileActions";
 import { fetchContractorProfileAPI } from "../actions/FirebaseApiCalls";
+import {
+  cleanInput,
+  startEndDateValidation,
+  isFormValid,
+  genericFieldValidation
+} from "./sharedReducerFunctions";
 import { digitsAndDashesOnlyRegex } from "../../../utils/regex";
+import { formatPhoneNumberWithDashes } from "../../../utils/stringUtils";
+import { validatePhone } from "../../../utils/validationUtils";
 const initialState = {
   firstName: {
     label: "First Name",
@@ -100,7 +108,7 @@ const initialState = {
   years: "",
   bkcheck: false,
   basicinfochk: false,
-  companyName: "Lucy Goosie",
+  companyName: "",
   history: "",
   bids: "",
   update: false,
@@ -122,6 +130,43 @@ export default function contractorProfileReducer(state = initialState, action) {
       return {
         ...state
       };
+    }
+    case ACTIONS.CONTRACTOR_GROUP.UPDATE_CONTRACTOR_PROFILE_VALUE: {
+      //copy the piece of locationstate for updating:
+      let formStateCopy = { ...state };
+      let oldFormItem = formStateCopy[action.payload.id]; //keep previous value for formatting and validation
+      let formItem = { ...formStateCopy[action.payload.id] };
+
+      //add the input to the object:
+      formItem.value = action.payload.value;
+
+      //clean the object value:
+      formItem = cleanInput(formItem, true); //true = ONLY strip leading spaces. prevent bugs in onChange
+
+      //autoformat this form field if neccessary:
+      formItem = profileFieldFormatting(
+        action.payload.id,
+        formItem,
+        oldFormItem
+      );
+
+      //validate this form field object:
+      formItem = profileFieldValidation(action.payload.id, formItem);
+
+      //put mutated object back into state copy:
+      formStateCopy[action.payload.id] = formItem;
+
+      //CHECK START AND END DATES FOR ERRORS:
+      // if (["startdate", "enddate"].includes(action.payload.id)) {
+      //   formStateCopy = startEndDateValidation(
+      //     formStateCopy,
+      //     "startdate",
+      //     "enddate"
+      //   );
+      // }
+
+      //return state
+      return formStateCopy;
     }
     case ACTIONS.CONTRACTOR_GROUP.ADD_CONTRACTOR_PROFILE_PROFILE_FAIL: {
       return {
@@ -148,3 +193,29 @@ export default function contractorProfileReducer(state = initialState, action) {
       return state;
   }
 }
+const profileFieldFormatting = (id, formItem, oldFormItem) => {
+  if (["phone"].includes(id)) {
+    formItem.value = formatPhoneNumberWithDashes(
+      formItem.value,
+      oldFormItem.value
+    );
+  }
+  return formItem;
+};
+
+const profileFieldValidation = (id, formItem) => {
+  //redundant check to  prevent validations from running when not needed:
+  if ("shouldValidate" in formItem && formItem.shouldValidate) {
+    if ("required" in formItem && formItem.required) {
+      //unneccessary double check
+      //generic validation:
+      formItem = genericFieldValidation(formItem);
+
+      //specific field validations:
+      if (["phone"].includes(id)) {
+        formItem.error = validatePhone(formItem.value);
+      }
+    }
+  }
+  return formItem;
+};

@@ -10,7 +10,7 @@ import TextArea from "../../Global/Input/textarea";
 import { ACTIONS } from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
 import { beginValidatingProfileValue } from "../../Redux/Store/actions/index";
 import {
-  updateProfile,
+  updateProfileValue,
   submitProfile
 } from "../../Redux/Store/actions/contractorProfileActions";
 import { Link } from "react-router-dom";
@@ -39,7 +39,7 @@ class UpdateProfile extends Component {
                     labelName={contractorProfile.firstName.label}
                     required={contractorProfile.firstName.required}
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -57,7 +57,7 @@ class UpdateProfile extends Component {
                     required={contractorProfile.lastName.required}
                     id="lastName"
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -79,7 +79,7 @@ class UpdateProfile extends Component {
                     required={contractorProfile.email.required}
                     id="email"
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -99,7 +99,7 @@ class UpdateProfile extends Component {
                     required={contractorProfile.phone.required}
                     id="phone"
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -121,7 +121,7 @@ class UpdateProfile extends Component {
                     required={contractorProfile.address1.required}
                     id="address1"
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -143,7 +143,7 @@ class UpdateProfile extends Component {
                     required={contractorProfile.address2.required}
                     id="address2"
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -165,7 +165,7 @@ class UpdateProfile extends Component {
                     required={contractorProfile.city.required}
                     id="city"
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -186,7 +186,7 @@ class UpdateProfile extends Component {
                     options={this.props.statesList}
                     id="businessState"
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -208,7 +208,7 @@ class UpdateProfile extends Component {
                     required={contractorProfile.zip.required}
                     id={"zip"}
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -230,7 +230,7 @@ class UpdateProfile extends Component {
                   options={this.props.serviceList}
                   id="typeOfJobs"
                   onChange={event =>
-                    this.props.actions.updateProfile(
+                    this.props.actions.updateProfileValue(
                       event.target.id,
                       event.target.value
                     )
@@ -252,7 +252,7 @@ class UpdateProfile extends Component {
                     labelName={contractorProfile.bio.label}
                     required={contractorProfile.bio.required}
                     onChange={event =>
-                      this.props.actions.updateProfile(
+                      this.props.actions.updateProfileValue(
                         event.target.id,
                         event.target.value
                       )
@@ -292,7 +292,7 @@ const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
     profile: state.firebase.profile,
-    contractorProfile: state.userData,
+    contractorProfile: state.contractorProfile,
     statesList: state.statesList,
     serviceList: state.serviceList
   };
@@ -302,7 +302,7 @@ function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(
       {
-        updateProfile: updateProfile,
+        updateProfileValue: updateProfileValue,
         beginValidatingProfileValue: beginValidatingProfileValue,
         submitProfile: submitProfile
       },
