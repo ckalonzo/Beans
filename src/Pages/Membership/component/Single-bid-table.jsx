@@ -5,14 +5,10 @@ import "../Css/single-pricing-cards.scss";
 import { Link } from "react-router-dom";
 
 class SingleBid extends Component {
-  handleClick = (id, counter, isAuth) => {
-    if (isAuth) {
-      return {};
-    } else {
-      this.props.addToCart(id, counter);
-      console.log(id);
-      console.log("counter" + counter);
-    }
+  handleClick = (id, counter) => {
+    this.props.addToCart(id, counter);
+    console.log(id);
+    console.log("counter" + counter);
   };
 
   render() {
@@ -20,8 +16,8 @@ class SingleBid extends Component {
       return (
         <div className="col-md-4 mb-3 " key={item.id}>
           <div className="card-width colorch-btn" id="hover4">
-            <Link
-              to="#"
+            <a
+              href="#"
               onClick={() => {
                 this.handleClick(item.id, this.props.counter);
               }}
@@ -36,7 +32,7 @@ class SingleBid extends Component {
                   Buy Now
                 </button>
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       );
@@ -59,8 +55,8 @@ class SingleBid extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    items: state.items,
-    counter: state.counter.counter
+    items: state.cartReducer,
+    counter: state.counterReducer
   };
 };
 const mapDispatchToProps = dispatch => {

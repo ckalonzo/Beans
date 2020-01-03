@@ -15,7 +15,7 @@ import History from "../component/History";
 import Reviews from "../component/Reviews";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
-import { compose } from "redux";
+import { compose, bindActionCreators } from "redux";
 import Button from "../../Global/Input/Button";
 import UpdateProfile from "../updateProfile/updateProfile";
 import { fetchContractorProfileAction } from "../../Redux/Store/actions/contractorProfileActions";
@@ -34,7 +34,8 @@ class Profile extends Component {
     });
   };
   componentDidMount() {
-    this.props.fetchContractorProfileAction();
+    console.log("didmount");
+    this.props.actions.fetchContractorProfileAction();
   }
   render() {
     const { contractorProfile } = this.props;
@@ -54,6 +55,7 @@ class Profile extends Component {
                   <div className="col-3">
                     <Picture />
                     <div className="mt-3">
+                      {this.props.contractorProfile.firstName}
                       <TypeOfJobs contractorProfile={contractorProfile} />
                     </div>
                     <div className="mt-3">
@@ -117,18 +119,20 @@ class Profile extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    contractorProfile: state.firestore.data
+    contractorProfile: state.firestore.data,
+    items: state.contractorProfile
   };
 };
 
-const mapDispatchToProps = dispatch => {
+function mapDispatchToProps(dispatch) {
   return {
-    fetchContractorProfileAction: () =>
-      dispatch({ type: "ACTION.FETCH_CONTRACTOR_PROFILE" })
+    actions: bindActionCreators(
+      {
+        fetchContractorProfileAction
+      },
+      dispatch
+    )
   };
-};
+}
 
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
-  firestoreConnect([{ collection: "contractorProfile" }])
-)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

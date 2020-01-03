@@ -1,32 +1,35 @@
 import { ACTIONS } from "./actionTypes/ta-actionTypes";
 
-export function addContractorProfileAction(payload) {
+export function addContractorProfileAction(newContractor) {
   console.log("addContractorProfileAction");
-  console.log(payload);
+  console.log(newContractor);
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
     const authorId = getState().firebase.auth.uid;
     firestore
       .collection("contractorProfile")
       .add({
-        firstName: payload.firstName,
-        lastName: payload.lastName,
-        zipCode: payload.zipCode,
-        email: payload.email,
-        phone: payload.phone,
-        address: payload.address,
-        bids: payload.bids,
-        Rating: payload.Rating,
-        Reviews: payload.Reviews,
-        Skills: payload.Skills,
+        firstName: newContractor.firstName,
+        lastName: newContractor.lastName,
+        zipCode: newContractor.zipCode,
+        initials: newContractor.firstName[0] + newContractor.lastName[0],
+        email: newContractor.email,
+        address1: newContractor.address1,
+        address2: newContractor.address2,
+        phoneNumber: newContractor.phoneNumber,
+        bids: newContractor.bids,
+        state: newContractor.state,
+        Rating: null,
+        Reviews: [],
+        Skills: [],
         activeMember: true,
-        bio: payload.bio,
-        city: payload.city,
-        companyName: payload.companyName,
-        numberOfJobs: payload.numberOfJobs,
-        state: payload.state,
-        typeOfJobs: payload.typeOfJobs,
-        years: payload.years,
+        bio: newContractor.bio,
+        city: newContractor.city,
+        companyName: newContractor.companyName,
+        numberOfJobs: 0,
+        state: newContractor.state,
+        typeOfJobs: newContractor.typeOfJobs,
+        years: 0,
         contractorUID: authorId,
         createdAt: new Date()
       })
@@ -56,6 +59,7 @@ export function addContractorProfileFailAction() {
   };
 }
 export function fetchContractorProfileAction() {
+  console.log("action");
   return {
     type: ACTIONS.CONTRACTOR_GROUP.FETCH_CONTRACTOR_PROFILE
   };

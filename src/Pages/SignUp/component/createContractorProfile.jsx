@@ -25,20 +25,30 @@ class CreateContractorProfile extends Component {
     address1: "",
     address2: "",
     city: "",
+    state: "",
     businessState: "",
     zipCode: "",
     bio: "",
     typeOfJobs: "",
     bids: "",
-    errors: [],
-    errorMessage: {},
-    companyName: ""
+    companyName: "",
+    phoneNumber: ""
   };
 
+  handleChange = e => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.actions.addContractorProfileAction(this.state);
+  };
   render() {
     const contractorProfile = this.props.contractorProfile;
     // console.log(this.props.contractorProfile.firstName);
-    console.log(contractorProfile);
+    console.log(this.state);
     return (
       <div>
         <section>
@@ -54,17 +64,12 @@ class CreateContractorProfile extends Component {
                   id="firstName"
                   labelName={contractorProfile.firstName.label}
                   required={contractorProfile.firstName.required}
-                  onChange={event =>
-                    this.props.actions.updateProfileValue(
-                      event.target.id,
-                      event.target.value
-                    )
-                  }
+                  onChange={this.handleChange}
                   onBlur={event =>
                     this.props.beginValidatingProfileValue(event.target.id)
                   }
                   error={contractorProfile.firstName.error}
-                  value={contractorProfile.firstName.value}
+                  value={this.state.firstName}
                 />
               </div>
               <div className="col">
@@ -72,19 +77,14 @@ class CreateContractorProfile extends Component {
                   labelName={contractorProfile.lastName.label}
                   required={contractorProfile.lastName.required}
                   id="lastName"
-                  onChange={event =>
-                    this.props.actions.updateProfileValue(
-                      event.target.id,
-                      event.target.value
-                    )
-                  }
+                  onChange={this.handleChange}
                   onBlur={event =>
                     this.props.actions.beginValidatingProfileValue(
                       event.target.id
                     )
                   }
                   error={contractorProfile.lastName.error}
-                  value={contractorProfile.lastName.value}
+                  value={this.state.lastName}
                 />
               </div>
             </div>
@@ -94,39 +94,29 @@ class CreateContractorProfile extends Component {
                   labelName={contractorProfile.email.label}
                   required={contractorProfile.email.required}
                   id="email"
-                  onChange={event =>
-                    this.props.actions.updateProfileValue(
-                      event.target.id,
-                      event.target.value
-                    )
-                  }
+                  onChange={this.handleChange}
                   onBlur={event =>
                     this.props.actions.beginValidatingProfileValue(
                       event.target.id
                     )
                   }
                   error={contractorProfile.email.error}
-                  value={contractorProfile.email.value}
+                  value={this.state.email}
                 />
               </div>
               <div className="col">
                 <TextInput
-                  labelName={contractorProfile.phone.label}
-                  required={contractorProfile.phone.required}
-                  id="phone"
-                  onChange={event =>
-                    this.props.actions.updateProfileValue(
-                      event.target.id,
-                      event.target.value
-                    )
-                  }
+                  labelName={contractorProfile.phoneNumber.label}
+                  required={contractorProfile.phoneNumber.required}
+                  id="phoneNumber"
+                  onChange={this.handleChange}
                   onBlur={event =>
                     this.props.actions.beginValidatingProfileValue(
                       event.target.id
                     )
                   }
-                  error={contractorProfile.phone.error}
-                  value={contractorProfile.phone.value}
+                  error={contractorProfile.phoneNumber.error}
+                  value={this.state.phoneNumber}
                 />
               </div>
             </div>
@@ -136,19 +126,14 @@ class CreateContractorProfile extends Component {
                   labelName={contractorProfile.address1.label}
                   required={contractorProfile.address1.required}
                   id="address1"
-                  onChange={event =>
-                    this.props.actions.updateProfileValue(
-                      event.target.id,
-                      event.target.value
-                    )
-                  }
+                  onChange={this.handleChange}
                   onBlur={event =>
                     this.props.actions.beginValidatingProfileValue(
                       event.target.id
                     )
                   }
                   error={contractorProfile.address1.error}
-                  value={contractorProfile.address1.value}
+                  value={this.state.address1}
                 />
               </div>
             </div>
@@ -158,19 +143,14 @@ class CreateContractorProfile extends Component {
                   labelName={contractorProfile.address2.label}
                   required={contractorProfile.address2.required}
                   id="address2"
-                  onChange={event =>
-                    this.props.actions.updateProfileValue(
-                      event.target.id,
-                      event.target.value
-                    )
-                  }
+                  onChange={this.handleChange}
                   onBlur={event =>
                     this.props.actions.beginValidatingProfileValue(
                       event.target.id
                     )
                   }
                   error={contractorProfile.address2.error}
-                  value={contractorProfile.address2.value}
+                  value={this.state.address2}
                 />
               </div>
             </div>
@@ -180,19 +160,14 @@ class CreateContractorProfile extends Component {
                   labelName={contractorProfile.city.label}
                   required={contractorProfile.city.required}
                   id="city"
-                  onChange={event =>
-                    this.props.actions.updateProfileValue(
-                      event.target.id,
-                      event.target.value
-                    )
-                  }
+                  onChange={this.handleChange}
                   onBlur={event =>
                     this.props.actions.beginValidatingProfileValue(
                       event.target.id
                     )
                   }
                   error={contractorProfile.city.error}
-                  value={contractorProfile.city.value}
+                  value={this.state.city}
                 />
               </div>
               <div className="col">
@@ -201,19 +176,14 @@ class CreateContractorProfile extends Component {
                   required={contractorProfile.businessState.required}
                   options={this.props.statesList}
                   id="businessState"
-                  onChange={event =>
-                    this.props.actions.updateProfileValue(
-                      event.target.id,
-                      event.target.value
-                    )
-                  }
+                  onChange={this.handleChange}
                   onBlur={event =>
                     this.props.actions.beginValidatingProfileValue(
                       event.target.id
                     )
                   }
                   error={contractorProfile.businessState.error}
-                  value={contractorProfile.businessState.value}
+                  value={this.state.businessState}
                 />
               </div>
             </div>
@@ -223,6 +193,24 @@ class CreateContractorProfile extends Component {
                   labelName={contractorProfile.zip.label}
                   required={contractorProfile.zip.required}
                   id={"zip"}
+                  onChange={this.handleChange}
+                  onBlur={event =>
+                    this.props.actions.beginValidatingProfileValue(
+                      event.target.id
+                    )
+                  }
+                  error={contractorProfile.zip.error}
+                  value={this.state.zip}
+                />
+              </div>
+            </div>
+            <div className="form-group row">
+              <div className="col">
+                <SelectInput
+                  labelName={contractorProfile.typeOfJobs.label}
+                  required={contractorProfile.typeOfJobs.required}
+                  options={this.props.serviceList}
+                  id="typeOfJobs"
                   onChange={event =>
                     this.props.actions.updateProfileValue(
                       event.target.id,
@@ -234,31 +222,10 @@ class CreateContractorProfile extends Component {
                       event.target.id
                     )
                   }
-                  error={contractorProfile.zip.error}
-                  value={contractorProfile.zip.value}
-                />
+                  error={contractorProfile.typeOfJobs.error}
+                  value={this.state.typeOfJobs}
+                ></SelectInput>
               </div>
-            </div>
-            <div className="form-group row">
-              <SelectInput
-                labelName={contractorProfile.typeOfJobs.label}
-                required={contractorProfile.typeOfJobs.required}
-                options={this.props.serviceList}
-                id="typeOfJobs"
-                onChange={event =>
-                  this.props.actions.updateProfileValue(
-                    event.target.id,
-                    event.target.value
-                  )
-                }
-                onBlur={event =>
-                  this.props.actions.beginValidatingProfileValue(
-                    event.target.id
-                  )
-                }
-                error={contractorProfile.typeOfJobs.error}
-                value={contractorProfile.typeOfJobs.value}
-              ></SelectInput>
             </div>
 
             <div className="form-group row">
@@ -267,19 +234,14 @@ class CreateContractorProfile extends Component {
                   id="bio"
                   labelName={contractorProfile.bio.label}
                   required={contractorProfile.bio.required}
-                  onChange={event =>
-                    this.props.actions.updateProfileValue(
-                      event.target.id,
-                      event.target.value
-                    )
-                  }
+                  onChange={this.handleChange}
                   onBlur={event =>
                     this.props.actions.beginValidatingProfileValue(
                       event.target.id
                     )
                   }
                   error={contractorProfile.bio.error}
-                  value={contractorProfile.bio.value}
+                  value={this.state.bio}
                 ></TextArea>
               </div>
             </div>
@@ -290,9 +252,7 @@ class CreateContractorProfile extends Component {
                   className="btn btn-primary"
                   labelName="Create Profile"
                   tabIndex={"13"}
-                  onClick={this.props.actions.addContractorProfileAction(
-                    this.props.contractorProfile
-                  )}
+                  onClick={this.handleSubmit}
                 >
                   Save Profile
                 </Button>

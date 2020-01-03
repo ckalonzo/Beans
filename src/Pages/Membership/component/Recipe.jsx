@@ -80,11 +80,11 @@ class Recipe extends Component {
 
 const mapStateToProps = state => {
   return {
-    addedItems: state.items.addedItems,
-    total: state.items.total,
-    amount: state.items.total,
-    title: state.items.title,
-    description: state.items.desc
+    addedItems: state.cartReducer.addedItems,
+    total: state.cartReducer.total,
+    amount: state.cartReducer.total,
+    title: state.cartReducer.title,
+    description: state.cartReducer.desc
   };
 };
 
@@ -99,7 +99,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Recipe);
+export default connect(mapStateToProps, mapDispatchToProps)(Recipe);

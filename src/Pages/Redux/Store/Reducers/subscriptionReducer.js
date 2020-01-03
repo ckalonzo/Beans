@@ -1,5 +1,5 @@
 import {
-  ADD_TO_CART,
+  ADDSUB_TO_CART,
   REMOVE_ITEM,
   SUB_QUANTITY,
   ADD_QUANTITY,
@@ -35,36 +35,35 @@ const initState = {
       desc4: "Help center access",
       price: 3000
     }
-  ]
+  ],
+  addedItems: [],
+  total: 0,
+  counter: 0
 };
 
 const SubscriptionReducer = (state = initState, action) => {
-  if (action.type === ADD_TO_CART) {
-    let addedSubscription = state.subscriptions.find(
-      subscription => subscription.id === action.id
-    );
-    //check if the action id exists in the addedSubscriptions
-    let existed_subscription = state.addedSubscriptions.find(
-      subscription => action.id === subscription.id
-    );
+  if (action.type === ADDSUB_TO_CART) {
+    let addedItem = state.subscriptions.find(item => item.id === action.id);
+    //check if the action id exists in the addedItems
+    let existed_item = state.addedItems.find(item => action.id === item.id);
 
-    if (existed_subscription) {
-      addedSubscription.quantity += 1;
+    if (existed_item) {
+      addedItem.quantity += 1;
       let newCounter = state.counter + 1;
       return {
         ...state,
-        total: state.total + addedSubscription.price,
+        total: state.total + addedItem.price,
         counter: newCounter
       };
     } else {
-      addedSubscription.quantity = 1;
+      addedItem.quantity = 1;
       let newCounter = state.counter + 1;
       //calculating the total
-      let newTotal = state.total + addedSubscription.price;
+      let newTotal = state.total + addedItem.price;
 
       return {
         ...state,
-        addedSubscriptions: [...state.addedSubscriptions, addedSubscription],
+        addedItems: [...state.addedItems, addedItem],
         total: newTotal,
         counter: newCounter
       };
@@ -88,6 +87,41 @@ const SubscriptionReducer = (state = initState, action) => {
       total: newTotal,
       counter: newCounter
     };
+  }
+  if (action.type === ADD_QUANTITY) {
+    let addedItem = state.subscriptions.find(item => item.id === action.id);
+    addedItem.quantity += 1;
+    let newTotal = state.total + addedItem.price;
+    let newCounter = state.counter + 1;
+    return {
+      ...state,
+      total: newTotal,
+      counter: newCounter
+    };
+  }
+  if (action.type === SUB_QUANTITY) {
+    let addedItem = state.subscriptions.find(item => item.id === action.id);
+    //if the qt == 0 then it should be removed
+    if (addedItem.quantity === 1) {
+      let new_items = state.addedItems.filter(item => item.id !== action.id);
+      let newTotal = state.total - addedItem.price;
+      let newCounter = state.counter - 1;
+      return {
+        ...state,
+        addedItems: new_items,
+        total: newTotal,
+        counter: newCounter
+      };
+    } else {
+      addedItem.quantity -= 1;
+      let newTotal = state.total - addedItem.price;
+      let newCounter = state.counter - 1;
+      return {
+        ...state,
+        total: newTotal,
+        counter: newCounter
+      };
+    }
   }
   return state;
 };

@@ -8,7 +8,7 @@ import {
   addQuantity,
   subtractQuantity
 } from "../../../../Redux/Store/actions/cartActions";
-
+import { addSubToCart } from "../../../../Redux/Store/actions/subscriptionAction";
 class shoppingCartHeader extends Component {
   render() {
     let addedItems = this.props.items.addedItems.length ? (
@@ -97,13 +97,19 @@ const mapStateToProps = state => {
     auth: state.firebase.auth,
     authError: state.auth,
     items: state.cartReducer,
-    total: state.cartReducer.total
+    total: state.cartReducer.total,
+    subscriptionTotal: state.subscriptionReducer,
+    subcounter: state.subscriptionReducer.counter,
+    subscriptions: state.subscriptionReducer
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
     addToCart: (id, counter) => {
       dispatch(addToCart(id, counter));
+    },
+    addSubToCart: (id, counter) => {
+      dispatch(addSubToCart(id, counter));
     },
     removeItem: id => {
       dispatch(removeItem(id));

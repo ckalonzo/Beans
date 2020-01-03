@@ -4,6 +4,7 @@ import IntroSignUp from "../component/IntroSignUp";
 import SignUpbasicinfo from "../component/signUp-basicinfo";
 import SocialNumberAknowledgement from "../component/SocialNumberAknowledgement";
 import CreateContractorProfile from "../component/createContractorProfile";
+import Success from "../component/SuccessPage";
 import { contractorSignUpAction } from "../../Redux/Store/actions/authActions";
 import { ACTIONS } from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
 import * as actionTypes from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
@@ -259,42 +260,10 @@ class Enrollment extends Component {
             handleChangeTimePicker={this.handleChangeTimePicker}
           />
         );
-      //   case 5:
-      //     return (
-      //       <Budget
-      //         nextStep={this.nextStep}
-      //         prevStep={this.prevStep}
-      //         handleChange={this.handleChange}
-      //         budget={budget}
-      //         values={values}
-      //       />
-      //     );
-      //   case 6:
-      //     return (
-      //       <Confirm
-      //         nextStep={this.nextStep}
-      //         prevStep={this.prevStep}
-      //         values={values}
-      //         handleSubmit={this.handleSubmit}
-      //       />
-      //     );
-      //   case 7:
-      //     return <Success />;
+      case 4:
+        return <Success />;
     }
   }
-
-  // MainForm.propTypes = {
-  //   onSubmit: PropTypes.func.isRequired
-  // };
-  // const mapStateToProps = state => {
-  //   return {
-  //     auth: state.firebase.auth
-  //   };
-  // };
-  // const mapDispatchToProps = dispatch => {
-  //   return {
-  //     CreateProject: project => dispatch(CreateProject(project))
-  //   };
 }
 const mapStateToProps = state => {
   return {

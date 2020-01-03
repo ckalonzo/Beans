@@ -19,42 +19,80 @@ const initState = {
       title: "1 Bids",
       desc: "1 Bid from TruckAway",
       price: 0.99,
-      img: OneBid
+      img: OneBid,
+      numOfBids: 1
     },
     {
       id: 2,
       title: "3 Bids",
       desc: "3 Bids from TruckAway",
       price: 2.99,
-      img: ThreeBids
+      img: ThreeBids,
+      numOfBids: 3
     },
     {
       id: 3,
       title: "5 Bids",
       desc: "5 Bids from TruckAway",
       price: 4.99,
-      img: FiveBids
+      img: FiveBids,
+      numOfBids: 5
     },
     {
       id: 4,
       title: "10 Bids",
       desc: "10 Bids from TruckAway",
       price: 8.99,
-      img: TenBids
+      img: TenBids,
+      numOfBids: 10
     },
     {
       id: 5,
       title: "15 Bids",
       desc: "15 Bids from TruckAway",
       price: 13.99,
-      img: FifteenBids
+      img: FifteenBids,
+      numOfBids: 15
     },
     {
       id: 6,
       title: "20 Bids",
       desc: "20 Bids from TruckAway",
       price: 17.99,
-      img: TwentyBids
+      img: TwentyBids,
+      numOfBids: 20
+    }
+  ],
+  subscriptions: [
+    {
+      id: 20,
+      title: "Starter",
+      desc1: "10 users included",
+      desc2: "2 GB of storage",
+      desc3: "Email support",
+      desc4: "Help center access",
+      price: 1000,
+      numOfBids: 500
+    },
+    {
+      id: 12,
+      title: "Pro",
+      desc1: "10 users included",
+      desc2: "2 GB of storage",
+      desc3: "Email support",
+      desc4: "Help center access",
+      price: 2500,
+      numOfBids: 1000
+    },
+    {
+      id: 13,
+      title: "Premium",
+      desc1: "10 users included",
+      desc2: "2 GB of storage",
+      desc3: "Email support",
+      desc4: "Help center access",
+      price: 3000,
+      numOfBids: 1000000
     }
   ],
   addedItems: [],
@@ -65,11 +103,13 @@ const cartReducer = (state = initState, action) => {
   //INSIDE Single-bid-table COMPONENT
   if (action.type === ADD_TO_CART) {
     let addedItem = state.items.find(item => item.id === action.id);
+
     //check if the action id exists in the addedItems
     let existed_item = state.addedItems.find(item => action.id === item.id);
 
     if (existed_item) {
       addedItem.quantity += 1;
+
       let newCounter = state.counter + 1;
       return {
         ...state,
@@ -78,6 +118,7 @@ const cartReducer = (state = initState, action) => {
       };
     } else {
       addedItem.quantity = 1;
+
       let newCounter = state.counter + 1;
       //calculating the total
       let newTotal = state.total + addedItem.price;
@@ -85,6 +126,7 @@ const cartReducer = (state = initState, action) => {
       return {
         ...state,
         addedItems: [...state.addedItems, addedItem],
+
         total: newTotal,
         counter: newCounter
       };

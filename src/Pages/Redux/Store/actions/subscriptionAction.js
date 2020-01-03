@@ -1,14 +1,14 @@
 import {
-  ADD_TO_CART,
+  ADDSUB_TO_CART,
   REMOVE_ITEM,
   SUB_QUANTITY,
   ADD_QUANTITY
 } from "./actionTypes/ta-actionTypes";
 
 //add cart action
-export const addToCart = (id, counter) => {
+export const addSubToCart = (id, counter) => {
   return {
-    type: ADD_TO_CART,
+    type: ADDSUB_TO_CART,
     id,
     counter
   };

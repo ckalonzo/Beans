@@ -77,6 +77,7 @@ export const fetchCustomerProfileAPI = () => {
 };
 
 export const fetchContractorProfileAPI = () => {
+  console.log("api");
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
     const uid = getState().firebase.auth.uid;

@@ -7,6 +7,11 @@ import {
   addQuantity,
   subtractQuantity
 } from "../../Redux/Store/actions/cartActions";
+import {
+  subremoveItem,
+  subaddQuantity,
+  subsubtractQuantity
+} from "../../Redux/Store/actions/cartActions";
 import Recipe from "./Recipe";
 import "../Css/cart.css";
 
@@ -82,7 +87,7 @@ class Cart extends Component {
             </td>
             <td className="text-right">
               <Link
-                to=""
+                to="/Membership/Membership"
                 onClick={() => {
                   this.handleRemove(item.id);
                 }}
@@ -103,7 +108,7 @@ class Cart extends Component {
         <div className="cart">
           <header className="header">
             <div className="header-contents">
-              <Link to="/Membership/Membership" className="back-button">
+              <Link to="#" className="back-button">
                 &lt; Back to shop
               </Link>
             </div>
@@ -139,7 +144,7 @@ class Cart extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    items: state.items
+    items: state.cartReducer
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -155,7 +160,4 @@ const mapDispatchToProps = dispatch => {
     }
   };
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

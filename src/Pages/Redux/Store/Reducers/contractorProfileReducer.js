@@ -1,5 +1,9 @@
 import { ACTIONS } from "./../actions/actionTypes/ta-actionTypes";
-import { fetchContractorProfileAction } from "../actions/contractorProfileActions";
+import {
+  fetchContractorProfileAction,
+  fetchContractorProfileSuccessAction,
+  fetchContractorProfileFailAction
+} from "../actions/contractorProfileActions";
 import { fetchContractorProfileAPI } from "../actions/FirebaseApiCalls";
 import {
   cleanInput,
@@ -36,7 +40,7 @@ const initialState = {
     error: null,
     maxLength: 255
   },
-  phone: {
+  phoneNumber: {
     label: "Phone (XXX-XXX-XXXX)",
     value: "",
     required: true,
@@ -112,7 +116,7 @@ const initialState = {
   history: "",
   bids: "",
   update: false,
-
+  Rating: 0,
   profile: "",
   validForm: false,
   errors: [],
@@ -175,11 +179,17 @@ export default function contractorProfileReducer(state = initialState, action) {
     }
 
     case ACTIONS.CONTRACTOR_GROUP.FETCH_CONTRACTOR_PROFILE: {
-      return {
-        ...state
-      };
+      console.log("reducer");
+      fetchContractorProfileAPI()
+        .then(json =>
+          action.asyncDispatch(fetchContractorProfileSuccessAction(json))
+        )
+        .catch(err =>
+          action.asyncDispatch(fetchContractorProfileFailAction(err))
+        );
     }
     case ACTIONS.CONTRACTOR_GROUP.FETCH_CONTRACTOR_PROFILE_SUCCESS: {
+      console.log(action.items);
       return {
         ...state
       };

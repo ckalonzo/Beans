@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import "../Css/Price-Table.scss";
 import { connect } from "react-redux";
-import { addToCart } from "../../Redux/Store/actions/subscriptionAction";
+import { addSubToCart } from "../../Redux/Store/actions/subscriptionAction";
+import Recipe from "./Recipe";
 
 class MembershipTable extends Component {
-  handleClick = (id, counter, isAuth) => {
-    if (isAuth) {
-      return {};
-    } else {
-      this.props.addToCart(id, counter);
-      console.log(id);
-      console.log("counter" + counter);
-    }
+  handleClick = (id, counter, price) => {
+    this.props.addSubToCart(id, counter);
+    console.log(id);
+    console.log(price);
+    console.log("counter" + counter);
+    return <Recipe />;
   };
+
   render() {
     let subscriptionList = this.props.subscriptions.subscriptions.map(
       subscription => {
@@ -22,21 +22,30 @@ class MembershipTable extends Component {
               <h4 className="my-0 font-weight-normal">{subscription.title}</h4>
             </div>
             <div className="card-body">
-              <h1 className="card-title pricing-card-title adj-prices">
-                {subscription.price} <small className="text-muted">/ mo</small>
-              </h1>
+              <div className="card-title pricing-card-title adj-prices">
+                <h2 className="">${subscription.price}</h2>
+              </div>
+              <div className="reaccuring">
+                <span>per month</span>
+              </div>
+              <div className=" -ta_mt-10 seperator"></div>
               <ul className="list-unstyled mt-3 mb-4">
                 <li>{subscription.desc1}</li>
                 <li>{subscription.desc2}</li>
                 <li>{subscription.desc3}</li>
                 <li>{subscription.desc4}</li>
               </ul>
-              <button
+              <Recipe />
+              {/* <a
+                href="#"
                 type="button"
                 className="btn btn-lg btn-block btn-outline-primary"
+                onClick={() => {
+                  this.handleClick(subscription.id, this.props.counter);
+                }}
               >
                 Buy Now
-              </button>
+              </a> */}
             </div>
           </div>
         );
@@ -76,14 +85,14 @@ class MembershipTable extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    subscriptions: state.subscriptions,
-    counter: state.counter.counter
+    subscriptions: state.subscriptionReducer,
+    counter: state.counterReducer
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    addToCart: (id, counter) => {
-      dispatch(addToCart(id, counter));
+    addSubToCart: (id, counter) => {
+      dispatch(addSubToCart(id, counter));
     }
   };
 };

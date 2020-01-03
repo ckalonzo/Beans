@@ -15,8 +15,8 @@ export default class SideMenuMobile extends Component {
             <span class="far fa-times-circle close_menu"></span>
             <div class="author-author__info">
               <div class="author__avatar v_middle">
-                <NavLink
-                  to="#"
+                <a
+                  href="#"
                   className="nav-link avatarlink dropdown-toggle nav-avatar"
                   id="navbarDropdownMenuLink"
                   data-toggle="dropdown"
@@ -24,7 +24,7 @@ export default class SideMenuMobile extends Component {
                   aria-expanded="false"
                 >
                   {/* {props.profile.initials} */}
-                </NavLink>
+                </a>
               </div>
             </div>
             {/* <!--end /.author-author__info--> */}

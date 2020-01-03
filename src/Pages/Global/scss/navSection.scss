@@ -1215,7 +1215,7 @@
     border-bottom: 10px solid #6e4ff6
 }
 
-.about_hero .about_hero_contents h1 span,.affiliate_area .generated .link,.author-profile .author-stats ul .t_sells span,.breadcrumb ul li a:hover,.breadcrumb ul li.active a:hover,.card_style2 .save_job:hover span,.color-secondary,.country_statistics table tbody tr td:nth-child(2),.credit_modules .modules__content .amounts .or,.dashboard_module .loading a,.dropdown.dropdown--author .author-credits .autor__info .amount,.dropdown.dropdown--cart .cart_area .cart_product .product__info .info .cat a,.dropdown.dropdown--cart .cart_area .cart_product .product__info .info .title:hover,.dwqa-container .dwqa-questions-archive .dwqa-questions-list .dwqa-question-meta span.dwqa-status.dwqa-status-resolved:before,.event_area .date_place span,.featured_event .countdown li,.featured_event .date_place li span,.featured_event h2 a:hover,.invoice .invoice__meta .date_info p.status,.job_detail_module .job__content .informations li .info_title span,.login .login_assist p a,.menu--light .mainmenu__menu .navbar-nav>li:hover>a,.mini-footer p a:hover,.notifications_module .notification .notification__icons .noti_icon.commented,.notifications_module .notification .notification__icons .noti_icon.reviewed,.notifications_module .notification .notification__icons span.icon-close:hover,.notifications_module .notification__unread .info p.time,.package-single .package-body ul li.yes:before,.package-single .package-header .amount span,.product-desc ul li.product_cat a,.product-meta .love-comments p span.lnr,.product-purchase .price_love p span,.recover_pass .login_assist p a,.secondary,.shortcode_modules .modules__content .amounts .or,.signup_form .login_assist p a,.single_item_visitor .dashboard__content .item_info .info h2,.single_product .product__additional_info ul li a:hover,.single_product .product__price_download .item_action .not--rated:hover .rate_it,.step-single .step-last span:last-child,.table tbody>tr>td.earning.subtract,.thread .thread-list .single-thread .media-body a.reply-link:hover,.thread.thread_review .thread-list .single-thread .media-body .media-heading .rev_item,.upload_modules .modules__content .amounts .or,.user-single .card-footer .stats p:last-child span,.widget-about .contact-details li a:hover,.withdraw_module .modules__content .amounts .or {
+.about_hero .about_hero_contents h1 span,.affiliate_area .generated .link,.author-profile .author-stats ul .t_sells span,.breadcrumb ul li a:hover,.breadcrumb ul li.active a:hover,.card_style2 .save_job:hover span,.color-secondary,.country_statistics table tbody tr td:nth-child(2),.credit_modules .modules__content .amounts .or,.dashboard_module .loading a,.dropdown.dropdown--author .author-credits .autor__info .amount,.dropdown.dropdown--cart .cart_area .cart_product .product__info .info .cat a,.dropdown.dropdown--cart .cart_area .cart_product .product__info .info .title:hover,.dwqa-container .dwqa-questions-archive .dwqa-questions-list .dwqa-question-meta span.dwqa-status.dwqa-status-resolved:before,.event_area .date_place span,.featured_event .countdown li,.featured_event .date_place li span,.featured_event h2 a:hover,.invoice .invoice__meta .date_info p.status,.job_detail_module .job__content .informations li .info_title span,.login .login_assist p a,.menu--light .mainmenu__menu .navbar-nav>li:hover>a,.mini-footer p a:hover,.notifications_module .notification .notification__icons .noti_icon.commented,.notifications_module .notification .notification__icons .noti_icon.reviewed,.notifications_module .notification .notification__icons span.fa-times-circle:hover,.notifications_module .notification__unread .info p.time,.package-single .package-body ul li.yes:before,.package-single .package-header .amount span,.product-desc ul li.product_cat a,.product-meta .love-comments p span.lnr,.product-purchase .price_love p span,.recover_pass .login_assist p a,.secondary,.shortcode_modules .modules__content .amounts .or,.signup_form .login_assist p a,.single_item_visitor .dashboard__content .item_info .info h2,.single_product .product__additional_info ul li a:hover,.single_product .product__price_download .item_action .not--rated:hover .rate_it,.step-single .step-last span:last-child,.table tbody>tr>td.earning.subtract,.thread .thread-list .single-thread .media-body a.reply-link:hover,.thread.thread_review .thread-list .single-thread .media-body .media-heading .rev_item,.upload_modules .modules__content .amounts .or,.user-single .card-footer .stats p:last-child span,.widget-about .contact-details li a:hover,.withdraw_module .modules__content .amounts .or {
     color: #1dc9b7
 }
 
@@ -4838,7 +4838,7 @@ span.slick-next {
     cursor: pointer
 }
 
-.mobile_content span.icon-close {
+.mobile_content span.fa-times-circle {
     float: none;
     position: absolute;
     left: 15px;
@@ -13466,7 +13466,7 @@ span.counter {
     background: rgba(29,201,183,.1)
 }
 
-.notifications_module .notification .notification__icons span.icon-close {
+.notifications_module .notification .notification__icons span.fa-times-circle {
     color: #c1c7d2;
     font-size: 16px;
     cursor: pointer
@@ -17370,7 +17370,7 @@ span.counter {
         margin-top: 30px
     }
 
-    .notifications_module .notification .notification__icons .icon-close {
+    .notifications_module .notification .notification__icons .fa-times-circle {
         position: absolute;
         right: 30px;
         top: 30px
