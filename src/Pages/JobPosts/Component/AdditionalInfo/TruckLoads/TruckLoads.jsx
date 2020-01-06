@@ -14,7 +14,6 @@ class TruckLoads extends Component {
                   id={truckLoads}
                   value={values.truckLoads}
                   onChange={handleChange("truckLoads")}
-                  value="1"
                   className="form-check-input"
                   name="optradio"
                 />{" "}
@@ -28,7 +27,6 @@ class TruckLoads extends Component {
                   id={truckLoads}
                   value={values.truckLoads}
                   onChange={handleChange("truckLoads")}
-                  value="2"
                   className="form-check-input"
                   name="optradio"
                 />{" "}
@@ -42,7 +40,6 @@ class TruckLoads extends Component {
                   id={truckLoads}
                   value={values.truckLoads}
                   onChange={handleChange("truckLoads")}
-                  value="3"
                   className="form-check-input"
                   name="optradio"
                 />{" "}
@@ -56,7 +53,6 @@ class TruckLoads extends Component {
                   id={truckLoads}
                   value={values.truckLoads}
                   onChange={handleChange("truckLoads")}
-                  value="4"
                   className="form-check-input"
                   name="optradio"
                 />{" "}
@@ -70,7 +66,6 @@ class TruckLoads extends Component {
                   id={truckLoads}
                   value={values.truckLoads}
                   onChange={handleChange("truckLoads")}
-                  value="5"
                   className="form-check-input"
                   name="optradio"
                 />{" "}
@@ -84,7 +79,6 @@ class TruckLoads extends Component {
                   id={truckLoads}
                   value={values.truckLoads}
                   onChange={handleChange("truckLoads")}
-                  value="6"
                   className="form-check-input"
                   name="optradio"
                 />{" "}

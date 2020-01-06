@@ -3,7 +3,7 @@ import "./css/TypeofTruck.css";
 
 export default class TypeOfTruck extends Component {
   render() {
-    const { typeOfTruck, handleChange, values, classes } = this.props;
+    const { typeOfTruck, handleChange, values } = this.props;
     return (
       <div className="container">
         <div className="row">
@@ -22,7 +22,6 @@ export default class TypeOfTruck extends Component {
                 <img
                   className="card-img-top"
                   src="https://i.imgur.com/DulN0qt.jpg"
-                  alt="Card image cap"
                 ></img>
                 <div className="card-body">
                   <h5 className="card-title">Regular Pick Truck</h5>
@@ -82,7 +81,7 @@ export default class TypeOfTruck extends Component {
                 <img
                   className="card-img-top"
                   src="https://imgur.com/nk474Lh.png"
-                  alt="Card image cap"
+                  // alt="Card image cap"
                 ></img>
                 <div className="card-body">
                   <h5 className="card-title">regular Pick Truck</h5>

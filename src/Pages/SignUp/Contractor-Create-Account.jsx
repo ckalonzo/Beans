@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { contractorSignUp } from "../Redux/Store/actions/authActions";
+import { contractorSignUpAction } from "../Redux/Store/actions/authActions";
 import "./Css/contractor-signup.scss";
-
+import Input from "../Global/Input/Input";
+import Email from "../Global/Input/Email";
+import Button from "../Global/Input/Button";
 class ContractorCreateAccount extends Component {
   state = {
     firstName: "",
@@ -20,89 +22,89 @@ class ContractorCreateAccount extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.contractorSignUp(this.state);
+    this.props.contractorSignUpAction(this.state);
   };
 
+  componentWillMount = () => {
+    window.scrollTo(0, 0);
+  };
   render() {
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to="SignUp/contractorSignUp" />;
+    if (auth.uid)
+      return <Redirect to="/SignUp/ContractorEnrollment/Enrollment" />;
 
     return (
       <section className="contractor-signup ">
         <div className="container ">
           <div className="row">
-            <div className="col-lg-8 offset-3">
-              <div className=" ">
-                <div className="signup-panel">
-                  <div className="row">
-                    <div className="mt-3 login-outline">
-                      <div className="mx-auto login">
-                        <div className="">
-                          <div className="row">
-                            <div className="col-6  mt-4 offset-3">
-                              <h2 className="title">Contractor Sign Up</h2>
-                            </div>
-                          </div>
-                          <form onSubmit={this.handleSubmit}>
-                            <div className="form-group mt-4">
-                              <label htmlFor="firstName">First Name</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                id="firstName"
-                                onChange={this.handleChange}
-                              />
-                            </div>
-                            <div className="form-group mt-4">
-                              <label htmlFor="lastName">Last Name</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                id="lastName"
-                                onChange={this.handleChange}
-                              />
-                            </div>
-                            <div className="form-group">
-                              <label htmlFor="Password">Password</label>
-                              <input
-                                type="password"
-                                className="form-control"
-                                id="password"
-                                onChange={this.handleChange}
-                              />
-                            </div>
-                            <div className="form-group mt-4">
-                              <label htmlFor="Email">Email address</label>
-                              <input
-                                type="email"
-                                className="form-control"
-                                id="email"
-                                placeholder="Enter email"
-                                onChange={this.handleChange}
-                              />
-                            </div>
-                            <div className="form-group mt-4">
-                              <label htmlFor="zipcode">Zip Code</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                id="zipcode"
-                                onChange={this.handleChange}
-                              />
-                            </div>
-
-                            <button
-                              type="submit"
-                              className="btn btn-primary signUp-btn btn-block mt-5 mb-3"
-                            >
-                              Sign Up
-                            </button>
-                            <div className="center red-text">
-                              {authError ? <p>{authError}</p> : null}
-                            </div>
-                          </form>
+            <div className="col-12">
+              <div className="row">
+                <div className="mt-3 col-12 login-outline">
+                  <div className="mx-auto login">
+                    <div className="col-12">
+                      <div className="row">
+                        <div className="mx-auto">
+                          <h2 className="title">Contractor Sign Up</h2>
                         </div>
                       </div>
+                      <form onSubmit={this.handleSubmit}>
+                        <div className="form-group mt-4">
+                          <label htmlFor="firstName">First Name</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="firstName"
+                            onChange={this.handleChange}
+                          />
+                        </div>
+                        <div className="form-group mt-4">
+                          <label htmlFor="lastName">Last Name</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="lastName"
+                            onChange={this.handleChange}
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="Password">Password</label>
+                          <input
+                            type="password"
+                            className="form-control"
+                            id="password"
+                            onChange={this.handleChange}
+                          />
+                        </div>
+                        <div className="form-group mt-4">
+                          <label htmlFor="Email">Email address</label>
+                          <input
+                            type="email"
+                            className="form-control"
+                            id="email"
+                            placeholder="Enter email"
+                            onChange={this.handleChange}
+                          />
+                        </div>
+                        <div className="form-group mt-4">
+                          <label htmlFor="zipcode">Zip Code</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="zipcode"
+                            onChange={this.handleChange}
+                          />
+                        </div>
+
+                        <button
+                          type="submit"
+                          className="btn btn-primary signUp-btn btn-block mt-5 mb-3"
+                        >
+                          Sign Up
+                        </button>
+                        <div className="center red-text">
+                          {authError ? <p>{authError}</p> : null}
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -124,7 +126,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    contractorSignUp: creds => dispatch(contractorSignUp(creds))
+    contractorSignUpAction: creds => dispatch(contractorSignUpAction(creds))
   };
 };
 export default connect(

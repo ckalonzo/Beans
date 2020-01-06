@@ -8,33 +8,31 @@ const Join = () => {
       <div className="fluid-container">
         <div className="row no-gutters ">
           <div className="col-md-6 col-sm-12 panel join-panel">
-            <div className="mt-5">
-              <div className="col-12 mx-auto join-title-outter">
-                <h2 className="join-title">Reasons Why You Should Join</h2>
+            <div className="col-12">
+              <div className="mt-5">
+                <div className="col-12 mx-auto -ta_pl-0 join-title-outter">
+                  <h2 className="join-title">Reasons Why You Should Join</h2>
+                </div>
+                <div className="mx-auto join-copy">
+                  <p>Millions of people need tasks done everyday.</p>
+                  <p>
+                    At vero eos et accusamus et iusto odio dignis ducimus qui
+                    blanditiis praesentium volupta deleniti quas molestias
+                    excepturi sint occaecati cupiditate non est laborum.
+                  </p>
+                </div>
               </div>
-              <div className="mx-auto join-copy">
+              <div className="col-9 offset-1 start-posting-today-button">
                 <p>
-                  Morbi pulvinar massa vitae sem cursus ferlentu. Cura bitur
-                  maximus sem nibh, at sollicitudin sem pretiu vitae. Sed do
-                  eiusmod tempor incidi ut labore et dolore mag aliqua ip.
-                </p>
-                <p>
-                  At vero eos et accusamus et iusto odio dignis ducimus qui
-                  blanditiis praesentium volupta deleniti quas molestias
-                  excepturi sint occaecati cupiditate non est laborum.
+                  <Link
+                    className="btn btn-primary btn-lg spt-btn"
+                    to="/JobPosts/PostJob"
+                    role="button"
+                  >
+                    Start Posting Today!
+                  </Link>
                 </p>
               </div>
-            </div>
-            <div className="mx-auto start-posting-today-button">
-              <p>
-                <Link
-                  className="btn btn-primary btn-lg spt-btn"
-                  to="/JobPosts/PostJob"
-                  role="button"
-                >
-                  Start Posting Today!
-                </Link>
-              </p>
             </div>
           </div>
           <div className="col-md-6 col-sm-12">

@@ -7,7 +7,10 @@ const ProfileLocation = props => {
         {/* <Icon type="environment" theme="filled" /> */}
       </div>
       <div className="col-10 pl-0">
-        <p>Atlanta, GA, United States</p>
+        <p>
+          {props.contractorProfile.city}, {props.contractorProfile.state},
+          United States
+        </p>
       </div>
     </div>
   );

@@ -1,16 +1,16 @@
-import React from "react";
+import { React, Fragment } from "react";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import NoImage from "../img/no-image.png";
-import CountdownTimer from "../Component/countdownTimer";
+//import CountdownTimer from "../Component/countdownTimer";
 const ProjectDetails = props => {
   const { project, auth, handleBidNow, bidNow } = props;
-  if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+  if (!auth.uid) return <Redirect to="/Login/CustomerLogin/CustomerLogin" />;
   if (project) {
     return (
-      <React.Fragment>
+      <Fragment>
         {/* <CountdownTimer timeTillDate={(project.selectedDate),(project.selectedTime}) timeFormat="MM DD YYYY, h:mm a" /> */}
         <div className="card">
           <div className="row no-gutters">
@@ -114,7 +114,7 @@ const ProjectDetails = props => {
             </aside>
           </div>
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   } else {
     return (
@@ -128,7 +128,7 @@ const ProjectDetails = props => {
 };
 
 const mapStateToProps = (state, componentProps) => {
-  //console.log(state)
+  console.log(state);
   const id = componentProps.match.params.id;
   const projects = state.firestore.data.projects;
   const project = projects ? projects[id] : null;

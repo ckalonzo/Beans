@@ -1,6 +1,6 @@
 @import "../scss/NoImage.scss";
 //breakpoints
-$breakpoints: xs,sm,md,lg,xl;
+$breakpoints: xs, sm, md, lg, xl;
 $bp1: nth($breakpoints, 1);
 $bp2: nth($breakpoints, 2);
 $bp3: nth($breakpoints, 3);
@@ -213,4 +213,7 @@ $ta-white: #ffffff;
       }
     }
   }
+}
+.ta-brand-blue {
+  color: #124676 !important;
 }

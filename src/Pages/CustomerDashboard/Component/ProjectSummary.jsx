@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import MultiItemcarousel from "./Multi-Item-carousel";
 import NoImage from "../../Global/Component/NoImage";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis"; //cap maxLine of characters
-const ProjectSummary = ({ jobs, deleteProject }) => {
+import { connect } from "react-redux";
+//import DeleteProject from "./DeleteProject";
+import { deleteProject } from "../../Redux/Store/actions/JobPostActions";
+const ProjectSummary = ({ jobs, deleteProject, props }) => {
+  const [isDeleting, setisDeleting] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   return (
     <article className="itemlist mt-4">
       <div className="row row-sm -ta_pb-20">
@@ -49,17 +54,12 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
             </div>
 
             <p>
-              <button
-                className=""
-                onClick={event => {
-                  deleteProject(event);
-                }}
-              >
+              {/* <button className="" onClick={props.deleteProject}>
                 Delete Job
-              </button>
+              </button> */}
               <Link to={"/jobs/" + jobs.id} className="btn  btn-warning">
                 {" "}
-                Details{" "}
+                Edit Job{" "}
               </Link>{" "}
             </p>
           </div>
@@ -69,5 +69,10 @@ const ProjectSummary = ({ jobs, deleteProject }) => {
     </article>
   );
 };
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteProject: () => dispatch(deleteProject())
+  };
+};
 
-export default ProjectSummary;
+export default connect(null, mapDispatchToProps)(ProjectSummary);

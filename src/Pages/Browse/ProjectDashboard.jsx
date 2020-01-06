@@ -38,7 +38,7 @@ class ProjectDashboard extends Component {
     const { projects, auth } = this.props;
     const { bidNow } = this.state;
     if (!auth.uid)
-      return <Redirect to="/ContractorLogin/ContractorLogin" />;
+      return <Redirect to="/Login/ContractorLogin/ContractorLogin" />;
     console.log(this.props);
     return (
       <section className="panel-list">

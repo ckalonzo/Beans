@@ -1,0 +1,121 @@
+[debug] [2020-01-06T12:45:13.805Z] ----------------------------------------------------------------------
+[debug] [2020-01-06T12:45:13.808Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\B\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-01-06T12:45:13.808Z] CLI Version:   6.5.0
+[debug] [2020-01-06T12:45:13.808Z] Platform:      win32
+[debug] [2020-01-06T12:45:13.808Z] Node Version:  v10.13.0
+[debug] [2020-01-06T12:45:13.809Z] Time:          Mon Jan 06 2020 07:45:13 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-06T12:45:13.809Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2020-01-06T12:45:13.816Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-06T12:45:13.817Z] > authorizing via signed-in user
+[debug] [2020-01-06T12:45:13.817Z] [iam] checking project messaging-app-93c7b for permissions ["firebase.projects.get"]
+[debug] [2020-01-06T12:45:13.818Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/messaging-app-93c7b:testIamPermissions  
+
+[debug] [2020-01-06T12:45:14.031Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-06T12:45:14.032Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/messaging-app-93c7b  
+ 
+[debug] [2020-01-06T12:45:14.204Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\B\Documents\dev\Beans'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2020-01-06T12:45:15.236Z] Fetching environment
+[debug] [2020-01-06T12:45:15.237Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/71275684215:getServerAppConfig  
+ 
+[debug] [2020-01-06T12:45:15.238Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/71275684215/clients/_:getWebAppConfig  
+ 
+[debug] [2020-01-06T12:45:15.388Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-06T12:45:15.388Z] Starting @google-cloud/functions-emulator
+[debug] [2020-01-06T12:45:15.516Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-01-06T12:45:16.918Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2020-01-06T12:45:17.018Z] Error during trigger parsing:  Error occurred while parsing your function triggers.
+
+C:\Users\B\Documents\dev\Beans\functions\index.js:36
+app.get('/project'/:projectId', getProject);
+                   ^
+
+SyntaxError: Unexpected token :
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:656:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:699:10)
+    at Module.load (internal/modules/cjs/loader.js:598:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:537:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:529:3)
+    at Module.require (internal/modules/cjs/loader.js:636:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+[warn] !  functions: Error from emulator. Error occurred while parsing your function triggers.
+
+C:\Users\B\Documents\dev\Beans\functions\index.js:36
+app.get('/project'/:projectId', getProject);
+                   ^
+
+SyntaxError: Unexpected token :
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:656:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:699:10)
+    at Module.load (internal/modules/cjs/loader.js:598:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:537:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:529:3)
+    at Module.require (internal/modules/cjs/loader.js:636:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+[debug] [2020-01-06T12:45:17.020Z] 
+[debug] [2020-01-06T12:48:17.956Z] ----------------------------------------------------------------------
+[debug] [2020-01-06T12:48:17.958Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\B\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-01-06T12:48:17.958Z] CLI Version:   6.5.0
+[debug] [2020-01-06T12:48:17.958Z] Platform:      win32
+[debug] [2020-01-06T12:48:17.958Z] Node Version:  v10.13.0
+[debug] [2020-01-06T12:48:17.960Z] Time:          Mon Jan 06 2020 07:48:17 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-06T12:48:17.960Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2020-01-06T12:48:17.967Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-06T12:48:17.967Z] > authorizing via signed-in user
+[debug] [2020-01-06T12:48:17.967Z] [iam] checking project messaging-app-93c7b for permissions ["firebase.projects.get"]
+[debug] [2020-01-06T12:48:17.969Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/messaging-app-93c7b:testIamPermissions  
+
+[debug] [2020-01-06T12:48:18.232Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-06T12:48:18.234Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/messaging-app-93c7b  
+ 
+[debug] [2020-01-06T12:48:18.430Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\B\Documents\dev\Beans'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2020-01-06T12:48:18.950Z] Fetching environment
+[debug] [2020-01-06T12:48:18.952Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/71275684215:getServerAppConfig  
+ 
+[debug] [2020-01-06T12:48:18.952Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/71275684215/clients/_:getWebAppConfig  
+ 
+[debug] [2020-01-06T12:48:19.097Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-06T12:48:19.098Z] Starting @google-cloud/functions-emulator
+[debug] [2020-01-06T12:48:19.215Z] <<< HTTP RESPONSE 200
+[warn] !  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5005
+[debug] [2020-01-06T12:48:20.618Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2020-01-06T12:48:20.704Z] Error during trigger parsing:  Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[warn] !  functions: Error from emulator. Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[debug] [2020-01-06T12:48:20.705Z] 
+[debug] [2020-01-06T14:24:42.665Z] Error: kill ENOSYS
+    at process.kill (internal/process/per_thread.js:198:13)
+    at process.listener (C:\Users\B\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\signal-exit\index.js:95:15)
+    at process.emit (events.js:182:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-01-06T14:24:45.033Z] Error: kill ENOSYS
+    at process.kill (internal/process/per_thread.js:198:13)
+    at process.listener (C:\Users\B\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\signal-exit\index.js:95:15)
+    at process.emit (events.js:182:13)
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -63,16 +63,6 @@ export default class TermAndConditions extends Component {
             </div>
           </div>
         </div>
-
-        <div className="row">
-          <div className="mx-auto">
-            <Link to="/SignUp/component/Thankyou">
-              <button type="button" className="btn btn-primary">
-                Submit
-              </button>
-            </Link>
-          </div>
-        </div>
       </div>
     );
   }

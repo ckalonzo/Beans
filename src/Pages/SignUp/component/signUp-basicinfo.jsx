@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import TextInput from "../../Global/Input/TextInput";
-
+import Input from "../../Global/Input/Input";
+import Email from "../../Global/Input/Email";
+import Button from "../../Global/Input/Button";
 class SignUpbasicinfo extends Component {
   continue = e => {
     e.preventDefault();
@@ -11,21 +13,25 @@ class SignUpbasicinfo extends Component {
     this.props.prevStep();
   };
 
+  componentWillMount = () => {
+    window.scrollTo(0, 0);
+  };
+
   render() {
     const { handleChange, firstName, lastName } = this.props;
     console.log(this.props);
     return (
       <div>
         <div className="container mt-5">
-          <div className="col-4 mx-auto">
-            <h1>Basic Information</h1>
+          <div className=" mx-auto">
+            <h2 className="">Basic Information</h2>
           </div>
           <form onSubmit={this.handleSubmit}>
             <div className="form-group mt-4">
               <label id="firstName" htmlFor="firstName">
                 First Name
               </label>
-              <TextInput
+              <Input
                 type="text"
                 className="form-control"
                 id="firstName"
@@ -36,7 +42,7 @@ class SignUpbasicinfo extends Component {
             </div>
             <div className="form-group mt-4">
               <label htmlFor="lastName">Last Name</label>
-              <TextInput
+              <Input
                 type={"text"}
                 className={"form-control"}
                 id={"lastName"}
@@ -46,7 +52,7 @@ class SignUpbasicinfo extends Component {
             </div>
             <div className="form-group">
               <label htmlFor="Password">Password</label>
-              <TextInput
+              <Input
                 type="password"
                 className="form-control"
                 id="password"
@@ -55,7 +61,7 @@ class SignUpbasicinfo extends Component {
             </div>
             <div className="form-group mt-4">
               <label htmlFor="Email">Email address</label>
-              <TextInput
+              <Input
                 type="email"
                 className="form-control"
                 id="email"
@@ -65,7 +71,7 @@ class SignUpbasicinfo extends Component {
             </div>
             <div className="form-group mt-4">
               <label htmlFor="zipcode">Zip Code</label>
-              <TextInput
+              <Input
                 type="text"
                 className="form-control"
                 id="zipcode"
@@ -95,21 +101,13 @@ class SignUpbasicinfo extends Component {
         </div>
         <div className="row">
           <div className="mx-auto">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={this.back}
-            >
-              Back
-            </button>
+            <Button type="button" labelName="Back" onClick={this.back} />
 
-            <button
+            <Button
               type="button"
-              className="btn btn-primary"
               onClick={this.continue}
-            >
-              Continue
-            </button>
+              labelName="Continue"
+            />
           </div>
         </div>
       </div>

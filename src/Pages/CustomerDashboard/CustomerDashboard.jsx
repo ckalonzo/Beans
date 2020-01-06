@@ -9,7 +9,7 @@ import { compose } from "redux";
 
 const CustomerDashboard = props => {
   const { projects, auth, customerId } = props;
-  if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+  if (!auth.uid) return <Redirect to="/Login/CustomerLogin/CustomerLogin" />;
   return (
     <section className="customer-dashboard">
       <div className="projectList container">

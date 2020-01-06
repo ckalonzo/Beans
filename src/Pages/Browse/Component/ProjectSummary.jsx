@@ -2,20 +2,16 @@ import NoImage from "../img/no-image.png";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis"; //cap maxLine of characters
-import Countdown from "./countdownTimer";
+//import Countdown from "./countdownTimer";
 export default class ProjectSummary extends Component {
   render() {
-    const { jobs, handleBidNow, bidNow, handleChange } = this.props;
+    const { jobs, handleBidNow, bidNow } = this.props;
     return (
       <article className="itemlist mt-4">
         <div className="row row-sm">
           <aside className="col-12 col-sm-3">
             <div className="img-wrap">
-              <img
-                src={NoImage}
-                alt="product with no image avaliable"
-                className="img-md"
-              />
+              <img src={NoImage} className="img-md" />
             </div>
           </aside>
           <Link className="col-12 col-sm-6" to={"/jobs/" + jobs.id}>

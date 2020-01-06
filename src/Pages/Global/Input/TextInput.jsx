@@ -2,29 +2,39 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export default class TextInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  renderError() {
+    if (this.props.error) {
+      return (
+        <div id="name-err" className="err-text" aria-live="asseritive">
+          {this.props.error}
+        </div>
+      );
+    }
+    //else
+    return;
   }
 
+  renderLabel() {
+    let label = this.props.labelName;
+    if (this.props.required) {
+      label += "*";
+    }
+    return label;
+  }
   render() {
     return (
-      <input
-        {...this.props}
-        id={this.props.id}
-        type={this.props.type ? this.props.type : "true"}
-        name={this.props.name}
-        className={this.props.className}
-        value={this.props.value}
-        aria-invalid={this.props.ariaInvalid}
-        aria-required={
-          this.props.ariaRequired ? this.props.ariaRequired : "true"
-        }
-      />
+      <div className="container">
+        <label htmlFor={this.props.id}>{this.renderLabel()}</label>
+        <input
+          id={this.props.id}
+          value={this.props.value ? this.props.value : ""}
+          type="text"
+          onChange={this.props.onChange}
+          className="form-control"
+          onBlur={this.handleBlur}
+        />
+        {this.renderError()}
+      </div>
     );
   }
 }
-TextInput.propTypes = {
-  id: PropTypes.string.isRequired,
-  value: PropTypes.string
-};

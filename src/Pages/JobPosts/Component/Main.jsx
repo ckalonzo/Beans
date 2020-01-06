@@ -13,7 +13,7 @@ import TypeOfJob from "../Component/TypeOfJob";
 import UploadImages from "../Component/UploadImages";
 import Confirm from "./Confirm";
 import Success from "./Success";
-import axios from "axios"
+import axios from "axios";
 
 class MainForm extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class MainForm extends Component {
       zipCode: "",
       largeItems: "",
       selectedDate: moment().format("MMM Do YYYY"),
-      selectedTime: moment().format('h:mm:ss a'),
+      selectedTime: moment().format("h:mm:ss a"),
       flightOfStairs: "",
       truckLoads: "",
       typeOfTruck: "",
@@ -73,30 +73,34 @@ class MainForm extends Component {
     if (event.target.files[0]) {
       const image = event.target.files[0];
       this.setState(() => ({ image }));
-   }
+    }
   };
 
   handleUpload = () => {
     const fd = new FormData();
-    fd.append('image', this.state.image, this.state.image.name);
-    axios.post('', fd, {
-      onUploadProgress: ProgressEvent => {
-        console.log('Upload Progress: ' + Math.round (ProgressEvent.loaded / ProgressEvent.total * 100) + '%' )
-      }
-    })
+    fd.append("image", this.state.image, this.state.image.name);
+    axios
+      .post("", fd, {
+        onUploadProgress: ProgressEvent => {
+          console.log(
+            "Upload Progress: " +
+              Math.round((ProgressEvent.loaded / ProgressEvent.total) * 100) +
+              "%"
+          );
+        }
+      })
       .then(res => {
-      console.log(res);
-    });
-   
+        console.log(res);
+      });
   };
 
   handleChangeDatePicker = date => {
     this.setState({ selectedDate: moment(date).format("MMM Do YYYY") });
-      console.log(date);
+    console.log(date);
   };
 
   handleChangeTimePicker = time => {
-    this.setState({ selectedTime: moment(time).format('h:mm:ss a')});
+    this.setState({ selectedTime: moment(time).format("h:mm:ss a") });
     console.log(time);
   };
 
@@ -109,7 +113,7 @@ class MainForm extends Component {
     console.log(this.props);
     const { step } = this.state;
     const { auth } = this.props;
-    if (!auth.uid) return <Redirect to="/CustomerLogin/CustomerLogin" />;
+    if (!auth.uid) return <Redirect to="/Login/CustomerLogin/CustomerLogin" />;
     const {
       service,
       email,
@@ -239,7 +243,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MainForm);
+export default connect(mapStateToProps, mapDispatchToProps)(MainForm);

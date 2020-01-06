@@ -1,11 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import ProviderSignedInLinks from "./ProviderSignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 import { connect } from "react-redux";
-
+import Logo from "../Component/logo";
+import NotificationHeader from "../Component/notificationHeader";
+import BidsHeader from "../Component/bidsHeader";
+import Message from "../Component/message";
+import ShoppingCartHeader from "../Component/shoppingCartHeader";
+import SideMenuDesktop from "../Component/sideMenuDesktop";
+import SideMenuMobile from "../Component/sideMenuMobile";
 const Navbar = props => {
-  const { auth, profile, ctr } = props;
+  const { auth, profile } = props;
   // display links if user is signed in or out
   const links = auth.uid ? (
     <ProviderSignedInLinks profile={profile} />
@@ -13,22 +19,27 @@ const Navbar = props => {
     <SignedOutLinks />
   );
   return (
-    <nav className="navbar navbar-light sticky-top navbar-expand-md bg-faded justify-content-center nav-section hover-underline-menu">
-      <div className="container">
-        <Link to="/" className="navbar-brand d-flex w-50 mr-auto" />
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapsingNavbar3"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="navbar-collapse collapse w-100" id="collapsingNavbar3">
-          {links}
+    <div class="menu-area nav-section">
+      <div class="top-menu-area sticky-top ">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12 -ta_px-0">
+              <div class=" menu-fullwidth">
+                <div class="logo-wrapper ">
+                  <div class="logo">
+                    <Logo />
+                  </div>
+                </div>
+                {links}
+              </div>
+            </div>
+          </div>
+          {/* <!-- end /.row --> */}
         </div>
+        {/* <!-- end /.container --> */}
       </div>
-    </nav>
+      {/* <!-- end  --> */}
+    </div>
   );
 };
 

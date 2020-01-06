@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 //import { addShipping } from './actions/cartActions'
-import "../Css/cart.css";
+import "../Css/cart.scss";
 import STRIPE_PUBLISHABLE from "./constants/stripe";
 import PAYMENT_SERVER_URL from "./constants/server";
 
@@ -13,6 +12,7 @@ const fromEuroToCent = amount => amount * 100;
 
 const successPayment = data => {
   alert("Payment Successful");
+  console.log(data);
 };
 
 const errorPayment = data => {
@@ -63,6 +63,9 @@ class Recipe extends Component {
           <li className="collection-item">
             <b>Total: ${this.props.total.toFixed(2)} </b>
           </li>
+          <li className="collection-item">
+            <b>TotalBids: {this.props.totalbids} </b>
+          </li>
         </div>
         <div className="checkout">
           <StripeCheckout
@@ -81,11 +84,12 @@ class Recipe extends Component {
 
 const mapStateToProps = state => {
   return {
-    addedItems: state.items.addedItems,
-    total: state.items.total,
-    amount: state.items.total,
-    title: state.items.title,
-    description: state.items.desc
+    addedItems: state.cartReducer.addedItems,
+    total: state.cartReducer.total,
+    amount: state.cartReducer.total,
+    title: state.cartReducer.title,
+    description: state.cartReducer.desc,
+    totalbids: state.cartReducer.bids
   };
 };
 
@@ -100,7 +104,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Recipe);
+export default connect(mapStateToProps, mapDispatchToProps)(Recipe);

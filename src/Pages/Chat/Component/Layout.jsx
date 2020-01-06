@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
-import { USER_CONNECTED, LOGOUT } from "../Events/Events";
+import { USER_CONNECTED } from "../Events/Events";
 import LoginForm from "./LoginForm";
 import ChatContainer from "./chats/ChatContainer";
 import { connect } from "react-redux";
-import { signIn } from "../../Redux/Store/actions/authActions";
+import { signInAction } from "../../Redux/Store/actions/authActions";
 
 const socketUrl = "http://localhost:3231";
 
@@ -42,13 +42,13 @@ class Layout extends Component {
 
   //Sets the user property in state to null.
   logout = () => {
-    const { socket } = this.state;
+    //   const { socket } = this.state;
     //  socket.emit(LOGOUT);
     this.setState({ user: null });
   };
 
   render() {
-    const { authError, auth } = this.props;
+    //const { authError, auth } = this.props;
     const { socket, user } = this.state;
     return (
       <div className="container">
@@ -71,11 +71,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signIn: creds => dispatch(signIn(creds))
+    signInAction: creds => dispatch(signInAction(creds))
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Layout);
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

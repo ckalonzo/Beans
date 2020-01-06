@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addToCart } from "../../Redux/Store/actions/cartActions";
+import { addToCart, totalBids } from "../../Redux/Store/actions/cartActions";
 import "../Css/single-pricing-cards.scss";
 import { Link } from "react-router-dom";
 
 class SingleBid extends Component {
-  handleClick = (id, counter, isAuth) => {
-    if (isAuth) {
-      return {};
-    } else {
-      this.props.addToCart(id, counter);
-      console.log(id);
-      console.log("counter" + counter);
-    }
+  handleClick = (id, counter, numOfBids) => {
+    this.props.addToCart(id, counter);
+    this.props.totalBids(numOfBids);
+
+    console.log(id);
+    console.log("counter" + counter);
+    console.log("numofbids" + numOfBids);
   };
 
   render() {
@@ -20,14 +19,21 @@ class SingleBid extends Component {
       return (
         <div className="col-md-4 mb-3 " key={item.id}>
           <div className="card-width colorch-btn" id="hover4">
-            <Link
-              to="#"
+            <a
+              href="#"
               onClick={() => {
-                this.handleClick(item.id, this.props.counter);
+                this.handleClick(
+                  item.id,
+                  this.props.counter,
+                  this.props.totalBids
+                );
               }}
             >
               <div className="card-body text-center">
-                <h2 className="card-title">{item.title}</h2>
+                <h2 className="card-title">
+                  {item.numOfBids}
+                  {item.title}
+                </h2>
                 <h3 className="card-subtitle mb-2 text-muted">
                   Price: ${item.price}
                 </h3>
@@ -36,7 +42,7 @@ class SingleBid extends Component {
                   Buy Now
                 </button>
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       );
@@ -59,19 +65,19 @@ class SingleBid extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    items: state.items,
-    counter: state.counter.counter
+    items: state.cartReducer,
+    counter: state.counterReducer
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
     addToCart: (id, counter) => {
       dispatch(addToCart(id, counter));
+    },
+    totalBids: numOfBids => {
+      dispatch(totalBids(numOfBids));
     }
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SingleBid);
+export default connect(mapStateToProps, mapDispatchToProps)(SingleBid);
