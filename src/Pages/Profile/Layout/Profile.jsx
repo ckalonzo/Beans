@@ -19,11 +19,13 @@ import { compose, bindActionCreators } from "redux";
 import Button from "../../Global/Input/Button";
 import UpdateProfile from "../updateProfile/updateProfile";
 import { fetchContractorProfileAction } from "../../Redux/Store/actions/contractorProfileActions";
+import firebase from "../../../Config/Firebase";
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      update: false
+      update: false,
+      contractorProfile: null
     };
   }
   updateProfile = e => {
@@ -35,7 +37,24 @@ class Profile extends Component {
   };
   componentDidMount() {
     console.log("didmount");
-    this.props.actions.fetchContractorProfileAction();
+    //this.props.actions.fetchContractorProfileAction();
+
+    firebase
+      .firestore()
+      .collection("contractorProfile") //pointing to contractorProfile collection
+      .doc()
+      .get() // getting/fetching data
+      .then(snapshot => {
+        console.log(snapshot);
+        const contractorProfile = []; //set array to get contractorProfile
+        // snapshot.forEach(doc => {
+        //   const data = doc.data(); //get data from each document in the contractorProfile collection
+        //   console.log("data" + data);
+        //   contractorProfile.push(data); // once I have data push it to the contractorProfile array
+        // });
+        // this.setState({ contractorProfile: contractorProfile });
+      })
+      .catch(error => console.log(error));
   }
   render() {
     const { contractorProfile } = this.props;

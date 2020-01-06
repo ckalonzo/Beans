@@ -1,5 +1,5 @@
 import { ACTIONS } from "./actionTypes/ta-actionTypes";
-
+import firebase from "../../../../Config/Firebase";
 export const addCustomerProfileAPI = () => {};
 
 export const addContractorProfileAPI = newUser => {
@@ -103,22 +103,21 @@ export const fetchContractorProfileAPI = () => {
 
 export const fetchBidsAPI = () => {
   return (dispatch, getState, { getFirestore }) => {
-    const firestore = getFirestore();
-    const uid = getState().firebase.auth.uid;
-    return firestore
-      .collection("Bids")
-      .doc(uid)
-      .get()
-      .then(snapshot => {
-        snapshot.docs.forEach(doc => {
-          let items = doc.data();
-
-          //   /* Make data suitable for rendering */
-          items = JSON.stringify(items);
-          dispatch({ type: ACTIONS.BIDS_GROUP.FETCH_BIDS, payload: items });
-          /* Update the components state with query result */
+    firebase
+      .firestore()
+      .collection("Bids") //pointing to bids collection
+      .get() // getting/fetching data
+      .then(data => {
+        let bids = []; //set array to get bids
+        data.forEach(doc => {
+          bids.push(doc.data()); // once I have data push it to the bids array
+          const data = doc.data().bids; //get data from each document in the bids collection
         });
-      });
+        // this.setState({ bids: bids });
+
+        dispatch({ type: ACTIONS.BIDS_GROUP.FETCH_BIDS, bids });
+      })
+      .catch(error => console.log(error));
   };
 };
 

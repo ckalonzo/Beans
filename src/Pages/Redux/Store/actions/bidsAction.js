@@ -1,17 +1,26 @@
 import { ACTIONS } from "./actionTypes/ta-actionTypes";
 
-export function fetchBids() {
-  return {
-    type: ACTIONS.BIDS_GROUP.FETCH_BIDS
+export function fetchBidsAction(bids, uid, items) {
+  return dispatch => {
+    dispatch({
+      type: ACTIONS.BIDS_GROUP.FETCH_BIDS,
+      bids,
+      uid
+    });
   };
 }
 
-export function fetchBidsSuccess() {
-  return {
-    type: ACTIONS.BIDS_GROUP.FETCH_BIDS_SUCCESS
+export function fetchBidsSuccessAction(payload, bids, uid) {
+  return dispatch => {
+    dispatch({
+      type: ACTIONS.BIDS_GROUP.FETCH_BIDS_SUCCESS,
+      bids,
+      uid,
+      payload
+    });
   };
 }
-export function fetchBidsFail() {
+export function fetchBidsFailAction() {
   return {
     type: ACTIONS.BIDS_GROUP.FETCH_BIDS.FAIL
   };

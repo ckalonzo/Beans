@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { fetchBids } from "../../../../Redux/Store/actions/bidsAction";
+import { fetchBidsAction } from "../../../../Redux/Store/actions/bidsAction";
 import firebase from "../../../../../Config/Firebase";
 
 class BidsHeader extends Component {
@@ -11,6 +11,7 @@ class BidsHeader extends Component {
     };
   }
   componentDidMount() {
+    // this.props.fetchBidsAction();
     firebase
       .firestore()
       .collection("Bids") //pointing to bids collection
@@ -60,7 +61,7 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    fetchBids: uid => dispatch(fetchBids(uid))
+    fetchBidsAction: uid => dispatch(fetchBidsAction(uid))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(BidsHeader);

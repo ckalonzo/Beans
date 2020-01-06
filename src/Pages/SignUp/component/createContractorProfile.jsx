@@ -40,11 +40,13 @@ class CreateContractorProfile extends Component {
       [e.target.id]: e.target.value
     });
   };
-
-  handleSubmit = e => {
+  continue = e => {
     e.preventDefault();
+    //process Form//
+    this.props.nextStep();
     this.props.actions.addContractorProfileAction(this.state);
   };
+
   render() {
     const contractorProfile = this.props.contractorProfile;
     // console.log(this.props.contractorProfile.firstName);
@@ -252,7 +254,7 @@ class CreateContractorProfile extends Component {
                   className="btn btn-primary"
                   labelName="Create Profile"
                   tabIndex={"13"}
-                  onClick={this.handleSubmit}
+                  onClick={this.continue}
                 >
                   Save Profile
                 </Button>

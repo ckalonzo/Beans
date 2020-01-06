@@ -5,7 +5,7 @@ import SignUpbasicinfo from "../component/signUp-basicinfo";
 import SocialNumberAknowledgement from "../component/SocialNumberAknowledgement";
 import CreateContractorProfile from "../component/createContractorProfile";
 import Success from "../component/SuccessPage";
-import { contractorSignUpAction } from "../../Redux/Store/actions/authActions";
+import { addContractorProfileAction } from "../../Redux/Store/actions/contractorProfileActions";
 import { ACTIONS } from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
 import * as actionTypes from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
 import { Redirect } from "react-router-dom";
@@ -41,7 +41,7 @@ class Enrollment extends Component {
     // this.prevStep = this.prevStep.bind(this);
     // this.handleChange = this.handleChange.bind(this);
     // this.handleChangeAttachments = this.handleChangeAttachments.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    //  this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeSSN = this.handleChangeSSN.bind(this);
     this.handleBlurSSN = this.handleBlurSSN.bind(this);
 
@@ -164,11 +164,6 @@ class Enrollment extends Component {
     //   this.setState({ selectedTime: time });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.CreateProject(this.state);
-  };
-
   render() {
     console.log(this.props);
     const { step } = this.state;
@@ -255,7 +250,6 @@ class Enrollment extends Component {
             address={address}
             city={city}
             zipCode={zipCode}
-            largeItems={largeItems}
             handleChangeDatePicker={this.handleChangeDatePicker}
             handleChangeTimePicker={this.handleChangeTimePicker}
           />
@@ -277,7 +271,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    contractorSignUpAction: creds => dispatch(contractorSignUpAction(creds)),
+    addContractorProfileAction: newContractor =>
+      dispatch(addContractorProfileAction(newContractor)),
     onhandleNextStep: StepCounter =>
       dispatch({
         type: actionTypes.ACTIONS.STEPS.NEXT_STEP,

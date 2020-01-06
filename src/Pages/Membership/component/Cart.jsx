@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
 import {
   removeItem,
   addQuantity,
-  subtractQuantity
+  subtractQuantity,
+  totalBids
 } from "../../Redux/Store/actions/cartActions";
 import {
   subremoveItem,
@@ -13,7 +13,7 @@ import {
   subsubtractQuantity
 } from "../../Redux/Store/actions/cartActions";
 import Recipe from "./Recipe";
-import "../Css/cart.css";
+import "../Css/cart.scss";
 
 class Cart extends Component {
   //to remove the item completely
@@ -83,6 +83,7 @@ class Cart extends Component {
               <div className="price-wrap">
                 <var className="price">${item.price}</var>
                 <small className="text-muted">(${item.price} each)</small>
+                <small className="text-muted">(${item.numOfBids} each)</small>
               </div>
             </td>
             <td className="text-right">
@@ -144,7 +145,8 @@ class Cart extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    items: state.cartReducer
+    items: state.cartReducer,
+    totalbids: state.cartReducer.bids
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -157,6 +159,9 @@ const mapDispatchToProps = dispatch => {
     },
     subtractQuantity: id => {
       dispatch(subtractQuantity(id));
+    },
+    totalBids: numOfBids => {
+      dispatch(totalBids(numOfBids));
     }
   };
 };

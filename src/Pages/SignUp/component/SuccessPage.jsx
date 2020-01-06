@@ -15,14 +15,21 @@ class Success extends Component {
       <Fragment>
         <div className="container">
           <div className="row">
-            <div className="mx-auto">
-              <h1> Congrats you're all set!!!</h1>
+            <div className="col-12">
+              <div className="mx-auto">
+                <h2> Congrats you're all set!!!</h2>
+              </div>
+            </div>
+            <div className="col-12">
+              <div className="mx-auto">
+                <h2>Lets pruchase some bids to get you started!!!!</h2>
+              </div>
             </div>
           </div>
 
           <div className="row">
             <div className="mx-auto">
-              <Link to="/Dashboard/ContractorDashboard">
+              <Link to="/Membership/Membership">
                 <button type="button" className="btn btn-primary">
                   Dashboard
                 </button>

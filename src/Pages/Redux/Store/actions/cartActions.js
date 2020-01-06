@@ -2,7 +2,8 @@ import {
   ADD_TO_CART,
   REMOVE_ITEM,
   SUB_QUANTITY,
-  ADD_QUANTITY
+  ADD_QUANTITY,
+  TOTAL_BIDS
 } from "./actionTypes/ta-actionTypes";
 
 //add cart action
@@ -13,7 +14,12 @@ export const addToCart = (id, counter) => {
     counter
   };
 };
-
+export const totalBids = numOfBids => {
+  return {
+    type: TOTAL_BIDS,
+    numOfBids
+  };
+};
 //remove item action
 export const removeItem = (id, counter) => {
   return {

@@ -182,7 +182,9 @@ export default function contractorProfileReducer(state = initialState, action) {
       console.log("reducer");
       fetchContractorProfileAPI()
         .then(json =>
-          action.asyncDispatch(fetchContractorProfileSuccessAction(json))
+          action.asyncDispatch(
+            fetchContractorProfileSuccessAction(action.payload)
+          )
         )
         .catch(err =>
           action.asyncDispatch(fetchContractorProfileFailAction(err))

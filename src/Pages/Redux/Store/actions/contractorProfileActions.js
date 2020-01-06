@@ -65,9 +65,10 @@ export function fetchContractorProfileAction() {
   };
 }
 
-export function fetchContractorProfileSuccessAction() {
+export function fetchContractorProfileSuccessAction(items) {
   return {
-    type: ACTIONS.CONTRACTOR_GROUP.FETCH_CONTRACTOR_PROFILE_SUCCESS
+    type: ACTIONS.CONTRACTOR_GROUP.FETCH_CONTRACTOR_PROFILE_SUCCESS,
+    payload: items
   };
 }
 

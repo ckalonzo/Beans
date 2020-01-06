@@ -3,7 +3,7 @@ import {
   REMOVE_ITEM,
   SUB_QUANTITY,
   ADD_QUANTITY,
-  CARTTOTALITEMS
+  TOTAL_BIDS
 } from "../actions/actionTypes/ta-actionTypes";
 
 import OneBid from "../../../Membership/Img/oneBid.png";
@@ -16,7 +16,7 @@ const initState = {
   items: [
     {
       id: 1,
-      title: "1 Bids",
+      title: " Bids",
       desc: "1 Bid from TruckAway",
       price: 0.99,
       img: OneBid,
@@ -24,7 +24,7 @@ const initState = {
     },
     {
       id: 2,
-      title: "3 Bids",
+      title: " Bids",
       desc: "3 Bids from TruckAway",
       price: 2.99,
       img: ThreeBids,
@@ -32,7 +32,7 @@ const initState = {
     },
     {
       id: 3,
-      title: "5 Bids",
+      title: " Bids",
       desc: "5 Bids from TruckAway",
       price: 4.99,
       img: FiveBids,
@@ -97,7 +97,8 @@ const initState = {
   ],
   addedItems: [],
   total: 0,
-  counter: 0
+  counter: 0,
+  bids: 0
 };
 const cartReducer = (state = initState, action) => {
   //INSIDE Single-bid-table COMPONENT
@@ -129,6 +130,36 @@ const cartReducer = (state = initState, action) => {
 
         total: newTotal,
         counter: newCounter
+      };
+    }
+  }
+  if (action.type === TOTAL_BIDS) {
+    let addedBid = state.items.find(
+      item => item.numOfBids === action.numOfBids
+    );
+
+    //check if the action id exists in the addedItems
+    let existed_item = state.addedBids.find(
+      item => action.numOfBids === item.numOfBids
+    );
+
+    if (existed_item) {
+      addedBid.quantity += 1;
+
+      return {
+        ...state,
+        total: state.bids + addedBid.numOfBids
+      };
+    } else {
+      addedBid.quantity = 1;
+      //calculating the total
+      let newTotalBids = state.bids + addedBid.numOfBids;
+
+      return {
+        ...state,
+        addedBids: [...state.addedBids, addedBid],
+
+        bids: newTotalBids
       };
     }
   }

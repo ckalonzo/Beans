@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addToCart } from "../../Redux/Store/actions/cartActions";
+import { addToCart, totalBids } from "../../Redux/Store/actions/cartActions";
 import "../Css/single-pricing-cards.scss";
 import { Link } from "react-router-dom";
 
 class SingleBid extends Component {
-  handleClick = (id, counter) => {
+  handleClick = (id, counter, numOfBids) => {
     this.props.addToCart(id, counter);
+    this.props.totalBids(numOfBids);
+
     console.log(id);
     console.log("counter" + counter);
+    console.log("numofbids" + numOfBids);
   };
 
   render() {
@@ -19,11 +22,18 @@ class SingleBid extends Component {
             <a
               href="#"
               onClick={() => {
-                this.handleClick(item.id, this.props.counter);
+                this.handleClick(
+                  item.id,
+                  this.props.counter,
+                  this.props.totalBids
+                );
               }}
             >
               <div className="card-body text-center">
-                <h2 className="card-title">{item.title}</h2>
+                <h2 className="card-title">
+                  {item.numOfBids}
+                  {item.title}
+                </h2>
                 <h3 className="card-subtitle mb-2 text-muted">
                   Price: ${item.price}
                 </h3>
@@ -63,6 +73,9 @@ const mapDispatchToProps = dispatch => {
   return {
     addToCart: (id, counter) => {
       dispatch(addToCart(id, counter));
+    },
+    totalBids: numOfBids => {
+      dispatch(totalBids(numOfBids));
     }
   };
 };
