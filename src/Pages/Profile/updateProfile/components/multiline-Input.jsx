@@ -4,7 +4,7 @@ const OutlinedTextFields = props => {
   // handleChange = name => event => {
   //   props.contractorProfile.bio;
   // };
-  console.log(props.contractorProfile);
+
   return (
     <textarea
       type="textarea"
@@ -12,7 +12,7 @@ const OutlinedTextFields = props => {
       rows="10"
       className="col-12 border"
       readOnly={true}
-      value={props.contractorProfile.bio}
+      //value={props.value}
       // onChange={this.handleChange({})}
       outline
     />

@@ -18,6 +18,16 @@ const BidsReducer = (state = initialState, action) => {
         )
         .catch(err => action.asyncDispatch(fetchBidsFailAction(err)));
     }
+    case ACTIONS.BIDS_GROUP.ADD_BID_SUCCESS: {
+      return {
+        ...state
+      };
+    }
+    case ACTIONS.BIDS_GROUP.ADD_BID_ERR: {
+      return {
+        ...state
+      };
+    }
 
     default:
       return state;

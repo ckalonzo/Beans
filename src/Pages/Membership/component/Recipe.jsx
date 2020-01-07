@@ -6,6 +6,8 @@ import StripeCheckout from "react-stripe-checkout";
 import "../Css/cart.scss";
 import STRIPE_PUBLISHABLE from "./constants/stripe";
 import PAYMENT_SERVER_URL from "./constants/server";
+import { ACTIONS } from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
+import addBidsAction from "../../Redux/Store/actions/bidsAction";
 
 const CURRENCY = "USD";
 const fromEuroToCent = amount => amount * 100;
@@ -13,8 +15,14 @@ const fromEuroToCent = amount => amount * 100;
 const successPayment = data => {
   alert("Payment Successful");
   console.log(data);
+
+  //this.props.handleTotalBids();
 };
 
+// const handleTotalBids = totalbids => {
+//   console.log(totalbids);
+//   this.props.addBidsAction(totalbids);
+// };
 const errorPayment = data => {
   alert("Payment Error");
   console.log(data);
@@ -100,6 +108,9 @@ const mapDispatchToProps = dispatch => {
     },
     substractShipping: () => {
       dispatch({ type: "SUB_SHIPPING" });
+    },
+    addBidsAction: () => {
+      dispatch({ type: ACTIONS.BIDS_GROUP.ADD_BID_SUCCESS });
     }
   };
 };

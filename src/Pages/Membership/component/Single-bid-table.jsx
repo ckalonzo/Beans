@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 
 class SingleBid extends Component {
   handleClick = (id, counter, numOfBids) => {
-    this.props.addToCart(id, counter);
-    this.props.totalBids(numOfBids);
+    this.props.addToCart(id, counter, numOfBids);
 
     console.log(id);
     console.log("counter" + counter);
@@ -66,16 +65,14 @@ const mapStateToProps = state => {
   console.log(state);
   return {
     items: state.cartReducer,
-    counter: state.counterReducer
+    counter: state.counterReducer,
+    numOfBids: state.cartReducer.items.numOfBids
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    addToCart: (id, counter) => {
-      dispatch(addToCart(id, counter));
-    },
-    totalBids: numOfBids => {
-      dispatch(totalBids(numOfBids));
+    addToCart: (id, counter, numOfBids) => {
+      dispatch(addToCart(id, counter, numOfBids));
     }
   };
 };

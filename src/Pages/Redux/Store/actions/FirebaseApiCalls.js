@@ -96,6 +96,7 @@ export const fetchContractorProfileAPI = () => {
             payload: items
           });
           /* Update the components state with query result */
+          this.setState({ items: items });
         });
       });
   };

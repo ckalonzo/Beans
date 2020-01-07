@@ -36,28 +36,30 @@ class Profile extends Component {
     });
   };
   componentDidMount() {
-    console.log("didmount");
+    // {
+    //   // this.props.fetchBidsAction();
+    //   firebase
+    //     .firestore()
+    //     .collection("contractorProfile") //pointing to bids collection
+    //     .where("contractorUID" === userId)
+    //     .get() // getting/fetching data
+    //     .then(snapshot => {
+    //       const contractorProfile = []; //set array to get bids
+    //       snapshot.forEach(doc => {
+    //         const data = doc.data(); //get data from each document in the bids collection
+    //         contractorProfile.push(data); // once I have data push it to the bids array
+    //       });
+    //       this.setState({ contractorProfile: contractorProfile });
+    //       console.log(contractorProfile);
+    //     })
+    //     .catch(error => console.log(error));
+    // }
+    // console.log("didmount");
     //this.props.actions.fetchContractorProfileAction();
-
-    firebase
-      .firestore()
-      .collection("contractorProfile") //pointing to contractorProfile collection
-      .doc()
-      .get() // getting/fetching data
-      .then(snapshot => {
-        console.log(snapshot);
-        const contractorProfile = []; //set array to get contractorProfile
-        // snapshot.forEach(doc => {
-        //   const data = doc.data(); //get data from each document in the contractorProfile collection
-        //   console.log("data" + data);
-        //   contractorProfile.push(data); // once I have data push it to the contractorProfile array
-        // });
-        // this.setState({ contractorProfile: contractorProfile });
-      })
-      .catch(error => console.log(error));
   }
   render() {
     const { contractorProfile } = this.props;
+    console.log(contractorProfile);
     if (this.state.update === true)
       return (
         <Redirect to="/Profile/updateProfile/updateProfile" update={false} />
@@ -74,31 +76,26 @@ class Profile extends Component {
                   <div className="col-3">
                     <Picture />
                     <div className="mt-3">
-                      {this.props.contractorProfile.firstName}
-                      <TypeOfJobs contractorProfile={contractorProfile} />
+                      <TypeOfJobs />
                     </div>
-                    <div className="mt-3">
-                      {/* <ProfileLocation contractorProfile={contractorProfile} /> */}
-                    </div>
+                    <div className="mt-3">{/* <ProfileLocation /> */}</div>
                   </div>
                   <div className="col-6">
                     <div className="row">
                       <div className="col-12">
                         <div className="mt-3">
-                          <PersonName contractorProfile={contractorProfile} />
+                          <PersonName />
                         </div>
                         <div className="mt-3">
                           <h6>Company Name:</h6>
-                          <CompanyName contractorProfile={contractorProfile} />
+                          <CompanyName />
                         </div>
                         <div className="mt-3">
-                          <AvgRating contractorProfile={contractorProfile} />
+                          <AvgRating />
                         </div>
                         <div className="mt-3">
                           <h3>Bio</h3>
-                          <OutlinedTextFields
-                            contractorProfile={contractorProfile}
-                          />
+                          <OutlinedTextFields />
                         </div>
                       </div>
                     </div>
@@ -109,13 +106,13 @@ class Profile extends Component {
                   <div className="col-8 offset-3">
                     <div className="row">
                       <div className="shadow mt-3">
-                        <Reviews contractorProfile={contractorProfile} />
+                        <Reviews />
                       </div>
                     </div>
 
                     <div className="row mt-4">
                       <div className="shadow">
-                        <History contractorProfile={contractorProfile} />
+                        <History />
                       </div>
                     </div>
 
@@ -138,8 +135,9 @@ class Profile extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    contractorProfile: state.firestore.data,
-    items: state.contractorProfile
+    contractorProfile: state.firestore.data.contractorProfile,
+    items: state.contractorProfile,
+    auth: state.firebase.auth
   };
 };
 
@@ -153,5 +151,15 @@ function mapDispatchToProps(dispatch) {
     )
   };
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  firestoreConnect(props => {
+    if (!props.auth.uid) return [];
+    return [
+      {
+        collection: "contractorProfile",
+        where: [["contractorUID", "==", props.auth.uid]]
+      }
+    ];
+  })
+)(Profile);

@@ -40,7 +40,7 @@ const initState = {
     },
     {
       id: 4,
-      title: "10 Bids",
+      title: " Bids",
       desc: "10 Bids from TruckAway",
       price: 8.99,
       img: TenBids,
@@ -48,7 +48,7 @@ const initState = {
     },
     {
       id: 5,
-      title: "15 Bids",
+      title: " Bids",
       desc: "15 Bids from TruckAway",
       price: 13.99,
       img: FifteenBids,
@@ -56,7 +56,7 @@ const initState = {
     },
     {
       id: 6,
-      title: "20 Bids",
+      title: " Bids",
       desc: "20 Bids from TruckAway",
       price: 17.99,
       img: TwentyBids,
@@ -96,6 +96,7 @@ const initState = {
     }
   ],
   addedItems: [],
+  addedBids: [],
   total: 0,
   counter: 0,
   bids: 0
@@ -112,57 +113,33 @@ const cartReducer = (state = initState, action) => {
       addedItem.quantity += 1;
 
       let newCounter = state.counter + 1;
+      let newBids = state.bids + addedItem.numOfBids;
       return {
         ...state,
         total: state.total + addedItem.price,
-        counter: newCounter
+        counter: newCounter,
+        bids: newBids
       };
     } else {
       addedItem.quantity = 1;
 
       let newCounter = state.counter + 1;
+
       //calculating the total
       let newTotal = state.total + addedItem.price;
+      let newBids = state.bids + addedItem.numOfBids;
 
       return {
         ...state,
         addedItems: [...state.addedItems, addedItem],
 
         total: newTotal,
-        counter: newCounter
+        counter: newCounter,
+        bids: newBids
       };
     }
   }
-  if (action.type === TOTAL_BIDS) {
-    let addedBid = state.items.find(
-      item => item.numOfBids === action.numOfBids
-    );
 
-    //check if the action id exists in the addedItems
-    let existed_item = state.addedBids.find(
-      item => action.numOfBids === item.numOfBids
-    );
-
-    if (existed_item) {
-      addedBid.quantity += 1;
-
-      return {
-        ...state,
-        total: state.bids + addedBid.numOfBids
-      };
-    } else {
-      addedBid.quantity = 1;
-      //calculating the total
-      let newTotalBids = state.bids + addedBid.numOfBids;
-
-      return {
-        ...state,
-        addedBids: [...state.addedBids, addedBid],
-
-        bids: newTotalBids
-      };
-    }
-  }
   if (action.type === REMOVE_ITEM) {
     let itemToRemove = state.addedItems.find(item => action.id === item.id);
     let new_items = state.addedItems.filter(item => action.id !== item.id);

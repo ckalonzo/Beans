@@ -7,17 +7,19 @@ import {
 } from "./actionTypes/ta-actionTypes";
 
 //add cart action
-export const addToCart = (id, counter) => {
+export const addToCart = (id, counter, numOfBids) => {
   return {
     type: ADD_TO_CART,
     id,
-    counter
+    counter,
+    numOfBids
   };
 };
-export const totalBids = numOfBids => {
+export const totalBids = (numOfBids, id) => {
   return {
     type: TOTAL_BIDS,
-    numOfBids
+    numOfBids,
+    id
   };
 };
 //remove item action
