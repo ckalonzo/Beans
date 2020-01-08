@@ -7,16 +7,16 @@ import "../Css/cart.scss";
 import STRIPE_PUBLISHABLE from "./constants/stripe";
 import PAYMENT_SERVER_URL from "./constants/server";
 import { ACTIONS } from "../../Redux/Store/actions/actionTypes/ta-actionTypes";
-import addBidsAction from "../../Redux/Store/actions/bidsAction";
+import { addBidsAction } from "../../Redux/Store/actions/bidsAction";
 
 const CURRENCY = "USD";
 const fromEuroToCent = amount => amount * 100;
 
-const successPayment = data => {
+const successPayment = (data,totalbids) => {
   alert("Payment Successful");
   console.log(data);
 
-  //this.props.handleTotalBids();
+  this.props.addBidsAction(totalbids)
 };
 
 // const handleTotalBids = totalbids => {
